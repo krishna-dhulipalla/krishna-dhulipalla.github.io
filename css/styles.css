@@ -226,6 +226,36 @@ p {
   margin-bottom: 1rem;
 }
 
+#chatbot-lottie-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#chatbot-lottie-btn:hover {
+  background-color: #f9f9f9;
+  transform: scale(1.03);
+}
+
+#chatbot-lottie-btn-text {
+  font-family: "Segoe UI", sans-serif;
+  font-size: 14px;
+  color: #333;
+  font-weight: 500;
+  margin-left: 10px;
+  max-width: 200px;
+}
+
 abbr[title] {
   -webkit-text-decoration: underline dotted;
   text-decoration: underline dotted;

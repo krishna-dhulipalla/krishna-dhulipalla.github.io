@@ -94,6 +94,11 @@
         font-weight: bold;
       }
     </style>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script
+      src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
+      type="module"
+    ></script>
   </head>
   <body class="d-flex flex-column">
     <main class="flex-shrink-0">
@@ -207,6 +212,22 @@
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+        <div
+          id="chatbot-lottie-btn"
+          onclick="window.open('https://huggingface.co/spaces/krishnadhulipalla/Personal_ChatBot', '_blank')"
+        >
+          <dotlottie-player
+            src="https://lottie.host/12b60265-5eef-4309-bcce-98abdae08afb/9FFDxA63EF.lottie"
+            background="transparent"
+            speed="1"
+            style="width: 50px; height: 50px"
+            loop
+            autoplay
+          ></dotlottie-player>
+          <div id="chatbot-lottie-btn-text">
+            Stuck scrolling? Chat with me instead!
           </div>
         </div>
       </section>
