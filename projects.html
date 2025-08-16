@@ -8,6 +8,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600&display=swap" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
+      type="module"
+    ></script>
     <script defer src="js/theme.js"></script>
     <style>
       body{font-family:'Inter',sans-serif;}h1,h2,h3,h4{font-family:'Poppins',sans-serif;}
@@ -26,37 +30,50 @@
     </nav>
 
     <section class="py-16 px-6 md:px-12">
-      <h1 class="text-4xl font-bold text-center mb-12">Projects</h1>
+      <div class="flex flex-col items-center text-center mb-12">
+        <img
+          src="assets/profile.png"
+          alt="Krishna Vamsi Dhulipalla"
+          class="w-40 h-40 rounded-full mb-4 shadow-lg"
+        />
+        <h1 class="text-4xl font-bold">Projects</h1>
+      </div>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
         <div class="bg-white dark:bg-gray-800 rounded shadow p-6 flex flex-col">
-          <img src="https://via.placeholder.com/400x250?text=Android+Agent" alt="Android Agent" class="rounded mb-4" />
+          <img src="assets/iot.png" alt="Android Agent" class="rounded mb-4" />
           <h2 class="text-2xl font-semibold mb-2">LLM-Based Android Agent</h2>
           <p class="flex-grow">Android UI automation agent with modular prompting and memory, reaching 80%+ step accuracy.</p>
           <a href="https://github.com/Krishna-dhulipalla" class="mt-4 text-teal-600 dark:text-teal-400 underline">GitHub</a>
         </div>
         <div class="bg-white dark:bg-gray-800 rounded shadow p-6 flex flex-col">
-          <img src="https://via.placeholder.com/400x250?text=Proxy+TuNER" alt="Proxy TuNER" class="rounded mb-4" />
+          <img src="assets/proxy.png" alt="Proxy TuNER" class="rounded mb-4" />
           <h2 class="text-2xl font-semibold mb-2">Proxy TuNER</h2>
           <p class="flex-grow">Proxy-tuning approach for cross-domain NER boosting F1 by 8% and reducing compute 70%.</p>
           <a href="https://github.com/Krishna-dhulipalla" class="mt-4 text-teal-600 dark:text-teal-400 underline">GitHub</a>
         </div>
         <div class="bg-white dark:bg-gray-800 rounded shadow p-6 flex flex-col">
-          <img src="https://via.placeholder.com/400x250?text=IntelliMeet" alt="IntelliMeet" class="rounded mb-4" />
+          <img src="assets/intellimeet.png" alt="IntelliMeet" class="rounded mb-4" />
           <h2 class="text-2xl font-semibold mb-2">IntelliMeet</h2>
           <p class="flex-grow">Decentralized video conferencing with on-device attention tracking and latency under 200ms.</p>
           <a href="https://github.com/Krishna-dhulipalla" class="mt-4 text-teal-600 dark:text-teal-400 underline">GitHub</a>
         </div>
         <div class="bg-white dark:bg-gray-800 rounded shadow p-6 flex flex-col">
-          <img src="https://via.placeholder.com/400x250?text=DNA+BERT" alt="DNA Project" class="rounded mb-4" />
+          <img src="assets/fake.jpg" alt="DNA Project" class="rounded mb-4" />
           <h2 class="text-2xl font-semibold mb-2">DNA Sequence Classifier</h2>
           <p class="flex-grow">Fine-tuned DNABERT and HyenaDNA models achieving 94%+ accuracy on genomic tasks.</p>
           <a href="https://github.com/Krishna-dhulipalla" class="mt-4 text-teal-600 dark:text-teal-400 underline">GitHub</a>
         </div>
         <div class="bg-white dark:bg-gray-800 rounded shadow p-6 flex flex-col">
-          <img src="https://via.placeholder.com/400x250?text=RAG+Search" alt="RAG Search" class="rounded mb-4" />
+          <img src="assets/drone.jpg" alt="RAG Search" class="rounded mb-4" />
           <h2 class="text-2xl font-semibold mb-2">Genomics Semantic Search</h2>
           <p class="flex-grow">LangChain pipelines enabling retrieval over literature using lightweight embeddings.</p>
           <a href="https://github.com/Krishna-dhulipalla" class="mt-4 text-teal-600 dark:text-teal-400 underline">GitHub</a>
+        </div>
+        <div class="bg-white dark:bg-gray-800 rounded shadow p-6 flex flex-col">
+          <img src="assets/talking.jpg" alt="LangGraph ChatBot" class="rounded mb-4" />
+          <h2 class="text-2xl font-semibold mb-2">LangGraph ChatBot</h2>
+          <p class="flex-grow">Graph-based LLM chatbot enabling multi-agent conversations with LangGraph.</p>
+          <a href="https://github.com/krishna-dhulipalla/LangGraph_ChatBot" class="mt-4 text-teal-600 dark:text-teal-400 underline">GitHub</a>
         </div>
       </div>
     </section>
@@ -64,6 +81,23 @@
     <footer class="py-6 text-center text-sm bg-white dark:bg-gray-900">
       © <span id="year"></span> Krishna Vamsi Dhulipalla
     </footer>
+    <div
+      id="chatbot-lottie-btn"
+      class="fixed bottom-4 right-4 flex flex-col items-center cursor-pointer"
+      onclick="window.open('https://huggingface.co/spaces/krishnadhulipalla/Personal_ChatBot', '_blank')"
+    >
+      <dotlottie-player
+        src="https://lottie.host/12b60265-5eef-4309-bcce-98abdae08afb/9FFDxA63EF.lottie"
+        background="transparent"
+        speed="1"
+        style="width: 50px; height: 50px"
+        loop
+        autoplay
+      ></dotlottie-player>
+      <div id="chatbot-lottie-btn-text" class="text-xs mt-1 text-gray-600 dark:text-gray-300">
+        Stuck scrolling? Chat with me instead!
+      </div>
+    </div>
     <script>
       document.getElementById('year').textContent = new Date().getFullYear();
     </script>

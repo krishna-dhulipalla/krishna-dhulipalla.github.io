@@ -8,6 +8,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600&display=swap" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
+      type="module"
+    ></script>
     <script defer src="js/theme.js"></script>
     <style>
       body{font-family:'Inter',sans-serif;}h1,h2,h3,h4{font-family:'Poppins',sans-serif;}
@@ -26,8 +30,15 @@
     </nav>
 
     <section class="py-16 px-6 md:px-12">
-      <h1 class="text-4xl font-bold mb-6">Resume</h1>
-      <p class="mb-8 max-w-3xl">ML Engineer with 3+ years designing intelligent systems, deploying models and integrating backend infrastructure. Skilled in LLMs, data engineering and cloud-native deployments.</p>
+      <div class="flex flex-col items-center text-center mb-8">
+        <img
+          src="assets/profile.png"
+          alt="Krishna Vamsi Dhulipalla"
+          class="w-40 h-40 rounded-full mb-4 shadow-lg"
+        />
+        <h1 class="text-4xl font-bold">Resume</h1>
+      </div>
+      <p class="mb-8 max-w-3xl mx-auto text-center">ML Engineer with 3+ years designing intelligent systems, deploying models and integrating backend infrastructure. Skilled in LLMs, data engineering and cloud-native deployments.</p>
       <a href="assets/resume.pdf" class="bg-teal-600 hover:bg-teal-700 text-white px-6 py-3 rounded shadow">Download PDF</a>
 
       <h2 class="text-2xl font-bold mt-12 mb-4">Experience Highlights</h2>
@@ -45,6 +56,23 @@
     <footer class="py-6 text-center text-sm bg-white dark:bg-gray-900">
       © <span id="year"></span> Krishna Vamsi Dhulipalla
     </footer>
+    <div
+      id="chatbot-lottie-btn"
+      class="fixed bottom-4 right-4 flex flex-col items-center cursor-pointer"
+      onclick="window.open('https://huggingface.co/spaces/krishnadhulipalla/Personal_ChatBot', '_blank')"
+    >
+      <dotlottie-player
+        src="https://lottie.host/12b60265-5eef-4309-bcce-98abdae08afb/9FFDxA63EF.lottie"
+        background="transparent"
+        speed="1"
+        style="width: 50px; height: 50px"
+        loop
+        autoplay
+      ></dotlottie-player>
+      <div id="chatbot-lottie-btn-text" class="text-xs mt-1 text-gray-600 dark:text-gray-300">
+        Stuck scrolling? Chat with me instead!
+      </div>
+    </div>
     <script>
       document.getElementById('year').textContent = new Date().getFullYear();
     </script>
