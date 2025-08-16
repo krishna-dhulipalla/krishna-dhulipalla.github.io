@@ -6,7 +6,10 @@
     <title>Krishna Vamsi Dhulipalla</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600&display=swap"
+      rel="stylesheet"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
     <script
       src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
@@ -14,33 +17,98 @@
     ></script>
     <script defer src="js/theme.js"></script>
     <style>
-      .animate-gradient{background-size:400% 400%;animation:gradient 15s ease infinite;}@keyframes gradient{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
-      body{font-family:'Inter',sans-serif;}
-      h1,h2,h3,h4{font-family:'Poppins',sans-serif;}
+      .animate-gradient {
+        background-size: 400% 400%;
+        animation: gradient 15s ease infinite;
+      }
+      @keyframes gradient {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: "Poppins", sans-serif;
+      }
     </style>
   </head>
   <body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200">
-    <nav class="flex items-center justify-between py-4 px-6 md:px-12 bg-white dark:bg-gray-900 shadow">
-      <a href="index.html" class="text-2xl font-bold text-teal-600 dark:text-teal-400">Krishna</a>
+    <nav
+      class="flex items-center justify-between py-4 px-6 md:px-12 bg-white dark:bg-gray-900 shadow"
+    >
+      <a
+        href="index.html"
+        class="text-2xl font-bold text-teal-600 dark:text-teal-400"
+        >Krishna</a
+      >
       <div class="space-x-4 text-sm md:text-base">
-        <a href="about.html" class="hover:text-teal-600 dark:hover:text-teal-400">About</a>
-        <a href="projects.html" class="hover:text-teal-600 dark:hover:text-teal-400">Projects</a>
-        <a href="resume.html" class="hover:text-teal-600 dark:hover:text-teal-400">Resume</a>
-        <a href="contact.html" class="hover:text-teal-600 dark:hover:text-teal-400">Contact</a>
-        <button id="theme-toggle" class="ml-2 px-2 py-1 border rounded border-gray-300 dark:border-gray-600">🌓</button>
+        <a
+          href="about.html"
+          class="hover:text-teal-600 dark:hover:text-teal-400"
+          >About</a
+        >
+        <a
+          href="projects.html"
+          class="hover:text-teal-600 dark:hover:text-teal-400"
+          >Projects</a
+        >
+        <a
+          href="resume.html"
+          class="hover:text-teal-600 dark:hover:text-teal-400"
+          >Resume</a
+        >
+        <a
+          href="contact.html"
+          class="hover:text-teal-600 dark:hover:text-teal-400"
+          >Contact</a
+        >
+        <button
+          id="theme-toggle"
+          class="ml-2 px-2 py-1 border rounded border-gray-300 dark:border-gray-600"
+        >
+          🌓
+        </button>
       </div>
     </nav>
 
     <!-- Hero -->
-    <section class="relative flex items-center justify-center text-center py-24">
-      <div class="absolute inset-0 -z-10 animate-gradient bg-gradient-to-r from-teal-500 via-purple-500 to-teal-500 opacity-20"></div>
+    <section
+      class="relative flex items-center justify-center text-center py-24"
+    >
+      <div
+        class="absolute inset-0 -z-10 animate-gradient bg-gradient-to-r from-teal-500 via-purple-500 to-teal-500 opacity-20"
+      ></div>
       <div class="px-4 flex flex-col items-center">
         <h1 class="text-4xl md:text-6xl font-bold">Krishna Vamsi Dhulipalla</h1>
-        <p class="mt-4 text-xl text-gray-600 dark:text-gray-300">Agentic AI Engineer</p>
-        <p class="mt-2 text-gray-500 dark:text-gray-400">Building agentic systems with LangGraph, AutoGen, CrewAI, LangSmith, and RAG pipelines using LangChain, Docker, and FastAPI.</p>
+        <p class="mt-4 text-xl text-gray-600 dark:text-gray-300">
+          Agentic AI Engineer
+        </p>
+        <p class="mt-2 text-gray-500 dark:text-gray-400">
+          Building agentic systems with LangGraph, AutoGen, CrewAI, LangSmith,
+          and RAG pipelines using LangChain, Docker, and FastAPI.
+        </p>
         <div class="mt-8">
-          <a href="projects.html" class="bg-teal-600 hover:bg-teal-700 text-white px-6 py-3 rounded shadow">View Projects</a>
-          <a href="resume.html" class="ml-4 border border-teal-600 text-teal-600 dark:text-teal-400 hover:bg-teal-50 dark:hover:bg-gray-800 px-6 py-3 rounded">Resume</a>
+          <a
+            href="projects.html"
+            class="bg-teal-600 hover:bg-teal-700 text-white px-6 py-3 rounded shadow"
+            >View Projects</a
+          >
+          <a
+            href="resume.html"
+            class="ml-4 border border-teal-600 text-teal-600 dark:text-teal-400 hover:bg-teal-50 dark:hover:bg-gray-800 px-6 py-3 rounded"
+            >Resume</a
+          >
         </div>
       </div>
     </section>
@@ -49,26 +117,60 @@
     <section id="about" class="py-16 px-6 md:px-12">
       <h2 class="text-3xl font-bold mb-6">About Me</h2>
       <p class="max-w-3xl leading-relaxed">
-        I'm a graduate student pursuing an MEng in Computer Science at Virginia Tech. My work focuses on crafting agentic workflows and intelligent systems with tools like LangGraph, AutoGen, CrewAI, LangSmith, and RAG with LangChain, Docker, and FastAPI. I'm passionate about AI, space and bioinformatics research, and love turning complex challenges into scalable solutions.
+        I'm a graduate student pursuing an MEng in Computer Science at Virginia
+        Tech. My work focuses on crafting agentic workflows and intelligent
+        systems with tools like LangGraph, AutoGen, CrewAI, LangSmith, and RAG
+        with LangChain, Docker, and FastAPI. I'm passionate about AI, space and
+        bioinformatics research, and love turning complex challenges into
+        scalable solutions.
       </p>
     </section>
 
     <!-- Skills -->
-    <section id="skills" class="py-16 px-6 md:px-12 bg-gray-50 dark:bg-gray-800">
+    <section
+      id="skills"
+      class="py-16 px-6 md:px-12 bg-gray-50 dark:bg-gray-800"
+    >
       <h2 class="text-3xl font-bold mb-6 text-center">Skills & Tools</h2>
-      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
-        <div class="bg-white dark:bg-gray-700 rounded shadow p-4 text-center">LangGraph</div>
-        <div class="bg-white dark:bg-gray-700 rounded shadow p-4 text-center">LangChain</div>
-        <div class="bg-white dark:bg-gray-700 rounded shadow p-4 text-center">AutoGen</div>
-        <div class="bg-white dark:bg-gray-700 rounded shadow p-4 text-center">CrewAI</div>
-        <div class="bg-white dark:bg-gray-700 rounded shadow p-4 text-center">LangSmith</div>
-        <div class="bg-white dark:bg-gray-700 rounded shadow p-4 text-center">RAG</div>
-        <div class="bg-white dark:bg-gray-700 rounded shadow p-4 text-center">Docker</div>
-        <div class="bg-white dark:bg-gray-700 rounded shadow p-4 text-center">FastAPI</div>
-        <div class="bg-white dark:bg-gray-700 rounded shadow p-4 text-center">Python</div>
-        <div class="bg-white dark:bg-gray-700 rounded shadow p-4 text-center">SQL</div>
-        <div class="bg-white dark:bg-gray-700 rounded shadow p-4 text-center">PyTorch</div>
-        <div class="bg-white dark:bg-gray-700 rounded shadow p-4 text-center">TensorFlow</div>
+      <div
+        class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 max-w-4xl mx-auto"
+      >
+        <div class="bg-white dark:bg-gray-700 rounded shadow p-4 text-center">
+          LangGraph
+        </div>
+        <div class="bg-white dark:bg-gray-700 rounded shadow p-4 text-center">
+          LangChain
+        </div>
+        <div class="bg-white dark:bg-gray-700 rounded shadow p-4 text-center">
+          AutoGen
+        </div>
+        <div class="bg-white dark:bg-gray-700 rounded shadow p-4 text-center">
+          CrewAI
+        </div>
+        <div class="bg-white dark:bg-gray-700 rounded shadow p-4 text-center">
+          LangSmith
+        </div>
+        <div class="bg-white dark:bg-gray-700 rounded shadow p-4 text-center">
+          RAG
+        </div>
+        <div class="bg-white dark:bg-gray-700 rounded shadow p-4 text-center">
+          Docker
+        </div>
+        <div class="bg-white dark:bg-gray-700 rounded shadow p-4 text-center">
+          FastAPI
+        </div>
+        <div class="bg-white dark:bg-gray-700 rounded shadow p-4 text-center">
+          Python
+        </div>
+        <div class="bg-white dark:bg-gray-700 rounded shadow p-4 text-center">
+          SQL
+        </div>
+        <div class="bg-white dark:bg-gray-700 rounded shadow p-4 text-center">
+          PyTorch
+        </div>
+        <div class="bg-white dark:bg-gray-700 rounded shadow p-4 text-center">
+          TensorFlow
+        </div>
       </div>
     </section>
 
@@ -77,59 +179,111 @@
       <h2 class="text-3xl font-bold mb-6">Experience</h2>
       <div class="space-y-8">
         <div class="border-l-2 border-teal-600 pl-4">
-          <h3 class="text-xl font-semibold">ML Research Engineer – Cloud Systems LLC</h3>
-          <p class="text-sm text-gray-500 dark:text-gray-400">Jul 2024 – Present</p>
-          <p>Designed complex SQL and data pipelines, building automated ETL workflows for diverse sources.</p>
+          <h3 class="text-xl font-semibold">
+            ML Research Engineer – Cloud Systems LLC
+          </h3>
+          <p class="text-sm text-gray-500 dark:text-gray-400">
+            Jul 2024 – Present
+          </p>
+          <p>
+            Designed complex SQL and data pipelines, building automated ETL
+            workflows for diverse sources.
+          </p>
         </div>
         <div class="border-l-2 border-teal-600 pl-4">
-          <h3 class="text-xl font-semibold">ML Research Engineer – Virginia Tech</h3>
+          <h3 class="text-xl font-semibold">
+            ML Research Engineer – Virginia Tech
+          </h3>
           <p class="text-sm text-gray-500 dark:text-gray-400">2024</p>
-          <p>Built AI pipelines with DNA foundation models and automated preprocessing for 1M+ sequences.</p>
+          <p>
+            Built AI pipelines with DNA foundation models and automated
+            preprocessing for 1M+ sequences.
+          </p>
         </div>
         <div class="border-l-2 border-teal-600 pl-4">
-          <h3 class="text-xl font-semibold">Research Assistant – Virginia Tech</h3>
-          <p class="text-sm text-gray-500 dark:text-gray-400">Jun 2023 – May 2024</p>
-          <p>Orchestrated genomic ETL pipelines and automated model retraining with custom CI/CD scripts.</p>
+          <h3 class="text-xl font-semibold">
+            Research Assistant – Virginia Tech
+          </h3>
+          <p class="text-sm text-gray-500 dark:text-gray-400">
+            Jun 2023 – May 2024
+          </p>
+          <p>
+            Orchestrated genomic ETL pipelines and automated model retraining
+            with custom CI/CD scripts.
+          </p>
         </div>
         <div class="border-l-2 border-teal-600 pl-4">
-          <h3 class="text-xl font-semibold">Agentic Engineer – UJR Technologies</h3>
-          <p class="text-sm text-gray-500 dark:text-gray-400">Jul 2021 – Dec 2022</p>
-          <p>Migrated batch ETL to real-time streaming and optimized Snowflake performance with materialized views.</p>
+          <h3 class="text-xl font-semibold">
+            Agentic Engineer – UJR Technologies
+          </h3>
+          <p class="text-sm text-gray-500 dark:text-gray-400">
+            Jul 2021 – Dec 2022
+          </p>
+          <p>
+            Migrated batch ETL to real-time streaming and optimized Snowflake
+            performance with materialized views.
+          </p>
         </div>
       </div>
     </section>
 
     <!-- Projects preview -->
-    <section id="projects" class="py-16 px-6 md:px-12 bg-gray-50 dark:bg-gray-800">
+    <section
+      id="projects"
+      class="py-16 px-6 md:px-12 bg-gray-50 dark:bg-gray-800"
+    >
       <h2 class="text-3xl font-bold mb-6 text-center">Featured Projects</h2>
       <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
         <div class="bg-white dark:bg-gray-700 rounded shadow p-4">
-          <img src="assets/talking.jpg" alt="LangGraph ChatBot" class="rounded mb-4" />
+          <img
+            src="assets/talking.jpg"
+            alt="LangGraph ChatBot"
+            class="rounded mb-4"
+          />
           <h3 class="text-xl font-semibold mb-2">LangGraph ChatBot</h3>
-          <p class="text-sm">Graph-based LLM chatbot enabling multi-agent conversations with LangGraph.</p>
+          <p class="text-sm">
+            Graph-based LLM chatbot enabling multi-agent conversations with
+            LangGraph.
+          </p>
         </div>
         <div class="bg-white dark:bg-gray-700 rounded shadow p-4">
           <img src="assets/iot.png" alt="Android Agent" class="rounded mb-4" />
           <h3 class="text-xl font-semibold mb-2">LLM-Based Android Agent</h3>
-          <p class="text-sm">Custom LLM agent achieving 80%+ step accuracy for mobile UI task automation.</p>
+          <p class="text-sm">
+            Custom LLM agent achieving 80%+ step accuracy for mobile UI task
+            automation.
+          </p>
         </div>
         <div class="bg-white dark:bg-gray-700 rounded shadow p-4">
           <img src="assets/proxy.png" alt="Proxy TuNER" class="rounded mb-4" />
           <h3 class="text-xl font-semibold mb-2">Proxy TuNER</h3>
-          <p class="text-sm">Proxy-tuned BERT models improving NER F1-score by 8% while cutting compute 70%.</p>
+          <p class="text-sm">
+            Proxy-tuned BERT models improving NER F1-score by 8% while cutting
+            compute 70%.
+          </p>
         </div>
       </div>
       <div class="text-center mt-8">
-        <a href="projects.html" class="bg-teal-600 hover:bg-teal-700 text-white px-6 py-3 rounded shadow">All Projects</a>
+        <a
+          href="projects.html"
+          class="bg-teal-600 hover:bg-teal-700 text-white px-6 py-3 rounded shadow"
+          >All Projects</a
+        >
       </div>
     </section>
 
     <!-- Resume callout -->
     <section id="resume" class="py-16 px-6 md:px-12">
       <h2 class="text-3xl font-bold mb-6 text-center">Resume</h2>
-      <p class="max-w-2xl mx-auto text-center mb-6">Download my full resume or view a condensed version.</p>
+      <p class="max-w-2xl mx-auto text-center mb-6">
+        Download my full resume or view a condensed version.
+      </p>
       <div class="text-center">
-        <a href="assets/resume.pdf" class="bg-teal-600 hover:bg-teal-700 text-white px-6 py-3 rounded shadow">Download Resume</a>
+        <a
+          href="assets/resume.pdf"
+          class="bg-teal-600 hover:bg-teal-700 text-white px-6 py-3 rounded shadow"
+          >Download Resume</a
+        >
       </div>
     </section>
 
@@ -138,7 +292,7 @@
     </footer>
     <div
       id="chatbot-lottie-btn"
-      class="fixed bottom-4 right-4 flex flex-col items-center cursor-pointer bg-white dark:bg-gray-800 p-3 rounded-full shadow-lg border border-teal-600 hover:shadow-xl transition"
+      class="fixed bottom-4 right-4 flex flex-col items-center cursor-pointer"
       onclick="window.open('https://huggingface.co/spaces/krishnadhulipalla/Personal_ChatBot', '_blank')"
     >
       <dotlottie-player
@@ -149,13 +303,16 @@
         loop
         autoplay
       ></dotlottie-player>
-      <div id="chatbot-lottie-btn-text" class="text-xs mt-2 text-gray-600 dark:text-gray-300 bg-white dark:bg-gray-800 px-2 py-1 rounded-full border border-teal-600 shadow">
+      <div
+        id="chatbot-lottie-btn-text"
+        class="text-xs mt-2 text-gray-600 dark:text-gray-300 bg-white dark:bg-gray-800 px-2 py-1 rounded-full border border-teal-600 shadow"
+      >
         Stuck scrolling? Chat with me instead!
       </div>
     </div>
 
     <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
+      document.getElementById("year").textContent = new Date().getFullYear();
     </script>
   </body>
 </html>

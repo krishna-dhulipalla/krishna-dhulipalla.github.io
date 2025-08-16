@@ -6,7 +6,10 @@
     <title>About - Krishna Vamsi Dhulipalla</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600&display=swap"
+      rel="stylesheet"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
     <script
       src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
@@ -15,18 +18,53 @@
 
     <script defer src="js/theme.js"></script>
     <style>
-      body{font-family:'Inter',sans-serif;}h1,h2,h3,h4{font-family:'Poppins',sans-serif;}
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: "Poppins", sans-serif;
+      }
     </style>
   </head>
   <body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200">
-    <nav class="flex items-center justify-between py-4 px-6 md:px-12 bg-white dark:bg-gray-900 shadow">
-      <a href="index.html" class="text-2xl font-bold text-teal-600 dark:text-teal-400">Krishna</a>
+    <nav
+      class="flex items-center justify-between py-4 px-6 md:px-12 bg-white dark:bg-gray-900 shadow"
+    >
+      <a
+        href="index.html"
+        class="text-2xl font-bold text-teal-600 dark:text-teal-400"
+        >Krishna</a
+      >
       <div class="space-x-4 text-sm md:text-base">
-        <a href="about.html" class="hover:text-teal-600 dark:hover:text-teal-400">About</a>
-        <a href="projects.html" class="hover:text-teal-600 dark:hover:text-teal-400">Projects</a>
-        <a href="resume.html" class="hover:text-teal-600 dark:hover:text-teal-400">Resume</a>
-        <a href="contact.html" class="hover:text-teal-600 dark:hover:text-teal-400">Contact</a>
-        <button id="theme-toggle" class="ml-2 px-2 py-1 border rounded border-gray-300 dark:border-gray-600">🌓</button>
+        <a
+          href="about.html"
+          class="hover:text-teal-600 dark:hover:text-teal-400"
+          >About</a
+        >
+        <a
+          href="projects.html"
+          class="hover:text-teal-600 dark:hover:text-teal-400"
+          >Projects</a
+        >
+        <a
+          href="resume.html"
+          class="hover:text-teal-600 dark:hover:text-teal-400"
+          >Resume</a
+        >
+        <a
+          href="contact.html"
+          class="hover:text-teal-600 dark:hover:text-teal-400"
+          >Contact</a
+        >
+        <button
+          id="theme-toggle"
+          class="ml-2 px-2 py-1 border rounded border-gray-300 dark:border-gray-600"
+        >
+          🌓
+        </button>
       </div>
     </nav>
 
@@ -40,10 +78,17 @@
         <h1 class="text-4xl font-bold mb-2">About Me</h1>
       </div>
       <p class="max-w-3xl mx-auto mb-6 leading-relaxed">
-        I'm Krishna Vamsi Dhulipalla, an agentic AI engineer currently pursuing my MEng in Computer Science at Virginia Tech. I love building systems that turn raw data into intelligent multi-agent applications.
+        I'm Krishna Vamsi Dhulipalla, an agentic AI engineer currently pursuing
+        my MEng in Computer Science at Virginia Tech. I love building systems
+        that turn raw data into intelligent multi-agent applications.
       </p>
       <p class="max-w-3xl mx-auto mb-6 leading-relaxed">
-        My recent work spans AI research, agentic workflows, and deploying cloud-native ML solutions using LangGraph, AutoGen, CrewAI, LangSmith, and RAG with LangChain, Docker, and FastAPI. I'm especially fascinated by the intersection of AI with space exploration and bioinformatics, pushing the boundaries of how machine learning can drive scientific discovery.
+        My recent work spans AI research, agentic workflows, and deploying
+        cloud-native ML solutions using LangGraph, AutoGen, CrewAI, LangSmith,
+        and RAG with LangChain, Docker, and FastAPI. I'm especially fascinated
+        by the intersection of AI with space exploration and bioinformatics,
+        pushing the boundaries of how machine learning can drive scientific
+        discovery.
       </p>
       <h2 class="text-2xl font-bold mt-12 mb-4">Education</h2>
       <ul class="list-disc ml-6 space-y-2">
@@ -52,8 +97,9 @@
       </ul>
       <h2 class="text-2xl font-bold mt-12 mb-4">Interests</h2>
       <p class="max-w-3xl leading-relaxed">
-        AI systems, space technologies, and bioinformatics research excite me. When I'm not coding, I enjoy exploring new gadgets and
-        following advances in aerospace.
+        AI systems, space technologies, and bioinformatics research excite me.
+        When I'm not coding, I enjoy exploring new gadgets and following
+        advances in aerospace.
       </p>
     </section>
 
@@ -62,7 +108,7 @@
     </footer>
     <div
       id="chatbot-lottie-btn"
-      class="fixed bottom-4 right-4 flex flex-col items-center cursor-pointer bg-white dark:bg-gray-800 p-3 rounded-full shadow-lg border border-teal-600 hover:shadow-xl transition"
+      class="fixed bottom-4 right-4 flex flex-col items-center cursor-pointer"
       onclick="window.open('https://huggingface.co/spaces/krishnadhulipalla/Personal_ChatBot', '_blank')"
     >
       <dotlottie-player
@@ -73,12 +119,15 @@
         loop
         autoplay
       ></dotlottie-player>
-      <div id="chatbot-lottie-btn-text" class="text-xs mt-2 text-gray-600 dark:text-gray-300 bg-white dark:bg-gray-800 px-2 py-1 rounded-full border border-teal-600 shadow">
+      <div
+        id="chatbot-lottie-btn-text"
+        class="text-xs mt-2 text-gray-600 dark:text-gray-300 bg-white dark:bg-gray-800 px-2 py-1 rounded-full border border-teal-600 shadow"
+      >
         Stuck scrolling? Chat with me instead!
       </div>
     </div>
     <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
+      document.getElementById("year").textContent = new Date().getFullYear();
     </script>
   </body>
 </html>
