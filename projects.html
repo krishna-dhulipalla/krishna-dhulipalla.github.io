@@ -1,505 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <title>Krishna's Portfolio</title>
-    <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-    <!-- Custom Google font-->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects - Krishna Vamsi Dhulipalla</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
-      rel="stylesheet"
-    />
-    <!-- Bootstrap icons-->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
-      rel="stylesheet"
-    />
-    <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="css/styles.css" rel="stylesheet" />
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    <script
-      src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
-      type="module"
-    ></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="js/theme.js"></script>
+    <style>
+      body{font-family:'Inter',sans-serif;}h1,h2,h3,h4{font-family:'Poppins',sans-serif;}
+    </style>
   </head>
-  <body class="d-flex flex-column h-100 bg-light">
-    <main class="flex-shrink-0">
-      <!-- Navigation-->
-      <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
-        <div class="container px-5">
-          <a class="navbar-brand" href="index.html"
-            ><span class="fw-bolder text-primary">Portfolio</span></a
-          >
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
-              <li class="nav-item">
-                <a class="nav-link" href="index.html">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="resume.html">Resume</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="projects.html">Projects</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="contact.html">Contact</a>
-              </li>
-            </ul>
-          </div>
+  <body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200">
+    <nav class="flex items-center justify-between py-4 px-6 md:px-12 bg-white dark:bg-gray-900 shadow">
+      <a href="index.html" class="text-2xl font-bold text-teal-600 dark:text-teal-400">Krishna</a>
+      <div class="space-x-4 text-sm md:text-base">
+        <a href="about.html" class="hover:text-teal-600 dark:hover:text-teal-400">About</a>
+        <a href="projects.html" class="hover:text-teal-600 dark:hover:text-teal-400">Projects</a>
+        <a href="resume.html" class="hover:text-teal-600 dark:hover:text-teal-400">Resume</a>
+        <a href="contact.html" class="hover:text-teal-600 dark:hover:text-teal-400">Contact</a>
+        <button id="theme-toggle" class="ml-2 px-2 py-1 border rounded border-gray-300 dark:border-gray-600">🌓</button>
+      </div>
+    </nav>
+
+    <section class="py-16 px-6 md:px-12">
+      <h1 class="text-4xl font-bold text-center mb-12">Projects</h1>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div class="bg-white dark:bg-gray-800 rounded shadow p-6 flex flex-col">
+          <img src="https://via.placeholder.com/400x250?text=Android+Agent" alt="Android Agent" class="rounded mb-4" />
+          <h2 class="text-2xl font-semibold mb-2">LLM-Based Android Agent</h2>
+          <p class="flex-grow">Android UI automation agent with modular prompting and memory, reaching 80%+ step accuracy.</p>
+          <a href="https://github.com/Krishna-dhulipalla" class="mt-4 text-teal-600 dark:text-teal-400 underline">GitHub</a>
         </div>
-      </nav>
-      <!-- Projects Section-->
-      <section class="py-5">
-        <div class="container px-5 mb-5">
-          <div class="text-center mb-5">
-            <h1 class="display-5 fw-bolder mb-0">
-              <span class="text-gradient d-inline">Featured Projects</span>
-            </h1>
-          </div>
-          <div class="row gx-5 justify-content-center">
-            <!-- Project 1 -->
-            <div class="col-lg-8 col-xl-6 mb-5">
-              <div
-                class="card h-100 shadow-lg rounded-4 border-0 overflow-hidden"
-              >
-                <img
-                  src="assets/proxy.png"
-                  class="card-img-top img-fluid"
-                  alt="Proxy TuNER Project"
-                  style="height: 250px; object-fit: cover"
-                />
-                <div class="card-body p-4">
-                  <div
-                    class="badge bg-primary bg-gradient-primary-to-secondary text-white rounded-pill mb-2"
-                  >
-                    NLP Research
-                  </div>
-                  <h2 class="fw-bolder mb-3">
-                    Proxy TuNER: Cross-Domain NER Framework
-                  </h2>
-
-                  <div class="d-flex gap-2 mb-3">
-                    <span class="badge bg-light text-dark border">PyTorch</span>
-                    <span class="badge bg-light text-dark border">BERT</span>
-                    <span class="badge bg-light text-dark border"
-                      >HuggingFace</span
-                    >
-                  </div>
-
-                  <div class="mb-4">
-                    <div class="d-flex align-items-center mb-2">
-                      <i class="bi bi-speedometer2 me-2 text-primary"></i>
-                      <strong>30% Faster Inference</strong>
-                    </div>
-                    <div class="d-flex align-items-center mb-2">
-                      <i class="bi bi-graph-up me-2 text-primary"></i>
-                      <strong>8% F1-Score Improvement</strong>
-                    </div>
-                    <div class="d-flex align-items-center">
-                      <i class="bi bi-cash-coin me-2 text-primary"></i>
-                      <strong>25% Cost Reduction</strong>
-                    </div>
-                  </div>
-
-                  <p class="text-muted">
-                    Advanced proxy-tuning framework for BERT models enabling:
-                  </p>
-                  <ul class="text-muted small">
-                    <li>Domain adaptation without weight modification</li>
-                    <li>71% avg F1-score across multiple domains</li>
-                    <li>Distributed training optimizations</li>
-                    <li>Automated hyperparameter tuning</li>
-                  </ul>
-
-                  <div class="mt-auto">
-                    <a
-                      href="https://github.com/krishna-creator/ProxytuNER"
-                      class="btn btn-primary px-3 py-2 me-2"
-                    >
-                      <i class="bi bi-github me-1"></i> View Code
-                    </a>
-                    <a
-                      href="https://figshare.com/articles/journal_contribution/Proxy_TuNER_Advancing_Cross-Domain_NamedEntity_Recognition_through_Proxy_Tuning/26822227/1"
-                      class="btn btn-outline-primary px-3 py-2"
-                    >
-                      Case Study
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Project 2 -->
-            <div class="col-lg-8 col-xl-6 mb-5">
-              <div
-                class="card h-100 shadow-lg rounded-4 border-0 overflow-hidden"
-              >
-                <img
-                  src="assets/drone.jpg"
-                  class="card-img-top img-fluid"
-                  alt="Drone Analysis Project"
-                  style="height: 250px; object-fit: cover"
-                />
-                <div class="card-body p-4">
-                  <div
-                    class="badge bg-primary bg-gradient-primary-to-secondary text-white rounded-pill mb-2"
-                  >
-                    Computer Vision
-                  </div>
-                  <h2 class="fw-bolder mb-3">Automated Drone Image Analysis</h2>
-
-                  <div class="d-flex gap-2 mb-3">
-                    <span class="badge bg-light text-dark border">OpenCV</span>
-                    <span class="badge bg-light text-dark border">GANs</span>
-                    <span class="badge bg-light text-dark border">RAG</span>
-                  </div>
-
-                  <div class="mb-4">
-                    <div class="d-flex align-items-center mb-2">
-                      <i class="bi bi-clock me-2 text-primary"></i>
-                      <strong>70% Time Reduction</strong>
-                    </div>
-                    <div class="d-flex align-items-center mb-2">
-                      <i class="bi bi-patch-check me-2 text-primary"></i>
-                      <strong>15% Accuracy Boost</strong>
-                    </div>
-                  </div>
-
-                  <p class="text-muted">
-                    End-to-end pipeline for agricultural analysis:
-                  </p>
-                  <ul class="text-muted small">
-                    <li>LLM-based plant classification</li>
-                    <li>Synthetic data generation with GANs</li>
-                    <li>500+ species analysis capability</li>
-                    <li>Real-time drone image processing</li>
-                  </ul>
-
-                  <!-- <div class="mt-auto">
-                    <a href="#" class="btn btn-primary px-3 py-2 me-2">
-                      <i class="bi bi-github me-1"></i> View Code
-                    </a>
-                    <a href="#" class="btn btn-outline-primary px-3 py-2">
-                      Live Demo
-                    </a>
-                  </div> -->
-                </div>
-              </div>
-            </div>
-            <!-- Project 3 - IoT Temperature Analytics -->
-            <div class="col-lg-8 col-xl-6 mb-5">
-              <div
-                class="card h-100 shadow-lg rounded-4 border-0 overflow-hidden"
-              >
-                <img
-                  src="assets/iot.png"
-                  class="card-img-top img-fluid"
-                  alt="IoT Temperature Analytics"
-                  style="height: 250px; object-fit: cover"
-                />
-                <div class="card-body p-4">
-                  <div
-                    class="badge bg-primary bg-gradient-primary-to-secondary text-white rounded-pill mb-2"
-                  >
-                    IoT Analytics
-                  </div>
-                  <h2 class="fw-bolder mb-3">
-                    Real-Time Temperature Forecasting System
-                  </h2>
-
-                  <div class="d-flex gap-2 mb-3">
-                    <span class="badge bg-light text-dark border"
-                      >Apache Kafka</span
-                    >
-                    <span class="badge bg-light text-dark border">GPT-4</span>
-                    <span class="badge bg-light text-dark border"
-                      >Snowflake</span
-                    >
-                  </div>
-
-                  <div class="mb-4">
-                    <div class="d-flex align-items-center mb-2">
-                      <i class="bi bi-thermometer-high me-2 text-primary"></i>
-                      <strong>10,000+ IoT Sensors</strong>
-                    </div>
-                    <div class="d-flex align-items-center mb-2">
-                      <i class="bi bi-speedometer me-2 text-primary"></i>
-                      <strong>91% Prediction Accuracy</strong>
-                    </div>
-                    <div class="d-flex align-items-center">
-                      <i class="bi bi-cash-stack me-2 text-primary"></i>
-                      <strong>40% Cost Reduction</strong>
-                    </div>
-                  </div>
-
-                  <p class="text-muted">
-                    Scalable temperature monitoring solution:
-                  </p>
-                  <ul class="text-muted small">
-                    <li>Real-time processing with Kafka pipelines</li>
-                    <li>LLM-enhanced forecasting models</li>
-                    <li>Looker dashboards for trend visualization</li>
-                    <li>Historical analysis via AWS</li>
-                  </ul>
-
-                  <div class="mt-auto">
-                    <a
-                      href="https://github.com/krishna-creator/Real-Time-IoT-Based-Temperature-Analytics-and-Forecasting"
-                      class="btn btn-primary px-3 py-2 me-2"
-                    >
-                      <i class="bi bi-github me-1"></i> Code
-                    </a>
-                    <a href="#" class="btn btn-outline-primary px-3 py-2">
-                      White Paper
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Project 4 - IntelliMeet -->
-            <div class="col-lg-8 col-xl-6 mb-5">
-              <div
-                class="card h-100 shadow-lg rounded-4 border-0 overflow-hidden"
-              >
-                <img
-                  src="assets/intellimeet.png"
-                  class="card-img-top img-fluid"
-                  alt="Video Conferencing"
-                  style="height: 250px; object-fit: cover"
-                />
-                <div class="card-body p-4">
-                  <div
-                    class="badge bg-primary bg-gradient-primary-to-secondary text-white rounded-pill mb-2"
-                  >
-                    AI/DevOps
-                  </div>
-                  <h2 class="fw-bolder mb-3">
-                    IntelliMeet: Secure Video Conferencing
-                  </h2>
-
-                  <div class="d-flex gap-2 mb-3">
-                    <span class="badge bg-light text-dark border">WebRTC</span>
-                    <span class="badge bg-light text-dark border">Node.js</span>
-                    <span class="badge bg-light text-dark border"
-                      >Federated Learning</span
-                    >
-                  </div>
-
-                  <div class="mb-4">
-                    <div class="d-flex align-items-center mb-2">
-                      <i class="bi bi-shield-lock me-2 text-primary"></i>
-                      <strong>Privacy-First Design</strong>
-                    </div>
-                    <div class="d-flex align-items-center mb-2">
-                      <i class="bi bi-gpu-card me-2 text-primary"></i>
-                      <strong>25% Model Accuracy ↑</strong>
-                    </div>
-                    <div class="d-flex align-items-center">
-                      <i class="bi bi-lightning-charge me-2 text-primary"></i>
-                      <strong>&lt;200ms Latency</strong>
-                    </div>
-                  </div>
-
-                  <p class="text-muted">
-                    Decentralized communication platform:
-                  </p>
-                  <ul class="text-muted small">
-                    <li>On-device AI training</li>
-                    <li>83% accurate speech-to-text</li>
-                    <li>10+ concurrent users</li>
-                    <li>End-to-end encryption</li>
-                  </ul>
-
-                  <div class="mt-auto">
-                    <a
-                      href="https://github.com/krishna-creator/SE-Project---IntelliMeet"
-                      class="btn btn-primary px-3 py-2 me-2"
-                    >
-                      <i class="bi bi-github me-1"></i> Repo
-                    </a>
-                    <a href="#" class="btn btn-outline-primary px-3 py-2">
-                      Live Demo
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Project 5 - COVID Misinfo -->
-            <div class="col-lg-8 col-xl-6 mb-5">
-              <div
-                class="card h-100 shadow-lg rounded-4 border-0 overflow-hidden"
-              >
-                <img
-                  src="assets/fake.jpg"
-                  class="card-img-top img-fluid"
-                  alt="COVID Misinformation"
-                  style="height: 250px; object-fit: cover"
-                />
-                <div class="card-body p-4">
-                  <div
-                    class="badge bg-primary bg-gradient-primary-to-secondary text-white rounded-pill mb-2"
-                  >
-                    NLP Research
-                  </div>
-                  <h2 class="fw-bolder mb-3">
-                    COVID-19 Misinformation Tracking
-                  </h2>
-
-                  <div class="d-flex gap-2 mb-3">
-                    <span class="badge bg-light text-dark border">BERT</span>
-                    <span class="badge bg-light text-dark border">NLTK</span>
-                    <span class="badge bg-light text-dark border"
-                      >NetworkX</span
-                    >
-                  </div>
-
-                  <div class="mb-4">
-                    <div class="d-flex align-items-center mb-2">
-                      <i class="bi bi-twitter me-2 text-primary"></i>
-                      <strong>1M+ Tweets Analyzed</strong>
-                    </div>
-                    <div class="d-flex align-items-center mb-2">
-                      <i class="bi bi-fingerprint me-2 text-primary"></i>
-                      <strong>89% Detection Accuracy</strong>
-                    </div>
-                  </div>
-
-                  <p class="text-muted">Social media analysis system:</p>
-                  <ul class="text-muted small">
-                    <li>LIAR dataset fine-tuning</li>
-                    <li>Community detection algorithms</li>
-                    <li>Sentiment analysis pipeline</li>
-                    <li>Influence tracking metrics</li>
-                  </ul>
-
-                  <div class="mt-auto">
-                    <a href="#" class="btn btn-primary px-3 py-2 me-2">
-                      <i class="bi bi-file-pdf me-1"></i> Paper
-                    </a>
-                    <a href="#" class="btn btn-outline-primary px-3 py-2">
-                      Dataset
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Project 6 - Talking Buddy -->
-            <div class="col-lg-8 col-xl-6 mb-5">
-              <div
-                class="card h-100 shadow-lg rounded-4 border-0 overflow-hidden"
-              >
-                <img
-                  src="assets/talking.jpg"
-                  class="card-img-top img-fluid"
-                  alt="AI Chatbot"
-                  style="height: 250px; object-fit: cover"
-                />
-                <div class="card-body p-4">
-                  <div
-                    class="badge bg-primary bg-gradient-primary-to-secondary text-white rounded-pill mb-2"
-                  >
-                    Conversational AI
-                  </div>
-                  <h2 class="fw-bolder mb-3">
-                    Talking Buddy: Emotional AI Companion
-                  </h2>
-
-                  <div class="d-flex gap-2 mb-3">
-                    <span class="badge bg-light text-dark border">GRU</span>
-                    <span class="badge bg-light text-dark border">React</span>
-                    <span class="badge bg-light text-dark border">Flask</span>
-                  </div>
-
-                  <div class="mb-4">
-                    <div class="d-flex align-items-center mb-2">
-                      <i class="bi bi-emoji-smile me-2 text-primary"></i>
-                      <strong>85% Sentiment Accuracy</strong>
-                    </div>
-                    <div class="d-flex align-items-center mb-2">
-                      <i class="bi bi-lightning-charge me-2 text-primary"></i>
-                      <strong>23% Cost Reduction</strong>
-                    </div>
-                  </div>
-
-                  <p class="text-muted">Context-aware chatbot features:</p>
-                  <ul class="text-muted small">
-                    <li>68.7K parameter efficient model</li>
-                    <li>Real-time response generation</li>
-                    <li>Cross-platform compatibility</li>
-                    <li>Customer service integration</li>
-                  </ul>
-
-                  <div class="mt-auto">
-                    <a href="#" class="btn btn-primary px-3 py-2 me-2">
-                      <i class="bi bi-github me-1"></i> Source
-                    </a>
-                    <a href="#" class="btn btn-outline-primary px-3 py-2">
-                      Try Demo
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div class="bg-white dark:bg-gray-800 rounded shadow p-6 flex flex-col">
+          <img src="https://via.placeholder.com/400x250?text=Proxy+TuNER" alt="Proxy TuNER" class="rounded mb-4" />
+          <h2 class="text-2xl font-semibold mb-2">Proxy TuNER</h2>
+          <p class="flex-grow">Proxy-tuning approach for cross-domain NER boosting F1 by 8% and reducing compute 70%.</p>
+          <a href="https://github.com/Krishna-dhulipalla" class="mt-4 text-teal-600 dark:text-teal-400 underline">GitHub</a>
         </div>
-        <div
-          id="chatbot-lottie-btn"
-          onclick="window.open('https://huggingface.co/spaces/krishnadhulipalla/Personal_ChatBot', '_blank')"
-        >
-          <dotlottie-player
-            src="https://lottie.host/12b60265-5eef-4309-bcce-98abdae08afb/9FFDxA63EF.lottie"
-            background="transparent"
-            speed="1"
-            style="width: 50px; height: 50px"
-            loop
-            autoplay
-          ></dotlottie-player>
-          <div id="chatbot-lottie-btn-text">
-            Stuck scrolling? Chat with me instead!
-          </div>
+        <div class="bg-white dark:bg-gray-800 rounded shadow p-6 flex flex-col">
+          <img src="https://via.placeholder.com/400x250?text=IntelliMeet" alt="IntelliMeet" class="rounded mb-4" />
+          <h2 class="text-2xl font-semibold mb-2">IntelliMeet</h2>
+          <p class="flex-grow">Decentralized video conferencing with on-device attention tracking and latency under 200ms.</p>
+          <a href="https://github.com/Krishna-dhulipalla" class="mt-4 text-teal-600 dark:text-teal-400 underline">GitHub</a>
         </div>
-      </section>
-    </main>
-    <!-- Footer-->
-    <footer class="bg-white py-4 mt-auto">
-      <div class="container px-5">
-        <div
-          class="row align-items-center justify-content-between flex-column flex-sm-row"
-        >
-          <div class="col-auto">
-            <div class="small m-0">Copyright &copy; Krishna 2025</div>
-          </div>
-          <div class="col-auto">
-            <a class="small" href="contact.html">Contact</a>
-          </div>
+        <div class="bg-white dark:bg-gray-800 rounded shadow p-6 flex flex-col">
+          <img src="https://via.placeholder.com/400x250?text=DNA+BERT" alt="DNA Project" class="rounded mb-4" />
+          <h2 class="text-2xl font-semibold mb-2">DNA Sequence Classifier</h2>
+          <p class="flex-grow">Fine-tuned DNABERT and HyenaDNA models achieving 94%+ accuracy on genomic tasks.</p>
+          <a href="https://github.com/Krishna-dhulipalla" class="mt-4 text-teal-600 dark:text-teal-400 underline">GitHub</a>
+        </div>
+        <div class="bg-white dark:bg-gray-800 rounded shadow p-6 flex flex-col">
+          <img src="https://via.placeholder.com/400x250?text=RAG+Search" alt="RAG Search" class="rounded mb-4" />
+          <h2 class="text-2xl font-semibold mb-2">Genomics Semantic Search</h2>
+          <p class="flex-grow">LangChain pipelines enabling retrieval over literature using lightweight embeddings.</p>
+          <a href="https://github.com/Krishna-dhulipalla" class="mt-4 text-teal-600 dark:text-teal-400 underline">GitHub</a>
         </div>
       </div>
+    </section>
+
+    <footer class="py-6 text-center text-sm bg-white dark:bg-gray-900">
+      © <span id="year"></span> Krishna Vamsi Dhulipalla
     </footer>
-    <!-- Bootstrap core JS-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Core theme JS-->
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
   </body>
 </html>
