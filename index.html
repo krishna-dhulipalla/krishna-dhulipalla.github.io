@@ -10,6 +10,11 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600&display=swap"
       rel="stylesheet"
     />
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+      };
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script
       src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
@@ -92,11 +97,13 @@
       <div class="px-4 flex flex-col items-center">
         <h1 class="text-4xl md:text-6xl font-bold">Krishna Vamsi Dhulipalla</h1>
         <p class="mt-4 text-xl text-gray-600 dark:text-gray-300">
-          Agentic AI Engineer
+          ML engineer specializing in agentic workflows and LLM applications.
         </p>
-        <p class="mt-2 text-gray-500 dark:text-gray-400">
-          Building agentic systems with LangGraph, AutoGen, CrewAI, LangSmith,
-          and RAG pipelines using LangChain, Docker, and FastAPI.
+        <p class="mt-2 text-gray-500 dark:text-gray-400 max-w-2xl">
+          3+ years of experience designing intelligent systems, deploying
+          models, and integrating cloud-native backends. Focused on
+          LLM-powered agents, semantic search, and real-time data using
+          LangChain, LangGraph, and FastAPI.
         </p>
         <div class="mt-8">
           <a
@@ -115,15 +122,15 @@
 
     <!-- About -->
     <section id="about" class="py-16 px-6 md:px-12">
-      <h2 class="text-3xl font-bold mb-6">About Me</h2>
-      <p class="max-w-3xl leading-relaxed">
-        I'm a graduate student pursuing an MEng in Computer Science at Virginia
-        Tech. My work focuses on crafting agentic workflows and intelligent
-        systems with tools like LangGraph, AutoGen, CrewAI, LangSmith, and RAG
-        with LangChain, Docker, and FastAPI. I'm passionate about AI, space and
-        bioinformatics research, and love turning complex challenges into
-        scalable solutions.
-      </p>
+        <h2 class="text-3xl font-bold mb-6">About Me</h2>
+        <p class="max-w-3xl leading-relaxed">
+          ML engineer with 3+ years building end-to-end AI solutions—from data
+          ingestion and model training to production deployment. Experienced
+          across ML research, infrastructure, and backend development with a
+          strong focus on LLM agents, semantic retrieval, and modular reasoning.
+          I enjoy translating complex problems into scalable, real-world
+          applications.
+        </p>
     </section>
 
     <!-- Skills -->
@@ -165,12 +172,27 @@
         <div class="bg-white dark:bg-gray-700 rounded shadow p-4 text-center">
           SQL
         </div>
-        <div class="bg-white dark:bg-gray-700 rounded shadow p-4 text-center">
-          PyTorch
-        </div>
-        <div class="bg-white dark:bg-gray-700 rounded shadow p-4 text-center">
-          TensorFlow
-        </div>
+          <div class="bg-white dark:bg-gray-700 rounded shadow p-4 text-center">
+            PyTorch
+          </div>
+          <div class="bg-white dark:bg-gray-700 rounded shadow p-4 text-center">
+            TensorFlow
+          </div>
+          <div class="bg-white dark:bg-gray-700 rounded shadow p-4 text-center">
+            AWS
+          </div>
+          <div class="bg-white dark:bg-gray-700 rounded shadow p-4 text-center">
+            GCP
+          </div>
+          <div class="bg-white dark:bg-gray-700 rounded shadow p-4 text-center">
+            Kubernetes
+          </div>
+          <div class="bg-white dark:bg-gray-700 rounded shadow p-4 text-center">
+            Spark
+          </div>
+          <div class="bg-white dark:bg-gray-700 rounded shadow p-4 text-center">
+            Kafka
+          </div>
       </div>
     </section>
 
@@ -182,47 +204,51 @@
           <h3 class="text-xl font-semibold">
             ML Research Engineer – Cloud Systems LLC
           </h3>
-          <p class="text-sm text-gray-500 dark:text-gray-400">
-            Jul 2024 – Present
-          </p>
-          <p>
-            Designed complex SQL and data pipelines, building automated ETL
-            workflows for diverse sources.
-          </p>
+            <p class="text-sm text-gray-500 dark:text-gray-400">
+              Jul 2024 – Present
+            </p>
+            <p>
+              Developed high-volume SQL queries and streaming pipelines,
+              automating ETL across cloud datasets to deliver reliable analytics
+              in near real time.
+            </p>
         </div>
         <div class="border-l-2 border-teal-600 pl-4">
           <h3 class="text-xl font-semibold">
             ML Research Engineer – Virginia Tech
           </h3>
-          <p class="text-sm text-gray-500 dark:text-gray-400">2024</p>
-          <p>
-            Built AI pipelines with DNA foundation models and automated
-            preprocessing for 1M+ sequences.
-          </p>
+            <p class="text-sm text-gray-500 dark:text-gray-400">Sep 2024 – Jul 2024</p>
+            <p>
+              Fine-tuned DNABERT and HyenaDNA models with LoRA and soft
+              prompting, reaching 94%+ accuracy while cutting iteration cycles by
+              40%.
+            </p>
         </div>
         <div class="border-l-2 border-teal-600 pl-4">
           <h3 class="text-xl font-semibold">
             Research Assistant – Virginia Tech
           </h3>
-          <p class="text-sm text-gray-500 dark:text-gray-400">
-            Jun 2023 – May 2024
-          </p>
-          <p>
-            Orchestrated genomic ETL pipelines and automated model retraining
-            with custom CI/CD scripts.
-          </p>
+            <p class="text-sm text-gray-500 dark:text-gray-400">
+              Jun 2023 – May 2024
+            </p>
+            <p>
+              Orchestrated genomic ETL pipelines with Airflow and Glue,
+              automating model retraining to boost data availability 50% and cut
+              manual effort 40%.
+            </p>
         </div>
         <div class="border-l-2 border-teal-600 pl-4">
           <h3 class="text-xl font-semibold">
             Agentic Engineer – UJR Technologies
           </h3>
-          <p class="text-sm text-gray-500 dark:text-gray-400">
-            Jul 2021 – Dec 2022
-          </p>
-          <p>
-            Migrated batch ETL to real-time streaming and optimized Snowflake
-            performance with materialized views.
-          </p>
+            <p class="text-sm text-gray-500 dark:text-gray-400">
+              Jul 2021 – Dec 2022
+            </p>
+            <p>
+              Migrated batch jobs to Kafka/Spark streaming and redesigned
+              Snowflake schemas, cutting query latency 40% and accelerating
+              deployments by 25%.
+            </p>
         </div>
       </div>
     </section>
