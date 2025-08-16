@@ -232,10 +232,9 @@ p {
   right: 20px;
   z-index: 9999;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  background-color: #0d9488;
-  border: none;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
   border-radius: 30px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   padding: 8px 16px;
@@ -244,16 +243,16 @@ p {
 }
 
 #chatbot-lottie-btn:hover {
-  background-color: #0f766e;
+  background-color: #f9f9f9;
   transform: scale(1.03);
 }
 
 #chatbot-lottie-btn-text {
   font-family: "Segoe UI", sans-serif;
   font-size: 14px;
-  color: #ffffff;
+  color: #333;
   font-weight: 500;
-  margin-top: 8px;
+  margin-left: 10px;
   max-width: 200px;
 }
 

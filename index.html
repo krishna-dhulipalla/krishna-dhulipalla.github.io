@@ -7,7 +7,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="css/styles.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script
       src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
@@ -36,9 +35,14 @@
     <section class="relative flex items-center justify-center text-center py-24">
       <div class="absolute inset-0 -z-10 animate-gradient bg-gradient-to-r from-teal-500 via-purple-500 to-teal-500 opacity-20"></div>
       <div class="px-4 flex flex-col items-center">
+        <img
+          src="assets/profile.png"
+          alt="Krishna Vamsi Dhulipalla"
+          class="w-40 h-40 rounded-full mb-6 shadow-lg"
+        />
         <h1 class="text-4xl md:text-6xl font-bold">Krishna Vamsi Dhulipalla</h1>
-        <p class="mt-4 text-xl text-gray-600 dark:text-gray-300">Agentic ML Engineer</p>
-        <p class="mt-2 text-gray-500 dark:text-gray-400">Building multi-agent systems with LangGraph, AutoGen, CrewAI, LangSmith and RAG-powered LangChain workflows.</p>
+        <p class="mt-4 text-xl text-gray-600 dark:text-gray-300">Data Engineer & ML Enthusiast</p>
+        <p class="mt-2 text-gray-500 dark:text-gray-400">Building scalable data systems and AI models with impact.</p>
         <div class="mt-8">
           <a href="projects.html" class="bg-teal-600 hover:bg-teal-700 text-white px-6 py-3 rounded shadow">View Projects</a>
           <a href="resume.html" class="ml-4 border border-teal-600 text-teal-600 dark:text-teal-400 hover:bg-teal-50 dark:hover:bg-gray-800 px-6 py-3 rounded">Resume</a>
@@ -50,9 +54,9 @@
     <section id="about" class="py-16 px-6 md:px-12">
       <h2 class="text-3xl font-bold mb-6">About Me</h2>
       <p class="max-w-3xl leading-relaxed">
-        I'm a graduate student pursuing an MEng in Computer Science at Virginia Tech. I build autonomous AI agents and
-        orchestrated pipelines using tools like LangGraph, AutoGen, CrewAI, LangSmith and RAG-driven LangChain. I'm passionate
-        about AI, space and bioinformatics research, and love turning complex challenges into scalable solutions.
+        I'm a graduate student pursuing an MEng in Computer Science at Virginia Tech. My work focuses on building robust data
+        pipelines and intelligent systems. I'm passionate about AI, space and bioinformatics research, and love turning complex
+        data challenges into scalable solutions.
       </p>
     </section>
 
@@ -60,18 +64,18 @@
     <section id="skills" class="py-16 px-6 md:px-12 bg-gray-50 dark:bg-gray-800">
       <h2 class="text-3xl font-bold mb-6 text-center">Skills & Tools</h2>
       <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
-        <div class="bg-white dark:bg-gray-700 rounded shadow p-4 text-center">LangGraph</div>
-        <div class="bg-white dark:bg-gray-700 rounded shadow p-4 text-center">AutoGen</div>
-        <div class="bg-white dark:bg-gray-700 rounded shadow p-4 text-center">CrewAI</div>
-        <div class="bg-white dark:bg-gray-700 rounded shadow p-4 text-center">LangSmith</div>
-        <div class="bg-white dark:bg-gray-700 rounded shadow p-4 text-center">RAG</div>
-        <div class="bg-white dark:bg-gray-700 rounded shadow p-4 text-center">LangChain</div>
-        <div class="bg-white dark:bg-gray-700 rounded shadow p-4 text-center">Docker</div>
-        <div class="bg-white dark:bg-gray-700 rounded shadow p-4 text-center">FastAPI</div>
         <div class="bg-white dark:bg-gray-700 rounded shadow p-4 text-center">Python</div>
+        <div class="bg-white dark:bg-gray-700 rounded shadow p-4 text-center">SQL</div>
+        <div class="bg-white dark:bg-gray-700 rounded shadow p-4 text-center">Spark</div>
+        <div class="bg-white dark:bg-gray-700 rounded shadow p-4 text-center">Airflow</div>
+        <div class="bg-white dark:bg-gray-700 rounded shadow p-4 text-center">Docker</div>
         <div class="bg-white dark:bg-gray-700 rounded shadow p-4 text-center">AWS</div>
         <div class="bg-white dark:bg-gray-700 rounded shadow p-4 text-center">Hugging Face</div>
-        <div class="bg-white dark:bg-gray-700 rounded shadow p-4 text-center">Airflow</div>
+        <div class="bg-white dark:bg-gray-700 rounded shadow p-4 text-center">LangChain</div>
+        <div class="bg-white dark:bg-gray-700 rounded shadow p-4 text-center">PyTorch</div>
+        <div class="bg-white dark:bg-gray-700 rounded shadow p-4 text-center">TensorFlow</div>
+        <div class="bg-white dark:bg-gray-700 rounded shadow p-4 text-center">Kafka</div>
+        <div class="bg-white dark:bg-gray-700 rounded shadow p-4 text-center">dbt</div>
       </div>
     </section>
 
@@ -95,7 +99,7 @@
           <p>Orchestrated genomic ETL pipelines and automated model retraining with custom CI/CD scripts.</p>
         </div>
         <div class="border-l-2 border-teal-600 pl-4">
-          <h3 class="text-xl font-semibold">ML Engineer – UJR Technologies</h3>
+          <h3 class="text-xl font-semibold">Data Engineer – UJR Technologies</h3>
           <p class="text-sm text-gray-500 dark:text-gray-400">Jul 2021 – Dec 2022</p>
           <p>Migrated batch ETL to real-time streaming and optimized Snowflake performance with materialized views.</p>
         </div>
@@ -107,11 +111,6 @@
       <h2 class="text-3xl font-bold mb-6 text-center">Featured Projects</h2>
       <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
         <div class="bg-white dark:bg-gray-700 rounded shadow p-4">
-          <img src="assets/talking.jpg" alt="LangGraph ChatBot" class="rounded mb-4" />
-          <h3 class="text-xl font-semibold mb-2">LangGraph ChatBot</h3>
-          <p class="text-sm">Graph-based LLM chatbot enabling multi-agent conversations with LangGraph.</p>
-        </div>
-        <div class="bg-white dark:bg-gray-700 rounded shadow p-4">
           <img src="assets/iot.png" alt="Android Agent" class="rounded mb-4" />
           <h3 class="text-xl font-semibold mb-2">LLM-Based Android Agent</h3>
           <p class="text-sm">Custom LLM agent achieving 80%+ step accuracy for mobile UI task automation.</p>
@@ -120,6 +119,11 @@
           <img src="assets/proxy.png" alt="Proxy TuNER" class="rounded mb-4" />
           <h3 class="text-xl font-semibold mb-2">Proxy TuNER</h3>
           <p class="text-sm">Proxy-tuned BERT models improving NER F1-score by 8% while cutting compute 70%.</p>
+        </div>
+        <div class="bg-white dark:bg-gray-700 rounded shadow p-4">
+          <img src="assets/intellimeet.png" alt="IntelliMeet" class="rounded mb-4" />
+          <h3 class="text-xl font-semibold mb-2">IntelliMeet</h3>
+          <p class="text-sm">Decentralized video conferencing with on-device attention tracking and low latency.</p>
         </div>
       </div>
       <div class="text-center mt-8">
@@ -141,6 +145,7 @@
     </footer>
     <div
       id="chatbot-lottie-btn"
+      class="fixed bottom-4 right-4 flex flex-col items-center cursor-pointer"
       onclick="window.open('https://huggingface.co/spaces/krishnadhulipalla/Personal_ChatBot', '_blank')"
     >
       <dotlottie-player
@@ -151,8 +156,8 @@
         loop
         autoplay
       ></dotlottie-player>
-      <div id="chatbot-lottie-btn-text">
-        Chat with my LangGraph bot!
+      <div id="chatbot-lottie-btn-text" class="text-xs mt-1 text-gray-600 dark:text-gray-300">
+        Stuck scrolling? Chat with me instead!
       </div>
     </div>
 
