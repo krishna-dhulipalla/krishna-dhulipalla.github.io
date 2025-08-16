@@ -10,6 +10,11 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600&display=swap"
       rel="stylesheet"
     />
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+      };
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script
       src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
@@ -71,43 +76,96 @@
       <div class="flex flex-col items-center text-center mb-8">
         <h1 class="text-4xl font-bold">Resume</h1>
       </div>
-      <p class="mb-8 max-w-3xl mx-auto text-center">
-        Agentic AI Engineer with 3+ years designing multi-agent systems,
-        deploying models and integrating backend infrastructure. Skilled in
-        LangGraph, AutoGen, CrewAI, LangSmith, RAG with LangChain, Docker,
-        FastAPI, and cloud-native deployments.
-      </p>
-      <a
-        href="assets/resume.pdf"
-        class="bg-teal-600 hover:bg-teal-700 text-white px-6 py-3 rounded shadow"
-        >Download PDF</a
-      >
+        <p class="mb-8 max-w-3xl mx-auto text-center">
+          ML engineer with 3+ years designing intelligent AI systems, deploying
+          models, and integrating cloud-native infrastructure. Experienced across
+          ML research, data engineering, and backend development with a focus on
+          LLM agents, semantic search, and real-time analytics.
+        </p>
+        <a
+          href="assets/resume.pdf"
+          class="bg-teal-600 hover:bg-teal-700 text-white px-6 py-3 rounded shadow"
+          >Download PDF</a
+        >
 
-      <h2 class="text-2xl font-bold mt-12 mb-4">Experience Highlights</h2>
-      <ul class="list-disc ml-6 space-y-2 max-w-3xl">
-        <li>
-          ML Research Engineer, Cloud Systems LLC – built SQL and agentic
-          pipelines and automated ETL workflows.
-        </li>
-        <li>
-          ML Research Engineer, Virginia Tech – implemented DNA foundation
-          models and automated preprocessing for massive genomic datasets.
-        </li>
-        <li>
-          Research Assistant, Virginia Tech – orchestrated genomic ETL pipelines
-          and CI/CD for model retraining.
-        </li>
-        <li>
-          Agentic Engineer, UJR Technologies – migrated ETL to real-time
-          streaming and optimized Snowflake schemas.
-        </li>
-      </ul>
+        <h2 class="text-2xl font-bold mt-12 mb-4">Work Experience</h2>
+        <div class="space-y-6 max-w-3xl">
+          <div>
+            <h3 class="text-xl font-semibold">ML Research Engineer – Cloud Systems LLC</h3>
+            <p class="text-sm text-gray-500 dark:text-gray-400">Jul 2024 – Present | Remote</p>
+            <ul class="list-disc pl-5 space-y-1">
+              <li><strong>Context:</strong> Modernize analytics for diverse cloud datasets.</li>
+              <li><strong>Actions:</strong> Created optimized SQL queries and streaming pipelines, automating ETL across sources with Airflow.</li>
+              <li><strong>Impact:</strong> Delivered reliable data feeds and reduced manual prep by 40%.</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold">ML Research Engineer – Virginia Tech</h3>
+            <p class="text-sm text-gray-500 dark:text-gray-400">Sep 2024 – Jul 2024 | Blacksburg, VA</p>
+            <ul class="list-disc pl-5 space-y-1">
+              <li><strong>Context:</strong> Classify genomic sequences using DNA foundation models.</li>
+              <li><strong>Actions:</strong> Fine-tuned DNABERT and HyenaDNA with LoRA and soft prompting; automated preprocessing for 1M+ sequences using Biopython and Airflow.</li>
+              <li><strong>Impact:</strong> Reached 94%+ accuracy and cut iteration cycles by 40%.</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold">Research Assistant – Virginia Tech</h3>
+            <p class="text-sm text-gray-500 dark:text-gray-400">Jun 2023 – May 2024 | Blacksburg, VA</p>
+            <ul class="list-disc pl-5 space-y-1">
+              <li><strong>Context:</strong> Support genomic research with scalable data workflows.</li>
+              <li><strong>Actions:</strong> Orchestrated ETL pipelines with Airflow and Glue, and automated model retraining via custom CI/CD scripts.</li>
+              <li><strong>Impact:</strong> Improved data availability 50% while reducing manual effort 40%.</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold">Data Engineer – UJR Technologies Pvt Ltd</h3>
+            <p class="text-sm text-gray-500 dark:text-gray-400">Jul 2021 – Dec 2022 | Hyderabad, India</p>
+            <ul class="list-disc pl-5 space-y-1">
+              <li><strong>Context:</strong> Transition legacy data platform to real-time analytics.</li>
+              <li><strong>Actions:</strong> Migrated batch jobs to Kafka/Spark streaming and optimized Snowflake schemas with materialized views.</li>
+              <li><strong>Impact:</strong> Cut processing latency 30%, sped deployments 25%, and maintained 99.9% uptime.</li>
+            </ul>
+          </div>
+        </div>
 
-      <h2 class="text-2xl font-bold mt-12 mb-4">Core Skills</h2>
-      <p class="max-w-3xl">
-        LangGraph, LangChain, AutoGen, CrewAI, LangSmith, RAG, Docker, FastAPI,
-        Python, SQL, PyTorch, TensorFlow.
-      </p>
+        <h2 class="text-2xl font-bold mt-12 mb-4">Skills</h2>
+        <ul class="list-disc ml-6 space-y-1 max-w-3xl">
+          <li><strong>Programming:</strong> Python, R, SQL, JavaScript/TypeScript, Node.js</li>
+          <li><strong>Frameworks:</strong> PyTorch, TensorFlow, Scikit-Learn, Hugging Face Transformers, LangChain, LangGraph</li>
+          <li><strong>AI Systems:</strong> LLM Fine-Tuning, RAG, Prompt Engineering, Agents, GANs</li>
+          <li><strong>Cloud & Infra:</strong> AWS, GCP, Docker, Kubernetes, SageMaker, MLflow, CI/CD</li>
+          <li><strong>Data Engineering:</strong> Spark, Kafka, dbt, Airflow, ETL pipelines, Data Warehousing</li>
+          <li><strong>Tools:</strong> Pandas, NumPy, Weights & Biases, Git, Tableau, Linux</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold mt-12 mb-4">Education</h2>
+        <ul class="list-disc ml-6 space-y-2 max-w-3xl">
+          <li>M.S. in Computer Science, Virginia Tech (Jan 2023 – Dec 2024) – CGPA 3.95/4</li>
+          <li>Bachelor’s in Computer Science, Anna University (Jul 2018 – May 2022) – CGPA 8.24/10</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold mt-12 mb-4">Publications</h2>
+        <ul class="list-disc ml-6 space-y-2 max-w-3xl">
+          <li>
+            L. Miao, K. V. Dhulipalla, S. Kundu et al., "Leveraging Machine
+            Learning for Predicting Circadian Transcription in mRNAs and lncRNAs," IEEE BIBM 2024.
+          </li>
+          <li>
+            M. Haghani, K. V. Dhulipalla, S. Li, "Harnessing DNA Foundation Models
+            for Cross-Species Transcription Factor Binding Sites Prediction in Plant Genomes," ML in Computational Biology 2025.
+          </li>
+        </ul>
+
+        <h2 class="text-2xl font-bold mt-12 mb-4">Certifications</h2>
+        <ul class="list-disc ml-6 space-y-1 max-w-3xl">
+          <li>Building RAG Agents with LLMs – Nvidia</li>
+          <li>Introduction to Deploying RAG Pipelines for Production at Scale</li>
+          <li>Delivering Data-Driven Decisions with AWS</li>
+          <li>End-to-End Real-World Data Engineering with Snowflake</li>
+          <li>Google Cloud Data Engineering Foundations</li>
+          <li>AICTE-EduSkills Certificate in AWS Cloud</li>
+          <li>Coursera Machine Learning (Data-Driven Insights, ML Algorithms)</li>
+        </ul>
     </section>
 
     <footer class="py-6 text-center text-sm bg-white dark:bg-gray-900">
