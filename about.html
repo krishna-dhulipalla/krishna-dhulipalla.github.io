@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/styles.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script
       src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
@@ -35,18 +36,19 @@
         <img
           src="assets/profile.png"
           alt="Krishna Vamsi Dhulipalla"
-          class="w-40 h-40 rounded-full mb-4 shadow-lg"
+          class="w-48 h-48 md:w-60 md:h-60 rounded-full mb-4 shadow-lg object-cover"
         />
         <h1 class="text-4xl font-bold mb-2">About Me</h1>
       </div>
       <p class="max-w-3xl mx-auto mb-6 leading-relaxed">
-        I'm Krishna Vamsi Dhulipalla, a data engineer and machine learning enthusiast currently pursuing my MEng in Computer Science at
-        Virginia Tech. I love building systems that turn raw data into intelligent applications.
+        I'm Krishna Vamsi Dhulipalla, an agentic ML engineer pursuing my MEng in Computer Science at Virginia Tech. I love building
+        systems that turn raw data into autonomous applications.
       </p>
       <p class="max-w-3xl mx-auto mb-6 leading-relaxed">
-        My recent work spans AI research, data engineering, and deploying cloud-native ML solutions. I'm especially fascinated by the
-        intersection of AI with space exploration and bioinformatics, pushing the boundaries of how machine learning can drive
-        scientific discovery.
+        My recent work spans AI research, multi-agent orchestration and deploying cloud-native solutions. I work with LangGraph, AutoGen,
+        CrewAI, LangSmith and RAG pipelines powered by LangChain, often containerized with Docker and served via FastAPI. I'm especially
+        fascinated by the intersection of AI with space exploration and bioinformatics, pushing the boundaries of how machine learning
+        can drive scientific discovery.
       </p>
       <h2 class="text-2xl font-bold mt-12 mb-4">Education</h2>
       <ul class="list-disc ml-6 space-y-2">
@@ -62,9 +64,9 @@
 
     <footer class="py-6 text-center text-sm bg-white dark:bg-gray-900">
       © <span id="year"></span> Krishna Vamsi Dhulipalla
+    </footer>
     <div
       id="chatbot-lottie-btn"
-      class="fixed bottom-4 right-4 flex flex-col items-center cursor-pointer"
       onclick="window.open('https://huggingface.co/spaces/krishnadhulipalla/Personal_ChatBot', '_blank')"
     >
       <dotlottie-player
@@ -75,8 +77,8 @@
         loop
         autoplay
       ></dotlottie-player>
-      <div id="chatbot-lottie-btn-text" class="text-xs mt-1 text-gray-600 dark:text-gray-300">
-        Stuck scrolling? Chat with me instead!
+      <div id="chatbot-lottie-btn-text">
+        Chat with my LangGraph bot!
       </div>
     </div>
     <script>
