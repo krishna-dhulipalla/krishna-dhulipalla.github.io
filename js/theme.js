@@ -1,21 +1,32 @@
-function toggleTheme() {
-  const root = document.documentElement;
-  const isDark = root.classList.contains('dark');
-  if (isDark) {
-    root.classList.remove('dark');
-    localStorage.theme = 'light';
+function setThemeFromStorage() {
+  if (localStorage.theme === 'dark') {
+    document.documentElement.classList.add('dark');
   } else {
-    root.classList.add('dark');
-    localStorage.theme = 'dark';
+    document.documentElement.classList.remove('dark');
   }
 }
 
-window.addEventListener('DOMContentLoaded', () => {
-  if (localStorage.theme === 'dark') {
-    document.documentElement.classList.add('dark');
-  }
+function updateToggleIcon() {
   const toggle = document.getElementById('theme-toggle');
   if (toggle) {
+    toggle.textContent = document.documentElement.classList.contains('dark')
+      ? '🌞'
+      : '🌙';
+  }
+}
+
+function toggleTheme() {
+  const isDark = document.documentElement.classList.toggle('dark');
+  localStorage.theme = isDark ? 'dark' : 'light';
+  updateToggleIcon();
+}
+
+setThemeFromStorage();
+
+window.addEventListener('DOMContentLoaded', () => {
+  const toggle = document.getElementById('theme-toggle');
+  if (toggle) {
+    updateToggleIcon();
     toggle.addEventListener('click', toggleTheme);
   }
 });
