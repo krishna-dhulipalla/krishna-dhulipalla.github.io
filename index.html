@@ -49,23 +49,23 @@
     </style>
   </head>
   <body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200">
-    <nav
-      class="flex items-center justify-between py-4 px-6 md:px-12 bg-white dark:bg-gray-900 shadow"
-    >
-      <a
-        href="index.html"
-        class="text-2xl font-bold text-teal-600 dark:text-teal-400"
-        >Krishna</a
-      >
-      <div class="space-x-4 text-sm md:text-base">
+    <nav class="flex flex-wrap items-center justify-between py-4 px-6 md:px-12 bg-white dark:bg-gray-900 shadow">
+      <div class="flex items-center justify-between w-full md:w-auto">
         <a
           href="index.html"
-          class="hover:text-teal-600 dark:hover:text-teal-400"
+          class="text-2xl font-bold text-teal-600 dark:text-teal-400"
+          >Krishna</a
+        >
+        <button id="menu-toggle" class="md:hidden text-2xl">☰</button>
+      </div>
+      <div
+        id="nav-menu"
+        class="hidden w-full flex-col space-y-2 mt-4 md:flex md:w-auto md:flex-row md:space-y-0 md:space-x-4 md:mt-0 text-sm md:text-base"
+      >
+        <a href="index.html" class="hover:text-teal-600 dark:hover:text-teal-400"
           >Home</a
         >
-        <a
-          href="about.html"
-          class="hover:text-teal-600 dark:hover:text-teal-400"
+        <a href="about.html" class="hover:text-teal-600 dark:hover:text-teal-400"
           >About</a
         >
         <a
@@ -73,19 +73,15 @@
           class="hover:text-teal-600 dark:hover:text-teal-400"
           >Projects</a
         >
-        <a
-          href="resume.html"
-          class="hover:text-teal-600 dark:hover:text-teal-400"
+        <a href="resume.html" class="hover:text-teal-600 dark:hover:text-teal-400"
           >Resume</a
         >
-        <a
-          href="contact.html"
-          class="hover:text-teal-600 dark:hover:text-teal-400"
+        <a href="contact.html" class="hover:text-teal-600 dark:hover:text-teal-400"
           >Contact</a
         >
         <button
           id="theme-toggle"
-          class="ml-2 px-2 py-1 border rounded border-gray-300 dark:border-gray-600"
+          class="md:ml-2 px-2 py-1 border rounded border-gray-300 dark:border-gray-600"
         >
           🌓
         </button>
@@ -269,7 +265,7 @@
           <img
             src="assets/talking.jpg"
             alt="LangGraph ChatBot"
-            class="rounded mb-4"
+            class="w-full rounded mb-4"
           />
           <h3 class="text-xl font-semibold mb-2">LangGraph ChatBot</h3>
           <p class="text-sm">
@@ -278,7 +274,7 @@
           </p>
         </div>
         <div class="bg-white dark:bg-gray-700 rounded shadow p-4">
-          <img src="assets/iot.png" alt="Android Agent" class="rounded mb-4" />
+          <img src="assets/iot.png" alt="Android Agent" class="w-full rounded mb-4" />
           <h3 class="text-xl font-semibold mb-2">LLM-Based Android Agent</h3>
           <p class="text-sm">
             Custom LLM agent achieving 80%+ step accuracy for mobile UI task
@@ -286,7 +282,7 @@
           </p>
         </div>
         <div class="bg-white dark:bg-gray-700 rounded shadow p-4">
-          <img src="assets/proxy.png" alt="Proxy TuNER" class="rounded mb-4" />
+          <img src="assets/proxy.png" alt="Proxy TuNER" class="w-full rounded mb-4" />
           <h3 class="text-xl font-semibold mb-2">Proxy TuNER</h3>
           <p class="text-sm">
             Proxy-tuned BERT models improving NER F1-score by 8% while cutting
