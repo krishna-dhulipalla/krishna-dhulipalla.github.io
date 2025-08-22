@@ -34,43 +34,37 @@
     </style>
   </head>
   <body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200">
-    <nav
-      class="flex items-center justify-between py-4 px-6 md:px-12 bg-white dark:bg-gray-900 shadow"
-    >
-      <a
-        href="index.html"
-        class="text-2xl font-bold text-teal-600 dark:text-teal-400"
-        >Krishna</a
-      >
-      <div class="space-x-4 text-sm md:text-base">
+    <nav class="flex flex-wrap items-center justify-between py-4 px-6 md:px-12 bg-white dark:bg-gray-900 shadow">
+      <div class="flex items-center justify-between w-full md:w-auto">
         <a
           href="index.html"
-          class="hover:text-teal-600 dark:hover:text-teal-400"
+          class="text-2xl font-bold text-teal-600 dark:text-teal-400"
+          >Krishna</a
+        >
+        <button id="menu-toggle" class="md:hidden text-2xl">☰</button>
+      </div>
+      <div
+        id="nav-menu"
+        class="hidden w-full flex-col space-y-2 mt-4 md:flex md:w-auto md:flex-row md:space-y-0 md:space-x-4 md:mt-0 text-sm md:text-base"
+      >
+        <a href="index.html" class="hover:text-teal-600 dark:hover:text-teal-400"
           >Home</a
         >
-        <a
-          href="about.html"
-          class="hover:text-teal-600 dark:hover:text-teal-400"
+        <a href="about.html" class="hover:text-teal-600 dark:hover:text-teal-400"
           >About</a
         >
-        <a
-          href="projects.html"
-          class="hover:text-teal-600 dark:hover:text-teal-400"
+        <a href="projects.html" class="hover:text-teal-600 dark:hover:text-teal-400"
           >Projects</a
         >
-        <a
-          href="resume.html"
-          class="hover:text-teal-600 dark:hover:text-teal-400"
+        <a href="resume.html" class="hover:text-teal-600 dark:hover:text-teal-400"
           >Resume</a
         >
-        <a
-          href="contact.html"
-          class="hover:text-teal-600 dark:hover:text-teal-400"
+        <a href="contact.html" class="hover:text-teal-600 dark:hover:text-teal-400"
           >Contact</a
         >
         <button
           id="theme-toggle"
-          class="ml-2 px-2 py-1 border rounded border-gray-300 dark:border-gray-600"
+          class="md:ml-2 px-2 py-1 border rounded border-gray-300 dark:border-gray-600"
         >
           🌓
         </button>
@@ -86,7 +80,7 @@
           <img
             src="assets/talking.jpg"
             alt="LangGraph ChatBot"
-            class="rounded mb-4"
+            class="w-full rounded mb-4"
           />
           <h2 class="text-2xl font-semibold mb-2">LangGraph ChatBot</h2>
           <ul class="list-disc pl-5 text-sm flex-grow space-y-1">
@@ -101,7 +95,7 @@
           >
         </div>
         <div class="bg-white dark:bg-gray-800 rounded shadow p-6 flex flex-col">
-          <img src="assets/iot.png" alt="Android Agent" class="rounded mb-4" />
+          <img src="assets/iot.png" alt="Android Agent" class="w-full rounded mb-4" />
           <h2 class="text-2xl font-semibold mb-2">LLM-Based Android Agent</h2>
           <ul class="list-disc pl-5 text-sm flex-grow space-y-1">
             <li><strong>Context:</strong> Automate mobile UI tasks from natural language goals.</li>
@@ -115,7 +109,7 @@
           >
         </div>
         <div class="bg-white dark:bg-gray-800 rounded shadow p-6 flex flex-col">
-          <img src="assets/proxy.png" alt="Proxy TuNER" class="rounded mb-4" />
+          <img src="assets/proxy.png" alt="Proxy TuNER" class="w-full rounded mb-4" />
           <h2 class="text-2xl font-semibold mb-2">Proxy TuNER</h2>
           <ul class="list-disc pl-5 text-sm flex-grow space-y-1">
             <li><strong>Context:</strong> Improve cross-domain NER without large compute budgets.</li>
@@ -132,7 +126,7 @@
           <img
             src="assets/intellimeet.png"
             alt="IntelliMeet"
-            class="rounded mb-4"
+            class="w-full rounded mb-4"
           />
           <h2 class="text-2xl font-semibold mb-2">IntelliMeet</h2>
           <ul class="list-disc pl-5 text-sm flex-grow space-y-1">
@@ -147,7 +141,7 @@
           >
         </div>
         <div class="bg-white dark:bg-gray-800 rounded shadow p-6 flex flex-col">
-          <img src="assets/fake.jpg" alt="DNA Project" class="rounded mb-4" />
+          <img src="assets/fake.jpg" alt="DNA Project" class="w-full rounded mb-4" />
           <h2 class="text-2xl font-semibold mb-2">DNA Sequence Classifier</h2>
           <ul class="list-disc pl-5 text-sm flex-grow space-y-1">
             <li><strong>Context:</strong> Classify genomic sequences accurately with limited compute.</li>
@@ -161,7 +155,7 @@
           >
         </div>
         <div class="bg-white dark:bg-gray-800 rounded shadow p-6 flex flex-col">
-          <img src="assets/drone.jpg" alt="RAG Search" class="rounded mb-4" />
+          <img src="assets/drone.jpg" alt="RAG Search" class="w-full rounded mb-4" />
           <h2 class="text-2xl font-semibold mb-2">Genomics Semantic Search</h2>
           <ul class="list-disc pl-5 text-sm flex-grow space-y-1">
             <li><strong>Context:</strong> Enable efficient discovery across genomics literature.</li>
