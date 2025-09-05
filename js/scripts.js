@@ -6,13 +6,16 @@
 // This file is intentionally blank
 // Use this file to add JavaScript to your project
 
-document
-  .getElementById("nn-contact-form")
-  .addEventListener("submit", function (event) {
+const form = document.getElementById("nn-contact-form");
+if (form) {
+  form.addEventListener("submit", function (event) {
     event.preventDefault();
 
     // Clear previous loss message
-    document.getElementById("loss-message").classList.add("hidden");
+    const lossMessage = document.getElementById("loss-message");
+    if (lossMessage) {
+      lossMessage.classList.add("hidden");
+    }
 
     // Check if all fields are filled
     const nameField = document.getElementById("name");
@@ -21,7 +24,9 @@ document
 
     if (!nameField.value || !emailField.value || !messageField.value) {
       // Display the loss message
-      document.getElementById("loss-message").classList.remove("hidden");
+      if (lossMessage) {
+        lossMessage.classList.remove("hidden");
+      }
       return;
     }
 
@@ -39,12 +44,10 @@ document
       .then((response) => {
         if (response.ok) {
           // Handle success
-          document
-            .getElementById("training-animation")
-            .classList.remove("hidden");
-          document
-            .querySelector(".form-container form")
-            .classList.add("hidden");
+          const training = document.getElementById("training-animation");
+          const formContainer = document.querySelector(".form-container form");
+          if (training) training.classList.remove("hidden");
+          if (formContainer) formContainer.classList.add("hidden");
           startAnimation();
         } else {
           // Handle errors
@@ -63,6 +66,7 @@ document
         alert("There was a problem submitting your form: " + error.message);
       });
   });
+}
 
 function startAnimation() {
   let epoch = 0;

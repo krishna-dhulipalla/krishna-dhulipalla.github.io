@@ -21,6 +21,7 @@
       type="module"
     ></script>
     <script defer src="js/theme.js"></script>
+    <script defer src="js/scripts.js"></script>
     <style>
       .animate-gradient {
         background-size: 400% 400%;
@@ -48,7 +49,7 @@
       }
     </style>
   </head>
-  <body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200">
+  <body id="top" class="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200">
     <nav
       class="flex flex-wrap items-center justify-between py-4 px-6 md:px-12 bg-white dark:bg-gray-900 shadow"
     >
@@ -65,27 +66,27 @@
         class="hidden w-full flex-col space-y-2 mt-4 md:flex md:w-auto md:flex-row md:space-y-0 md:space-x-4 md:mt-0 text-sm md:text-base"
       >
         <a
-          href="index.html"
+          href="#top"
           class="hover:text-teal-600 dark:hover:text-teal-400"
           >Home</a
         >
         <a
-          href="about.html"
+          href="#about"
           class="hover:text-teal-600 dark:hover:text-teal-400"
           >About</a
         >
         <a
-          href="projects.html"
+          href="#projects"
           class="hover:text-teal-600 dark:hover:text-teal-400"
           >Projects</a
         >
         <a
-          href="resume.html"
+          href="#resume"
           class="hover:text-teal-600 dark:hover:text-teal-400"
           >Resume</a
         >
         <a
-          href="contact.html"
+          href="#contact"
           class="hover:text-teal-600 dark:hover:text-teal-400"
           >Contact</a
         >
@@ -118,12 +119,12 @@
         </p>
         <div class="mt-8">
           <a
-            href="projects.html"
+            href="#projects"
             class="bg-teal-600 hover:bg-teal-700 text-white px-6 py-3 rounded shadow"
             >View Projects</a
           >
           <a
-            href="resume.html"
+            href="#resume"
             class="ml-4 border border-teal-600 text-teal-600 dark:text-teal-400 hover:bg-teal-50 dark:hover:bg-gray-800 px-6 py-3 rounded"
             >Resume</a
           >
@@ -265,72 +266,171 @@
       </div>
     </section>
 
-    <!-- Projects preview -->
-    <section
-      id="projects"
-      class="py-16 px-6 md:px-12 bg-gray-50 dark:bg-gray-800"
-    >
-      <h2 class="text-3xl font-bold mb-6 text-center">Featured Projects</h2>
-      <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-        <div class="bg-white dark:bg-gray-700 rounded shadow p-4">
-          <img
-            src="assets/talking.jpg"
-            alt="LangGraph ChatBot"
-            class="w-full h-48 object-cover rounded mb-4"
-          />
-          <h3 class="text-xl font-semibold mb-2">LangGraph ChatBot</h3>
-          <p class="text-sm">
-            Graph-based LLM chatbot enabling multi-agent conversations with
-            LangGraph.
-          </p>
-        </div>
-        <div class="bg-white dark:bg-gray-700 rounded shadow p-4">
-          <img
-            src="assets/android_agent.jpg"
-            alt="Android Agent"
-            class="w-full h-48 object-cover rounded mb-4"
-          />
-          <h3 class="text-xl font-semibold mb-2">LLM-Based Android Agent</h3>
-          <p class="text-sm">
-            Custom LLM agent achieving 80%+ step accuracy for mobile UI task
-            automation.
-          </p>
-        </div>
-        <div class="bg-white dark:bg-gray-700 rounded shadow p-4">
-          <img
-            src="assets/proxy.png"
-            alt="Proxy TuNER"
-            class="w-full h-48 object-cover rounded mb-4"
-          />
-          <h3 class="text-xl font-semibold mb-2">Proxy TuNER</h3>
-          <p class="text-sm">
-            Proxy-tuned BERT models improving NER F1-score by 8% while cutting
-            compute 70%.
-          </p>
-        </div>
+    <!-- Projects -->
+    <section id="projects" class="py-16 px-6 md:px-12 bg-gray-50 dark:bg-gray-800">
+      <div class="flex flex-col items-center text-center mb-12">
+        <h2 class="text-4xl font-bold">Projects</h2>
       </div>
-      <div class="text-center mt-8">
-        <a
-          href="projects.html"
-          class="bg-teal-600 hover:bg-teal-700 text-white px-6 py-3 rounded shadow"
-          >All Projects</a
-        >
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div class="bg-white dark:bg-gray-700 rounded shadow p-6 flex flex-col">
+          <img src="assets/talking.jpg" alt="LangGraph ChatBot" class="w-full h-48 object-cover rounded mb-4" />
+          <h3 class="text-2xl font-semibold mb-2">LangGraph ChatBot</h3>
+          <ul class="list-disc pl-5 text-sm flex-grow space-y-1">
+            <li><strong>Context:</strong> Explore multi-agent coordination for conversational AI.</li>
+            <li><strong>Actions:</strong> Built a graph-based chatbot orchestrating LLM agents with LangGraph for tool use and role handoffs.</li>
+            <li><strong>Impact:</strong> Demonstrated a scalable pattern for multi-agent dialogues and reasoning.</li>
+          </ul>
+          <a href="https://github.com/krishna-dhulipalla/LangGraph_ChatBot" class="mt-4 text-teal-600 dark:text-teal-400 underline">GitHub</a>
+        </div>
+        <div class="bg-white dark:bg-gray-700 rounded shadow p-6 flex flex-col">
+          <img src="assets/android_agent.jpg" alt="Android Agent" class="w-full h-48 object-cover rounded mb-4" />
+          <h3 class="text-2xl font-semibold mb-2">LLM-Based Android Agent</h3>
+          <ul class="list-disc pl-5 text-sm flex-grow space-y-1">
+            <li><strong>Context:</strong> Automate mobile UI tasks with high accuracy.</li>
+            <li><strong>Actions:</strong> Crafted a custom LLM agent achieving over 80% step accuracy on Android interfaces.</li>
+            <li><strong>Impact:</strong> Enabled reliable mobile automation for complex workflows.</li>
+          </ul>
+          <a href="https://github.com/Krishna-dhulipalla" class="mt-4 text-teal-600 dark:text-teal-400 underline">GitHub</a>
+        </div>
+        <div class="bg-white dark:bg-gray-700 rounded shadow p-6 flex flex-col">
+          <img src="assets/proxy.png" alt="Proxy TuNER" class="w-full h-48 object-cover rounded mb-4" />
+          <h3 class="text-2xl font-semibold mb-2">Proxy TuNER</h3>
+          <ul class="list-disc pl-5 text-sm flex-grow space-y-1">
+            <li><strong>Context:</strong> Improve NER models with lower compute.</li>
+            <li><strong>Actions:</strong> Proxy-tuned BERT models cutting compute by 70% while boosting F1 by 8%.</li>
+            <li><strong>Impact:</strong> Delivered accurate entity recognition on resource-constrained setups.</li>
+          </ul>
+          <a href="https://github.com/Krishna-dhulipalla" class="mt-4 text-teal-600 dark:text-teal-400 underline">GitHub</a>
+        </div>
+        <div class="bg-white dark:bg-gray-700 rounded shadow p-6 flex flex-col">
+          <img src="assets/intro.png" alt="PulseMap Agent" class="w-full h-48 object-cover rounded mb-4" />
+          <h3 class="text-2xl font-semibold mb-2">PulseMap Agent</h3>
+          <ul class="list-disc pl-5 text-sm flex-grow space-y-1">
+            <li><strong>Context:</strong> Community safety data scattered across feeds.</li>
+            <li><strong>Actions:</strong> Fused USGS, NWS, EONET and FIRMS data with AI-classified community reports.</li>
+            <li><strong>Impact:</strong> Unified alerts into one map, improving local incident visibility.</li>
+          </ul>
+          <a href="https://github.com/krishna-dhulipalla/PulseMap-Agent" class="mt-4 text-teal-600 dark:text-teal-400 underline">GitHub</a>
+        </div>
+        <div class="bg-white dark:bg-gray-700 rounded shadow p-6 flex flex-col">
+          <img src="assets/DNA_clasifier.jpg" alt="DNA Sequence Classifier" class="w-full h-48 object-cover rounded mb-4" />
+          <h3 class="text-2xl font-semibold mb-2">DNA Sequence Classifier</h3>
+          <ul class="list-disc pl-5 text-sm flex-grow space-y-1">
+            <li><strong>Context:</strong> Classify genomic sequences accurately with limited compute.</li>
+            <li><strong>Actions:</strong> Fine-tuned DNABERT and HyenaDNA with LoRA and soft prompting; automated preprocessing for 1M+ sequences.</li>
+            <li><strong>Impact:</strong> Achieved 94%+ accuracy while cutting preprocessing runtime 40%.</li>
+          </ul>
+          <a href="https://github.com/Krishna-dhulipalla" class="mt-4 text-teal-600 dark:text-teal-400 underline">GitHub</a>
+        </div>
+        <div class="bg-white dark:bg-gray-700 rounded shadow p-6 flex flex-col">
+          <img src="assets/android_agent.jpg" alt="IntelliMeet" class="w-full h-48 object-cover rounded mb-4" />
+          <h3 class="text-2xl font-semibold mb-2">IntelliMeet</h3>
+          <ul class="list-disc pl-5 text-sm flex-grow space-y-1">
+            <li><strong>Context:</strong> Create a secure, decentralized video conferencing platform.</li>
+            <li><strong>Actions:</strong> Built federated, encrypted system with on-device RetinaFace attention tracking and Transformer-based speech-to-text.</li>
+            <li><strong>Impact:</strong> Delivered sub-200ms latency and boosted engagement 25%.</li>
+          </ul>
+          <a href="https://github.com/Krishna-dhulipalla" class="mt-4 text-teal-600 dark:text-teal-400 underline">GitHub</a>
+        </div>
       </div>
     </section>
 
-    <!-- Resume callout -->
+    <!-- Resume -->
     <section id="resume" class="py-16 px-6 md:px-12">
-      <h2 class="text-3xl font-bold mb-6 text-center">Resume</h2>
-      <p class="max-w-2xl mx-auto text-center mb-6">
-        Download my full resume or view a condensed version.
-      </p>
-      <div class="text-center">
-        <a
-          href="assets/resume.pdf"
-          class="bg-teal-600 hover:bg-teal-700 text-white px-6 py-3 rounded shadow"
-          >Download Resume</a
-        >
+      <div class="flex flex-col items-center text-center mb-8">
+        <h2 class="text-4xl font-bold">Resume</h2>
       </div>
+      <p class="mb-8 max-w-3xl mx-auto text-center">
+        ML engineer with 3+ years designing intelligent AI systems, deploying models, and integrating cloud-native infrastructure. Experienced across ML research, data engineering, and backend development with a focus on LLM agents, semantic search, and real-time analytics.
+      </p>
+      <div class="text-center mb-12">
+        <a href="assets/resume.pdf" class="bg-teal-600 hover:bg-teal-700 text-white px-6 py-3 rounded shadow">Download PDF</a>
+      </div>
+      <h3 class="text-2xl font-bold mt-8 mb-4">Work Experience</h3>
+      <div class="space-y-6 max-w-3xl">
+        <div>
+          <h4 class="text-xl font-semibold">ML Research Engineer – Cloud Systems LLC</h4>
+          <p class="text-sm text-gray-500 dark:text-gray-400">Jul 2024 – Present | Remote</p>
+          <ul class="list-disc pl-5 space-y-1">
+            <li><strong>Context:</strong> Modernize analytics for diverse cloud datasets.</li>
+            <li><strong>Actions:</strong> Created optimized SQL queries and streaming pipelines, automating ETL across sources with Airflow.</li>
+            <li><strong>Impact:</strong> Delivered reliable data feeds and reduced manual prep by 40%.</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-xl font-semibold">ML Research Engineer – Virginia Tech</h4>
+          <p class="text-sm text-gray-500 dark:text-gray-400">Sep 2023 – Jul 2024 | Blacksburg, VA</p>
+          <ul class="list-disc pl-5 space-y-1">
+            <li><strong>Context:</strong> Fine-tune DNA foundation models for genomic tasks.</li>
+            <li><strong>Actions:</strong> Fine-tuned DNABERT and HyenaDNA with LoRA and soft prompting, automating preprocessing for over 1M sequences.</li>
+            <li><strong>Impact:</strong> Reached 94%+ accuracy and cut iteration cycles by 40%.</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-xl font-semibold">Data Engineer – Va Tech Transportation Institute</h4>
+          <p class="text-sm text-gray-500 dark:text-gray-400">Jan 2023 – Aug 2023 | Blacksburg, VA</p>
+          <ul class="list-disc pl-5 space-y-1">
+            <li><strong>Context:</strong> Unify real-time data for analytics.</li>
+            <li><strong>Actions:</strong> Migrated batch jobs to Kafka/Spark streaming and optimized Snowflake schemas with materialized views.</li>
+            <li><strong>Impact:</strong> Cut processing latency 30%, sped deployments 25%, and maintained 99.9% uptime.</li>
+          </ul>
+        </div>
+      </div>
+      <h3 class="text-2xl font-bold mt-12 mb-4">Skills</h3>
+      <ul class="list-disc ml-6 space-y-1 max-w-3xl">
+        <li><strong>Programming:</strong> Python, R, SQL, JavaScript/TypeScript, Node.js</li>
+        <li><strong>Frameworks:</strong> PyTorch, TensorFlow, Scikit-Learn, Hugging Face Transformers, LangChain, LangGraph</li>
+        <li><strong>AI Systems:</strong> LLM Fine-Tuning, RAG, Prompt Engineering, Agents, GANs</li>
+        <li><strong>Cloud & Infra:</strong> AWS, GCP, Docker, Kubernetes, SageMaker, MLflow, CI/CD</li>
+        <li><strong>Data Engineering:</strong> Spark, Kafka, dbt, Airflow, ETL pipelines, Data Warehousing</li>
+        <li><strong>Tools:</strong> Pandas, NumPy, Weights & Biases, Git, Tableau, Linux</li>
+      </ul>
+      <h3 class="text-2xl font-bold mt-12 mb-4">Education</h3>
+      <ul class="list-disc ml-6 space-y-2 max-w-3xl">
+        <li>M.S. in Computer Science, Virginia Tech (Jan 2023 – Dec 2024) – CGPA 3.95/4</li>
+        <li>Bachelor’s in Computer Science, Anna University (Jul 2018 – May 2022) – CGPA 8.24/10</li>
+      </ul>
+      <h3 class="text-2xl font-bold mt-12 mb-4">Publications</h3>
+      <ul class="list-disc ml-6 space-y-2 max-w-3xl">
+        <li>L. Miao, K. V. Dhulipalla, S. Kundu et al., "Leveraging Machine Learning for Predicting Circadian Transcription in mRNAs and lncRNAs," IEEE BIBM 2024.</li>
+        <li>M. Haghani, K. V. Dhulipalla, S. Li, "Harnessing DNA Foundation Models for Cross-Species Transcription Factor Binding Sites Prediction in Plant Genomes," ML in Computational Biology 2025.</li>
+      </ul>
+      <h3 class="text-2xl font-bold mt-12 mb-4">Certifications</h3>
+      <ul class="list-disc ml-6 space-y-1 max-w-3xl">
+        <li>Building RAG Agents with LLMs – Nvidia</li>
+        <li>Introduction to Deploying RAG Pipelines for Production at Scale</li>
+        <li>Delivering Data-Driven Decisions with AWS</li>
+        <li>End-to-End Real-World Data Engineering with Snowflake</li>
+        <li>Google Cloud Data Engineering Foundations</li>
+        <li>AICTE-EduSkills Certificate in AWS Cloud</li>
+        <li>Coursera Machine Learning (Data-Driven Insights, ML Algorithms)</li>
+      </ul>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-16 px-6 md:px-12 bg-gray-50 dark:bg-gray-800">
+      <div class="flex flex-col items-center text-center mb-8">
+        <h2 class="text-4xl font-bold">Get in Touch</h2>
+        <p class="text-gray-600 dark:text-gray-300">
+          Have a project or role focused on LLMs, data engineering, or intelligent agents? Let's connect and build something impactful.
+        </p>
+      </div>
+      <form id="nn-contact-form" action="https://formspree.io/f/mzzpwpkj" method="POST" class="max-w-xl mx-auto space-y-4">
+        <div>
+          <label for="name" class="block font-medium mb-1">Input Layer: Name</label>
+          <input type="text" id="name" name="name" placeholder="Your Name" autocomplete="name" class="w-full p-2 border rounded bg-gray-100 dark:bg-gray-800" />
+        </div>
+        <div>
+          <label for="email" class="block font-medium mb-1">Hidden Layer 1: Email</label>
+          <input type="email" id="email" name="email" placeholder="Your Email" autocomplete="email" class="w-full p-2 border rounded bg-gray-100 dark:bg-gray-800" />
+        </div>
+        <div>
+          <label for="message" class="block font-medium mb-1">Hidden Layer 2: Message</label>
+          <textarea id="message" name="message" placeholder="Your Message" class="w-full p-2 border rounded bg-gray-100 dark:bg-gray-800"></textarea>
+        </div>
+        <div id="loss-message" class="loss-message hidden text-red-500 text-sm"></div>
+        <button type="submit" class="bg-teal-600 hover:bg-teal-700 text-white px-6 py-3 rounded shadow">Submit</button>
+      </form>
     </section>
 
     <footer class="py-6 text-center text-sm bg-white dark:bg-gray-900">
