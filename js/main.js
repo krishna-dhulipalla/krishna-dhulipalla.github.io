@@ -73,23 +73,6 @@ resumeModal.addEventListener("click", (e) => {
   if (e.target === resumeModal) closeResume.click();
 });
 
-// Project filters
-const filterBtns = document.querySelectorAll(".filter-btn");
-const cards = document.querySelectorAll(".project-card");
-filterBtns.forEach((btn) =>
-  btn.addEventListener("click", () => {
-    filterBtns.forEach((b) =>
-      b.classList.remove("active", "bg-teal-50", "dark:bg-gray-800")
-    );
-    btn.classList.add("active", "bg-teal-50", "dark:bg-gray-800");
-    const tag = btn.dataset.filter;
-    cards.forEach((card) => {
-      const show = tag === "all" || card.dataset.tags.includes(tag);
-      card.style.display = show ? "block" : "none";
-    });
-  })
-);
-
 // Toast helper
 function showToast(msg) {
   const t = document.getElementById("toast");
@@ -116,4 +99,56 @@ hero?.addEventListener("error", () => {
   } finally {
     fb?.classList.remove("hidden");
   }
+});
+
+(function initTilt() {
+  const card = document.querySelector(".tilt-card");
+  if (!card) return;
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+  let rect = null;
+  const maxRotate = 10;
+  function setFromEvent(e) {
+    rect = rect || card.getBoundingClientRect();
+    const px = (e.clientX - rect.left) / rect.width;
+    const py = (e.clientY - rect.top) / rect.height;
+    const rx = (py - 0.5) * -2 * maxRotate;
+    const ry = (px - 0.5) * 2 * maxRotate;
+    card.style.transform = `rotateX(${rx.toFixed(2)}deg) rotateY(${ry.toFixed(
+      2
+    )}deg)`;
+  }
+  function reset() {
+    rect = null;
+    card.style.transform = "rotateX(0deg) rotateY(0deg)";
+    card.classList.remove("is-tilting");
+  }
+  card.addEventListener("mouseenter", () => card.classList.add("is-tilting"));
+  card.addEventListener("mousemove", setFromEvent);
+  card.addEventListener("mouseleave", reset);
+  window.addEventListener(
+    "scroll",
+    () => {
+      rect = null;
+    },
+    { passive: true }
+  );
+})();
+
+// --- Filter buttons ---
+const filterWrap = document.getElementById("projFilters");
+const cards = Array.from(document.querySelectorAll("#projGrid .proj-card"));
+
+filterWrap?.addEventListener("click", (e) => {
+  const btn = e.target.closest(".proj-filter");
+  if (!btn) return;
+  filterWrap
+    .querySelectorAll(".proj-filter")
+    .forEach((b) => b.setAttribute("aria-pressed", "false"));
+  btn.setAttribute("aria-pressed", "true");
+  const key = btn.dataset.filter;
+  cards.forEach((card) => {
+    const cat = card.dataset.cat;
+    card.style.display = key === "all" || cat === key ? "" : "none";
+  });
 });

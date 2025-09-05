@@ -219,3 +219,80 @@ body {
   font-size: 0.85rem;
   opacity: 0.9;
 }
+
+.tilt-card {
+  perspective: 1200px;
+  transition: transform 250ms cubic-bezier(0.2, 0.6, 0.2, 1), box-shadow 250ms;
+}
+.tilt-card.is-tilting {
+  box-shadow: 0 30px 80px -30px rgba(0, 0, 0, 0.35);
+}
+@media (prefers-reduced-motion: reduce) {
+  .tilt-card {
+    transition: none !important;
+  }
+}
+
+/* Glow layer */
+.proj-card .proj-glow {
+  position: absolute;
+  inset: -1px;
+  border-radius: 1rem;
+  opacity: 0;
+  pointer-events: none;
+  background: linear-gradient(120deg, #6366f1, #ec4899, #22d3ee);
+  mask-image: radial-gradient(
+    200px circle at var(--x, 50%) var(--y, 50%),
+    white,
+    transparent
+  );
+  transition: opacity 0.25s ease;
+  animation: gradient 12s linear infinite;
+}
+.proj-card:hover .proj-glow {
+  opacity: 1;
+}
+
+@keyframes gradient {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+/* Glow layer */
+.proj-card .proj-glow {
+  position: absolute;
+  inset: -1px;
+  border-radius: 1rem;
+  opacity: 0;
+  pointer-events: none;
+  background: linear-gradient(120deg, #6366f1, #ec4899, #22d3ee);
+  mask-image: radial-gradient(200px circle at 50% 50%, white, transparent);
+  transition: opacity 0.25s ease;
+  animation: gradient 12s linear infinite;
+}
+.proj-card:hover .proj-glow {
+  opacity: 1;
+}
+
+@keyframes gradient {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+/* Chips (tags) base */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 9999px;
+  padding: 0.25rem 0.625rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
