@@ -57,7 +57,7 @@
         <a
           href="index.html"
           class="text-2xl font-bold text-teal-600 dark:text-teal-400"
-          >Krishna</a
+          >KVD</a
         >
         <button id="menu-toggle" class="md:hidden text-2xl">☰</button>
       </div>
@@ -79,11 +79,6 @@
           href="#projects"
           class="hover:text-teal-600 dark:hover:text-teal-400"
           >Projects</a
-        >
-        <a
-          href="#resume"
-          class="hover:text-teal-600 dark:hover:text-teal-400"
-          >Resume</a
         >
         <a
           href="#contact"
@@ -124,7 +119,8 @@
             >View Projects</a
           >
           <a
-            href="#resume"
+            href="https://krishna-dhulipalla.github.io/assets/resume.pdf"
+            download
             class="ml-4 border border-teal-600 text-teal-600 dark:text-teal-400 hover:bg-teal-50 dark:hover:bg-gray-800 px-6 py-3 rounded"
             >Resume</a
           >
@@ -135,6 +131,11 @@
     <!-- About -->
     <section id="about" class="py-16 px-6 md:px-12">
       <h2 class="text-3xl font-bold mb-6">About Me</h2>
+      <img
+        src="assets/profile.png"
+        alt="Profile photo"
+        class="w-32 h-32 rounded-full mx-auto mb-6"
+      />
       <p class="max-w-3xl leading-relaxed">
         ML engineer with 3+ years building end-to-end AI solutions—from data
         ingestion and model training to production deployment. Experienced
@@ -333,78 +334,6 @@
           <a href="https://github.com/Krishna-dhulipalla" class="mt-4 text-teal-600 dark:text-teal-400 underline">GitHub</a>
         </div>
       </div>
-    </section>
-
-    <!-- Resume -->
-    <section id="resume" class="py-16 px-6 md:px-12">
-      <div class="flex flex-col items-center text-center mb-8">
-        <h2 class="text-4xl font-bold">Resume</h2>
-      </div>
-      <p class="mb-8 max-w-3xl mx-auto text-center">
-        ML engineer with 3+ years designing intelligent AI systems, deploying models, and integrating cloud-native infrastructure. Experienced across ML research, data engineering, and backend development with a focus on LLM agents, semantic search, and real-time analytics.
-      </p>
-      <div class="text-center mb-12">
-        <a href="assets/resume.pdf" class="bg-teal-600 hover:bg-teal-700 text-white px-6 py-3 rounded shadow">Download PDF</a>
-      </div>
-      <h3 class="text-2xl font-bold mt-8 mb-4">Work Experience</h3>
-      <div class="space-y-6 max-w-3xl">
-        <div>
-          <h4 class="text-xl font-semibold">ML Research Engineer – Cloud Systems LLC</h4>
-          <p class="text-sm text-gray-500 dark:text-gray-400">Jul 2024 – Present | Remote</p>
-          <ul class="list-disc pl-5 space-y-1">
-            <li><strong>Context:</strong> Modernize analytics for diverse cloud datasets.</li>
-            <li><strong>Actions:</strong> Created optimized SQL queries and streaming pipelines, automating ETL across sources with Airflow.</li>
-            <li><strong>Impact:</strong> Delivered reliable data feeds and reduced manual prep by 40%.</li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="text-xl font-semibold">ML Research Engineer – Virginia Tech</h4>
-          <p class="text-sm text-gray-500 dark:text-gray-400">Sep 2023 – Jul 2024 | Blacksburg, VA</p>
-          <ul class="list-disc pl-5 space-y-1">
-            <li><strong>Context:</strong> Fine-tune DNA foundation models for genomic tasks.</li>
-            <li><strong>Actions:</strong> Fine-tuned DNABERT and HyenaDNA with LoRA and soft prompting, automating preprocessing for over 1M sequences.</li>
-            <li><strong>Impact:</strong> Reached 94%+ accuracy and cut iteration cycles by 40%.</li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="text-xl font-semibold">Data Engineer – Va Tech Transportation Institute</h4>
-          <p class="text-sm text-gray-500 dark:text-gray-400">Jan 2023 – Aug 2023 | Blacksburg, VA</p>
-          <ul class="list-disc pl-5 space-y-1">
-            <li><strong>Context:</strong> Unify real-time data for analytics.</li>
-            <li><strong>Actions:</strong> Migrated batch jobs to Kafka/Spark streaming and optimized Snowflake schemas with materialized views.</li>
-            <li><strong>Impact:</strong> Cut processing latency 30%, sped deployments 25%, and maintained 99.9% uptime.</li>
-          </ul>
-        </div>
-      </div>
-      <h3 class="text-2xl font-bold mt-12 mb-4">Skills</h3>
-      <ul class="list-disc ml-6 space-y-1 max-w-3xl">
-        <li><strong>Programming:</strong> Python, R, SQL, JavaScript/TypeScript, Node.js</li>
-        <li><strong>Frameworks:</strong> PyTorch, TensorFlow, Scikit-Learn, Hugging Face Transformers, LangChain, LangGraph</li>
-        <li><strong>AI Systems:</strong> LLM Fine-Tuning, RAG, Prompt Engineering, Agents, GANs</li>
-        <li><strong>Cloud & Infra:</strong> AWS, GCP, Docker, Kubernetes, SageMaker, MLflow, CI/CD</li>
-        <li><strong>Data Engineering:</strong> Spark, Kafka, dbt, Airflow, ETL pipelines, Data Warehousing</li>
-        <li><strong>Tools:</strong> Pandas, NumPy, Weights & Biases, Git, Tableau, Linux</li>
-      </ul>
-      <h3 class="text-2xl font-bold mt-12 mb-4">Education</h3>
-      <ul class="list-disc ml-6 space-y-2 max-w-3xl">
-        <li>M.S. in Computer Science, Virginia Tech (Jan 2023 – Dec 2024) – CGPA 3.95/4</li>
-        <li>Bachelor’s in Computer Science, Anna University (Jul 2018 – May 2022) – CGPA 8.24/10</li>
-      </ul>
-      <h3 class="text-2xl font-bold mt-12 mb-4">Publications</h3>
-      <ul class="list-disc ml-6 space-y-2 max-w-3xl">
-        <li>L. Miao, K. V. Dhulipalla, S. Kundu et al., "Leveraging Machine Learning for Predicting Circadian Transcription in mRNAs and lncRNAs," IEEE BIBM 2024.</li>
-        <li>M. Haghani, K. V. Dhulipalla, S. Li, "Harnessing DNA Foundation Models for Cross-Species Transcription Factor Binding Sites Prediction in Plant Genomes," ML in Computational Biology 2025.</li>
-      </ul>
-      <h3 class="text-2xl font-bold mt-12 mb-4">Certifications</h3>
-      <ul class="list-disc ml-6 space-y-1 max-w-3xl">
-        <li>Building RAG Agents with LLMs – Nvidia</li>
-        <li>Introduction to Deploying RAG Pipelines for Production at Scale</li>
-        <li>Delivering Data-Driven Decisions with AWS</li>
-        <li>End-to-End Real-World Data Engineering with Snowflake</li>
-        <li>Google Cloud Data Engineering Foundations</li>
-        <li>AICTE-EduSkills Certificate in AWS Cloud</li>
-        <li>Coursera Machine Learning (Data-Driven Insights, ML Algorithms)</li>
-      </ul>
     </section>
 
     <!-- Contact -->
