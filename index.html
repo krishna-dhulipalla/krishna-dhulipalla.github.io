@@ -30,7 +30,7 @@
   <body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-100">
     <!-- ===== Navbar ===== -->
     <header
-      class="fixed top-0 inset-x-0 z-50 border-b border-black/5 dark:border-white/10 bg-white/80 dark:bg-gray-900/80 glass"
+      class="fixed top-0 inset-x-0 z-50 border-b border-black/5 dark:border-white/10 bg-white dark:bg-gray-900/80 glass"
     >
       <nav
         class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between"
@@ -149,11 +149,13 @@
           </div>
         </div>
         <div class="relative" data-aos="fade-up" data-aos-delay="150">
-          <div class="rounded-2xl shadow-float p-4 glass">
+          <div class="rounded-2xl shadow-float p-4 bg-white dark:bg-gray-900 h-[340px] overflow-hidden">
             <!-- Use a local .lottie or .json you control; this avoids 403s -->
             <dotlottie-wc
+              id="heroAnim"
               src="https://lottie.host/ec759afa-08cf-493a-9df6-4f2ba2a515fe/01ooaS1eRs.lottie"
-              style="width: 100%; height: 100%"
+              class="w-full h-full object-cover"
+              style="width:100%;height:100%"
               speed="1"
               autoplay
               loop
@@ -213,7 +215,7 @@
     </section>
 
     <!-- ===== Featured Projects ===== -->
-    <section id="projects" class="bg-gray-50 dark:bg-gray-800/40">
+    <section id="projects" class="bg-white dark:bg-gray-800/40">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
         <div class="flex items-end justify-between gap-6">
           <h2 class="font-display text-3xl md:text-4xl font-bold">
@@ -573,7 +575,7 @@
     </section>
 
     <!-- ===== Skills ===== -->
-    <section id="skills" class="bg-gray-50 dark:bg-gray-800/40">
+    <section id="skills" class="bg-white dark:bg-gray-800/40">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
         <h2 class="font-display text-3xl md:text-4xl font-bold">
           Skills & tools
@@ -660,7 +662,7 @@
           id="nn-contact-form"
           action="https://formspree.io/f/mzzpwpkj"
           method="POST"
-          class="rounded-2xl border border-gray-200 dark:border-gray-700 p-6 grid gap-4 bg-white/80 dark:bg-gray-900/50 glass"
+          class="rounded-2xl border border-gray-200 dark:border-gray-700 p-6 grid gap-4 bg-white dark:bg-gray-900/50"
           onsubmit="event.preventDefault(); showToast('Message sent — I will reply soon.'); this.reset();"
         >
           <div class="grid gap-1">
