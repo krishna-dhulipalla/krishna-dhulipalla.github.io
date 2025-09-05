@@ -196,3 +196,34 @@ body {
     display: none;
   }
 }
+
+/* ===== Fancy theme toggle ===== */
+.theme-toggle {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.6),
+    rgba(255, 255, 255, 0.35)
+  );
+}
+.dark .theme-toggle {
+  background: linear-gradient(
+    180deg,
+    rgba(17, 24, 39, 0.7),
+    rgba(17, 24, 39, 0.5)
+  );
+}
+.theme-toggle:active {
+  transform: scale(0.98);
+}
+.theme-toggle .theme-icon {
+  display: inline-block;
+  transition: transform 0.35s ease;
+}
+.theme-toggle.rotating .theme-icon {
+  transform: rotate(180deg);
+}
+.theme-toggle .theme-text {
+  font-size: 0.85rem;
+  opacity: 0.9;
+}

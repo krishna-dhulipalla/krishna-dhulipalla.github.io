@@ -17,10 +17,9 @@
 
     <!-- Lottie for subtle hero animation -->
     <script
+      src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js"
       type="module"
-      src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
     ></script>
-
     <!-- AOS (animate on scroll) -->
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
     <script defer src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
@@ -49,15 +48,18 @@
           <a
             href="#"
             id="resume-link"
+            href="assets/resume.pdf"
             class="inline-flex items-center rounded-xl border border-teal-600 px-3 py-1.5 font-medium text-teal-700 dark:text-teal-400 hover:bg-teal-50 dark:hover:bg-gray-800"
             >Resume</a
           >
           <button
             id="theme-toggle"
-            class="rounded-xl border border-gray-300 dark:border-gray-700 px-2 py-1"
+            class="theme-toggle rounded-xl border border-gray-300 dark:border-gray-700 px-2 py-1 flex items-center gap-2"
             aria-label="Toggle theme"
+            aria-pressed="false"
           >
-            🌓
+            <span class="theme-icon" aria-hidden="true">🌞</span>
+            <span class="theme-text hidden sm:inline">Light</span>
           </button>
         </div>
         <button
@@ -82,6 +84,7 @@
           <a
             href="#"
             id="resume-link-m"
+            href="assets/resume.pdf"
             class="inline-flex w-max items-center rounded-xl border border-teal-600 px-3 py-1.5 font-medium text-teal-700 dark:text-teal-400 hover:bg-teal-50 dark:hover:bg-gray-800"
             >Resume</a
           >
@@ -148,15 +151,13 @@
         <div class="relative" data-aos="fade-up" data-aos-delay="150">
           <div class="rounded-2xl shadow-float p-4 glass">
             <!-- Use a local .lottie or .json you control; this avoids 403s -->
-            <dotlottie-player
-              id="heroAnim"
-              src="/assets/hero.lottie"
-              background="transparent"
+            <dotlottie-wc
+              src="https://lottie.host/ec759afa-08cf-493a-9df6-4f2ba2a515fe/01ooaS1eRs.lottie"
+              style="width: 100%; height: 100%"
               speed="1"
-              style="width: 100%; height: 340px"
-              loop
               autoplay
-            ></dotlottie-player>
+              loop
+            ></dotlottie-wc>
 
             <!-- graceful fallback if load fails -->
             <div
@@ -258,7 +259,7 @@
               class="block"
             >
               <div
-                class="relative h-44 bg-gradient-to-tr from-gray-900 to-gray-700"
+                class="relative h-44 bg-gradient-to-tr from-gray-100 to-gray-200 dark:from-gray-900 dark:to-gray-700"
               >
                 <img
                   src="./assets/talking.jpg"
@@ -301,7 +302,7 @@
               class="block"
             >
               <div
-                class="relative h-44 bg-gradient-to-tr from-gray-900 to-gray-700"
+                class="relative h-44 bg-gradient-to-tr from-gray-100 to-gray-200 dark:from-gray-900 dark:to-gray-700"
               >
                 <img
                   src="./assets/android_agent.jpg"
@@ -340,7 +341,7 @@
               class="block"
             >
               <div
-                class="relative h-44 bg-gradient-to-tr from-gray-900 to-gray-700"
+                class="relative h-44 bg-gradient-to-tr from-gray-100 to-gray-200 dark:from-gray-900 dark:to-gray-700"
               >
                 <img
                   src="./assets/intro.png"
@@ -379,7 +380,7 @@
           >
             <a href="#" class="block">
               <div
-                class="relative h-44 bg-gradient-to-tr from-gray-900 to-gray-700"
+                class="relative h-44 bg-gradient-to-tr from-gray-100 to-gray-200 dark:from-gray-900 dark:to-gray-700"
               >
                 <img
                   src="./assets/proxy.png"
@@ -413,7 +414,7 @@
           >
             <a href="#" class="block">
               <div
-                class="relative h-44 bg-gradient-to-tr from-gray-900 to-gray-700"
+                class="relative h-44 bg-gradient-to-tr from-gray-100 to-gray-200 dark:from-gray-900 dark:to-gray-700"
               >
                 <img
                   src="./assets/DNA_clasifier.jpg"
@@ -448,7 +449,7 @@
           >
             <a href="#" class="block">
               <div
-                class="relative h-44 bg-gradient-to-tr from-gray-900 to-gray-700"
+                class="relative h-44 bg-gradient-to-tr from-gray-100 to-gray-200 dark:from-gray-900 dark:to-gray-700"
               >
                 <img
                   src="./assets/intellimeet.png"
@@ -746,7 +747,7 @@
         </div>
         <div class="p-5">
           <iframe
-            src="https://krishna-dhulipalla.github.io/assets/resume.pdf"
+            src="assets/resume.pdf"
             class="w-full h-[70vh] rounded-md"
             title="Resume PDF"
           ></iframe>
