@@ -1,0 +1,198 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.glass {
+  backdrop-filter: blur(8px);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.6),
+    rgba(255, 255, 255, 0.35)
+  );
+}
+.dark .glass {
+  background: linear-gradient(
+    180deg,
+    rgba(17, 24, 39, 0.7),
+    rgba(17, 24, 39, 0.5)
+  );
+}
+.accent-gradient {
+  background-image: linear-gradient(90deg, #14b8a6, #7c3aed, #14b8a6);
+  background-size: 200% 200%;
+}
+
+/* ===== Zig-zag card timeline (like screenshots) ===== */
+.journey {
+  position: relative;
+  margin-top: 2.25rem;
+}
+.journey-spine {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  transform: translateX(-50%);
+  background: linear-gradient(
+    180deg,
+    transparent,
+    rgba(236, 72, 153, 0.35),
+    rgba(99, 102, 241, 0.35),
+    transparent
+  );
+  border-radius: 999px;
+  opacity: 0.5;
+}
+.journey-list {
+  position: relative;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 5rem;
+}
+
+/* card container */
+.j-card {
+  position: relative;
+  max-width: 640px;
+  margin-left: auto; /* default: right side */
+  padding-left: 2.5rem; /* for node overlap */
+}
+.j-card:nth-child(even) {
+  /* alternate to left side */
+  margin-left: 0;
+  margin-right: auto;
+  padding-right: 2.5rem;
+  padding-left: 0;
+}
+.j-card .j-node {
+  position: absolute;
+  top: 0.9rem;
+  left: calc(-1.15rem);
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  background: #fff;
+  border: 3px solid rgba(236, 72, 153, 0.25);
+  box-shadow: 0 0 0 6px rgba(236, 72, 153, 0.08);
+}
+.j-card:nth-child(even) .j-node {
+  left: auto;
+  right: calc(-1.15rem);
+}
+.dark .j-card .j-node {
+  background: #0b0b0b;
+}
+
+/* actual card */
+.j-body {
+  border-radius: 18px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(8px);
+  padding: 1.1rem 1.25rem;
+  box-shadow: 0 30px 70px -40px rgba(0, 0, 0, 0.35);
+}
+.dark .j-body {
+  border-color: rgba(255, 255, 255, 0.12);
+  background: rgba(0, 0, 0, 0.25);
+}
+
+/* top row: date pill + tag */
+.j-top {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+}
+.j-date {
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.3rem 0.6rem;
+  border-radius: 999px;
+  background: rgba(244, 114, 182, 0.15); /* pink-400 tint */
+  color: rgb(190, 24, 93);
+}
+.dark .j-date {
+  background: rgba(244, 114, 182, 0.18);
+  color: rgb(244, 114, 182);
+}
+
+.j-tag {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  padding: 0.25rem 0.55rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+}
+.j-tag.j-edu {
+  background: rgba(13, 148, 136, 0.12);
+  color: #0f766e; /* teal */
+  border-color: rgba(13, 148, 136, 0.22);
+}
+.j-tag.j-exp {
+  background: rgba(109, 40, 217, 0.12);
+  color: #6d28d9; /* violet */
+  border-color: rgba(109, 40, 217, 0.22);
+}
+
+/* text */
+.j-title {
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.15;
+}
+.j-sub {
+  margin-top: 0.35rem;
+  color: #475569;
+}
+.dark .j-sub {
+  color: #cbd5e1;
+}
+
+/* soft “card tail” that points to spine */
+.j-card::before {
+  content: "";
+  position: absolute;
+  top: 1.25rem;
+  width: 16px;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(236, 72, 153, 0.25), transparent);
+  right: 100%;
+}
+.j-card:nth-child(even)::before {
+  left: 100%;
+  right: auto;
+  background: linear-gradient(270deg, rgba(236, 72, 153, 0.25), transparent);
+}
+
+/* mobile: single column */
+@media (max-width: 768px) {
+  .journey-spine {
+    left: 18px;
+    transform: none;
+    width: 2px;
+  }
+  .j-card,
+  .j-card:nth-child(even) {
+    margin: 0 0 0 2.25rem;
+    padding: 0 0 0 1.5rem;
+  }
+  .j-card .j-node,
+  .j-card:nth-child(even) .j-node {
+    left: -0.75rem;
+    right: auto;
+  }
+  .j-card::before,
+  .j-card:nth-child(even)::before {
+    display: none;
+  }
+}

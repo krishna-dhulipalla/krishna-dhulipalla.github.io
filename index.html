@@ -3,406 +3,897 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Krishna Vamsi Dhulipalla</title>
+    <title>Krishna Vamsi Dhulipalla — Portfolio</title>
+
+    <!-- Fonts & Tailwind -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap"
       rel="stylesheet"
     />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
         darkMode: "class",
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "ui-sans-serif", "system-ui"],
+              display: ["Poppins", "ui-sans-serif", "system-ui"],
+            },
+            boxShadow: {
+              float: "0 20px 50px -20px rgba(0,0,0,0.35)",
+            },
+            keyframes: {
+              floaty: {
+                "0%,100%": { transform: "translateY(0)" },
+                "50%": { transform: "translateY(-6px)" },
+              },
+              gradient: {
+                "0%": { "background-position": "0% 50%" },
+                "50%": { "background-position": "100% 50%" },
+                "100%": { "background-position": "0% 50%" },
+              },
+            },
+            animation: {
+              floaty: "floaty 6s ease-in-out infinite",
+              gradient: "gradient 12s ease infinite",
+            },
+          },
+        },
       };
     </script>
-    <script
-      src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
-      type="module"
-    ></script>
-    <script defer src="js/theme.js"></script>
-    <script defer src="js/scripts.js"></script>
-    <style>
-      .animate-gradient {
-        background-size: 400% 400%;
-        animation: gradient 15s ease infinite;
-      }
-      @keyframes gradient {
-        0% {
-          background-position: 0% 50%;
-        }
-        50% {
-          background-position: 100% 50%;
-        }
-        100% {
-          background-position: 0% 50%;
-        }
-      }
-      body {
-        font-family: "Inter", sans-serif;
-      }
-      h1,
-      h2,
-      h3,
-      h4 {
-        font-family: "Poppins", sans-serif;
-      }
-    </style>
-  </head>
-  <body id="top" class="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200">
-    <nav
-      class="flex flex-wrap items-center justify-between py-4 px-6 md:px-12 bg-white dark:bg-gray-900 shadow"
-    >
-      <div class="flex items-center justify-between w-full md:w-auto">
-        <a
-          href="index.html"
-          class="text-2xl font-bold text-teal-600 dark:text-teal-400"
-          >KVD</a
-        >
-        <button id="menu-toggle" class="md:hidden text-2xl">☰</button>
-      </div>
-      <div
-        id="nav-menu"
-        class="hidden w-full flex-col space-y-2 mt-4 md:flex md:w-auto md:flex-row md:space-y-0 md:space-x-4 md:mt-0 text-sm md:text-base"
-      >
-        <a
-          href="#top"
-          class="hover:text-teal-600 dark:hover:text-teal-400"
-          >Home</a
-        >
-        <a
-          href="#about"
-          class="hover:text-teal-600 dark:hover:text-teal-400"
-          >About</a
-        >
-        <a
-          href="#projects"
-          class="hover:text-teal-600 dark:hover:text-teal-400"
-          >Projects</a
-        >
-        <a
-          href="#contact"
-          class="hover:text-teal-600 dark:hover:text-teal-400"
-          >Contact</a
-        >
-        <button
-          id="theme-toggle"
-          class="md:ml-2 px-2 py-1 border rounded border-gray-300 dark:border-gray-600"
-        >
-          🌓
-        </button>
-      </div>
-    </nav>
 
-    <!-- Hero -->
-    <section
-      class="relative flex items-center justify-center text-center py-24"
+    <!-- Lottie for subtle hero animation -->
+    <script
+      type="module"
+      src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
+    ></script>
+
+    <!-- AOS (animate on scroll) -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+    <script defer src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+
+  <body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-100">
+    <!-- ===== Navbar ===== -->
+    <header
+      class="sticky top-0 z-50 border-b border-black/5 dark:border-white/10 bg-white/80 dark:bg-gray-900/80 glass"
     >
-      <div
-        class="absolute inset-0 -z-10 animate-gradient bg-gradient-to-r from-teal-500 via-purple-500 to-teal-500 opacity-20"
-      ></div>
-      <div class="px-4 flex flex-col items-center">
-        <h1 class="text-4xl md:text-6xl font-bold">Krishna Vamsi Dhulipalla</h1>
-        <p class="mt-4 text-xl text-gray-600 dark:text-gray-300">
-          ML engineer specializing in agentic workflows and LLM applications.
-        </p>
-        <p class="mt-2 text-gray-500 dark:text-gray-400 max-w-2xl">
-          3+ years of experience designing intelligent systems, deploying
-          models, and integrating cloud-native backends. Focused on LLM-powered
-          agents, semantic search, and real-time data using LangChain,
-          LangGraph, and FastAPI.
-        </p>
-        <div class="mt-8">
+      <nav
+        class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between"
+      >
+        <a href="#top" class="font-display text-xl font-bold tracking-tight">
+          <span class="text-teal-600">Krishna</span>
+          <span class="text-gray-900 dark:text-white">Vamsi</span>
+        </a>
+        <div class="hidden md:flex items-center gap-6 text-sm">
+          <a href="#about" class="hover:text-teal-600">About</a>
+          <a href="#projects" class="hover:text-teal-600">Projects</a>
+          <a href="#experience" class="hover:text-teal-600">Experience</a>
+          <a href="#skills" class="hover:text-teal-600">Skills</a>
+          <a href="#contact" class="hover:text-teal-600">Contact</a>
           <a
-            href="#projects"
-            class="bg-teal-600 hover:bg-teal-700 text-white px-6 py-3 rounded shadow"
-            >View Projects</a
+            href="#"
+            id="resume-link"
+            class="inline-flex items-center rounded-xl border border-teal-600 px-3 py-1.5 font-medium text-teal-700 dark:text-teal-400 hover:bg-teal-50 dark:hover:bg-gray-800"
+            >Resume</a
           >
+          <button
+            id="theme-toggle"
+            class="rounded-xl border border-gray-300 dark:border-gray-700 px-2 py-1"
+            aria-label="Toggle theme"
+          >
+            🌓
+          </button>
+        </div>
+        <button
+          id="menuBtn"
+          class="md:hidden p-2 rounded-lg border border-gray-200 dark:border-gray-700"
+          aria-label="Open menu"
+        >
+          ☰
+        </button>
+      </nav>
+      <!-- Mobile menu -->
+      <div
+        id="mobileMenu"
+        class="md:hidden hidden border-t border-black/5 dark:border-white/10"
+      >
+        <div class="mx-auto max-w-7xl px-4 py-3 flex flex-col gap-3 text-sm">
+          <a href="#about" class="hover:text-teal-600">About</a>
+          <a href="#projects" class="hover:text-teal-600">Projects</a>
+          <a href="#experience" class="hover:text-teal-600">Experience</a>
+          <a href="#skills" class="hover:text-teal-600">Skills</a>
+          <a href="#contact" class="hover:text-teal-600">Contact</a>
           <a
-            href="https://krishna-dhulipalla.github.io/assets/resume.pdf"
-            download
-            class="ml-4 border border-teal-600 text-teal-600 dark:text-teal-400 hover:bg-teal-50 dark:hover:bg-gray-800 px-6 py-3 rounded"
+            href="#"
+            id="resume-link-m"
+            class="inline-flex w-max items-center rounded-xl border border-teal-600 px-3 py-1.5 font-medium text-teal-700 dark:text-teal-400 hover:bg-teal-50 dark:hover:bg-gray-800"
             >Resume</a
           >
         </div>
       </div>
+    </header>
+
+    <!-- ===== Hero ===== -->
+    <section id="top" class="relative overflow-hidden">
+      <div
+        class="absolute inset-0 -z-10 accent-gradient opacity-20 animate-gradient"
+      ></div>
+      <div
+        class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-2 md:py-2 grid md:grid-cols-2 items-center gap-10"
+      >
+        <div data-aos="fade-up" data-aos-delay="50">
+          <p
+            class="text-xs uppercase tracking-widest text-teal-600 font-semibold"
+          >
+            ML Engineer • Agentic Systems • LLM Apps
+          </p>
+          <h1
+            class="mt-3 font-display text-4xl md:text-6xl font-bold leading-tight"
+          >
+            I build AI agents and data-backed products that ship.
+          </h1>
+          <p class="mt-4 text-gray-600 dark:text-gray-300 max-w-xl">
+            3+ yrs across ML research, backend, and cloud. I design agentic
+            workflows (LangGraph/LangChain), search & retrieval, and realtime
+            pipelines—then deploy them with FastAPI, Docker, and cloud infra.
+          </p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a
+              href="#projects"
+              class="inline-flex items-center rounded-xl bg-teal-600 px-4 py-2.5 text-white shadow-float hover:bg-teal-700"
+              >See projects</a
+            >
+            <a
+              href="#contact"
+              class="inline-flex items-center rounded-xl border border-gray-300 dark:border-gray-700 px-4 py-2.5 hover:bg-gray-50 dark:hover:bg-gray-800"
+              >Get in touch</a
+            >
+          </div>
+          <div
+            class="mt-6 flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400"
+          >
+            <a
+              href="https://github.com/Krishna-dhulipalla"
+              class="hover:text-teal-600"
+              >GitHub</a
+            >
+            <a
+              href="https://www.linkedin.com/in/krishnavamsidhulipalla"
+              class="hover:text-teal-600"
+              >LinkedIn</a
+            >
+            <a
+              href="https://krishna-dhulipalla.github.io"
+              class="hover:text-teal-600"
+              >Website</a
+            >
+          </div>
+        </div>
+        <div class="relative" data-aos="fade-up" data-aos-delay="150">
+          <div class="rounded-2xl shadow-float p-4 glass">
+            <!-- Use a local .lottie or .json you control; this avoids 403s -->
+            <dotlottie-player
+              id="heroAnim"
+              src="/assets/hero.lottie"
+              background="transparent"
+              speed="1"
+              style="width: 100%; height: 340px"
+              loop
+              autoplay
+            ></dotlottie-player>
+
+            <!-- graceful fallback if load fails -->
+            <div
+              id="heroAnimFallback"
+              class="hidden h-[340px] w-full rounded-xl accent-gradient animate-gradient"
+              aria-hidden="true"
+            ></div>
+          </div>
+          <div
+            class="absolute -bottom-6 -right-6 rounded-xl px-4 py-2 bg-teal-600 text-white text-sm shadow-float animate-floaty"
+          >
+            Now open to roles
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- About -->
-    <section id="about" class="py-16 px-6 md:px-12">
-      <h2 class="text-3xl font-bold mb-6">About Me</h2>
-      <img
-        src="assets/profile.png"
-        alt="Profile photo"
-        class="w-32 h-32 rounded-full mx-auto mb-6"
-      />
-      <p class="max-w-3xl leading-relaxed">
-        ML engineer with 3+ years building end-to-end AI solutions—from data
-        ingestion and model training to production deployment. Experienced
-        across ML research, infrastructure, and backend development with a
-        strong focus on LLM agents, semantic retrieval, and modular reasoning. I
-        enjoy translating complex problems into scalable, real-world
-        applications.
-      </p>
+    <!-- ===== About ===== -->
+    <section id="about" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+      <div class="grid md:grid-cols-[1fr,2fr] gap-8 items-start">
+        <div data-aos="fade-right">
+          <img
+            src="./assets/profile.png"
+            alt="Profile"
+            class="rounded-2xl shadow-float w-full max-w-xs"
+          />
+        </div>
+        <div data-aos="fade-left">
+          <h2 class="font-display text-3xl md:text-4xl font-bold">About me</h2>
+          <p class="mt-4 text-gray-600 dark:text-gray-300">
+            I’m Krishna Vamsi Dhulipalla, an ML engineer focused on agentic
+            systems and LLM applications. I enjoy turning ambiguous problems
+            into shippable features. Recently, I’ve been building multi-agent
+            chat flows, Android UI agents, and a community hazard map powered by
+            realtime data.
+          </p>
+          <dl class="mt-6 grid sm:grid-cols-2 gap-4 text-sm">
+            <div
+              class="rounded-xl border border-gray-200 dark:border-gray-700 p-4"
+            >
+              <dt class="text-gray-500">Currently</dt>
+              <dd class="font-medium">ML Engineer @ Cloud Systems</dd>
+            </div>
+            <div
+              class="rounded-xl border border-gray-200 dark:border-gray-700 p-4"
+            >
+              <dt class="text-gray-500">Looking for</dt>
+              <dd class="font-medium">AI/ML Engineer · Data Scientist</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
     </section>
 
-    <!-- Skills -->
+    <!-- ===== Featured Projects ===== -->
+    <section id="projects" class="bg-gray-50 dark:bg-gray-800/40">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
+        <div class="flex items-end justify-between gap-6">
+          <h2 class="font-display text-3xl md:text-4xl font-bold">
+            Featured projects
+          </h2>
+          <div class="flex gap-2 text-sm">
+            <button
+              data-filter="all"
+              class="filter-btn active rounded-full border px-3 py-1.5"
+            >
+              All
+            </button>
+            <button
+              data-filter="agents"
+              class="filter-btn rounded-full border px-3 py-1.5"
+            >
+              Agents
+            </button>
+            <button
+              data-filter="data"
+              class="filter-btn rounded-full border px-3 py-1.5"
+            >
+              Data
+            </button>
+            <button
+              data-filter="research"
+              class="filter-btn rounded-full border px-3 py-1.5"
+            >
+              Research
+            </button>
+          </div>
+        </div>
+
+        <div class="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <!-- Card 1 -->
+          <article
+            class="project-card group border border-gray-200 dark:border-gray-700 rounded-2xl overflow-hidden hover:shadow-float transition"
+            data-tags="agents"
+          >
+            <a
+              href="https://github.com/krishna-dhulipalla/LangGraph_ChatBot"
+              target="_blank"
+              class="block"
+            >
+              <div
+                class="relative h-44 bg-gradient-to-tr from-gray-900 to-gray-700"
+              >
+                <img
+                  src="./assets/talking.jpg"
+                  alt="LangGraph ChatBot"
+                  class="absolute inset-0 h-full w-full object-cover opacity-80 group-hover:opacity-100 transition"
+                />
+              </div>
+              <div class="p-5">
+                <h3 class="font-semibold text-xl">LangGraph ChatBot</h3>
+                <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">
+                  Multi-agent orchestration with tool-use and role handoffs.
+                  Reusable flow patterns for reasoning.
+                </p>
+                <div class="mt-3 flex flex-wrap gap-2 text-[11px]">
+                  <span
+                    class="rounded-full bg-teal-600/10 text-teal-700 dark:text-teal-300 px-2 py-1"
+                    >LangGraph</span
+                  >
+                  <span
+                    class="rounded-full bg-purple-600/10 text-purple-700 dark:text-purple-300 px-2 py-1"
+                    >LLM</span
+                  >
+                  <span
+                    class="rounded-full bg-gray-600/10 text-gray-700 dark:text-gray-300 px-2 py-1"
+                    >FastAPI</span
+                  >
+                </div>
+              </div>
+            </a>
+          </article>
+
+          <!-- Card 2 -->
+          <article
+            class="project-card group border border-gray-200 dark:border-gray-700 rounded-2xl overflow-hidden hover:shadow-float transition"
+            data-tags="agents"
+          >
+            <a
+              href="https://github.com/Krishna-dhulipalla"
+              target="_blank"
+              class="block"
+            >
+              <div
+                class="relative h-44 bg-gradient-to-tr from-gray-900 to-gray-700"
+              >
+                <img
+                  src="./assets/android_agent.jpg"
+                  alt="Android Agent"
+                  class="absolute inset-0 h-full w-full object-cover opacity-80 group-hover:opacity-100 transition"
+                />
+              </div>
+              <div class="p-5">
+                <h3 class="font-semibold text-xl">LLM‑based Android Agent</h3>
+                <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">
+                  Automates mobile UI tasks with >80% step accuracy on benchmark
+                  flows.
+                </p>
+                <div class="mt-3 flex flex-wrap gap-2 text-[11px]">
+                  <span
+                    class="rounded-full bg-teal-600/10 text-teal-700 dark:text-teal-300 px-2 py-1"
+                    >Vision</span
+                  >
+                  <span
+                    class="rounded-full bg-purple-600/10 text-purple-700 dark:text-purple-300 px-2 py-1"
+                    >Agents</span
+                  >
+                </div>
+              </div>
+            </a>
+          </article>
+
+          <!-- Card 3 -->
+          <article
+            class="project-card group border border-gray-200 dark:border-gray-700 rounded-2xl overflow-hidden hover:shadow-float transition"
+            data-tags="data agents"
+          >
+            <a
+              href="https://huggingface.co/spaces/krishna-dhulipalla/pulsemap"
+              target="_blank"
+              class="block"
+            >
+              <div
+                class="relative h-44 bg-gradient-to-tr from-gray-900 to-gray-700"
+              >
+                <img
+                  src="./assets/intro.png"
+                  alt="PulseMap"
+                  class="absolute inset-0 h-full w-full object-cover opacity-80 group-hover:opacity-100 transition"
+                />
+              </div>
+              <div class="p-5">
+                <h3 class="font-semibold text-xl">PulseMap Agent</h3>
+                <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">
+                  Realtime community & disaster intelligence on a live map.
+                  Add/fetch location reports with an agent.
+                </p>
+                <div class="mt-3 flex flex-wrap gap-2 text-[11px]">
+                  <span
+                    class="rounded-full bg-teal-600/10 text-teal-700 dark:text-teal-300 px-2 py-1"
+                    >LangChain</span
+                  >
+                  <span
+                    class="rounded-full bg-purple-600/10 text-purple-700 dark:text-purple-300 px-2 py-1"
+                    >Maps</span
+                  >
+                  <span
+                    class="rounded-full bg-gray-600/10 text-gray-700 dark:text-gray-300 px-2 py-1"
+                    >HF Spaces</span
+                  >
+                </div>
+              </div>
+            </a>
+          </article>
+
+          <!-- Card 4 -->
+          <article
+            class="project-card group border border-gray-200 dark:border-gray-700 rounded-2xl overflow-hidden hover:shadow-float transition"
+            data-tags="research"
+          >
+            <a href="#" class="block">
+              <div
+                class="relative h-44 bg-gradient-to-tr from-gray-900 to-gray-700"
+              >
+                <img
+                  src="./assets/proxy.png"
+                  alt="Genomics"
+                  class="absolute inset-0 h-full w-full object-cover opacity-80 group-hover:opacity-100 transition"
+                />
+              </div>
+              <div class="p-5">
+                <h3 class="font-semibold text-xl">Proxy TuNER</h3>
+                <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">
+                  Improve NER models with lower compute.
+                </p>
+                <div class="mt-3 flex flex-wrap gap-2 text-[11px]">
+                  <span
+                    class="rounded-full bg-teal-600/10 text-teal-700 dark:text-teal-300 px-2 py-1"
+                    >DNABERT</span
+                  >
+                  <span
+                    class="rounded-full bg-purple-600/10 text-purple-700 dark:text-purple-300 px-2 py-1"
+                    >HyenaDNA</span
+                  >
+                </div>
+              </div>
+            </a>
+          </article>
+
+          <!-- Card 5 -->
+          <article
+            class="project-card group border border-gray-200 dark:border-gray-700 rounded-2xl overflow-hidden hover:shadow-float transition"
+            data-tags="data"
+          >
+            <a href="#" class="block">
+              <div
+                class="relative h-44 bg-gradient-to-tr from-gray-900 to-gray-700"
+              >
+                <img
+                  src="./assets/DNA_clasifier.jpg"
+                  alt="Pipelines"
+                  class="absolute inset-0 h-full w-full object-cover opacity-80 group-hover:opacity-100 transition"
+                />
+              </div>
+              <div class="p-5">
+                <h3 class="font-semibold text-xl">DNA Sequence Classifier</h3>
+                <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">
+                  Kafka/Spark streams, robust ETL, and Snowflake schemas for
+                  low‑latency analytics.
+                </p>
+                <div class="mt-3 flex flex-wrap gap-2 text-[11px]">
+                  <span
+                    class="rounded-full bg-teal-600/10 text-teal-700 dark:text-teal-300 px-2 py-1"
+                    >Kafka</span
+                  >
+                  <span
+                    class="rounded-full bg-gray-600/10 text-gray-700 dark:text-gray-300 px-2 py-1"
+                    >Spark</span
+                  >
+                </div>
+              </div>
+            </a>
+          </article>
+
+          <!-- Card 6 -->
+          <article
+            class="project-card group border border-gray-200 dark:border-gray-700 rounded-2xl overflow-hidden hover:shadow-float transition"
+            data-tags="agents"
+          >
+            <a href="#" class="block">
+              <div
+                class="relative h-44 bg-gradient-to-tr from-gray-900 to-gray-700"
+              >
+                <img
+                  src="./assets/intellimeet.png"
+                  alt="RAG"
+                  class="absolute inset-0 h-full w-full object-cover opacity-80 group-hover:opacity-100 transition"
+                />
+              </div>
+              <div class="p-5">
+                <h3 class="font-semibold text-xl">IntelliMeet</h3>
+                <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">
+                  BM25 + FAISS hybrid retrieval with tool use, streaming, and
+                  memory updates.
+                </p>
+                <div class="mt-3 flex flex-wrap gap-2 text-[11px]">
+                  <span
+                    class="rounded-full bg-teal-600/10 text-teal-700 dark:text-teal-300 px-2 py-1"
+                    >RAG</span
+                  >
+                  <span
+                    class="rounded-full bg-gray-600/10 text-gray-700 dark:text-gray-300 px-2 py-1"
+                    >FAISS</span
+                  >
+                </div>
+              </div>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Background / Journey ===== -->
     <section
-      id="skills"
-      class="py-16 px-6 md:px-12 bg-gray-50 dark:bg-gray-800"
+      id="background"
+      class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-20"
     >
-      <h2 class="text-3xl font-bold mb-6 text-center">Skills & Tools</h2>
+      <h2 class="font-display text-3xl md:text-4xl font-bold text-center">
+        Background
+      </h2>
+      <p class="mt-3 text-center text-gray-600 dark:text-gray-300">
+        My journey blends hands-on machine learning, data engineering, and
+        product thinking.
+      </p>
+
+      <div class="journey">
+        <!-- center line -->
+        <span class="journey-spine" aria-hidden="true"></span>
+
+        <ol class="journey-list">
+          <!-- 1. Experience -->
+          <li class="j-card exp">
+            <div class="j-node" aria-hidden="true"></div>
+            <div class="j-body">
+              <div class="j-top">
+                <span class="j-date">Jul 2025 – Present</span>
+                <span class="j-tag j-exp">Experience</span>
+              </div>
+              <h3 class="j-title">ML Engineer — Cloud Systems LLC</h3>
+              <p class="j-sub">
+                Pipelines, agentic features, real-time analytics.
+              </p>
+            </div>
+          </li>
+
+          <!-- 2. Experience -->
+          <li class="j-card exp">
+            <div class="j-node" aria-hidden="true"></div>
+            <div class="j-body">
+              <div class="j-top">
+                <span class="j-date">Sep 2024 – Jul 2025</span>
+                <span class="j-tag j-exp">Experience</span>
+              </div>
+              <h3 class="j-title">ML Research Engineer — Virginia Tech</h3>
+              <p class="j-sub">LLM/RAG systems, automation, evaluation.</p>
+            </div>
+          </li>
+
+          <!-- 3. Education -->
+          <li class="j-card edu">
+            <div class="j-node" aria-hidden="true"></div>
+            <div class="j-body">
+              <div class="j-top">
+                <span class="j-date">Jan 2023 – Dec 2024</span>
+                <span class="j-tag j-edu">Education</span>
+              </div>
+              <h3 class="j-title">MEng, Computer Science — Virginia Tech</h3>
+              <p class="j-sub">ML/DL, data engineering, AI systems.</p>
+            </div>
+          </li>
+
+          <!-- 4. Experience -->
+          <li class="j-card exp">
+            <div class="j-node" aria-hidden="true"></div>
+            <div class="j-body">
+              <div class="j-top">
+                <span class="j-date">Jun 2023 – May 2024</span>
+                <span class="j-tag j-exp">Experience</span>
+              </div>
+              <h3 class="j-title">Research Assistant — Virginia Tech</h3>
+              <p class="j-sub">
+                Genomics ETL, retraining pipelines, evaluation.
+              </p>
+            </div>
+          </li>
+
+          <!-- 5. Education -->
+          <li class="j-card edu">
+            <div class="j-node" aria-hidden="true"></div>
+            <div class="j-body">
+              <div class="j-top">
+                <span class="j-date">Aug 2018 – May 2022</span>
+                <span class="j-tag j-edu">Education</span>
+              </div>
+              <h3 class="j-title">
+                B.Tech, Computer Science — Vel Tech University
+              </h3>
+              <p class="j-sub">CS fundamentals, CV/ML projects.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===== Skills ===== -->
+    <section id="skills" class="bg-gray-50 dark:bg-gray-800/40">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
+        <h2 class="font-display text-3xl md:text-4xl font-bold">
+          Skills & tools
+        </h2>
+        <div class="mt-8 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+          <div
+            class="rounded-xl border border-gray-200 dark:border-gray-700 p-4 text-center"
+          >
+            LangGraph
+          </div>
+          <div
+            class="rounded-xl border border-gray-200 dark:border-gray-700 p-4 text-center"
+          >
+            LangChain
+          </div>
+          <div
+            class="rounded-xl border border-gray-200 dark:border-gray-700 p-4 text-center"
+          >
+            AutoGen
+          </div>
+          <div
+            class="rounded-xl border border-gray-200 dark:border-gray-700 p-4 text-center"
+          >
+            RAG
+          </div>
+          <div
+            class="rounded-xl border border-gray-200 dark:border-gray-700 p-4 text-center"
+          >
+            FastAPI
+          </div>
+          <div
+            class="rounded-xl border border-gray-200 dark:border-gray-700 p-4 text-center"
+          >
+            Python
+          </div>
+          <div
+            class="rounded-xl border border-gray-200 dark:border-gray-700 p-4 text-center"
+          >
+            Kafka
+          </div>
+          <div
+            class="rounded-xl border border-gray-200 dark:border-gray-700 p-4 text-center"
+          >
+            Spark
+          </div>
+          <div
+            class="rounded-xl border border-gray-200 dark:border-gray-700 p-4 text-center"
+          >
+            Docker
+          </div>
+          <div
+            class="rounded-xl border border-gray-200 dark:border-gray-700 p-4 text-center"
+          >
+            GCP/AWS
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Contact ===== -->
+    <section id="contact" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
+      <div class="grid md:grid-cols-2 gap-10">
+        <div>
+          <h2 class="font-display text-3xl md:text-4xl font-bold">
+            Let’s talk
+          </h2>
+          <p class="mt-3 text-gray-600 dark:text-gray-300">
+            Open to roles and collaborations. The fastest way to reach me is
+            email or LinkedIn.
+          </p>
+          <div class="mt-6 flex flex-col gap-2 text-sm">
+            <a href="mailto:krishna@example.com" class="hover:text-teal-600"
+              >krishna@example.com</a
+            >
+            <a
+              href="https://www.linkedin.com/in/krishnavamsidhulipalla"
+              class="hover:text-teal-600"
+              target="_blank"
+              >LinkedIn</a
+            >
+          </div>
+        </div>
+        <form
+          id="nn-contact-form"
+          action="https://formspree.io/f/mzzpwpkj"
+          method="POST"
+          class="rounded-2xl border border-gray-200 dark:border-gray-700 p-6 grid gap-4 bg-white/80 dark:bg-gray-900/50 glass"
+          onsubmit="event.preventDefault(); showToast('Message sent — I will reply soon.'); this.reset();"
+        >
+          <div class="grid gap-1">
+            <label for="name" class="text-sm text-gray-500">Name</label>
+            <input
+              id="name"
+              type="text"
+              class="rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 px-3 py-2"
+              required
+            />
+          </div>
+          <div class="grid gap-1">
+            <label for="email" class="text-sm text-gray-500">Email</label>
+            <input
+              id="email"
+              type="email"
+              class="rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 px-3 py-2"
+              required
+            />
+          </div>
+          <div class="grid gap-1">
+            <label for="msg" class="text-sm text-gray-500">Message</label>
+            <textarea
+              id="msg"
+              rows="4"
+              class="rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 px-3 py-2"
+              placeholder="Tell me about your project…"
+            ></textarea>
+          </div>
+          <button
+            class="mt-2 inline-flex items-center rounded-xl bg-teal-600 px-4 py-2.5 text-white shadow-float hover:bg-teal-700"
+          >
+            Send
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- ===== Footer ===== -->
+    <footer class="border-t border-black/5 dark:border-white/10">
       <div
-        class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 max-w-4xl mx-auto"
+        class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 text-sm flex flex-col md:flex-row items-center justify-between gap-3"
       >
-        <div class="bg-white dark:bg-gray-700 rounded shadow p-4 text-center">
-          LangGraph
-        </div>
-        <div class="bg-white dark:bg-gray-700 rounded shadow p-4 text-center">
-          LangChain
-        </div>
-        <div class="bg-white dark:bg-gray-700 rounded shadow p-4 text-center">
-          AutoGen
-        </div>
-        <div class="bg-white dark:bg-gray-700 rounded shadow p-4 text-center">
-          CrewAI
-        </div>
-        <div class="bg-white dark:bg-gray-700 rounded shadow p-4 text-center">
-          LangSmith
-        </div>
-        <div class="bg-white dark:bg-gray-700 rounded shadow p-4 text-center">
-          RAG
-        </div>
-        <div class="bg-white dark:bg-gray-700 rounded shadow p-4 text-center">
-          Docker
-        </div>
-        <div class="bg-white dark:bg-gray-700 rounded shadow p-4 text-center">
-          FastAPI
-        </div>
-        <div class="bg-white dark:bg-gray-700 rounded shadow p-4 text-center">
-          Python
-        </div>
-        <div class="bg-white dark:bg-gray-700 rounded shadow p-4 text-center">
-          SQL
-        </div>
-        <div class="bg-white dark:bg-gray-700 rounded shadow p-4 text-center">
-          PyTorch
-        </div>
-        <div class="bg-white dark:bg-gray-700 rounded shadow p-4 text-center">
-          TensorFlow
-        </div>
-        <div class="bg-white dark:bg-gray-700 rounded shadow p-4 text-center">
-          AWS
-        </div>
-        <div class="bg-white dark:bg-gray-700 rounded shadow p-4 text-center">
-          GCP
-        </div>
-        <div class="bg-white dark:bg-gray-700 rounded shadow p-4 text-center">
-          Kubernetes
-        </div>
-        <div class="bg-white dark:bg-gray-700 rounded shadow p-4 text-center">
-          Spark
-        </div>
-        <div class="bg-white dark:bg-gray-700 rounded shadow p-4 text-center">
-          Kafka
+        <p>© <span id="year"></span> Krishna Vamsi Dhulipalla</p>
+        <div class="flex items-center gap-4">
+          <a href="#top" class="hover:text-teal-600">Back to top ↑</a>
         </div>
       </div>
-    </section>
-
-    <!-- Experience -->
-    <section id="experience" class="py-16 px-6 md:px-12">
-      <h2 class="text-3xl font-bold mb-6">Experience</h2>
-      <div class="space-y-8">
-        <div class="border-l-2 border-teal-600 pl-4">
-          <h3 class="text-xl font-semibold">
-            ML Research Engineer – Cloud Systems LLC
-          </h3>
-          <p class="text-sm text-gray-500 dark:text-gray-400">
-            Jul 2024 – Present
-          </p>
-          <p>
-            Developed high-volume SQL queries and streaming pipelines,
-            automating ETL across cloud datasets to deliver reliable analytics
-            in near real time.
-          </p>
-        </div>
-        <div class="border-l-2 border-teal-600 pl-4">
-          <h3 class="text-xl font-semibold">
-            ML Research Engineer – Virginia Tech
-          </h3>
-          <p class="text-sm text-gray-500 dark:text-gray-400">
-            Sep 2024 – Jul 2024
-          </p>
-          <p>
-            Fine-tuned DNABERT and HyenaDNA models with LoRA and soft prompting,
-            reaching 94%+ accuracy while cutting iteration cycles by 40%.
-          </p>
-        </div>
-        <div class="border-l-2 border-teal-600 pl-4">
-          <h3 class="text-xl font-semibold">
-            Research Assistant – Virginia Tech
-          </h3>
-          <p class="text-sm text-gray-500 dark:text-gray-400">
-            Jun 2023 – May 2024
-          </p>
-          <p>
-            Orchestrated genomic ETL pipelines with Airflow and Glue, automating
-            model retraining to boost data availability 50% and cut manual
-            effort 40%.
-          </p>
-        </div>
-        <div class="border-l-2 border-teal-600 pl-4">
-          <h3 class="text-xl font-semibold">
-            Agentic Engineer – UJR Technologies
-          </h3>
-          <p class="text-sm text-gray-500 dark:text-gray-400">
-            Jul 2021 – Dec 2022
-          </p>
-          <p>
-            Migrated batch jobs to Kafka/Spark streaming and redesigned
-            Snowflake schemas, cutting query latency 40% and accelerating
-            deployments by 25%.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects -->
-    <section id="projects" class="py-16 px-6 md:px-12 bg-gray-50 dark:bg-gray-800">
-      <div class="flex flex-col items-center text-center mb-12">
-        <h2 class="text-4xl font-bold">Projects</h2>
-      </div>
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-        <div class="bg-white dark:bg-gray-700 rounded shadow p-6 flex flex-col">
-          <img src="assets/talking.jpg" alt="LangGraph ChatBot" class="w-full h-48 object-cover rounded mb-4" />
-          <h3 class="text-2xl font-semibold mb-2">LangGraph ChatBot</h3>
-          <ul class="list-disc pl-5 text-sm flex-grow space-y-1">
-            <li><strong>Context:</strong> Explore multi-agent coordination for conversational AI.</li>
-            <li><strong>Actions:</strong> Built a graph-based chatbot orchestrating LLM agents with LangGraph for tool use and role handoffs.</li>
-            <li><strong>Impact:</strong> Demonstrated a scalable pattern for multi-agent dialogues and reasoning.</li>
-          </ul>
-          <a href="https://github.com/krishna-dhulipalla/LangGraph_ChatBot" class="mt-4 text-teal-600 dark:text-teal-400 underline">GitHub</a>
-        </div>
-        <div class="bg-white dark:bg-gray-700 rounded shadow p-6 flex flex-col">
-          <img src="assets/android_agent.jpg" alt="Android Agent" class="w-full h-48 object-cover rounded mb-4" />
-          <h3 class="text-2xl font-semibold mb-2">LLM-Based Android Agent</h3>
-          <ul class="list-disc pl-5 text-sm flex-grow space-y-1">
-            <li><strong>Context:</strong> Automate mobile UI tasks with high accuracy.</li>
-            <li><strong>Actions:</strong> Crafted a custom LLM agent achieving over 80% step accuracy on Android interfaces.</li>
-            <li><strong>Impact:</strong> Enabled reliable mobile automation for complex workflows.</li>
-          </ul>
-          <a href="https://github.com/Krishna-dhulipalla" class="mt-4 text-teal-600 dark:text-teal-400 underline">GitHub</a>
-        </div>
-        <div class="bg-white dark:bg-gray-700 rounded shadow p-6 flex flex-col">
-          <img src="assets/proxy.png" alt="Proxy TuNER" class="w-full h-48 object-cover rounded mb-4" />
-          <h3 class="text-2xl font-semibold mb-2">Proxy TuNER</h3>
-          <ul class="list-disc pl-5 text-sm flex-grow space-y-1">
-            <li><strong>Context:</strong> Improve NER models with lower compute.</li>
-            <li><strong>Actions:</strong> Proxy-tuned BERT models cutting compute by 70% while boosting F1 by 8%.</li>
-            <li><strong>Impact:</strong> Delivered accurate entity recognition on resource-constrained setups.</li>
-          </ul>
-          <a href="https://github.com/Krishna-dhulipalla" class="mt-4 text-teal-600 dark:text-teal-400 underline">GitHub</a>
-        </div>
-        <div class="bg-white dark:bg-gray-700 rounded shadow p-6 flex flex-col">
-          <img src="assets/intro.png" alt="PulseMap Agent" class="w-full h-48 object-cover rounded mb-4" />
-          <h3 class="text-2xl font-semibold mb-2">PulseMap Agent</h3>
-          <ul class="list-disc pl-5 text-sm flex-grow space-y-1">
-            <li><strong>Context:</strong> Community safety data scattered across feeds.</li>
-            <li><strong>Actions:</strong> Fused USGS, NWS, EONET and FIRMS data with AI-classified community reports.</li>
-            <li><strong>Impact:</strong> Unified alerts into one map, improving local incident visibility.</li>
-          </ul>
-          <a href="https://github.com/krishna-dhulipalla/PulseMap-Agent" class="mt-4 text-teal-600 dark:text-teal-400 underline">GitHub</a>
-        </div>
-        <div class="bg-white dark:bg-gray-700 rounded shadow p-6 flex flex-col">
-          <img src="assets/DNA_clasifier.jpg" alt="DNA Sequence Classifier" class="w-full h-48 object-cover rounded mb-4" />
-          <h3 class="text-2xl font-semibold mb-2">DNA Sequence Classifier</h3>
-          <ul class="list-disc pl-5 text-sm flex-grow space-y-1">
-            <li><strong>Context:</strong> Classify genomic sequences accurately with limited compute.</li>
-            <li><strong>Actions:</strong> Fine-tuned DNABERT and HyenaDNA with LoRA and soft prompting; automated preprocessing for 1M+ sequences.</li>
-            <li><strong>Impact:</strong> Achieved 94%+ accuracy while cutting preprocessing runtime 40%.</li>
-          </ul>
-          <a href="https://github.com/Krishna-dhulipalla" class="mt-4 text-teal-600 dark:text-teal-400 underline">GitHub</a>
-        </div>
-        <div class="bg-white dark:bg-gray-700 rounded shadow p-6 flex flex-col">
-          <img src="assets/android_agent.jpg" alt="IntelliMeet" class="w-full h-48 object-cover rounded mb-4" />
-          <h3 class="text-2xl font-semibold mb-2">IntelliMeet</h3>
-          <ul class="list-disc pl-5 text-sm flex-grow space-y-1">
-            <li><strong>Context:</strong> Create a secure, decentralized video conferencing platform.</li>
-            <li><strong>Actions:</strong> Built federated, encrypted system with on-device RetinaFace attention tracking and Transformer-based speech-to-text.</li>
-            <li><strong>Impact:</strong> Delivered sub-200ms latency and boosted engagement 25%.</li>
-          </ul>
-          <a href="https://github.com/Krishna-dhulipalla" class="mt-4 text-teal-600 dark:text-teal-400 underline">GitHub</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="py-16 px-6 md:px-12 bg-gray-50 dark:bg-gray-800">
-      <div class="flex flex-col items-center text-center mb-8">
-        <h2 class="text-4xl font-bold">Get in Touch</h2>
-        <p class="text-gray-600 dark:text-gray-300">
-          Have a project or role focused on LLMs, data engineering, or intelligent agents? Let's connect and build something impactful.
-        </p>
-      </div>
-      <form id="nn-contact-form" action="https://formspree.io/f/mzzpwpkj" method="POST" class="max-w-xl mx-auto space-y-4">
-        <div>
-          <label for="name" class="block font-medium mb-1">Input Layer: Name</label>
-          <input type="text" id="name" name="name" placeholder="Your Name" autocomplete="name" class="w-full p-2 border rounded bg-gray-100 dark:bg-gray-800" />
-        </div>
-        <div>
-          <label for="email" class="block font-medium mb-1">Hidden Layer 1: Email</label>
-          <input type="email" id="email" name="email" placeholder="Your Email" autocomplete="email" class="w-full p-2 border rounded bg-gray-100 dark:bg-gray-800" />
-        </div>
-        <div>
-          <label for="message" class="block font-medium mb-1">Hidden Layer 2: Message</label>
-          <textarea id="message" name="message" placeholder="Your Message" class="w-full p-2 border rounded bg-gray-100 dark:bg-gray-800"></textarea>
-        </div>
-        <div id="loss-message" class="loss-message hidden text-red-500 text-sm"></div>
-        <button type="submit" class="bg-teal-600 hover:bg-teal-700 text-white px-6 py-3 rounded shadow">Submit</button>
-      </form>
-    </section>
-
-    <footer class="py-6 text-center text-sm bg-white dark:bg-gray-900">
-      © <span id="year"></span> Krishna Vamsi Dhulipalla ·
-      <a
-        href="https://github.com/krishna-dhulipalla"
-        class="text-teal-600 dark:text-teal-400 underline"
-        target="_blank"
-        rel="noopener"
-        >GitHub</a
+      <div
+        id="chatbot-lottie-btn"
+        class="fixed bottom-4 right-4 flex flex-col items-center cursor-pointer"
+        onclick="window.open('https://krishnadhulipalla-chatbot.hf.space/', '_blank')"
       >
-      <span class="mx-1">|</span>
-      <a
-        href="https://www.linkedin.com/in/krishnavamsidhulipalla/"
-        class="text-teal-600 dark:text-teal-400 underline"
-        target="_blank"
-        rel="noopener"
-        >LinkedIn</a
-      >
+        <dotlottie-player
+          src="https://lottie.host/12b60265-5eef-4309-bcce-98abdae08afb/9FFDxA63EF.lottie"
+          background="transparent"
+          speed="1"
+          style="width: 50px; height: 50px"
+          loop
+          autoplay
+        ></dotlottie-player>
+        <div
+          id="chatbot-lottie-btn-text"
+          class="text-xs mt-2 text-gray-600 dark:text-gray-300 bg-white dark:bg-gray-800 px-2 py-1 rounded-full border border-teal-600 shadow"
+        >
+          Stuck scrolling? Chat with me instead!
+        </div>
+      </div>
     </footer>
+
+    <!-- ===== Resume Modal ===== -->
     <div
-      id="chatbot-lottie-btn"
-      class="fixed bottom-4 right-4 flex flex-col items-center cursor-pointer"
-      onclick="window.open('https://krishnadhulipalla-chatbot.hf.space/', '_blank')"
+      id="resumeModal"
+      class="fixed inset-0 hidden items-center justify-center bg-black/50 p-4 z-50"
     >
-      <dotlottie-player
-        src="https://lottie.host/12b60265-5eef-4309-bcce-98abdae08afb/9FFDxA63EF.lottie"
-        background="transparent"
-        speed="1"
-        style="width: 50px; height: 50px"
-        loop
-        autoplay
-      ></dotlottie-player>
       <div
-        id="chatbot-lottie-btn-text"
-        class="text-xs mt-2 text-gray-600 dark:text-gray-300 bg-white dark:bg-gray-800 px-2 py-1 rounded-full border border-teal-600 shadow"
+        class="w-full max-w-3xl rounded-2xl bg-white dark:bg-gray-900 overflow-hidden shadow-2xl"
       >
-        Stuck scrolling? Chat with me instead!
+        <div
+          class="flex items-center justify-between px-5 py-3 border-b border-gray-200 dark:border-gray-800"
+        >
+          <h3 class="font-semibold">Resume</h3>
+          <button id="closeResume" class="text-xl leading-none">×</button>
+        </div>
+        <div class="p-5">
+          <iframe
+            src="https://krishna-dhulipalla.github.io/assets/resume.pdf"
+            class="w-full h-[70vh] rounded-md"
+            title="Resume PDF"
+          ></iframe>
+        </div>
       </div>
     </div>
 
+    <!-- ===== Toast ===== -->
+    <div
+      id="toast"
+      class="fixed bottom-6 left-1/2 -translate-x-1/2 hidden rounded-xl bg-gray-900 text-white text-sm px-4 py-2 shadow-float"
+    >
+      Message sent — I will reply soon.
+    </div>
+
     <script>
+      // AOS
+      window.addEventListener("load", () =>
+        AOS.init({ once: true, duration: 700, easing: "ease-out" })
+      );
+
+      // Mobile menu
+      const menuBtn = document.getElementById("menuBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
+      menuBtn?.addEventListener("click", () =>
+        mobileMenu.classList.toggle("hidden")
+      );
+
+      // Theme toggle (persist in localStorage)
+      const themeBtn = document.getElementById("theme-toggle");
+      const setTheme = (isDark) => {
+        const root = document.documentElement;
+        if (isDark) {
+          root.classList.add("dark");
+          localStorage.theme = "dark";
+        } else {
+          root.classList.remove("dark");
+          localStorage.theme = "light";
+        }
+      };
+      // init
+      setTheme(
+        localStorage.theme === "dark" ||
+          (!("theme" in localStorage) &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches)
+      );
+      themeBtn?.addEventListener("click", () =>
+        setTheme(!document.documentElement.classList.contains("dark"))
+      );
+
+      // Year
       document.getElementById("year").textContent = new Date().getFullYear();
+
+      // Resume modal
+      const resumeLinks = [
+        document.getElementById("resume-link"),
+        document.getElementById("resume-link-m"),
+      ].filter(Boolean);
+      const resumeModal = document.getElementById("resumeModal");
+      const closeResume = document.getElementById("closeResume");
+      resumeLinks.forEach((el) =>
+        el.addEventListener("click", (e) => {
+          e.preventDefault();
+          resumeModal.classList.remove("hidden");
+          resumeModal.classList.add("flex");
+        })
+      );
+      closeResume?.addEventListener("click", () => {
+        resumeModal.classList.add("hidden");
+        resumeModal.classList.remove("flex");
+      });
+      resumeModal.addEventListener("click", (e) => {
+        if (e.target === resumeModal) closeResume.click();
+      });
+
+      // Project filters
+      const filterBtns = document.querySelectorAll(".filter-btn");
+      const cards = document.querySelectorAll(".project-card");
+      filterBtns.forEach((btn) =>
+        btn.addEventListener("click", () => {
+          filterBtns.forEach((b) =>
+            b.classList.remove("active", "bg-teal-50", "dark:bg-gray-800")
+          );
+          btn.classList.add("active", "bg-teal-50", "dark:bg-gray-800");
+          const tag = btn.dataset.filter;
+          cards.forEach((card) => {
+            const show = tag === "all" || card.dataset.tags.includes(tag);
+            card.style.display = show ? "block" : "none";
+          });
+        })
+      );
+
+      // Toast helper
+      function showToast(msg) {
+        const t = document.getElementById("toast");
+        t.textContent = msg;
+        t.classList.remove("hidden");
+        setTimeout(() => t.classList.add("hidden"), 2400);
+      }
+      window.showToast = showToast;
+    </script>
+    <script>
+      // Fallback if the primary Lottie fails to load (e.g., 403)
+      const hero = document.getElementById("heroAnim");
+      const fb = document.getElementById("heroAnimFallback");
+      hero?.addEventListener("error", () => {
+        try {
+          // Attempt a remote fallback animation
+          hero.load(
+            "https://assets10.lottiefiles.com/packages/lf20_q5pk6p1k.json"
+          );
+        } catch (e) {
+          /* noop */
+        } finally {
+          fb?.classList.remove("hidden");
+        }
+      });
     </script>
   </body>
 </html>
