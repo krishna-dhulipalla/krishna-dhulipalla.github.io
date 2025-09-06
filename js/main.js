@@ -152,3 +152,45 @@ filterWrap?.addEventListener("click", (e) => {
     card.style.display = key === "all" || cat === key ? "" : "none";
   });
 });
+
+// Animate ring meters on enter viewport
+const meters = document.querySelectorAll(".ring-meter");
+if (meters.length) {
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          const el = e.target;
+          const target =
+            parseFloat(getComputedStyle(el).getPropertyValue("--val")) || 0;
+          let cur = 0;
+          const step = () => {
+            cur += Math.max(1, Math.round(target / 24)); // ~24 frames
+            if (cur >= target) cur = target;
+            el.style.setProperty("--val", cur);
+            el.querySelector("span").textContent = `${cur}%`;
+            if (cur < target) requestAnimationFrame(step);
+          };
+          requestAnimationFrame(step);
+          io.unobserve(el);
+        }
+      });
+    },
+    { threshold: 0.4 }
+  );
+  meters.forEach((m) => io.observe(m));
+}
+
+// Smooth scroll for proof links
+document.querySelectorAll('a[href^="#project-"]').forEach((a) => {
+  a.addEventListener("click", (e) => {
+    const id = a.getAttribute("href").slice(1);
+    const target = document.getElementById(id);
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: "smooth", block: "center" });
+      target.classList.add("ring-highlight");
+      setTimeout(() => target.classList.remove("ring-highlight"), 1200);
+    }
+  });
+});

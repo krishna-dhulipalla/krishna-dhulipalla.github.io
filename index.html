@@ -342,6 +342,7 @@
       <div class="grid gap-6 md:grid-cols-2" id="projGrid">
         <!-- 1) LangGraph ChatBot -->
         <article
+          id="project-profile-rag"
           data-cat="agents"
           class="proj-card group relative rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden bg-white/90 dark:bg-slate-900/80 backdrop-blur transition shadow-sm hover:shadow-2xl hover:-translate-y-1.5"
         >
@@ -411,6 +412,7 @@
 
         <!-- 2) LLM-Based Android Agent (new format) -->
         <article
+          id="project-android-agent"
           data-cat="agents"
           class="proj-card group relative rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden bg-white/90 dark:bg-slate-900/80 backdrop-blur transition shadow-sm hover:shadow-2xl hover:-translate-y-1.5"
         >
@@ -478,6 +480,7 @@
 
         <!-- 3) Proxy TuNER (new format) -->
         <article
+          id="project-proxytuner"
           data-cat="research"
           class="proj-card group relative rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden bg-white/90 dark:bg-slate-900/80 backdrop-blur transition shadow-sm hover:shadow-2xl hover:-translate-y-1.5"
         >
@@ -545,6 +548,7 @@
 
         <!-- 4) IntelliMeet (new format) -->
         <article
+          id="project-intellimeet"
           data-cat="mlops"
           class="proj-card group relative rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden bg-white/90 dark:bg-slate-900/80 backdrop-blur transition shadow sm hover:shadow-2xl hover:-translate-y-1.5"
         >
@@ -612,6 +616,7 @@
 
         <!-- 5) DNA Sequence Classifier (new format) -->
         <article
+          id="project-genomics-pipeline"
           data-cat="research"
           class="proj-card group relative rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden bg-white/90 dark:bg-slate-900/80 backdrop-blur transition shadow-sm hover:shadow-2xl hover:-translate-y-1.5"
         >
@@ -680,6 +685,7 @@
 
         <!-- 6) PulseMap — Community & Disaster Intelligence (new format) -->
         <article
+          id="project-pulsemap"
           data-cat="mlops"
           class="proj-card group relative rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden bg-white/90 dark:bg-slate-900/80 backdrop-blur transition shadow-sm hover:shadow-2xl hover:-translate-y-1.5"
         >
@@ -706,22 +712,22 @@
               <li
                 class="chip bg-orange-100 text-orange-700 dark:bg-orange-900 dark:text-orange-200"
               >
-                USGS
+                LangGraph
               </li>
               <li
                 class="chip bg-emerald-100 text-emerald-700 dark:bg-emerald-900 dark:text-emerald-200"
               >
-                NWS
+                Python
               </li>
               <li
                 class="chip bg-fuchsia-100 text-fuchsia-700 dark:bg-fuchsia-900 dark:text-fuchsia-200"
               >
-                EONET
+                SQL
               </li>
               <li
                 class="chip bg-cyan-100 text-cyan-700 dark:bg-cyan-900 dark:text-cyan-200"
               >
-                FIRMS
+                Docker
               </li>
               <li
                 class="chip bg-indigo-100 text-indigo-700 dark:bg-indigo-900 dark:text-indigo-200"
@@ -731,7 +737,7 @@
               <li
                 class="chip bg-rose-100 text-rose-700 dark:bg-rose-900 dark:text-rose-200"
               >
-                De-duplication
+                Data Fusion
               </li>
               <li
                 class="chip bg-lime-100 text-lime-700 dark:bg-lime-900 dark:text-lime-200"
@@ -765,7 +771,7 @@
 
     <!-- ===== Background / Journey ===== -->
     <section
-      id="background"
+      id="experience"
       class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-20"
     >
       <h2 class="font-display text-3xl md:text-4xl font-bold text-center">
@@ -900,64 +906,632 @@
     </section>
 
     <!-- ===== Skills ===== -->
-    <section id="skills" class="bg-white dark:bg-gray-800/40">
-      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
-        <h2 class="font-display text-3xl md:text-4xl font-bold">
-          Skills & tools
-        </h2>
-        <div class="mt-8 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+
+    <!-- Agents & LLMs card -->
+    <section
+      id="skills"
+      class="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-md"
+    >
+      <!-- Header -->
+      <div class="flex items-center justify-between mb-4">
+        <div class="flex items-center gap-3">
           <div
-            class="rounded-xl border border-gray-200 dark:border-gray-700 p-4 text-center"
+            class="grid place-items-center h-10 w-10 rounded-xl bg-violet-500/10"
           >
-            LangGraph
+            <!-- brain icon -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 text-violet-400"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+            >
+              <path
+                d="M7 7v10a4 4 0 0 1-4-4V9a4 4 0 0 1 4-4h3v2M17 7v10a4 4 0 0 0 4-4V9a4 4 0 0 0-4-4h-3v2M10 21a3 3 0 0 1-3-3M14 21a3 3 0 0 0 3-3"
+                stroke-width="1.5"
+              />
+            </svg>
           </div>
-          <div
-            class="rounded-xl border border-gray-200 dark:border-gray-700 p-4 text-center"
-          >
-            LangChain
-          </div>
-          <div
-            class="rounded-xl border border-gray-200 dark:border-gray-700 p-4 text-center"
-          >
-            AutoGen
-          </div>
-          <div
-            class="rounded-xl border border-gray-200 dark:border-gray-700 p-4 text-center"
-          >
-            RAG
-          </div>
-          <div
-            class="rounded-xl border border-gray-200 dark:border-gray-700 p-4 text-center"
-          >
-            FastAPI
-          </div>
-          <div
-            class="rounded-xl border border-gray-200 dark:border-gray-700 p-4 text-center"
-          >
-            Python
-          </div>
-          <div
-            class="rounded-xl border border-gray-200 dark:border-gray-700 p-4 text-center"
-          >
-            Kafka
-          </div>
-          <div
-            class="rounded-xl border border-gray-200 dark:border-gray-700 p-4 text-center"
-          >
-            Spark
-          </div>
-          <div
-            class="rounded-xl border border-gray-200 dark:border-gray-700 p-4 text-center"
-          >
-            Docker
-          </div>
-          <div
-            class="rounded-xl border border-gray-200 dark:border-gray-700 p-4 text-center"
-          >
-            GCP/AWS
+          <div>
+            <h3 class="text-lg font-semibold">Agents & LLMs</h3>
+            <p class="text-xs text-white/60">Snapshot • used weekly</p>
           </div>
         </div>
+
+        <!-- tiny “last used” tag -->
+        <span
+          class="text-[11px] rounded-full px-2 py-1 border border-white/10 bg-white/5"
+          >Last used: this week</span
+        >
       </div>
+
+      <!-- Rings + proof chips -->
+      <ul class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <!-- item -->
+        <li class="flex items-center gap-3">
+          <div class="ring-meter" style="--val: 95"><span>95%</span></div>
+          <div class="min-w-0">
+            <div class="font-medium leading-tight">LangGraph</div>
+            <a
+              href="#project-pulsemap"
+              class="text-xs underline underline-offset-2 opacity-80 hover:opacity-100"
+              >PulseMap · tool errors −28%</a
+            >
+          </div>
+        </li>
+
+        <li class="flex items-center gap-3">
+          <div class="ring-meter" style="--val: 90"><span>90%</span></div>
+          <div class="min-w-0">
+            <div class="font-medium leading-tight">LangChain</div>
+            <a
+              href="#project-pulsemap"
+              class="text-xs underline underline-offset-2 opacity-80 hover:opacity-100"
+              >RAG routing · prod</a
+            >
+          </div>
+        </li>
+
+        <li class="flex items-center gap-3">
+          <div class="ring-meter" style="--val: 88"><span>88%</span></div>
+          <div class="min-w-0">
+            <div class="font-medium leading-tight">Prompt Engineering</div>
+            <a
+              href="#project-android-agent"
+              class="text-xs underline underline-offset-2 opacity-80 hover:opacity-100"
+              >Android agent · +25% success</a
+            >
+          </div>
+        </li>
+
+        <li class="flex items-center gap-3">
+          <div class="ring-meter" style="--val: 85"><span>85%</span></div>
+          <div class="min-w-0">
+            <div class="font-medium leading-tight">FAISS / Hybrid RAG</div>
+            <a
+              href="#project-profile-rag"
+              class="text-xs underline underline-offset-2 opacity-80 hover:opacity-100"
+              >BM25 + reranker</a
+            >
+          </div>
+        </li>
+
+        <li class="flex items-center gap-3">
+          <div class="ring-meter" style="--val: 82"><span>82%</span></div>
+          <div class="min-w-0">
+            <div class="font-medium leading-tight">Evaluation & Tracing</div>
+            <a
+              href="#project-pulsemap"
+              class="text-xs underline underline-offset-2 opacity-80 hover:opacity-100"
+              >LangSmith · logs</a
+            >
+          </div>
+        </li>
+
+        <li class="flex items-center gap-3">
+          <div class="ring-meter" style="--val: 75"><span>75%</span></div>
+          <div class="min-w-0">
+            <div class="font-medium leading-tight">AutoGen / CrewAI</div>
+            <a
+              href="#project-lab-assistant"
+              class="text-xs underline underline-offset-2 opacity-80 hover:opacity-100"
+              >multi-agent workflows</a
+            >
+          </div>
+        </li>
+      </ul>
+    </section>
+    <!-- Data & MLOps -->
+    <section
+      id="skills-mlops"
+      class="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-md mt-6"
+    >
+      <div class="flex items-center justify-between mb-4">
+        <div class="flex items-center gap-3">
+          <div
+            class="grid place-items-center h-10 w-10 rounded-xl bg-emerald-500/10"
+          >
+            <!-- server-cog icon -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 text-emerald-400"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-width="1.5"
+                d="M4 6h16M4 12h16M4 18h7m8-1-1 1m1-1 1 1m-1-1v-2m0 2h2"
+              />
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold">Data & MLOps</h3>
+            <p class="text-xs text-white/60">
+              Pipelines • evaluation • observability
+            </p>
+          </div>
+        </div>
+        <span
+          class="text-[11px] rounded-full px-2 py-1 border border-white/10 bg-white/5"
+          >Last used: this week</span
+        >
+      </div>
+
+      <ul class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <li class="flex items-center gap-3">
+          <div class="ring-meter ring-emerald" style="--val: 90">
+            <span>90%</span>
+          </div>
+          <div>
+            <div class="font-medium leading-tight">Airflow & ETL</div>
+            <a
+              href="#project-genomics-pipeline"
+              class="text-xs underline underline-offset-2 opacity-80 hover:opacity-100"
+            >
+              VT genomics · −40% runtime
+            </a>
+          </div>
+        </li>
+
+        <li class="flex items-center gap-3">
+          <div class="ring-meter ring-emerald" style="--val: 85">
+            <span>85%</span>
+          </div>
+          <div>
+            <div class="font-medium leading-tight">
+              MLflow / Experimentation
+            </div>
+            <a
+              href="#project-genomics-pipeline"
+              class="text-xs underline underline-offset-2 opacity-80 hover:opacity-100"
+            >
+              tracked fine-tunes & metrics
+            </a>
+          </div>
+        </li>
+
+        <li class="flex items-center gap-3">
+          <div class="ring-meter ring-emerald" style="--val: 84">
+            <span>84%</span>
+          </div>
+          <div>
+            <div class="font-medium leading-tight">RAG Evaluation</div>
+            <a
+              href="#project-profile-rag"
+              class="text-xs underline underline-offset-2 opacity-80 hover:opacity-100"
+            >
+              FAISS+BM25+reranker
+            </a>
+          </div>
+        </li>
+
+        <li class="flex items-center gap-3">
+          <div class="ring-meter ring-emerald" style="--val: 82">
+            <span>82%</span>
+          </div>
+          <div>
+            <div class="font-medium leading-tight">Kafka / Streaming</div>
+            <a
+              href="#project-pulsemap"
+              class="text-xs underline underline-offset-2 opacity-80 hover:opacity-100"
+            >
+              live alerts pipeline
+            </a>
+          </div>
+        </li>
+
+        <li class="flex items-center gap-3">
+          <div class="ring-meter ring-emerald" style="--val: 80">
+            <span>80%</span>
+          </div>
+          <div>
+            <div class="font-medium leading-tight">dbt / Warehousing</div>
+            <a
+              href="#project-genomics-pipeline"
+              class="text-xs underline underline-offset-2 opacity-80 hover:opacity-100"
+            >
+              marts & tests
+            </a>
+          </div>
+        </li>
+
+        <li class="flex items-center gap-3">
+          <div class="ring-meter ring-emerald" style="--val: 78">
+            <span>78%</span>
+          </div>
+          <div>
+            <div class="font-medium leading-tight">LangSmith / Tracing</div>
+            <a
+              href="#project-pulsemap"
+              class="text-xs underline underline-offset-2 opacity-80 hover:opacity-100"
+            >
+              agent debugging
+            </a>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Backend & APIs -->
+    <section
+      id="skills-backend"
+      class="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-md mt-6"
+    >
+      <div class="flex items-center justify-between mb-4">
+        <div class="flex items-center gap-3">
+          <div
+            class="grid place-items-center h-10 w-10 rounded-xl bg-sky-500/10"
+          >
+            <!-- brackets icon -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 text-sky-400"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path stroke-width="1.5" d="M8 4H6v16h2M16 4h2v16h-2" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold">Backend & APIs</h3>
+            <p class="text-xs text-white/60">FastAPI • auth • testing</p>
+          </div>
+        </div>
+        <span
+          class="text-[11px] rounded-full px-2 py-1 border border-white/10 bg-white/5"
+          >Last used: this week</span
+        >
+      </div>
+
+      <ul class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <li class="flex items-center gap-3">
+          <div class="ring-meter ring-sky" style="--val: 92">
+            <span>92%</span>
+          </div>
+          <div>
+            <div class="font-medium leading-tight">FastAPI</div>
+            <a
+              href="#project-pulsemap"
+              class="text-xs underline underline-offset-2 opacity-80 hover:opacity-100"
+            >
+              agents & webhooks
+            </a>
+          </div>
+        </li>
+
+        <li class="flex items-center gap-3">
+          <div class="ring-meter ring-sky" style="--val: 88">
+            <span>88%</span>
+          </div>
+          <div>
+            <div class="font-medium leading-tight">Postgres/SQLite + SQL</div>
+            <a
+              href="#project-profile-rag"
+              class="text-xs underline underline-offset-2 opacity-80 hover:opacity-100"
+            >
+              session memory & logs
+            </a>
+          </div>
+        </li>
+
+        <li class="flex items-center gap-3">
+          <div class="ring-meter ring-sky" style="--val: 85">
+            <span>85%</span>
+          </div>
+          <div>
+            <div class="font-medium leading-tight">Auth & JWT</div>
+            <a
+              href="#project-intellimeet"
+              class="text-xs underline underline-offset-2 opacity-80 hover:opacity-100"
+            >
+              secure rooms
+            </a>
+          </div>
+        </li>
+
+        <li class="flex items-center gap-3">
+          <div class="ring-meter ring-sky" style="--val: 82">
+            <span>82%</span>
+          </div>
+          <div>
+            <div class="font-medium leading-tight">Testing & CI</div>
+            <a
+              href="#project-intellimeet"
+              class="text-xs underline underline-offset-2 opacity-80 hover:opacity-100"
+            >
+              pipeline & e2e
+            </a>
+          </div>
+        </li>
+
+        <li class="flex items-center gap-3">
+          <div class="ring-meter ring-sky" style="--val: 80">
+            <span>80%</span>
+          </div>
+          <div>
+            <div class="font-medium leading-tight">WebSockets / Realtime</div>
+            <a
+              href="#project-intellimeet"
+              class="text-xs underline underline-offset-2 opacity-80 hover:opacity-100"
+            >
+              <span>sub-200ms calls</span>
+            </a>
+          </div>
+        </li>
+
+        <li class="flex items-center gap-3">
+          <div class="ring-meter ring-sky" style="--val: 78">
+            <span>78%</span>
+          </div>
+          <div>
+            <div class="font-medium leading-tight">OpenAPI & Docs</div>
+            <a
+              href="#project-pulsemap"
+              class="text-xs underline underline-offset-2 opacity-80 hover:opacity-100"
+            >
+              typed routes
+            </a>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Cloud & Infrastructure -->
+    <section
+      id="skills-cloud"
+      class="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-md mt-6"
+    >
+      <div class="flex items-center justify-between mb-4">
+        <div class="flex items-center gap-3">
+          <div
+            class="grid place-items-center h-10 w-10 rounded-xl bg-amber-500/10"
+          >
+            <!-- cloud icon -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 text-amber-400"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-width="1.5"
+                d="M3 15a4 4 0 0 0 4 4h10a4 4 0 1 0-1.2-7.8A6 6 0 0 0 6 9.5 4.5 4.5 0 0 0 3 15Z"
+              />
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold">Cloud & Infrastructure</h3>
+            <p class="text-xs text-white/60">Docker • K8s • AWS/GCP</p>
+          </div>
+        </div>
+        <span
+          class="text-[11px] rounded-full px-2 py-1 border border-white/10 bg-white/5"
+          >Last used: recent</span
+        >
+      </div>
+
+      <ul class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <li class="flex items-center gap-3">
+          <div class="ring-meter ring-amber" style="--val: 88">
+            <span>88%</span>
+          </div>
+          <div>
+            <div class="font-medium leading-tight">Docker</div>
+            <a
+              href="#project-profile-rag"
+              class="text-xs underline underline-offset-2 opacity-80 hover:opacity-100"
+            >
+              local & prod builds
+            </a>
+          </div>
+        </li>
+
+        <li class="flex items-center gap-3">
+          <div class="ring-meter ring-amber" style="--val: 84">
+            <span>84%</span>
+          </div>
+          <div>
+            <div class="font-medium leading-tight">Kubernetes</div>
+            <a
+              href="#project-pulsemap"
+              class="text-xs underline underline-offset-2 opacity-80 hover:opacity-100"
+            >
+              agents on k8s
+            </a>
+          </div>
+        </li>
+
+        <li class="flex items-center gap-3">
+          <div class="ring-meter ring-amber" style="--val: 82">
+            <span>82%</span>
+          </div>
+          <div>
+            <div class="font-medium leading-tight">AWS (S3, ECS, CW)</div>
+            <a
+              href="#project-genomics-pipeline"
+              class="text-xs underline underline-offset-2 opacity-80 hover:opacity-100"
+            >
+              logs & deploys
+            </a>
+          </div>
+        </li>
+
+        <li class="flex items-center gap-3">
+          <div class="ring-meter ring-amber" style="--val: 80">
+            <span>80%</span>
+          </div>
+          <div>
+            <div class="font-medium leading-tight">GCP (GCS, BQ)</div>
+            <a
+              href="#project-genomics-pipeline"
+              class="text-xs underline underline-offset-2 opacity-80 hover:opacity-100"
+            >
+              ETL & storage
+            </a>
+          </div>
+        </li>
+
+        <li class="flex items-center gap-3">
+          <div class="ring-meter ring-amber" style="--val: 78">
+            <span>78%</span>
+          </div>
+          <div>
+            <div class="font-medium leading-tight">CI/CD</div>
+            <a
+              href="#project-intellimeet"
+              class="text-xs underline underline-offset-2 opacity-80 hover:opacity-100"
+            >
+              stable releases
+            </a>
+          </div>
+        </li>
+
+        <li class="flex items-center gap-3">
+          <div class="ring-meter ring-amber" style="--val: 76">
+            <span>76%</span>
+          </div>
+          <div>
+            <div class="font-medium leading-tight">Observability</div>
+            <a
+              href="#project-pulsemap"
+              class="text-xs underline underline-offset-2 opacity-80 hover:opacity-100"
+            >
+              metrics & alerts
+            </a>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ML / Analytics Tools -->
+    <section
+      id="skills-analytics"
+      class="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-md mt-6"
+    >
+      <div class="flex items-center justify-between mb-4">
+        <div class="flex items-center gap-3">
+          <div
+            class="grid place-items-center h-10 w-10 rounded-xl bg-rose-500/10"
+          >
+            <!-- chart icon -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 text-rose-400"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-width="1.5"
+                d="M4 19V5m0 14h16M8 17v-5m4 5V7m4 10v-3"
+              />
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold">ML / Analytics Tools</h3>
+            <p class="text-xs text-white/60">PyTorch • TF • CV/NLP</p>
+          </div>
+        </div>
+        <span
+          class="text-[11px] rounded-full px-2 py-1 border border-white/10 bg-white/5"
+          >Last used: recent</span
+        >
+      </div>
+
+      <ul class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <li class="flex items-center gap-3">
+          <div class="ring-meter ring-rose" style="--val: 90">
+            <span>90%</span>
+          </div>
+          <div>
+            <div class="font-medium leading-tight">PyTorch</div>
+            <a
+              href="#project-proxytuner"
+              class="text-xs underline underline-offset-2 opacity-80 hover:opacity-100"
+            >
+              proxy-tuning NER
+            </a>
+          </div>
+        </li>
+
+        <li class="flex items-center gap-3">
+          <div class="ring-meter ring-rose" style="--val: 85">
+            <span>85%</span>
+          </div>
+          <div>
+            <div class="font-medium leading-tight">Transformers / HF</div>
+            <a
+              href="#project-profile-rag"
+              class="text-xs underline underline-offset-2 opacity-80 hover:opacity-100"
+            >
+              local embeddings
+            </a>
+          </div>
+        </li>
+
+        <li class="flex items-center gap-3">
+          <div class="ring-meter ring-rose" style="--val: 82">
+            <span>82%</span>
+          </div>
+          <div>
+            <div class="font-medium leading-tight">OpenCV / CV</div>
+            <a
+              href="#project-intellimeet"
+              class="text-xs underline underline-offset-2 opacity-80 hover:opacity-100"
+            >
+              RetinaFace on-device
+            </a>
+          </div>
+        </li>
+
+        <li class="flex items-center gap-3">
+          <div class="ring-meter ring-rose" style="--val: 80">
+            <span>80%</span>
+          </div>
+          <div>
+            <div class="font-medium leading-tight">NLP / Prompting</div>
+            <a
+              href="#project-android-agent"
+              class="text-xs underline underline-offset-2 opacity-80 hover:opacity-100"
+            >
+              few-shot + reflection
+            </a>
+          </div>
+        </li>
+
+        <li class="flex items-center gap-3">
+          <div class="ring-meter ring-rose" style="--val: 78">
+            <span>78%</span>
+          </div>
+          <div>
+            <div class="font-medium leading-tight">Pandas / NumPy</div>
+            <a
+              href="#project-genomics-pipeline"
+              class="text-xs underline underline-offset-2 opacity-80 hover:opacity-100"
+            >
+              data prep @ scale
+            </a>
+          </div>
+        </li>
+
+        <li class="flex items-center gap-3">
+          <div class="ring-meter ring-rose" style="--val: 76">
+            <span>76%</span>
+          </div>
+          <div>
+            <div class="font-medium leading-tight">Visualization</div>
+            <a
+              href="#project-profile-rag"
+              class="text-xs underline underline-offset-2 opacity-80 hover:opacity-100"
+            >
+              eval dashboards
+            </a>
+          </div>
+        </li>
+      </ul>
     </section>
 
     <!-- ===== Contact ===== -->
