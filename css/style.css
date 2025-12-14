@@ -363,11 +363,306 @@ body {
 #skills-analytics {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-#skills-agents:hover,
-#skills-mlops:hover,
-#skills-backend:hover,
-#skills-cloud:hover,
 #skills-analytics:hover {
   transform: translateY(-1px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* =========================================
+   Feature 1: Hero System Flow Animation
+   (Restored & Enhanced)
+   ========================================= */
+.hero-system-svg {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Common Path Styles */
+.sys-path,
+.sys-lane,
+.sys-path-obs-active {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.sys-path {
+  stroke: #e2e8f0; /* slate-200 */
+  stroke-width: 2;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000; /* Hidden by default */
+}
+.dark .sys-path {
+  stroke: #334155; /* slate-700 */
+}
+
+/* Nodes */
+.sys-node-shape,
+.sys-node-agent-shape,
+.sys-node-rect {
+  fill: #ffffff;
+  stroke: #e2e8f0;
+  stroke-width: 2;
+  transition: all 0.3s ease;
+}
+.dark .sys-node-shape,
+.dark .sys-node-agent-shape,
+.dark .sys-node-rect {
+  fill: #0f172a; /* slate-900 */
+  stroke: #334155;
+}
+
+/* Phase 1: Trigger (Red) */
+.sys-node-trigger .sys-node-inner {
+  fill: #ef4444;
+  opacity: 0;
+  transform: scale(0.5);
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.hero-flow-play .sys-node-trigger .sys-node-inner {
+  animation: sysTrigger 0.5s ease-out forwards;
+}
+
+/* Phase 2: Agent Fan-out (Teal) */
+.sys-node-agent .sys-node-inner {
+  fill: #14b8a6; /* teal-500 */
+  opacity: 0;
+  transform: scale(0.5);
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.hero-flow-play .sys-node-agent .sys-node-inner {
+  animation: sysPop 0.5s ease-out 0.6s forwards;
+}
+
+/* Lanes Animation */
+.hero-flow-play .lane-plan {
+  animation: sysDraw 0.8s ease-out 0.8s forwards;
+}
+.hero-flow-play .lane-exec {
+  animation: sysDraw 0.8s ease-out 0.9s forwards;
+}
+.hero-flow-play .lane-verify {
+  animation: sysDraw 0.8s ease-out 1s forwards;
+}
+
+/* Phase 3: Tools (Blue) */
+.sys-node-tools .sys-node-inner {
+  fill: #3b82f6;
+  opacity: 0;
+  transform: scale(0.5);
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.hero-flow-play .sys-node-tools .sys-node-inner {
+  animation: sysPop 0.4s ease-out 1.4s forwards;
+}
+
+/* Phase 4: Production (Purple Glow) */
+.sys-boundary-rect {
+  fill: none;
+  stroke: #a855f7; /* purple-500 */
+  stroke-width: 2;
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  opacity: 0;
+}
+.hero-flow-play .sys-boundary-rect {
+  animation: sysDrawBoundary 1s ease-out 1.8s forwards,
+    sysGlowPulse 3s infinite 2.8s;
+}
+
+/* Phase 5: Cost/Stability (Green) */
+.sys-node-cost text {
+  opacity: 0;
+}
+.hero-flow-play .sys-node-cost text {
+  animation: sysFadeIn 0.5s ease 2.5s forwards;
+}
+
+/* Phase 6: Observability Loop (Blue Dashed) */
+.sys-path-obs-active {
+  stroke: #3b82f6;
+  stroke-width: 2;
+  stroke-dasharray: 8 4;
+  opacity: 0;
+}
+.hero-flow-play .sys-path-obs-active {
+  opacity: 1;
+  animation: sysLoop 30s linear infinite 3s;
+}
+
+/* Keyframes */
+@keyframes sysTrigger {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes sysPop {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  70% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes sysDraw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes sysDrawBoundary {
+  0% {
+    opacity: 1;
+    stroke-dashoffset: 400;
+  }
+  100% {
+    opacity: 1;
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes sysGlowPulse {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 2px rgba(168, 85, 247, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 0 8px rgba(168, 85, 247, 0.6));
+  }
+}
+@keyframes sysFadeIn {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes sysLoop {
+  from {
+    stroke-dashoffset: 300;
+  }
+  to {
+    stroke-dashoffset: -300;
+  }
+}
+
+/* =========================================
+   Feature 9: Professional System Diagrams (Strict)
+   ========================================= */
+
+/* --- Base Path Style --- */
+.sys-overlay-path {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+  pointer-events: none;
+}
+
+/* --- 1. Execution Flow (One-Time) --- */
+/* Represents a data packet moving L->R or Input->Output */
+.sys-flow-exec {
+  stroke-width: 3;
+  opacity: 0; /* Hidden initially */
+  stroke-dasharray: 100 1200; /* Short packet, long gap */
+  stroke-dashoffset: 1300; /* Start hidden "upstream" */
+  animation: sysExecPass 5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  filter: drop-shadow(0 0 3px currentColor);
+}
+
+/* --- 2. Ambient Loop (Continuous) --- */
+/* Represents feedback/observability (Low attention) */
+.sys-flow-loop {
+  stroke-width: 2;
+  opacity: 0.4;
+  stroke-dasharray: 12 12;
+  animation: sysAmbientLoop 20s linear infinite;
+}
+
+/* --- Context Colors (Professional Palette) --- */
+.sys-theme-base {
+  stroke: #10b981;
+  color: #10b981;
+} /* Emerald */
+.sys-theme-agent {
+  stroke: #3b82f6;
+  color: #3b82f6;
+} /* Blue */
+.sys-theme-data {
+  stroke: #f59e0b;
+  color: #f59e0b;
+} /* Amber */
+.sys-theme-secure {
+  stroke: #8b5cf6;
+  color: #8b5cf6;
+} /* Violet */
+.sys-theme-alert {
+  stroke: #f43f5e;
+  color: #f43f5e;
+} /* Rose */
+.sys-theme-stream {
+  stroke: #06b6d4;
+  color: #06b6d4;
+} /* Cyan */
+
+/* --- Keyframes --- */
+@keyframes sysExecPass {
+  0% {
+    opacity: 0;
+    stroke-dashoffset: 1300;
+  }
+  5% {
+    opacity: 1; /* Illuminate entering system */
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0; /* Fade out at destination */
+    stroke-dashoffset: -100;
+  }
+}
+
+@keyframes sysAmbientLoop {
+  to {
+    stroke-dashoffset: -500;
+  }
+}
+
+/* --- Sequencing Delays (For Logic Stages) --- */
+.sys-delay-1 {
+  animation-delay: 1.5s;
+}
+.sys-delay-2 {
+  animation-delay: 3s;
+}
+.sys-delay-3 {
+  animation-delay: 4.5s;
+}
+
+/* --- Accessibility --- */
+@media (prefers-reduced-motion: reduce) {
+  .sys-flow-exec,
+  .sys-flow-loop {
+    animation: none;
+    opacity: 1;
+    stroke-dasharray: none;
+  }
 }
