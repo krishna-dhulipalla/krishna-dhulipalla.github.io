@@ -1,0 +1,1850 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Krishna Vamsi Dhulipalla - Portfolio</title>
+
+    <meta
+      name="google-site-verification"
+      content="qCeAap7TkXSuUZxvLUJ4y7XeuWX39M39Eo62k3zbyuE"
+    />
+
+    <!-- Fonts & Tailwind -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/tailwind-config.js"></script>
+
+    <!-- Lottie for subtle hero animation -->
+    <script
+      src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js"
+      type="module"
+    ></script>
+    <script
+      src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js"
+      type="module"
+    ></script>
+    <!-- AOS (animate on scroll) -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+    <script defer src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+
+  <body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-100">
+    <!-- ===== Navbar ===== -->
+    <header
+      class="fixed top-0 inset-x-0 z-50 border-b border-black/5 dark:border-white/10 bg-white dark:bg-gray-900/80 glass"
+    >
+      <nav
+        class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between"
+      >
+        <a href="#top" class="font-display text-xl font-bold tracking-tight">
+          <span class="text-teal-600">Krishna</span>
+          <span class="text-gray-900 dark:text-white">Vamsi</span>
+        </a>
+        <div class="hidden md:flex items-center gap-6 text-sm">
+          <a href="#about" class="hover:text-teal-600">About</a>
+          <a href="#projects" class="hover:text-teal-600">Projects</a>
+          <a href="#experience" class="hover:text-teal-600">Experience</a>
+          <a href="#skills" class="hover:text-teal-600">Skills</a>
+          <a href="#contact" class="hover:text-teal-600">Contact</a>
+          <a
+            href="#"
+            id="resume-link"
+            href="assets/resume.pdf"
+            class="inline-flex items-center rounded-xl border border-teal-600 px-3 py-1.5 font-medium text-teal-700 dark:text-teal-400 hover:bg-teal-50 dark:hover:bg-gray-800"
+            >Resume</a
+          >
+          <button
+            id="theme-toggle"
+            class="theme-toggle rounded-xl border border-gray-300 dark:border-gray-700 px-2 py-1 flex items-center gap-2"
+            aria-label="Toggle theme"
+            aria-pressed="false"
+          >
+            <span class="theme-icon" aria-hidden="true">🌞</span>
+            <span class="theme-text hidden sm:inline">Light</span>
+          </button>
+        </div>
+        <button
+          id="menuBtn"
+          class="md:hidden p-2 rounded-lg border border-gray-200 dark:border-gray-700"
+          aria-label="Open menu"
+        >
+          Menu
+        </button>
+      </nav>
+      <!-- Mobile menu -->
+      <div
+        id="mobileMenu"
+        class="md:hidden hidden border-t border-black/5 dark:border-white/10"
+      >
+        <div class="mx-auto max-w-7xl px-4 py-3 flex flex-col gap-3 text-sm">
+          <a href="#about" class="hover:text-teal-600">About</a>
+          <a href="#projects" class="hover:text-teal-600">Projects</a>
+          <a href="#experience" class="hover:text-teal-600">Experience</a>
+          <a href="#skills" class="hover:text-teal-600">Skills</a>
+          <a href="#contact" class="hover:text-teal-600">Contact</a>
+          <a
+            href="#"
+            id="resume-link-m"
+            href="assets/resume.pdf"
+            class="inline-flex w-max items-center rounded-xl border border-teal-600 px-3 py-1.5 font-medium text-teal-700 dark:text-teal-400 hover:bg-teal-50 dark:hover:bg-gray-800"
+            >Resume</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <!-- ===== Hero ===== -->
+    <section id="top" class="relative overflow-hidden">
+      <div
+        class="absolute inset-0 -z-10 accent-gradient opacity-20 animate-gradient"
+      ></div>
+      <div
+        class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-24 pb-32 grid md:grid-cols-2 items-center gap-10"
+      >
+        <div data-aos="fade-up" data-aos-delay="50">
+          <p
+            class="text-xs uppercase tracking-widest text-teal-600 font-semibold"
+          >
+            Software & ML Engineer | Agentic Systems | LLM Platforms
+          </p>
+          <h1
+            class="mt-3 font-display text-4xl md:text-6xl font-bold leading-tight"
+          >
+            I build AI agents and data-backed products that ship.
+          </h1>
+          <p class="mt-4 text-gray-600 dark:text-gray-300 max-w-xl">
+            3+ years across ML engineering, infrastructure, and cloud. I design
+            multi-agent workflows (LangGraph/LangChain), RAG/search, and
+            streaming data pipelines, then deploy them with FastAPI, Docker, and
+            Kubernetes.
+          </p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a
+              href="#projects"
+              class="inline-flex items-center rounded-xl bg-teal-600 px-4 py-2.5 text-white shadow-float hover:bg-teal-700 hover:-translate-y-0.5 transition-transform"
+              >See projects</a
+            >
+            <a
+              href="#contact"
+              class="inline-flex items-center rounded-xl border border-gray-300 dark:border-gray-700 px-4 py-2.5 hover:bg-gray-50 dark:hover:bg-gray-800 hover:-translate-y-0.5 transition-transform"
+              >Get in touch</a
+            >
+          </div>
+          <div
+            class="mt-6 flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400"
+          >
+            <a
+              href="https://github.com/Krishna-dhulipalla"
+              class="hover:text-teal-600"
+              >GitHub</a
+            >
+            <a
+              href="https://www.linkedin.com/in/krishnavamsidhulipalla"
+              class="hover:text-teal-600"
+              >LinkedIn</a
+            >
+            <a
+              href="https://scholar.google.com/citations?user=uvbsnjMAAAAJ&hl=en"
+              class="hover:text-teal-600"
+              >Google Scholar</a
+            >
+          </div>
+        </div>
+        <div class="relative" data-aos="fade-up" data-aos-delay="150">
+          <div
+            class="rounded-2xl shadow-float p-4 bg-white dark:bg-gray-900 overflow-hidden aspect-[16/9]"
+          >
+            <dotlottie-wc
+              id="heroAnim"
+              src="https://lottie.host/ec759afa-08cf-493a-9df6-4f2ba2a515fe/01ooaS1eRs.lottie"
+              class="block w-full h-full"
+              style="width: 100%; height: 100%"
+              autoplay
+              loop
+            ></dotlottie-wc>
+          </div>
+          <div
+            class="absolute -bottom-6 -right-6 rounded-xl px-4 py-2 bg-teal-600 text-white text-sm shadow-float animate-floaty"
+          >
+            Now open to roles
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="relative isolate">
+      <!-- background accents -->
+      <div
+        aria-hidden="true"
+        class="pointer-events-none absolute inset-0 -z-10"
+      >
+        <div
+          class="absolute -top-20 -left-28 h-72 w-72 rounded-full blur-3xl opacity-20 bg-gradient-to-tr from-indigo-400 to-cyan-400 dark:from-indigo-600 dark:to-cyan-600"
+        ></div>
+        <div
+          class="absolute bottom-0 -right-24 h-64 w-64 rounded-full blur-3xl opacity-20 bg-gradient-to-tr from-fuchsia-400 to-rose-400 dark:from-fuchsia-600 dark:to-rose-600"
+        ></div>
+      </div>
+
+      <div
+        class="mx-auto max-w-6xl px-6 py-16 md:py-24 grid grid-cols-1 md:grid-cols-[1.8fr_.7fr] gap-10 items-center"
+      >
+        <!-- LEFT -->
+        <div>
+          <p
+            class="text-sm font-semibold tracking-wide text-rose-500 dark:text-rose-400"
+          >
+            Hi there, I'm
+          </p>
+
+          <!-- slightly smaller name -->
+          <h1
+            class="mt-1 text-[clamp(34px,6vw,64px)] font-extrabold leading-[1.05] tracking-tight text-slate-900 dark:text-slate-100"
+          >
+            Krishna Vamsi Dhulipalla
+          </h1>
+
+          <!-- LinkedIn-style headline with | and softer gray -->
+          <p
+            class="mt-3 text-lg md:text-[22px] font-semibold text-slate-600/90 dark:text-slate-300/90"
+          >
+            Software & ML Engineer&nbsp;|&nbsp;Agentic Systems&nbsp;|&nbsp;RAG &
+            Evals&nbsp;|&nbsp;Streaming Data&nbsp;|&nbsp;Cloud-native MLOps
+          </p>
+
+          <!-- credibility tags -->
+          <div class="mt-6 flex flex-wrap gap-3">
+            <span
+              class="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 text-sm font-medium ring-1 ring-slate-200/70 bg-white text-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:ring-slate-700/70"
+            >
+              M.S. CS (3.9/4) - Virginia Tech
+            </span>
+            <span
+              class="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 text-sm font-medium ring-1 ring-indigo-200/70 bg-indigo-50 text-indigo-700 dark:bg-indigo-900/40 dark:text-indigo-200 dark:ring-indigo-700/50"
+            >
+              Agentic systems (LangGraph/LangChain)
+            </span>
+            <span
+              class="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 text-sm font-medium ring-1 ring-emerald-200/70 bg-emerald-50 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-200 dark:ring-emerald-700/50"
+            >
+              Streaming data (Kafka + Spark + Airflow)
+            </span>
+            <span
+              class="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 text-sm font-medium ring-1 ring-sky-200/70 bg-sky-50 text-sky-700 dark:bg-sky-900/40 dark:text-sky-200 dark:ring-sky-700/50"
+            >
+              Docker + K8s + FastAPI
+            </span>
+            <span
+              class="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 text-sm font-medium ring-1 ring-rose-200/70 bg-rose-50 text-rose-700 dark:bg-rose-900/40 dark:text-rose-200 dark:ring-rose-700/50"
+            >
+              RAG + Observability (LangSmith/Evals)
+            </span>
+          </div>
+
+          <!-- reduced content -->
+          <div
+            class="mt-7 text-[17px] leading-[1.85] text-slate-700 dark:text-slate-300 max-w-3xl"
+          >
+            <p>
+              Software and ML engineer with 3+ years building agentic LLM
+              systems, retrieval pipelines, and data services end-to-end, kept
+              reliable with clear latency and quality targets.
+            </p>
+            <ul class="mt-4 space-y-3">
+              <li class="flex gap-3">
+                <span class="mt-1.5 size-2 rounded-full bg-emerald-500"></span>
+                <span
+                  ><strong>Impact first:</strong> cut manual query handling 40%
+                  by shipping SQL/API agents with A/B and regression evals
+                  before scaling.</span
+                >
+              </li>
+              <li class="flex gap-3">
+                <span class="mt-1.5 size-2 rounded-full bg-indigo-500"></span>
+                <span
+                  ><strong>Reliable delivery:</strong> containerized agents and
+                  pipelines on Kubernetes with rolling/HPA, pruned ETL/streaming
+                  steps, and guarded tool use to keep uptime above 99.9%.</span
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- RIGHT: 3D profile (less cropped) -->
+        <div class="justify-self-center md:justify-self-end">
+          <div
+            class="tilt-card group relative w-[220px] sm:w-[260px] md:w-[280px] aspect-[4/5] rounded-3xl bg-gradient-to-b from-white to-slate-50 dark:from-slate-800 dark:to-slate-900 shadow-2xl overflow-hidden will-change-transform"
+            style="transform-style: preserve-3d"
+          >
+            <img
+              src="assets/profile.png"
+              alt="Profile photo"
+              class="absolute inset-0 m-auto h-full w-full object-contain p-2 [transform:translateZ(40px)]"
+              loading="eager"
+            />
+          </div>
+          <p class="sr-only">
+            Interactive 3D tilt on hover; motion is disabled if the user prefers
+            reduced motion.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Projects ===== -->
+    <section id="projects" class="mx-auto max-w-6xl px-6 py-16 md:py-24">
+      <!-- Section title -->
+      <h2
+        class="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100 mb-10"
+      >
+        Projects
+      </h2>
+      <!-- Filters -->
+      <div
+        class="mb-8 flex flex-wrap gap-2"
+        id="projFilters"
+        role="tablist"
+        aria-label="Project filters"
+      >
+        <button
+          class="proj-filter px-3 py-1.5 rounded-full text-sm font-medium border transition bg-white text-slate-700 border-slate-200 hover:bg-slate-50 hover:border-slate-300 aria-pressed:bg-slate-900 aria-pressed:text-white aria-pressed:border-slate-900 dark:bg-slate-900 dark:text-slate-200 dark:border-slate-700 dark:hover:bg-slate-800 dark:hover:border-slate-600 dark:aria-pressed:bg-white dark:aria-pressed:text-slate-900 dark:aria-pressed:border-white"
+          data-filter="all"
+          aria-pressed="true"
+        >
+          All
+        </button>
+
+        <button
+          class="proj-filter px-3 py-1.5 rounded-full text-sm font-medium border transition bg-white text-slate-700 border-slate-200 hover:bg-slate-50 hover:border-slate-300 dark:bg-slate-900 dark:text-slate-200 dark:border-slate-700 dark:hover:bg-slate-800 dark:hover:border-slate-600"
+          data-filter="agents"
+        >
+          Agents
+        </button>
+
+        <button
+          class="proj-filter px-3 py-1.5 rounded-full text-sm font-medium border transition bg-white text-slate-700 border-slate-200 hover:bg-slate-50 hover:border-slate-300 dark:bg-slate-900 dark:text-slate-200 dark:border-slate-700 dark:hover:bg-slate-800 dark:hover:border-slate-600"
+          data-filter="mlops"
+        >
+          Data &amp; MLOps
+        </button>
+
+        <button
+          class="proj-filter px-3 py-1.5 rounded-full text-sm font-medium border transition bg-white text-slate-700 border-slate-200 hover:bg-slate-50 hover:border-slate-300 dark:bg-slate-900 dark:text-slate-200 dark:border-slate-700 dark:hover:bg-slate-800 dark:hover:border-slate-600"
+          data-filter="research"
+        >
+          Research
+        </button>
+      </div>
+
+      <!-- Grid -->
+      <div class="grid gap-6 md:grid-cols-2" id="projGrid">
+        <!-- 1) LangGraph ChatBot -->
+        <article
+          id="project-profile-rag"
+          data-cat="agents"
+          class="proj-card group relative rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden bg-white/90 dark:bg-slate-900/80 backdrop-blur transition shadow-sm hover:shadow-2xl hover:-translate-y-1.5"
+        >
+          <!-- hover glow -->
+
+          <div
+            class="relative w-full aspect-video bg-[#33373D] rounded-t-xl overflow-hidden group-hover:scale-[1.02] transition-transform duration-500 flex items-center justify-center p-2"
+          >
+            <!-- Animated Diagram Wrapper -->
+            <svg
+              viewBox="0 0 2816 1536"
+              class="w-full h-full object-contain pointer-events-none"
+              aria-label="Autonomous Multi-Agent System Architecture"
+            >
+              <!-- 1. The Complex Diagram (loaded as image to keep DOM light) -->
+              <image
+                href="assets/diagrams/Autonomous.svg"
+                width="2816"
+                height="1536"
+              />
+
+              <!-- 2. Animated Flow Overlays (matched to diagram visual flows) -->
+              <defs>
+                <linearGradient id="flowGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop
+                    offset="0%"
+                    style="stop-color: #10b981; stop-opacity: 0"
+                  />
+                  <stop
+                    offset="50%"
+                    style="stop-color: #10b981; stop-opacity: 1"
+                  />
+                  <stop
+                    offset="100%"
+                    style="stop-color: #10b981; stop-opacity: 0"
+                  />
+                </linearGradient>
+              </defs>
+
+              <!-- Flow 1: Execution Pass (Trigger -> Orchestrator -> Tools) -->
+              <path
+                d="M 350 250 C 500 250, 600 300, 800 350"
+                class="sys-overlay-path sys-flow-exec sys-theme-base"
+              />
+              <path
+                d="M 1800 350 C 2000 350, 2100 250, 2300 200"
+                class="sys-overlay-path sys-flow-exec sys-theme-agent sys-delay-1"
+              />
+
+              <!-- Flow 2: Feedback Loop (Validation) - Ambient -->
+              <path
+                d="M 2400 1300 C 1800 1450, 1000 1450, 500 1300"
+                class="sys-overlay-path sys-flow-loop sys-theme-secure"
+              />
+            </svg>
+          </div>
+
+          <div class="relative p-6 space-y-4">
+            <h3
+              class="text-xl font-semibold text-slate-900 dark:text-slate-100"
+            >
+              Autonomous Multi-Agent Web UI Automation
+            </h3>
+            <p class="text-slate-600 dark:text-slate-300">
+              Agents plan from screenshots, rank DOM elements, and run verified
+              actions; <strong>90%+</strong> reliability across
+              <strong>10+</strong> flows with DOM+vision checks, cutting failure
+              loops <strong>85%</strong> and pushing correctness past
+              <strong>95%</strong>.
+            </p>
+            <ul class="flex flex-wrap gap-2">
+              <li
+                class="chip bg-indigo-100 text-indigo-700 dark:bg-indigo-900 dark:text-indigo-200"
+              >
+                LangGraph
+              </li>
+              <li
+                class="chip bg-emerald-100 text-emerald-700 dark:bg-emerald-900 dark:text-emerald-200"
+              >
+                DOM Ranking
+              </li>
+              <li
+                class="chip bg-rose-100 text-rose-700 dark:bg-rose-900 dark:text-rose-200"
+              >
+                Vision Checks
+              </li>
+              <li
+                class="chip bg-sky-100 text-sky-700 dark:bg-sky-900 dark:text-sky-200"
+              >
+                Fast Retry
+              </li>
+              <li
+                class="chip bg-amber-100 text-amber-700 dark:bg-amber-900 dark:text-amber-200"
+              >
+                LangSmith
+              </li>
+            </ul>
+            <div class="pt-2">
+              <a
+                href="https://github.com/krishna-dhulipalla/Autonomous-Web-UI-Multi-Agent"
+                target="_blank"
+                class="inline-flex items-center gap-2 text-sm font-medium text-indigo-600 dark:text-indigo-400 hover:underline"
+              >
+                View on GitHub
+                <svg class="size-4" viewBox="0 0 20 20" fill="currentColor">
+                  <path
+                    d="M12.293 2.293a1 1 0 011.414 0l4 4a1 1 0 11-1.414 1.414L14 5.414V17a1 1 0 11-2 0V5.414L9.707 7.707A1 1 0 018.293 6.293l4-4z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2) LLM-Based Android Agent (new format) -->
+        <article
+          id="project-android-agent"
+          data-cat="agents"
+          class="proj-card group relative rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden bg-white/90 dark:bg-slate-900/80 backdrop-blur transition shadow-sm hover:shadow-2xl hover:-translate-y-1.5"
+        >
+          <div
+            class="relative w-full aspect-video bg-[#33373D] rounded-t-xl overflow-hidden group-hover:scale-[1.02] transition-transform duration-500 flex items-center justify-center p-2"
+          >
+            <svg
+              viewBox="0 0 2816 1536"
+              class="w-full h-full object-contain pointer-events-none"
+              aria-label="LLM SQL Agent Architecture"
+            >
+              <image
+                href="assets/diagrams/SQL_agent.svg"
+                width="2816"
+                height="1536"
+              />
+
+              <!-- Flow: User -> Agent -> DB -> Response (Execution Pass) -->
+              <path
+                d="M 200 800 L 600 800"
+                class="sys-overlay-path sys-flow-exec sys-theme-alert"
+              />
+              <path
+                d="M 1200 800 C 1400 800, 1600 600, 1800 600"
+                class="sys-overlay-path sys-flow-exec sys-theme-data sys-delay-1"
+              />
+              <path
+                d="M 1800 600 L 2400 600"
+                class="sys-overlay-path sys-flow-exec sys-theme-agent sys-delay-2"
+              />
+            </svg>
+          </div>
+          <div class="relative p-6 space-y-4">
+            <h3
+              class="text-xl font-semibold text-slate-900 dark:text-slate-100"
+            >
+              LLM-Powered Internal Agents
+            </h3>
+            <p class="text-slate-600 dark:text-slate-300">
+              Cut manual query handling <strong>40%</strong> by shipping agents
+              that auto-retrieve from SQL and internal APIs; batched I/O and
+              incremental loads trimmed ETL runtime <strong>25%</strong>, and
+              schema-validated APIs shortened integration cycles
+              <strong>20%</strong>.
+            </p>
+            <ul class="flex flex-wrap gap-2">
+              <li
+                class="chip bg-violet-100 text-violet-700 dark:bg-violet-900 dark:text-violet-200"
+              >
+                LangChain
+              </li>
+              <li
+                class="chip bg-emerald-100 text-emerald-700 dark:bg-emerald-900 dark:text-emerald-200"
+              >
+                SQL + APIs
+              </li>
+              <li
+                class="chip bg-rose-100 text-rose-700 dark:bg-rose-900 dark:text-rose-200"
+              >
+                Batched ETL
+              </li>
+              <li
+                class="chip bg-cyan-100 text-cyan-700 dark:bg-cyan-900 dark:text-cyan-200"
+              >
+                Schema CI
+              </li>
+              <li
+                class="chip bg-amber-100 text-amber-700 dark:bg-amber-900 dark:text-amber-200"
+              >
+                Kubernetes
+              </li>
+            </ul>
+            <div class="pt-2">
+              <a
+                href="https://github.com/krishna-dhulipalla"
+                target="_blank"
+                class="inline-flex items-center gap-2 text-sm font-medium text-indigo-600 dark:text-indigo-400 hover:underline"
+              >
+                View on GitHub
+                <svg class="size-4" viewBox="0 0 20 20" fill="currentColor">
+                  <path
+                    d="M12.293 2.293a1 1 0 011.414 0l4 4a1 1 0 11-1.414 1.414L14 5.414V17a1 1 0 11-2 0V5.414L9.707 7.707A1 1 0 018.293 6.293l4-4z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3) Proxy TuNER (new format) -->
+        <article
+          id="project-proxytuner"
+          data-cat="research"
+          class="proj-card group relative rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden bg-white/90 dark:bg-slate-900/80 backdrop-blur transition shadow-sm hover:shadow-2xl hover:-translate-y-1.5"
+        >
+          <div
+            class="relative w-full aspect-video bg-[#33373D] rounded-t-xl overflow-hidden group-hover:scale-[1.02] transition-transform duration-500 flex items-center justify-center p-2"
+          >
+            <svg
+              viewBox="0 0 2816 1536"
+              class="w-full h-full object-contain pointer-events-none"
+              aria-label="Proxy TuNER Architecture"
+            >
+              <image
+                href="assets/diagrams/Proxy_tunner.svg"
+                width="2816"
+                height="1536"
+              />
+
+              <!-- Flow: Knowledge Distillation (Execution Pass) -->
+              <path
+                d="M 800 450 C 1200 450, 1400 450, 1800 450"
+                class="sys-overlay-path sys-flow-exec sys-theme-secure sys-delay-1"
+              />
+            </svg>
+          </div>
+          <div class="relative p-6 space-y-4">
+            <h3
+              class="text-xl font-semibold text-slate-900 dark:text-slate-100"
+            >
+              Proxy TuNER
+            </h3>
+            <p class="text-slate-600 dark:text-slate-300">
+              Proxy-tuning BERT with logit ensembling and GRL: F1
+              <strong>+8%</strong> across domains, training cost
+              <strong>-70%</strong>, inference <strong>+30%</strong>.
+            </p>
+            <ul class="flex flex-wrap gap-2">
+              <li
+                class="chip bg-indigo-100 text-indigo-700 dark:bg-indigo-900 dark:text-indigo-200"
+              >
+                BERT
+              </li>
+              <li
+                class="chip bg-lime-100 text-lime-700 dark:bg-lime-900 dark:text-lime-200"
+              >
+                Domain Adaptation
+              </li>
+              <li
+                class="chip bg-fuchsia-100 text-fuchsia-700 dark:bg-fuchsia-900 dark:text-fuchsia-200"
+              >
+                GRL
+              </li>
+              <li
+                class="chip bg-teal-100 text-teal-700 dark:bg-teal-900 dark:text-teal-200"
+              >
+                Efficient Tuning
+              </li>
+              <li
+                class="chip bg-sky-100 text-sky-700 dark:bg-sky-900 dark:text-sky-200"
+              >
+                PyTorch
+              </li>
+            </ul>
+            <div class="pt-2">
+              <a
+                href="https://github.com/krishna-dhulipalla/ProxytuNER"
+                target="_blank"
+                class="inline-flex items-center gap-2 text-sm font-medium text-indigo-600 dark:text-indigo-400 hover:underline"
+              >
+                View on GitHub
+                <svg class="size-4" viewBox="0 0 20 20" fill="currentColor">
+                  <path
+                    d="M12.293 2.293a1 1 0 011.414 0l4 4a1 1 0 11-1.414 1.414L14 5.414V17a1 1 0 11-2 0V5.414L9.707 7.707A1 1 0 018.293 6.293l4-4z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 4) IntelliMeet (new format) -->
+        <article
+          id="project-intellimeet"
+          data-cat="mlops"
+          class="proj-card group relative rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden bg-white/90 dark:bg-slate-900/80 backdrop-blur transition shadow sm hover:shadow-2xl hover:-translate-y-1.5"
+        >
+          <div
+            class="relative w-full aspect-video bg-[#33373D] rounded-t-xl overflow-hidden group-hover:scale-[1.02] transition-transform duration-500 flex items-center justify-center p-2"
+          >
+            <svg
+              viewBox="0 0 2816 1536"
+              class="w-full h-full object-contain pointer-events-none"
+              aria-label="IntelliMeet Architecture"
+            >
+              <image
+                href="assets/diagrams/intellimeet.svg"
+                width="2816"
+                height="1536"
+              />
+
+              <!-- Flow 1: High-Speed WebRTC Stream -->
+              <path
+                d="M 200 400 C 400 400, 600 600, 800 600"
+                class="sys-overlay-path sys-flow-exec sys-theme-stream"
+              />
+
+              <!-- Flow 2: Encrypted Sync (Delayed) -->
+              <path
+                d="M 1600 750 L 2200 750"
+                class="sys-overlay-path sys-flow-exec sys-theme-secure sys-delay-1"
+              />
+            </svg>
+          </div>
+          <div class="relative p-6 space-y-4">
+            <h3
+              class="text-xl font-semibold text-slate-900 dark:text-slate-100"
+            >
+              IntelliMeet
+            </h3>
+            <p class="text-slate-600 dark:text-slate-300">
+              Secure video with federated learning and encryption; on-device
+              attention detection cut dropouts <strong>25%</strong> while
+              keeping latency under <strong>200 ms</strong> and uptime at
+              <strong>99.9%</strong>, plus auto notes via STT+summaries.
+            </p>
+            <ul class="flex flex-wrap gap-2">
+              <li
+                class="chip bg-rose-100 text-rose-700 dark:bg-rose-900 dark:text-rose-200"
+              >
+                WebRTC
+              </li>
+              <li
+                class="chip bg-cyan-100 text-cyan-700 dark:bg-cyan-900 dark:text-cyan-200"
+              >
+                Edge ML
+              </li>
+              <li
+                class="chip bg-amber-100 text-amber-700 dark:bg-amber-900 dark:text-amber-200"
+              >
+                RetinaFace
+              </li>
+              <li
+                class="chip bg-violet-100 text-violet-700 dark:bg-violet-900 dark:text-violet-200"
+              >
+                Transformer STT
+              </li>
+              <li
+                class="chip bg-emerald-100 text-emerald-700 dark:bg-emerald-900 dark:text-emerald-200"
+              >
+                E2E Encryption
+              </li>
+            </ul>
+            <div class="pt-2">
+              <a
+                href="https://github.com/krishna-dhulipalla/SE-Project---IntelliMeet"
+                target="_blank"
+                class="inline-flex items-center gap-2 text-sm font-medium text-indigo-600 dark:text-indigo-400 hover:underline"
+              >
+                View on GitHub
+                <svg class="size-4" viewBox="0 0 20 20" fill="currentColor">
+                  <path
+                    d="M12.293 2.293a1 1 0 011.414 0l4 4a1 1 0 11-1.414 1.414L14 5.414V17a1 1 0 11-2 0V5.414L9.707 7.707A1 1 0 018.293 6.293l4-4z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 5) DNA Sequence Classifier (new format) -->
+        <article
+          id="project-genomics-pipeline"
+          data-cat="research"
+          class="proj-card group relative rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden bg-white/90 dark:bg-slate-900/80 backdrop-blur transition shadow-sm hover:shadow-2xl hover:-translate-y-1.5"
+        >
+          <div
+            class="relative w-full aspect-video bg-[#33373D] rounded-t-xl overflow-hidden group-hover:scale-[1.02] transition-transform duration-500 flex items-center justify-center p-2"
+          >
+            <svg
+              viewBox="0 0 2816 1536"
+              class="w-full h-full object-contain pointer-events-none"
+              aria-label="DNA Classifier Architecture"
+            >
+              <image
+                href="assets/diagrams/DNA_classifier.svg"
+                width="2816"
+                height="1536"
+              />
+
+              <!-- Flow: DNA Data Pipeline (Execution Pass) -->
+              <path
+                d="M 200 700 C 400 700, 500 500, 700 500"
+                class="sys-overlay-path sys-flow-exec sys-theme-base"
+              />
+              <path
+                d="M 1300 550 L 1800 550"
+                class="sys-overlay-path sys-flow-exec sys-theme-agent sys-delay-2"
+              />
+            </svg>
+          </div>
+          <div class="relative p-6 space-y-4">
+            <h3
+              class="text-xl font-semibold text-slate-900 dark:text-slate-100"
+            >
+              DNA Sequence Classifier
+            </h3>
+            <p class="text-slate-600 dark:text-slate-300">
+              Fine-tuned DNABERT/HyenaDNA with LoRA + soft prompts; boosted
+              throughput <strong>30%</strong> and accuracy
+              <strong>94%+</strong> across <strong>1M+</strong> sequences with
+              scheduled/streamed prep and checkpoint reuse on HPC.
+            </p>
+            <ul class="flex flex-wrap gap-2">
+              <li
+                class="chip bg-teal-100 text-teal-700 dark:bg-teal-900 dark:text-teal-200"
+              >
+                DNABERT
+              </li>
+              <li
+                class="chip bg-rose-100 text-rose-700 dark:bg-rose-900 dark:text-rose-200"
+              >
+                Soft Prompting
+              </li>
+              <li
+                class="chip bg-indigo-100 text-indigo-700 dark:bg-indigo-900 dark:text-indigo-200"
+              >
+                LoRA
+              </li>
+              <li
+                class="chip bg-lime-100 text-lime-700 dark:bg-lime-900 dark:text-lime-200"
+              >
+                Airflow
+              </li>
+              <li
+                class="chip bg-sky-100 text-sky-700 dark:bg-sky-900 dark:text-sky-200"
+              >
+                MLflow
+              </li>
+            </ul>
+            <div class="pt-2">
+              <a
+                href="https://github.com/krishna-dhulipalla?tab=repositories"
+                target="_blank"
+                class="inline-flex items-center gap-2 text-sm font-medium text-indigo-600 dark:text-indigo-400 hover:underline"
+              >
+                View on GitHub
+                <svg class="size-4" viewBox="0 0 20 20" fill="currentColor">
+                  <path
+                    d="M12.293 2.293a1 1 0 011.414 0l4 4a1 1 0 11-1.414 1.414L14 5.414V17a1 1 0 11-2 0V5.414L9.707 7.707A1 1 0 018.293 6.293l4-4z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 6) PulseMap — Community & Disaster Intelligence (new format) -->
+        <article
+          id="project-pulsemap"
+          data-cat="mlops"
+          class="proj-card group relative rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden bg-white/90 dark:bg-slate-900/80 backdrop-blur transition shadow-sm hover:shadow-2xl hover:-translate-y-1.5"
+        >
+          <div
+            class="relative w-full aspect-video bg-[#33373D] rounded-t-xl overflow-hidden group-hover:scale-[1.02] transition-transform duration-500 flex items-center justify-center p-2"
+          >
+            <svg
+              viewBox="0 0 2816 1536"
+              class="w-full h-full object-contain pointer-events-none"
+              aria-label="PulseMap Architecture"
+            >
+              <image
+                href="assets/diagrams/pulse_map.svg"
+                width="2816"
+                height="1536"
+              />
+
+              <!-- Flow: Streaming Data Pipeline (Execution Pass) -->
+              <path
+                d="M 150 750 L 550 750"
+                class="sys-overlay-path sys-flow-exec sys-theme-data"
+              />
+              <path
+                d="M 1200 750 C 1400 750, 1600 500, 2000 500"
+                class="sys-overlay-path sys-flow-exec sys-theme-stream sys-delay-2"
+              />
+            </svg>
+          </div>
+          <div class="relative p-6 space-y-4">
+            <h3
+              class="text-xl font-semibold text-slate-900 dark:text-slate-100"
+            >
+              PulseMap – Agentic Risk & Situation Awareness Platform
+            </h3>
+            <p class="text-slate-600 dark:text-slate-300">
+              Built an agentic intelligence platform that ingests real-time
+              signals from multiple sources and applies coordinated LLM agents
+              to generate structured, location-aware insights. Reduced manual
+              triage time by <strong>60%</strong>, improved signal-to-action
+              latency by <strong>45%</strong>, and sustained
+              <strong>99.9%</strong> service uptime through agent-level
+              observability, verification loops, and controlled deployments.
+            </p>
+            <ul class="flex flex-wrap gap-2">
+              <li
+                class="chip bg-violet-100 text-violet-700 dark:bg-violet-900 dark:text-violet-200"
+              >
+                LLM Agents
+              </li>
+              <li
+                class="chip bg-indigo-100 text-indigo-700 dark:bg-indigo-900 dark:text-indigo-200"
+              >
+                LangGraph
+              </li>
+              <li
+                class="chip bg-emerald-100 text-emerald-700 dark:bg-emerald-900 dark:text-emerald-200"
+              >
+                LangChain
+              </li>
+              <li
+                class="chip bg-sky-100 text-sky-700 dark:bg-sky-900 dark:text-sky-200"
+              >
+                RAG / Semantic Search
+              </li>
+              <li
+                class="chip bg-amber-100 text-amber-700 dark:bg-amber-900 dark:text-amber-200"
+              >
+                Multi-Source Ingestion
+              </li>
+              <li
+                class="chip bg-rose-100 text-rose-700 dark:bg-rose-900 dark:text-rose-200"
+              >
+                Geospatial Reasoning
+              </li>
+              <li
+                class="chip bg-cyan-100 text-cyan-700 dark:bg-cyan-900 dark:text-cyan-200"
+              >
+                Vector Databases
+              </li>
+              <li
+                class="chip bg-teal-100 text-teal-700 dark:bg-teal-900 dark:text-teal-200"
+              >
+                FastAPI
+              </li>
+              <li
+                class="chip bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-200"
+              >
+                Docker
+              </li>
+              <li
+                class="chip bg-fuchsia-100 text-fuchsia-700 dark:bg-fuchsia-900 dark:text-fuchsia-200"
+              >
+                Cloud Deployment
+              </li>
+              <li
+                class="chip bg-orange-100 text-orange-700 dark:bg-orange-900 dark:text-orange-200"
+              >
+                Observability & Metrics
+              </li>
+            </ul>
+            <div class="pt-2">
+              <a
+                href="https://github.com/krishna-dhulipalla/PulseMap-Agent"
+                target="_blank"
+                class="inline-flex items-center gap-2 text-sm font-medium text-indigo-600 dark:text-indigo-400 hover:underline"
+              >
+                View on GitHub
+                <svg class="size-4" viewBox="0 0 20 20" fill="currentColor">
+                  <path
+                    d="M12.293 2.293a1 1 0 011.414 0l4 4a1 1 0 11-1.414 1.414L14 5.414V17a1 1 0 11-2 0V5.414L9.707 7.707A1 1 0 018.293 6.293l4-4z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== Background / Journey ===== -->
+    <section
+      id="experience"
+      class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-20"
+    >
+      <h2 class="font-display text-3xl md:text-4xl font-bold text-center">
+        Background
+      </h2>
+      <p class="mt-3 text-center text-gray-600 dark:text-gray-300">
+        My journey blends hands-on machine learning, data engineering, and
+        product thinking.
+      </p>
+
+      <div class="journey">
+        <!-- center line -->
+        <span class="journey-spine" aria-hidden="true"></span>
+
+        <ol class="journey-list">
+          <!-- 1. Experience -->
+          <li class="j-card exp">
+            <div class="j-node" aria-hidden="true"></div>
+            <div class="j-body">
+              <div class="j-top">
+                <span class="j-date">Jul 2025 - Present</span>
+                <span class="j-tag j-exp">Experience</span>
+              </div>
+              <h3 class="j-title">
+                Software Engineer – AI Platform, Cloud Systems LLC
+              </h3>
+              <p class="j-sub">
+                Cut manual query handling <strong>40%</strong> by shipping
+                SQL/API agents for reporting teams; rebuilt ETL with batched I/O
+                and incremental loads to trim runtime <strong>25%</strong>;
+                containerized services with rolling updates/HPA to keep uptime
+                above <strong>99.9%</strong>; and added schema-validated API
+                contracts to shorten integrations <strong>20%</strong>.
+              </p>
+            </div>
+          </li>
+
+          <!-- 2. Experience -->
+          <li class="j-card exp">
+            <div class="j-node" aria-hidden="true"></div>
+            <div class="j-body">
+              <div class="j-top">
+                <span class="j-date">Aug 2024 - Jul 2025</span>
+                <span class="j-tag j-exp">Experience</span>
+              </div>
+              <h3 class="j-title">Machine Learning Engineer — Virginia Tech</h3>
+              <p class="j-sub">
+                Improved genomic sequence throughput <strong>30%</strong> with
+                LoRA + soft prompts; orchestrated
+                <strong>100+</strong> multi-GPU runs with scheduling/checkpoint
+                reuse to shrink cycles from days to hours; built a LangChain
+                semantic-search interface that replaced manual literature
+                review; and containerized fine-tunes with MLflow to cut setup
+                time <strong>25%</strong>.
+              </p>
+            </div>
+          </li>
+
+          <!-- 3. Education -->
+          <li class="j-card edu">
+            <div class="j-node" aria-hidden="true"></div>
+            <div class="j-body">
+              <div class="j-top">
+                <span class="j-date">Jan 2023 – Dec 2024</span>
+                <span class="j-tag j-edu">Education</span>
+              </div>
+              <h3 class="j-title">M.S., Computer Science — Virginia Tech</h3>
+              <p class="j-sub">
+                GPA <strong>3.9/4</strong>; focused on AI/ML and data systems,
+                co-authoring papers on DNA foundation models and circadian
+                transcription while building end-to-end LLM pipelines from
+                training to deployment.
+              </p>
+            </div>
+          </li>
+
+          <!-- 4. Experience -->
+          <li class="j-card exp">
+            <div class="j-node" aria-hidden="true"></div>
+            <div class="j-body">
+              <div class="j-top">
+                <span class="j-date">Jun 2023 – May 2024</span>
+                <span class="j-tag j-exp">Experience</span>
+              </div>
+              <h3 class="j-title">
+                Graduate Research Assistant — Virginia Tech
+              </h3>
+              <p class="j-sub">
+                Improved cross-domain named entity recognition consistency by
+                <strong>15%</strong> by training and fine-tuning BERT and
+                SciBERT models across heterogeneous datasets. Reduced manual
+                intervention <strong>40%</strong> by automating retraining and
+                evaluation with CI/CD pipelines. Optimized training workflows on
+                institutional compute clusters, cutting runtime and resource
+                usage <strong>15%</strong> through systematic benchmarking and
+                tuning.
+              </p>
+            </div>
+          </li>
+
+          <li class="j-card exp">
+            <div class="j-node" aria-hidden="true"></div>
+            <div class="j-body">
+              <div class="j-top">
+                <span class="j-date">Jul 2021 – Dec 2022</span>
+                <span class="j-tag j-exp">Experience</span>
+              </div>
+              <h3 class="j-title">Software Engineer — UJR Technologies</h3>
+              <p class="j-sub">
+                Delivered full-stack features across backend APIs and UI flows,
+                supporting development across <strong>3</strong> core product
+                modules and improving team delivery speed. Increased stability
+                of ML-driven features by adding model-serving endpoints and
+                validation logic, reducing prediction-related failures
+                <strong>30%</strong>. Lowered cross-service integration issues
+                <strong>40%</strong> by standardizing API contracts, and
+                improved deployment reliability by implementing automated tests
+                and rollback paths, cutting release failures
+                <strong>20%</strong>.
+              </p>
+            </div>
+          </li>
+
+          <!-- 5. Education -->
+          <li class="j-card edu">
+            <div class="j-node" aria-hidden="true"></div>
+            <div class="j-body">
+              <div class="j-top">
+                <span class="j-date">Aug 2018 – May 2022</span>
+                <span class="j-tag j-edu">Education</span>
+              </div>
+              <h3 class="j-title">
+                B.Tech, Computer Science — Vel Tech University
+              </h3>
+              <p class="j-sub">
+                B.Tech in Computer Science (GPA 8.24/10); completed core systems
+                and ML coursework and led a distributed-systems capstone that
+                evolved into a small open-source contribution adopted by student
+                developers.
+              </p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===== Skills ===== -->
+
+    <!-- Agents & LLMs card -->
+    <section
+      id="skills"
+      class="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-md"
+    >
+      <!-- Header -->
+      <div class="flex items-center justify-between mb-4">
+        <div class="flex items-center gap-3">
+          <div
+            class="grid place-items-center h-10 w-10 rounded-xl bg-violet-500/10"
+          >
+            <!-- brain icon -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 text-violet-400"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+            >
+              <path
+                d="M7 7v10a4 4 0 0 1-4-4V9a4 4 0 0 1 4-4h3v2M17 7v10a4 4 0 0 0 4-4V9a4 4 0 0 0-4-4h-3v2M10 21a3 3 0 0 1-3-3M14 21a3 3 0 0 0 3-3"
+                stroke-width="1.5"
+              />
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold">Agents & LLMs</h3>
+            <p class="text-xs text-white/60">Snapshot - used weekly</p>
+          </div>
+        </div>
+
+        <!-- tiny “last used” tag -->
+        <span
+          class="text-[11px] rounded-full px-2 py-1 border border-white/10 bg-white/5"
+          >Last used: this week</span
+        >
+      </div>
+
+      <!-- Rings + proof chips -->
+      <ul class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <!-- item -->
+        <li class="flex items-center gap-3">
+          <div class="ring-meter" style="--val: 95"><span>95%</span></div>
+          <div class="min-w-0">
+            <div class="font-medium leading-tight">LangGraph</div>
+            <a
+              href="#project-profile-rag"
+              class="text-xs underline underline-offset-2 opacity-80 hover:opacity-100"
+              >UI automation 95%+ correctness</a
+            >
+          </div>
+        </li>
+
+        <li class="flex items-center gap-3">
+          <div class="ring-meter" style="--val: 90"><span>90%</span></div>
+          <div class="min-w-0">
+            <div class="font-medium leading-tight">LangChain</div>
+            <a
+              href="#project-android-agent"
+              class="text-xs underline underline-offset-2 opacity-80 hover:opacity-100"
+              >SQL/API agents cut manual queries 40%</a
+            >
+          </div>
+        </li>
+
+        <li class="flex items-center gap-3">
+          <div class="ring-meter" style="--val: 88"><span>88%</span></div>
+          <div class="min-w-0">
+            <div class="font-medium leading-tight">Prompt Engineering</div>
+            <a
+              href="#project-android-agent"
+              class="text-xs underline underline-offset-2 opacity-80 hover:opacity-100"
+              >Few-shot prompts + tool guardrails</a
+            >
+          </div>
+        </li>
+
+        <li class="flex items-center gap-3">
+          <div class="ring-meter" style="--val: 85"><span>85%</span></div>
+          <div class="min-w-0">
+            <div class="font-medium leading-tight">FAISS / Hybrid RAG</div>
+            <a
+              href="#project-pulsemap"
+              class="text-xs underline underline-offset-2 opacity-80 hover:opacity-100"
+              >BM25 + reranker</a
+            >
+          </div>
+        </li>
+
+        <li class="flex items-center gap-3">
+          <div class="ring-meter" style="--val: 82"><span>82%</span></div>
+          <div class="min-w-0">
+            <div class="font-medium leading-tight">Evaluation & Tracing</div>
+            <a
+              href="#project-profile-rag"
+              class="text-xs underline underline-offset-2 opacity-80 hover:opacity-100"
+              >LangSmith/Evals regression suites</a
+            >
+          </div>
+        </li>
+
+        <li class="flex items-center gap-3">
+          <div class="ring-meter" style="--val: 75"><span>75%</span></div>
+          <div class="min-w-0">
+            <div class="font-medium leading-tight">AutoGen / CrewAI</div>
+            <a
+              href="#project-pulsemap"
+              class="text-xs underline underline-offset-2 opacity-80 hover:opacity-100"
+              >multi-agent workflows</a
+            >
+          </div>
+        </li>
+      </ul>
+    </section>
+    <!-- Data & MLOps -->
+    <section
+      id="skills-mlops"
+      class="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-md mt-6"
+    >
+      <div class="flex items-center justify-between mb-4">
+        <div class="flex items-center gap-3">
+          <div
+            class="grid place-items-center h-10 w-10 rounded-xl bg-emerald-500/10"
+          >
+            <!-- server-cog icon -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 text-emerald-400"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-width="1.5"
+                d="M4 6h16M4 12h16M4 18h7m8-1-1 1m1-1 1 1m-1-1v-2m0 2h2"
+              />
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold">Data & MLOps</h3>
+            <p class="text-xs text-white/60">
+              Pipelines, evaluation, and observability
+            </p>
+          </div>
+        </div>
+        <span
+          class="text-[11px] rounded-full px-2 py-1 border border-white/10 bg-white/5"
+          >Last used: this week</span
+        >
+      </div>
+
+      <ul class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <li class="flex items-center gap-3">
+          <div class="ring-meter ring-emerald" style="--val: 90">
+            <span>90%</span>
+          </div>
+          <div>
+            <div class="font-medium leading-tight">Airflow & ETL</div>
+            <a
+              href="#project-genomics-pipeline"
+              class="text-xs underline underline-offset-2 opacity-80 hover:opacity-100"
+            >
+              Genomics ETL throughput +30%, runtime -40%
+            </a>
+          </div>
+        </li>
+
+        <li class="flex items-center gap-3">
+          <div class="ring-meter ring-emerald" style="--val: 85">
+            <span>85%</span>
+          </div>
+          <div>
+            <div class="font-medium leading-tight">
+              MLflow / Experimentation
+            </div>
+            <a
+              href="#project-genomics-pipeline"
+              class="text-xs underline underline-offset-2 opacity-80 hover:opacity-100"
+            >
+              tracked fine-tunes & metrics
+            </a>
+          </div>
+        </li>
+
+        <li class="flex items-center gap-3">
+          <div class="ring-meter ring-emerald" style="--val: 84">
+            <span>84%</span>
+          </div>
+          <div>
+            <div class="font-medium leading-tight">RAG Evaluation</div>
+            <a
+              href="#project-pulsemap"
+              class="text-xs underline underline-offset-2 opacity-80 hover:opacity-100"
+            >
+              FAISS+BM25+reranker
+            </a>
+          </div>
+        </li>
+
+        <li class="flex items-center gap-3">
+          <div class="ring-meter ring-emerald" style="--val: 82">
+            <span>82%</span>
+          </div>
+          <div>
+            <div class="font-medium leading-tight">Kafka / Streaming</div>
+            <a
+              href="#project-pulsemap"
+              class="text-xs underline underline-offset-2 opacity-80 hover:opacity-100"
+            >
+              real-time reporting (-75% latency)
+            </a>
+          </div>
+        </li>
+
+        <li class="flex items-center gap-3">
+          <div class="ring-meter ring-emerald" style="--val: 80">
+            <span>80%</span>
+          </div>
+          <div>
+            <div class="font-medium leading-tight">dbt / Warehousing</div>
+            <a
+              href="#project-android-agent"
+              class="text-xs underline underline-offset-2 opacity-80 hover:opacity-100"
+            >
+              Snowflake marts & materialized views
+            </a>
+          </div>
+        </li>
+
+        <li class="flex items-center gap-3">
+          <div class="ring-meter ring-emerald" style="--val: 78">
+            <span>78%</span>
+          </div>
+          <div>
+            <div class="font-medium leading-tight">LangSmith / Tracing</div>
+            <a
+              href="#project-pulsemap"
+              class="text-xs underline underline-offset-2 opacity-80 hover:opacity-100"
+            >
+              agent debugging
+            </a>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Backend & APIs -->
+    <section
+      id="skills-backend"
+      class="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-md mt-6"
+    >
+      <div class="flex items-center justify-between mb-4">
+        <div class="flex items-center gap-3">
+          <div
+            class="grid place-items-center h-10 w-10 rounded-xl bg-sky-500/10"
+          >
+            <!-- brackets icon -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 text-sky-400"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path stroke-width="1.5" d="M8 4H6v16h2M16 4h2v16h-2" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold">Backend & APIs</h3>
+            <p class="text-xs text-white/60">FastAPI, auth, testing</p>
+          </div>
+        </div>
+        <span
+          class="text-[11px] rounded-full px-2 py-1 border border-white/10 bg-white/5"
+          >Last used: this week</span
+        >
+      </div>
+
+      <ul class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <li class="flex items-center gap-3">
+          <div class="ring-meter ring-sky" style="--val: 92">
+            <span>92%</span>
+          </div>
+          <div>
+            <div class="font-medium leading-tight">FastAPI</div>
+            <a
+              href="#project-pulsemap"
+              class="text-xs underline underline-offset-2 opacity-80 hover:opacity-100"
+            >
+              agents & webhooks
+            </a>
+          </div>
+        </li>
+
+        <li class="flex items-center gap-3">
+          <div class="ring-meter ring-sky" style="--val: 88">
+            <span>88%</span>
+          </div>
+          <div>
+            <div class="font-medium leading-tight">Postgres/SQLite + SQL</div>
+            <a
+              href="#project-android-agent"
+              class="text-xs underline underline-offset-2 opacity-80 hover:opacity-100"
+            >
+              session memory & logs
+            </a>
+          </div>
+        </li>
+
+        <li class="flex items-center gap-3">
+          <div class="ring-meter ring-sky" style="--val: 85">
+            <span>85%</span>
+          </div>
+          <div>
+            <div class="font-medium leading-tight">Auth & JWT</div>
+            <a
+              href="#project-intellimeet"
+              class="text-xs underline underline-offset-2 opacity-80 hover:opacity-100"
+            >
+              secure rooms
+            </a>
+          </div>
+        </li>
+
+        <li class="flex items-center gap-3">
+          <div class="ring-meter ring-sky" style="--val: 82">
+            <span>82%</span>
+          </div>
+          <div>
+            <div class="font-medium leading-tight">Testing & CI</div>
+            <a
+              href="#project-intellimeet"
+              class="text-xs underline underline-offset-2 opacity-80 hover:opacity-100"
+            >
+              pipeline & e2e
+            </a>
+          </div>
+        </li>
+
+        <li class="flex items-center gap-3">
+          <div class="ring-meter ring-sky" style="--val: 80">
+            <span>80%</span>
+          </div>
+          <div>
+            <div class="font-medium leading-tight">WebSockets / Realtime</div>
+            <a
+              href="#project-intellimeet"
+              class="text-xs underline underline-offset-2 opacity-80 hover:opacity-100"
+            >
+              <span>sub-200ms calls</span>
+            </a>
+          </div>
+        </li>
+
+        <li class="flex items-center gap-3">
+          <div class="ring-meter ring-sky" style="--val: 78">
+            <span>78%</span>
+          </div>
+          <div>
+            <div class="font-medium leading-tight">OpenAPI & Docs</div>
+            <a
+              href="#project-pulsemap"
+              class="text-xs underline underline-offset-2 opacity-80 hover:opacity-100"
+            >
+              typed routes
+            </a>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Cloud & Infrastructure -->
+    <section
+      id="skills-cloud"
+      class="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-md mt-6"
+    >
+      <div class="flex items-center justify-between mb-4">
+        <div class="flex items-center gap-3">
+          <div
+            class="grid place-items-center h-10 w-10 rounded-xl bg-amber-500/10"
+          >
+            <!-- cloud icon -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 text-amber-400"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-width="1.5"
+                d="M3 15a4 4 0 0 0 4 4h10a4 4 0 1 0-1.2-7.8A6 6 0 0 0 6 9.5 4.5 4.5 0 0 0 3 15Z"
+              />
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold">Cloud & Infrastructure</h3>
+            <p class="text-xs text-white/60">Docker, K8s, AWS/GCP</p>
+          </div>
+        </div>
+        <span
+          class="text-[11px] rounded-full px-2 py-1 border border-white/10 bg-white/5"
+          >Last used: recent</span
+        >
+      </div>
+
+      <ul class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <li class="flex items-center gap-3">
+          <div class="ring-meter ring-amber" style="--val: 88">
+            <span>88%</span>
+          </div>
+          <div>
+            <div class="font-medium leading-tight">Docker</div>
+            <a
+              href="#project-pulsemap"
+              class="text-xs underline underline-offset-2 opacity-80 hover:opacity-100"
+            >
+              local & prod builds
+            </a>
+          </div>
+        </li>
+
+        <li class="flex items-center gap-3">
+          <div class="ring-meter ring-amber" style="--val: 84">
+            <span>84%</span>
+          </div>
+          <div>
+            <div class="font-medium leading-tight">Kubernetes</div>
+            <a
+              href="#project-pulsemap"
+              class="text-xs underline underline-offset-2 opacity-80 hover:opacity-100"
+            >
+              agents on k8s
+            </a>
+          </div>
+        </li>
+
+        <li class="flex items-center gap-3">
+          <div class="ring-meter ring-amber" style="--val: 82">
+            <span>82%</span>
+          </div>
+          <div>
+            <div class="font-medium leading-tight">AWS (S3, ECS, CW)</div>
+            <a
+              href="#project-genomics-pipeline"
+              class="text-xs underline underline-offset-2 opacity-80 hover:opacity-100"
+            >
+              logs & deploys
+            </a>
+          </div>
+        </li>
+
+        <li class="flex items-center gap-3">
+          <div class="ring-meter ring-amber" style="--val: 80">
+            <span>80%</span>
+          </div>
+          <div>
+            <div class="font-medium leading-tight">GCP (GCS, BQ)</div>
+            <a
+              href="#project-genomics-pipeline"
+              class="text-xs underline underline-offset-2 opacity-80 hover:opacity-100"
+            >
+              ETL & storage
+            </a>
+          </div>
+        </li>
+
+        <li class="flex items-center gap-3">
+          <div class="ring-meter ring-amber" style="--val: 78">
+            <span>78%</span>
+          </div>
+          <div>
+            <div class="font-medium leading-tight">CI/CD</div>
+            <a
+              href="#project-intellimeet"
+              class="text-xs underline underline-offset-2 opacity-80 hover:opacity-100"
+            >
+              stable releases
+            </a>
+          </div>
+        </li>
+
+        <li class="flex items-center gap-3">
+          <div class="ring-meter ring-amber" style="--val: 76">
+            <span>76%</span>
+          </div>
+          <div>
+            <div class="font-medium leading-tight">Observability</div>
+            <a
+              href="#project-pulsemap"
+              class="text-xs underline underline-offset-2 opacity-80 hover:opacity-100"
+            >
+              metrics & alerts
+            </a>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ML / Analytics Tools -->
+    <section
+      id="skills-analytics"
+      class="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-md mt-6"
+    >
+      <div class="flex items-center justify-between mb-4">
+        <div class="flex items-center gap-3">
+          <div
+            class="grid place-items-center h-10 w-10 rounded-xl bg-rose-500/10"
+          >
+            <!-- chart icon -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 text-rose-400"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-width="1.5"
+                d="M4 19V5m0 14h16M8 17v-5m4 5V7m4 10v-3"
+              />
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold">ML / Analytics Tools</h3>
+            <p class="text-xs text-white/60">PyTorch, TF, CV/NLP</p>
+          </div>
+        </div>
+        <span
+          class="text-[11px] rounded-full px-2 py-1 border border-white/10 bg-white/5"
+          >Last used: recent</span
+        >
+      </div>
+
+      <ul class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <li class="flex items-center gap-3">
+          <div class="ring-meter ring-rose" style="--val: 90">
+            <span>90%</span>
+          </div>
+          <div>
+            <div class="font-medium leading-tight">PyTorch</div>
+            <a
+              href="#project-proxytuner"
+              class="text-xs underline underline-offset-2 opacity-80 hover:opacity-100"
+            >
+              proxy-tuning NER
+            </a>
+          </div>
+        </li>
+
+        <li class="flex items-center gap-3">
+          <div class="ring-meter ring-rose" style="--val: 85">
+            <span>85%</span>
+          </div>
+          <div>
+            <div class="font-medium leading-tight">Transformers / HF</div>
+            <a
+              href="#project-profile-rag"
+              class="text-xs underline underline-offset-2 opacity-80 hover:opacity-100"
+            >
+              local embeddings
+            </a>
+          </div>
+        </li>
+
+        <li class="flex items-center gap-3">
+          <div class="ring-meter ring-rose" style="--val: 82">
+            <span>82%</span>
+          </div>
+          <div>
+            <div class="font-medium leading-tight">OpenCV / CV</div>
+            <a
+              href="#project-intellimeet"
+              class="text-xs underline underline-offset-2 opacity-80 hover:opacity-100"
+            >
+              RetinaFace on-device
+            </a>
+          </div>
+        </li>
+
+        <li class="flex items-center gap-3">
+          <div class="ring-meter ring-rose" style="--val: 80">
+            <span>80%</span>
+          </div>
+          <div>
+            <div class="font-medium leading-tight">NLP / Prompting</div>
+            <a
+              href="#project-android-agent"
+              class="text-xs underline underline-offset-2 opacity-80 hover:opacity-100"
+            >
+              few-shot + reflection
+            </a>
+          </div>
+        </li>
+
+        <li class="flex items-center gap-3">
+          <div class="ring-meter ring-rose" style="--val: 78">
+            <span>78%</span>
+          </div>
+          <div>
+            <div class="font-medium leading-tight">Pandas / NumPy</div>
+            <a
+              href="#project-genomics-pipeline"
+              class="text-xs underline underline-offset-2 opacity-80 hover:opacity-100"
+            >
+              data prep @ scale
+            </a>
+          </div>
+        </li>
+
+        <li class="flex items-center gap-3">
+          <div class="ring-meter ring-rose" style="--val: 76">
+            <span>76%</span>
+          </div>
+          <div>
+            <div class="font-medium leading-tight">Visualization</div>
+            <a
+              href="#project-profile-rag"
+              class="text-xs underline underline-offset-2 opacity-80 hover:opacity-100"
+            >
+              eval dashboards
+            </a>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ===== Contact ===== -->
+    <section id="contact" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
+      <div class="grid md:grid-cols-2 gap-10">
+        <div>
+          <h2 class="font-display text-3xl md:text-4xl font-bold">
+            Let's talk
+          </h2>
+          <p class="mt-3 text-gray-600 dark:text-gray-300">
+            Open to roles and collaborations. The fastest way to reach me is
+            email or LinkedIn.
+          </p>
+          <div class="mt-6 flex flex-col gap-2 text-sm">
+            <a
+              href="mailto:dhulipallakrishnavamsi@gmail.com"
+              class="hover:text-teal-600"
+              >dhulipallakrishnavamsi@gmail.com</a
+            >
+            <a
+              href="https://www.linkedin.com/in/krishnavamsidhulipalla"
+              class="hover:text-teal-600"
+              target="_blank"
+              >LinkedIn</a
+            >
+          </div>
+        </div>
+        <form
+          id="nn-contact-form"
+          action="https://formspree.io/f/mzzpwpkj"
+          method="POST"
+          class="rounded-2xl border border-gray-200 dark:border-gray-700 p-6 grid gap-4 bg-white dark:bg-gray-900/50"
+          onsubmit="event.preventDefault(); showToast('Message sent - I will reply soon.'); this.reset();"
+        >
+          <div class="grid gap-1">
+            <label for="name" class="text-sm text-gray-500">Name</label>
+            <input
+              id="name"
+              type="text"
+              class="rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 px-3 py-2"
+              required
+            />
+          </div>
+          <div class="grid gap-1">
+            <label for="email" class="text-sm text-gray-500">Email</label>
+            <input
+              id="email"
+              type="email"
+              class="rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 px-3 py-2"
+              required
+            />
+          </div>
+          <div class="grid gap-1">
+            <label for="msg" class="text-sm text-gray-500">Message</label>
+            <textarea
+              id="msg"
+              rows="4"
+              class="rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 px-3 py-2"
+              placeholder="Tell me about your project..."
+            ></textarea>
+          </div>
+          <button
+            class="mt-2 inline-flex items-center rounded-xl bg-teal-600 px-4 py-2.5 text-white shadow-float hover:bg-teal-700"
+          >
+            Send
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- ===== Footer ===== -->
+    <footer class="border-t border-black/5 dark:border-white/10">
+      <div
+        class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 text-sm flex flex-col md:flex-row items-center justify-between gap-3"
+      >
+        <p>© <span id="year"></span> Krishna Vamsi Dhulipalla</p>
+        <div class="flex items-center gap-4">
+          <a href="#top" class="hover:text-teal-600">Back to top ↑</a>
+        </div>
+      </div>
+      <div
+        id="chatbot-lottie-btn"
+        class="fixed bottom-14 right-4 flex flex-col items-center cursor-pointer"
+        onclick="window.open('https://krishnadhulipalla-chatbot.hf.space/', '_blank')"
+      >
+        <dotlottie-wc
+          src="https://lottie.host/12b60265-5eef-4309-bcce-98abdae08afb/9FFDxA63EF.lottie"
+          style="width: 5rem; height: 5rem"
+          speed="1"
+          autoplay
+          loop
+        ></dotlottie-wc>
+        <div
+          id="chatbot-lottie-btn-text"
+          class="text-xs mt-2 text-gray-600 dark:text-gray-300 bg-white dark:bg-gray-800 px-2 py-1 rounded-full border border-teal-600 shadow"
+        >
+          Stuck scrolling? Chat with me instead!
+        </div>
+      </div>
+    </footer>
+
+    <!-- ===== Resume Modal ===== -->
+    <div
+      id="resumeModal"
+      class="fixed inset-0 hidden items-center justify-center bg-black/50 p-4 z-50"
+    >
+      <div
+        class="w-full max-w-3xl rounded-2xl bg-white dark:bg-gray-900 overflow-hidden shadow-2xl"
+      >
+        <div
+          class="flex items-center justify-between px-5 py-3 border-b border-gray-200 dark:border-gray-800"
+        >
+          <h3 class="font-semibold">Resume</h3>
+          <button id="closeResume" class="text-xl leading-none">×</button>
+        </div>
+        <div class="p-5">
+          <iframe
+            src="assets/resume.pdf"
+            class="w-full h-[70vh] rounded-md"
+            title="Resume PDF"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== Toast ===== -->
+    <div
+      id="toast"
+      class="fixed bottom-6 left-1/2 -translate-x-1/2 hidden rounded-xl bg-gray-900 text-white text-sm px-4 py-2 shadow-float"
+    >
+      Message sent - I will reply soon.
+    </div>
+
+    <script src="./js/main.js"></script>
+  </body>
+</html>
