@@ -7,6 +7,8 @@ featured: true
 excerpt: I stopped tracking individual job listings and started tracking hiring behavior—momentum, freezes, job lifespan, and timing. Here’s what changed and why it’s actually useful.
 ---
 
+![Dashboard](/assets/blog/hiring-trend-tracker/dashboard.png)
+
 Most job search tools answer: **“what roles are open right now?”**
 
 I wanted a different answer:
@@ -43,7 +45,7 @@ Tracking 78+ companies is overwhelming if everything looks equally important.
 
 So the dashboard is intentionally split into two sections:
 
-### 1) **This Week: Movers** (expanded)
+### 1) **This Week: Movers**
 
 Only companies with meaningful weekly signals get expanded:
 
@@ -138,8 +140,9 @@ Instead, I only show it when:
 So the “news” section becomes:
 **context**, not noise.
 
+![Example: a headline linked to a hiring spike/freeze signal](/assets/blog/hiring-trend-tracker/amazon.png)
 ![Example: a headline linked to a hiring spike/freeze signal](/assets/blog/hiring-trend-tracker/news-signal.png)
-_Figure: News is shown only when it explains movement._
+_Figure: News can predict hiring trends and explain hiring behavior._
 
 ---
 
@@ -147,7 +150,7 @@ _Figure: News is shown only when it explains movement._
 
 I’ve open-sourced the project here:
 
-**GitHub:** https://github.com/<your-link-here>
+**GitHub:** [Repo link](https://github.com/krishna-dhulipalla/Hiring-Trend-Tracker)
 
 Setup instructions are already included in the repository.
 

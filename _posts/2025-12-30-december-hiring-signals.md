@@ -152,6 +152,7 @@ That’s the mindset I’m taking into January.
 
 I built this tracker for myself and open-sourced it:
 
-**GitHub:** https://github.com/<your-link-here>
+**GitHub:** [Repo link](https://github.com/krishna-dhulipalla/Hiring-Trend-Tracker)
+**Related blog post:** [Why I built this](https://krishna-dhulipalla.github.io/job%20search/2025/12/29/hiring-momentum-dashboard.html)
 
 Setup instructions are included in the repository.
