@@ -1,0 +1,233 @@
+---
+layout: null
+---
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog - Krishna Vamsi Dhulipalla</title>
+    <meta
+      name="description"
+      content="Engineering thoughts on LLM systems, Agentic workflows, and Reverse Engineering."
+    />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="{{ site.baseurl }}/js/tailwind-config.js"></script>
+
+    <style>
+      ::selection {
+        background-color: #0d9488;
+        color: white;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      .font-serif {
+        font-family: "Merriweather", serif;
+      }
+      .font-mono {
+        font-family: "JetBrains Mono", monospace;
+      }
+
+      .bento-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .bento-card:hover {
+        transform: translateY(-4px);
+      }
+      .bento-card:hover .arrow-icon {
+        transform: translate(4px, -4px);
+      }
+    </style>
+  </head>
+
+  <body
+    class="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 flex flex-col min-h-screen"
+  >
+    <!-- Navbar -->
+    <header
+      class="fixed top-0 inset-x-0 z-50 border-b border-black/5 dark:border-white/10 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md"
+    >
+      <nav
+        class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between"
+      >
+        <a
+          href="{{ site.baseurl }}/index.html"
+          class="text-xl font-bold tracking-tight"
+        >
+          <span class="text-teal-600">Krishna</span>
+          <span class="text-gray-900 dark:text-white">Vamsi</span>
+        </a>
+        <div class="hidden md:flex items-center gap-6 text-sm font-medium">
+          <a
+            href="{{ site.baseurl }}/index.html#about"
+            class="hover:text-teal-600 transition-colors"
+            >About</a
+          >
+          <a
+            href="{{ site.baseurl }}/index.html#projects"
+            class="hover:text-teal-600 transition-colors"
+            >Projects</a
+          >
+          <a href="{{ site.baseurl }}/blog.html" class="text-teal-600"
+            >Writing</a
+          >
+          <button
+            id="theme-toggle"
+            class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+          >
+            <span class="theme-icon">🌞</span>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main
+      class="flex-grow pt-32 pb-20 px-4 sm:px-6 lg:px-8 mx-auto max-w-7xl w-full"
+    >
+      <!-- Header -->
+      <section class="mb-16 max-w-2xl">
+        <h1
+          class="text-4xl md:text-5xl font-serif font-bold tracking-tight mb-4 text-gray-900 dark:text-white"
+        >
+          Engineering Logs
+        </h1>
+        <p class="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+          Exploring the friction points of building real-world AI systems. Notes
+          on agentic workflows, infra evaluation, and reverse engineering.
+        </p>
+      </section>
+
+      <!-- Bento Grid Layout -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {% for post in site.posts %} {% if post.featured %}
+        <!-- Featured Post (Spans 2 cols) -->
+        <article
+          class="bento-card group col-span-1 md:col-span-2 relative overflow-hidden rounded-3xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-xl dark:hover:border-teal-500/30"
+        >
+          <a
+            href="{{ post.url | relative_url }}"
+            class="block p-8 h-full flex flex-col justify-between"
+          >
+            <div class="mb-6">
+              <div
+                class="flex items-center gap-3 text-xs font-mono mb-4 text-teal-600 dark:text-teal-400 uppercase tracking-wider"
+              >
+                <span>{{ post.category }}</span>
+                <span
+                  class="w-1 h-1 rounded-full bg-gray-300 dark:bg-gray-600"
+                ></span>
+                <span>{{ post.date | date: "%b %d, %Y" }}</span>
+              </div>
+              <h2
+                class="text-3xl sm:text-4xl font-serif font-bold leading-tight mb-3 group-hover:text-teal-600 transition-colors"
+              >
+                {{ post.title }}
+              </h2>
+              <p
+                class="text-gray-600 dark:text-gray-300 leading-relaxed line-clamp-3"
+              >
+                {{ post.excerpt }}
+              </p>
+            </div>
+            <div
+              class="flex items-center text-sm font-medium text-gray-900 dark:text-white group-hover:underline decoration-teal-500 underline-offset-4"
+            >
+              Read Article
+              <svg
+                class="arrow-icon w-4 h-4 ml-1 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                ></path>
+              </svg>
+            </div>
+          </a>
+        </article>
+        {% else %}
+        <!-- Standard Post -->
+        <article
+          class="bento-card group relative overflow-hidden rounded-3xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-lg"
+        >
+          <a
+            href="{{ post.url | relative_url }}"
+            class="block p-8 h-full flex flex-col"
+          >
+            <div
+              class="flex items-center gap-3 text-xs font-mono mb-4 text-rose-600 dark:text-rose-400 uppercase tracking-wider"
+            >
+              <span>{{ post.category }}</span>
+            </div>
+            <h3
+              class="text-xl font-serif font-bold leading-snug mb-3 group-hover:text-rose-500 transition-colors"
+            >
+              {{ post.title }}
+            </h3>
+            <p class="text-sm text-gray-400 mt-auto pt-4">
+              {{ post.content | number_of_words | divided_by: 200 }} min read
+            </p>
+          </a>
+        </article>
+        {% endif %} {% endfor %}
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-black/5 dark:border-white/10 mt-auto">
+      <div
+        class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 flex items-center justify-between text-sm text-gray-500"
+      >
+        <p>&copy; 2025 Krishna Vamsi Dhulipalla</p>
+        <a href="{{ site.baseurl }}/index.html" class="hover:text-teal-600"
+          >Back to Portfolio</a
+        >
+      </div>
+    </footer>
+
+    <!-- Theme Logic (Simple JS for now) -->
+    <script>
+      const btn = document.getElementById("theme-toggle");
+      const html = document.documentElement;
+
+      // Init
+      if (
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        html.classList.add("dark");
+      } else {
+        html.classList.remove("dark");
+      }
+
+      // Toggle
+      if (btn) {
+        btn.addEventListener("click", () => {
+          if (html.classList.contains("dark")) {
+            html.classList.remove("dark");
+            localStorage.theme = "light";
+          } else {
+            html.classList.add("dark");
+            localStorage.theme = "dark";
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
