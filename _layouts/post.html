@@ -150,7 +150,7 @@
         </div>
       </div>
 
-      <!-- Comments Section (Frontend Only) -->
+      <!-- Comments Section (Vercel Backend) -->
       <section
         class="mx-auto max-w-3xl mt-16 pt-8 border-t border-gray-200 dark:border-gray-800"
       >
@@ -160,8 +160,10 @@
 
         <!-- Comment List -->
         <div id="comment-list" class="space-y-6 mb-10">
-          <!-- Comments injected here via JS -->
-          <p id="no-comments-msg" class="text-gray-500 italic text-sm">
+          <p id="loading-msg" class="text-gray-500 italic text-sm">
+            Loading comments...
+          </p>
+          <p id="no-comments-msg" class="hidden text-gray-500 italic text-sm">
             No comments yet. Be the first!
           </p>
         </div>
@@ -169,25 +171,56 @@
         <!-- Comment Form -->
         <form
           id="comment-form"
-          class="bg-gray-50 dark:bg-gray-800/50 p-6 rounded-2xl border border-gray-200 dark:border-gray-700"
+          class="bg-gray-50 dark:bg-gray-800/50 p-6 rounded-2xl border border-gray-200 dark:border-gray-700 relative"
         >
           <h4 class="text-lg font-semibold mb-4 text-gray-900 dark:text-white">
             Leave a thought
           </h4>
+
           <div class="grid gap-4">
-            <div>
-              <label
-                for="comment-name"
-                class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
-                >Name (Optional)</label
-              >
-              <input
-                type="text"
-                id="comment-name"
-                placeholder="Anonymous"
-                class="w-full rounded-lg border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 px-4 py-2 text-sm focus:border-teal-500 focus:ring-teal-500 dark:text-white"
-              />
+            <!-- Honeypot (Hidden) -->
+            <input
+              type="text"
+              name="website"
+              style="display: none"
+              tabindex="-1"
+              autocomplete="off"
+            />
+
+            <div class="flex items-center gap-4">
+              <div class="flex-grow">
+                <label
+                  for="comment-name"
+                  class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                  >Name</label
+                >
+                <input
+                  type="text"
+                  id="comment-name"
+                  placeholder="Your Name"
+                  class="w-full rounded-lg border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 px-4 py-2 text-sm focus:border-teal-500 focus:ring-teal-500 dark:text-white transition-opacity duration-200"
+                />
+              </div>
+
+              <!-- Anonymous Toggle -->
+              <div class="flex flex-col justify-end pb-2">
+                <label class="inline-flex items-center cursor-pointer">
+                  <input
+                    type="checkbox"
+                    id="anon-toggle"
+                    class="sr-only peer"
+                  />
+                  <div
+                    class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-teal-300 dark:peer-focus:ring-teal-800 rounded-full dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-teal-600"
+                  ></div>
+                  <span
+                    class="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300"
+                    >Post as Anonymous</span
+                  >
+                </label>
+              </div>
             </div>
+
             <div>
               <label
                 for="comment-body"
@@ -202,94 +235,150 @@
                 class="w-full rounded-lg border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 px-4 py-2 text-sm focus:border-teal-500 focus:ring-teal-500 dark:text-white"
               ></textarea>
             </div>
+
             <button
               type="submit"
-              class="self-start px-4 py-2 bg-teal-600 text-white rounded-lg text-sm font-medium hover:bg-teal-700 transition-colors"
+              id="submit-btn"
+              class="self-start px-4 py-2 bg-teal-600 text-white rounded-lg text-sm font-medium hover:bg-teal-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
               Post Comment
             </button>
+            <p id="error-msg" class="hidden text-red-500 text-sm mt-2"></p>
           </div>
         </form>
       </section>
 
-      <!-- Comment Logic -->
+      <!-- Comment Logic (Vercel API) -->
       <script>
         document.addEventListener("DOMContentLoaded", () => {
           const form = document.getElementById("comment-form");
           const list = document.getElementById("comment-list");
+          const loadingMsg = document.getElementById("loading-msg");
           const noMsg = document.getElementById("no-comments-msg");
+          const nameInput = document.getElementById("comment-name");
+          const anonToggle = document.getElementById("anon-toggle");
+          const submitBtn = document.getElementById("submit-btn");
+          const errorMsg = document.getElementById("error-msg");
 
-          // Unique key for this post
-          const postKey = "comments_" + window.location.pathname;
+          // Configuration
+          const API_URL = "/api/comments";
+          const postId = window.location.pathname.replace(/\/$/, "");
 
-          // Random Emoji Generator
-          const emojis = [
-            "🚀",
-            "👾",
-            "🤖",
-            "🐱",
-            "🦕",
-            "🍕",
-            "⚡️",
-            "🔥",
-            "💡",
-            "🧠",
-          ];
-          const getRandomEmoji = () =>
-            emojis[Math.floor(Math.random() * emojis.length)];
+          // 1. Toggle Anonymous Logic
+          anonToggle.addEventListener("change", (e) => {
+            if (e.target.checked) {
+              nameInput.value = "";
+              nameInput.placeholder = "Anonymous";
+              nameInput.disabled = true;
+              nameInput.classList.add("opacity-50");
+            } else {
+              nameInput.placeholder = "Your Name";
+              nameInput.disabled = false;
+              nameInput.classList.remove("opacity-50");
+            }
+          });
 
-          // Load comments
-          const loadComments = () => {
-            const stored = JSON.parse(localStorage.getItem(postKey) || "[]");
-            if (stored.length > 0) {
-              noMsg.style.display = "none";
-              list.innerHTML = stored
-                .map(
-                  (c) => `
-                <div class="flex gap-3">
-                  <div class="flex-shrink-0 w-10 h-10 rounded-full bg-teal-100 dark:bg-teal-900/30 flex items-center justify-center text-xl">
-                    ${c.emoji}
-                  </div>
-                  <div>
-                    <div class="flex items-center gap-2">
-                      <span class="font-semibold text-gray-900 dark:text-white text-sm">${c.name}</span>
-                      <span class="text-xs text-gray-500">${c.date}</span>
-                    </div>
-                    <p class="text-gray-600 dark:text-gray-300 text-sm mt-1">${c.body}</p>
-                  </div>
+          // 2. Render Comments
+          const renderComments = (comments) => {
+            list.innerHTML = "";
+
+            if (comments.length === 0) {
+              list.appendChild(noMsg);
+              noMsg.classList.remove("hidden");
+              return;
+            }
+
+            comments.forEach((c) => {
+              const div = document.createElement("div");
+              div.className = "flex gap-3 animate-fade-in";
+
+              const dateStr = new Date(c.createdAt).toLocaleDateString(
+                undefined,
+                {
+                  month: "short",
+                  day: "numeric",
+                  year: "numeric",
+                }
+              );
+
+              div.innerHTML = `
+                <div class="flex-shrink-0 w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-gray-500 dark:text-gray-400">
+                  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
                 </div>
-              `
-                )
-                .join("");
+                <div>
+                  <div class="flex items-center gap-2">
+                    <span class="font-semibold text-gray-900 dark:text-white text-sm">${c.name}</span>
+                    <span class="text-xs text-gray-500">${dateStr}</span>
+                  </div>
+                  <p class="text-gray-600 dark:text-gray-300 text-sm mt-1 whitespace-pre-wrap">${c.body}</p>
+                </div>
+              `;
+              list.appendChild(div);
+            });
+          };
+
+          // 3. Fetch Comments
+          const fetchComments = async () => {
+            try {
+              loadingMsg.classList.remove("hidden");
+              noMsg.classList.add("hidden");
+
+              const res = await fetch(
+                `${API_URL}?postId=${encodeURIComponent(postId)}`
+              );
+              if (!res.ok) throw new Error("Failed to load");
+
+              const data = await res.json();
+              loadingMsg.classList.add("hidden");
+              renderComments(data.comments || []);
+            } catch (err) {
+              console.error(err);
+              loadingMsg.textContent =
+                "Could not load comments. (Is the backend running?)";
             }
           };
 
-          loadComments();
+          fetchComments();
 
-          // Handle Submit
-          form.addEventListener("submit", (e) => {
+          // 4. Submit Comment
+          form.addEventListener("submit", async (e) => {
             e.preventDefault();
-            const name =
-              document.getElementById("comment-name").value.trim() ||
-              "Anonymous";
+            errorMsg.classList.add("hidden");
+            submitBtn.disabled = true;
+            submitBtn.textContent = "Posting...";
+
             const body = document.getElementById("comment-body").value.trim();
+            const isAnonymous = anonToggle.checked;
+            const name = isAnonymous ? "Anonymous" : nameInput.value.trim();
+            const honeypot = form.querySelector('input[name="website"]').value;
 
-            if (!body) return;
+            try {
+              const res = await fetch(API_URL, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                  postId,
+                  name,
+                  isAnonymous,
+                  content: body,
+                  honeypot,
+                }),
+              });
 
-            const newComment = {
-              name,
-              body,
-              emoji: getRandomEmoji(),
-              date: new Date().toLocaleDateString(),
-            };
+              if (!res.ok) throw new Error("Failed to post");
 
-            const stored = JSON.parse(localStorage.getItem(postKey) || "[]");
-            stored.push(newComment);
-            localStorage.setItem(postKey, JSON.stringify(stored));
-
-            // Reset and reload
-            form.reset();
-            loadComments();
+              document.getElementById("comment-body").value = "";
+              form.querySelector('input[name="website"]').value = "";
+              await fetchComments();
+            } catch (err) {
+              console.error(err);
+              errorMsg.textContent =
+                "Failed to post comment. Please try again.";
+              errorMsg.classList.remove("hidden");
+            } finally {
+              submitBtn.disabled = false;
+              submitBtn.textContent = "Post Comment";
+            }
           });
         });
       </script>
