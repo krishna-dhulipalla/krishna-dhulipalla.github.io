@@ -149,6 +149,150 @@
           </p>
         </div>
       </div>
+
+      <!-- Comments Section (Frontend Only) -->
+      <section
+        class="mx-auto max-w-3xl mt-16 pt-8 border-t border-gray-200 dark:border-gray-800"
+      >
+        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+          Comments
+        </h3>
+
+        <!-- Comment List -->
+        <div id="comment-list" class="space-y-6 mb-10">
+          <!-- Comments injected here via JS -->
+          <p id="no-comments-msg" class="text-gray-500 italic text-sm">
+            No comments yet. Be the first!
+          </p>
+        </div>
+
+        <!-- Comment Form -->
+        <form
+          id="comment-form"
+          class="bg-gray-50 dark:bg-gray-800/50 p-6 rounded-2xl border border-gray-200 dark:border-gray-700"
+        >
+          <h4 class="text-lg font-semibold mb-4 text-gray-900 dark:text-white">
+            Leave a thought
+          </h4>
+          <div class="grid gap-4">
+            <div>
+              <label
+                for="comment-name"
+                class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                >Name (Optional)</label
+              >
+              <input
+                type="text"
+                id="comment-name"
+                placeholder="Anonymous"
+                class="w-full rounded-lg border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 px-4 py-2 text-sm focus:border-teal-500 focus:ring-teal-500 dark:text-white"
+              />
+            </div>
+            <div>
+              <label
+                for="comment-body"
+                class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                >Message</label
+              >
+              <textarea
+                id="comment-body"
+                rows="3"
+                required
+                placeholder="Great post!"
+                class="w-full rounded-lg border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 px-4 py-2 text-sm focus:border-teal-500 focus:ring-teal-500 dark:text-white"
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              class="self-start px-4 py-2 bg-teal-600 text-white rounded-lg text-sm font-medium hover:bg-teal-700 transition-colors"
+            >
+              Post Comment
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Comment Logic -->
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          const form = document.getElementById("comment-form");
+          const list = document.getElementById("comment-list");
+          const noMsg = document.getElementById("no-comments-msg");
+
+          // Unique key for this post
+          const postKey = "comments_" + window.location.pathname;
+
+          // Random Emoji Generator
+          const emojis = [
+            "🚀",
+            "👾",
+            "🤖",
+            "🐱",
+            "🦕",
+            "🍕",
+            "⚡️",
+            "🔥",
+            "💡",
+            "🧠",
+          ];
+          const getRandomEmoji = () =>
+            emojis[Math.floor(Math.random() * emojis.length)];
+
+          // Load comments
+          const loadComments = () => {
+            const stored = JSON.parse(localStorage.getItem(postKey) || "[]");
+            if (stored.length > 0) {
+              noMsg.style.display = "none";
+              list.innerHTML = stored
+                .map(
+                  (c) => `
+                <div class="flex gap-3">
+                  <div class="flex-shrink-0 w-10 h-10 rounded-full bg-teal-100 dark:bg-teal-900/30 flex items-center justify-center text-xl">
+                    ${c.emoji}
+                  </div>
+                  <div>
+                    <div class="flex items-center gap-2">
+                      <span class="font-semibold text-gray-900 dark:text-white text-sm">${c.name}</span>
+                      <span class="text-xs text-gray-500">${c.date}</span>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300 text-sm mt-1">${c.body}</p>
+                  </div>
+                </div>
+              `
+                )
+                .join("");
+            }
+          };
+
+          loadComments();
+
+          // Handle Submit
+          form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const name =
+              document.getElementById("comment-name").value.trim() ||
+              "Anonymous";
+            const body = document.getElementById("comment-body").value.trim();
+
+            if (!body) return;
+
+            const newComment = {
+              name,
+              body,
+              emoji: getRandomEmoji(),
+              date: new Date().toLocaleDateString(),
+            };
+
+            const stored = JSON.parse(localStorage.getItem(postKey) || "[]");
+            stored.push(newComment);
+            localStorage.setItem(postKey, JSON.stringify(stored));
+
+            // Reset and reload
+            form.reset();
+            loadComments();
+          });
+        });
+      </script>
     </main>
 
     <!-- Theme Logic -->
