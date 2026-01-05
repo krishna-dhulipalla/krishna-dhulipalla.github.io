@@ -101,40 +101,6 @@ hero?.addEventListener("error", () => {
   }
 });
 
-(function initTilt() {
-  const card = document.querySelector(".tilt-card");
-  if (!card) return;
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-
-  let rect = null;
-  const maxRotate = 10;
-  function setFromEvent(e) {
-    rect = rect || card.getBoundingClientRect();
-    const px = (e.clientX - rect.left) / rect.width;
-    const py = (e.clientY - rect.top) / rect.height;
-    const rx = (py - 0.5) * -2 * maxRotate;
-    const ry = (px - 0.5) * 2 * maxRotate;
-    card.style.transform = `rotateX(${rx.toFixed(2)}deg) rotateY(${ry.toFixed(
-      2
-    )}deg)`;
-  }
-  function reset() {
-    rect = null;
-    card.style.transform = "rotateX(0deg) rotateY(0deg)";
-    card.classList.remove("is-tilting");
-  }
-  card.addEventListener("mouseenter", () => card.classList.add("is-tilting"));
-  card.addEventListener("mousemove", setFromEvent);
-  card.addEventListener("mouseleave", reset);
-  window.addEventListener(
-    "scroll",
-    () => {
-      rect = null;
-    },
-    { passive: true }
-  );
-})();
-
 // --- Filter buttons ---
 const filterWrap = document.getElementById("projFilters");
 const cards = Array.from(document.querySelectorAll("#projGrid .proj-card"));
@@ -152,34 +118,6 @@ filterWrap?.addEventListener("click", (e) => {
     card.style.display = key === "all" || cat === key ? "" : "none";
   });
 });
-
-// Animate ring meters on enter viewport
-const meters = document.querySelectorAll(".ring-meter");
-if (meters.length) {
-  const io = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((e) => {
-        if (e.isIntersecting) {
-          const el = e.target;
-          const target =
-            parseFloat(getComputedStyle(el).getPropertyValue("--val")) || 0;
-          let cur = 0;
-          const step = () => {
-            cur += Math.max(1, Math.round(target / 24)); // ~24 frames
-            if (cur >= target) cur = target;
-            el.style.setProperty("--val", cur);
-            el.querySelector("span").textContent = `${cur}%`;
-            if (cur < target) requestAnimationFrame(step);
-          };
-          requestAnimationFrame(step);
-          io.unobserve(el);
-        }
-      });
-    },
-    { threshold: 0.4 }
-  );
-  meters.forEach((m) => io.observe(m));
-}
 
 // Smooth scroll for proof links
 document.querySelectorAll('a[href^="#project-"]').forEach((a) => {

@@ -220,19 +220,6 @@ body {
   opacity: 0.9;
 }
 
-.tilt-card {
-  perspective: 1200px;
-  transition: transform 250ms cubic-bezier(0.2, 0.6, 0.2, 1), box-shadow 250ms;
-}
-.tilt-card.is-tilting {
-  box-shadow: 0 30px 80px -30px rgba(0, 0, 0, 0.35);
-}
-@media (prefers-reduced-motion: reduce) {
-  .tilt-card {
-    transition: none !important;
-  }
-}
-
 /* Glow layer */
 .proj-card .proj-glow {
   position: absolute;
@@ -295,64 +282,6 @@ body {
   padding: 0.25rem 0.625rem;
   font-size: 0.75rem;
   font-weight: 600;
-}
-
-/* === Skill Rings (CSS-only) ===
-   Usage: <div class="ring-meter" style="--val:90"><span>90%</span></div>
-   Tailwind handles spacing/typography; this is only the ring rendering.
-*/
-.ring-meter {
-  --size: 48px; /* change to 56px for larger rings */
-  --thickness: 7px; /* ring thickness */
-  --val: 80; /* 0–100 (can be overridden inline) */
-  --ring: 200 100% 70%; /* HSL hue for the active arc; tuned to Tailwind violet/blue range */
-  --track: 215 28% 17%; /* track color (slate-800-ish) */
-  position: relative;
-  width: var(--size);
-  height: var(--size);
-  border-radius: 9999px;
-  display: grid;
-  place-items: center;
-  background: conic-gradient(
-    hsl(var(--ring)) calc(var(--val) * 1%),
-    hsl(var(--track) / 0.25) 0
-  );
-}
-
-.ring-meter::after {
-  /* inner hole to make a donut */
-  content: "";
-  position: absolute;
-  inset: var(--thickness);
-  border-radius: inherit;
-  /* match your card bg; tweak if needed */
-  background: color-mix(in oklab, rgb(15 23 42) 85%, transparent);
-  backdrop-filter: blur(0.5px);
-}
-
-.ring-meter > span {
-  position: relative;
-  font-size: 10px;
-  font-weight: 650;
-  letter-spacing: 0.2px;
-  opacity: 0.9;
-}
-
-/* Color variants for ring arc (match Tailwind hues) */
-.ring-violet {
-  --ring: 258 90% 70%;
-} /* already used on Agents card */
-.ring-emerald {
-  --ring: 160 84% 39%;
-}
-.ring-sky {
-  --ring: 203 89% 53%;
-}
-.ring-amber {
-  --ring: 38 92% 50%;
-}
-.ring-rose {
-  --ring: 346 77% 57%;
 }
 
 /* Optional: subtle card hover */
