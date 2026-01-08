@@ -103,7 +103,9 @@ hero?.addEventListener("error", () => {
 
 // --- Filter buttons ---
 const filterWrap = document.getElementById("projFilters");
-const cards = Array.from(document.querySelectorAll("#projGrid .proj-card"));
+const cards = Array.from(
+  document.querySelectorAll("#projGrid .spotlight-card")
+);
 
 filterWrap?.addEventListener("click", (e) => {
   const btn = e.target.closest(".proj-filter");
@@ -132,3 +134,51 @@ document.querySelectorAll('a[href^="#project-"]').forEach((a) => {
     }
   });
 });
+
+// Spotlight Hover Effect
+const spotlightCards = document.querySelectorAll(".spotlight-card");
+spotlightCards.forEach((card) => {
+  card.addEventListener("mousemove", (e) => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    card.style.setProperty("--mouse-x", `${x}px`);
+    card.style.setProperty("--mouse-y", `${y}px`);
+  });
+});
+
+// Lightbox Logic
+const imageModal = document.getElementById("imageModal");
+const modalImg = document.getElementById("modalImg");
+
+function openImageModal(src) {
+  if (imageModal && modalImg) {
+    modalImg.src = src;
+    imageModal.classList.remove("hidden");
+    imageModal.classList.add("flex");
+    document.body.style.overflow = "hidden"; // Prevent background scrolling
+  }
+}
+
+function closeImageModal() {
+  if (imageModal) {
+    imageModal.classList.add("hidden");
+    imageModal.classList.remove("flex");
+    document.body.style.overflow = ""; // Restore scrolling
+  }
+}
+
+// Close on Escape key
+document.addEventListener("keydown", (e) => {
+  if (
+    e.key === "Escape" &&
+    imageModal &&
+    !imageModal.classList.contains("hidden")
+  ) {
+    closeImageModal();
+  }
+});
+
+// Expose to window for inline onclick handlers
+window.openImageModal = openImageModal;
+window.closeImageModal = closeImageModal;
