@@ -282,6 +282,7 @@
         Projects
       </h2>
       <!-- Filters -->
+      <!-- Filters -->
       <div
         class="mb-8 flex flex-wrap gap-2"
         id="projFilters"
@@ -289,7 +290,7 @@
         aria-label="Project filters"
       >
         <button
-          class="proj-filter px-3 py-1.5 rounded-full text-sm font-medium border transition bg-white text-slate-700 border-slate-200 hover:bg-slate-50 hover:border-slate-300 aria-pressed:bg-slate-900 aria-pressed:text-white aria-pressed:border-slate-900 dark:bg-slate-900 dark:text-slate-200 dark:border-slate-700 dark:hover:bg-slate-800 dark:hover:border-slate-600 dark:aria-pressed:bg-white dark:aria-pressed:text-slate-900 dark:aria-pressed:border-white"
+          class="proj-filter px-4 py-2 rounded-full text-sm font-medium border transition-all duration-300 bg-white text-slate-700 border-slate-200 hover:bg-slate-50 dark:bg-slate-900 dark:text-slate-300 dark:border-slate-700 dark:hover:bg-slate-800 aria-pressed:bg-teal-600 aria-pressed:text-white aria-pressed:border-teal-600 aria-pressed:shadow-lg aria-pressed:scale-105 dark:aria-pressed:bg-teal-500 dark:aria-pressed:text-black dark:aria-pressed:border-teal-500"
           data-filter="all"
           aria-pressed="true"
         >
@@ -297,21 +298,21 @@
         </button>
 
         <button
-          class="proj-filter px-3 py-1.5 rounded-full text-sm font-medium border transition bg-white text-slate-700 border-slate-200 hover:bg-slate-50 hover:border-slate-300 dark:bg-slate-900 dark:text-slate-200 dark:border-slate-700 dark:hover:bg-slate-800 dark:hover:border-slate-600"
+          class="proj-filter px-4 py-2 rounded-full text-sm font-medium border transition-all duration-300 bg-white text-slate-700 border-slate-200 hover:bg-slate-50 dark:bg-slate-900 dark:text-slate-300 dark:border-slate-700 dark:hover:bg-slate-800 aria-pressed:bg-teal-600 aria-pressed:text-white aria-pressed:border-teal-600 aria-pressed:shadow-lg aria-pressed:scale-105 dark:aria-pressed:bg-teal-500 dark:aria-pressed:text-black dark:aria-pressed:border-teal-500"
           data-filter="agents"
         >
           Agents
         </button>
 
         <button
-          class="proj-filter px-3 py-1.5 rounded-full text-sm font-medium border transition bg-white text-slate-700 border-slate-200 hover:bg-slate-50 hover:border-slate-300 dark:bg-slate-900 dark:text-slate-200 dark:border-slate-700 dark:hover:bg-slate-800 dark:hover:border-slate-600"
+          class="proj-filter px-4 py-2 rounded-full text-sm font-medium border transition-all duration-300 bg-white text-slate-700 border-slate-200 hover:bg-slate-50 dark:bg-slate-900 dark:text-slate-300 dark:border-slate-700 dark:hover:bg-slate-800 aria-pressed:bg-teal-600 aria-pressed:text-white aria-pressed:border-teal-600 aria-pressed:shadow-lg aria-pressed:scale-105 dark:aria-pressed:bg-teal-500 dark:aria-pressed:text-black dark:aria-pressed:border-teal-500"
           data-filter="mlops"
         >
           Data &amp; MLOps
         </button>
 
         <button
-          class="proj-filter px-3 py-1.5 rounded-full text-sm font-medium border transition bg-white text-slate-700 border-slate-200 hover:bg-slate-50 hover:border-slate-300 dark:bg-slate-900 dark:text-slate-200 dark:border-slate-700 dark:hover:bg-slate-800 dark:hover:border-slate-600"
+          class="proj-filter px-4 py-2 rounded-full text-sm font-medium border transition-all duration-300 bg-white text-slate-700 border-slate-200 hover:bg-slate-50 dark:bg-slate-900 dark:text-slate-300 dark:border-slate-700 dark:hover:bg-slate-800 aria-pressed:bg-teal-600 aria-pressed:text-white aria-pressed:border-teal-600 aria-pressed:shadow-lg aria-pressed:scale-105 dark:aria-pressed:bg-teal-500 dark:aria-pressed:text-black dark:aria-pressed:border-teal-500"
           data-filter="research"
         >
           Research
@@ -475,14 +476,15 @@
           data-aos="fade-up"
         >
           <div
-            class="relative w-full aspect-[16/10] bg-[#1a1b1e] overflow-hidden flex items-center justify-center p-4"
+            class="relative w-full aspect-[16/10] bg-[#1a1b1e] overflow-hidden flex items-center justify-center p-4 cursor-zoom-in"
+            onclick="openImageModal(this.querySelector('image').getAttribute('href'))"
           >
             <div
-              class="absolute inset-0 bg-gradient-to-t from-zinc-900 via-transparent to-transparent opacity-60 z-10"
+              class="absolute inset-0 bg-gradient-to-t from-zinc-900 via-transparent to-transparent opacity-60 z-10 pointer-events-none"
             ></div>
             <svg
               viewBox="0 0 2816 1536"
-              class="w-full h-full object-contain pointer-events-none group-hover:scale-105 transition-transform duration-700 z-0"
+              class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700 z-0"
             >
               <image
                 href="assets/diagrams/Proxy_tunner.svg"
@@ -547,14 +549,15 @@
           data-aos-delay="100"
         >
           <div
-            class="relative w-full aspect-[16/10] bg-[#1a1b1e] overflow-hidden flex items-center justify-center p-4"
+            class="relative w-full aspect-[16/10] bg-[#1a1b1e] overflow-hidden flex items-center justify-center p-4 cursor-zoom-in"
+            onclick="openImageModal(this.querySelector('image').getAttribute('href'))"
           >
             <div
-              class="absolute inset-0 bg-gradient-to-t from-zinc-900 via-transparent to-transparent opacity-60 z-10"
+              class="absolute inset-0 bg-gradient-to-t from-zinc-900 via-transparent to-transparent opacity-60 z-10 pointer-events-none"
             ></div>
             <svg
               viewBox="0 0 2816 1536"
-              class="w-full h-full object-contain pointer-events-none group-hover:scale-105 transition-transform duration-700 z-0"
+              class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700 z-0"
             >
               <image
                 href="assets/diagrams/intellimeet.svg"
@@ -615,14 +618,15 @@
           data-aos="fade-up"
         >
           <div
-            class="relative w-full aspect-[16/10] bg-[#1a1b1e] overflow-hidden flex items-center justify-center p-4"
+            class="relative w-full aspect-[16/10] bg-[#1a1b1e] overflow-hidden flex items-center justify-center p-4 cursor-zoom-in"
+            onclick="openImageModal(this.querySelector('image').getAttribute('href'))"
           >
             <div
-              class="absolute inset-0 bg-gradient-to-t from-zinc-900 via-transparent to-transparent opacity-60 z-10"
+              class="absolute inset-0 bg-gradient-to-t from-zinc-900 via-transparent to-transparent opacity-60 z-10 pointer-events-none"
             ></div>
             <svg
               viewBox="0 0 2816 1536"
-              class="w-full h-full object-contain pointer-events-none group-hover:scale-105 transition-transform duration-700 z-0"
+              class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700 z-0"
             >
               <image
                 href="assets/diagrams/DNA_classifier.svg"
@@ -686,14 +690,15 @@
           data-aos-delay="100"
         >
           <div
-            class="relative w-full aspect-[16/10] bg-[#1a1b1e] overflow-hidden flex items-center justify-center p-4"
+            class="relative w-full aspect-[16/10] bg-[#1a1b1e] overflow-hidden flex items-center justify-center p-4 cursor-zoom-in"
+            onclick="openImageModal(this.querySelector('image').getAttribute('href'))"
           >
             <div
-              class="absolute inset-0 bg-gradient-to-t from-zinc-900 via-transparent to-transparent opacity-60 z-10"
+              class="absolute inset-0 bg-gradient-to-t from-zinc-900 via-transparent to-transparent opacity-60 z-10 pointer-events-none"
             ></div>
             <svg
               viewBox="0 0 2816 1536"
-              class="w-full h-full object-contain pointer-events-none group-hover:scale-105 transition-transform duration-700 z-0"
+              class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700 z-0"
             >
               <image
                 href="assets/diagrams/pulse_map.svg"
@@ -866,10 +871,6 @@
             class="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-2"
           >
             <h3 class="text-xl font-bold text-white">Virginia Tech</h3>
-            <span
-              class="text-zinc-400 text-sm font-medium bg-zinc-800/50 px-3 py-1 rounded-full"
-              >Dec 2024</span
-            >
           </div>
           <div class="text-lg text-zinc-300 font-medium mb-1">
             Master of Science, Computer Science
@@ -887,10 +888,6 @@
             class="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-2"
           >
             <h3 class="text-xl font-bold text-white">Vel Tech University</h3>
-            <span
-              class="text-zinc-400 text-sm font-medium bg-zinc-800/50 px-3 py-1 rounded-full"
-              >2021</span
-            >
           </div>
           <div class="text-lg text-zinc-300 font-medium mb-1">
             Bachelor of Technology, Computer Science and Engineering
@@ -962,70 +959,101 @@
         Technical Arsenal
       </h2>
       <div class="bento-grid">
-        <!-- 1. Languages -->
+        <!-- 1. Languages & Web -->
         <div
           class="spotlight-card p-6 border-t-4 border-emerald-400"
           data-aos="fade-up"
         >
-          <h3 class="text-lg font-bold text-white mb-3">Languages</h3>
+          <h3 class="text-lg font-bold text-white mb-3">Languages & Web</h3>
           <div class="flex flex-wrap gap-2 text-sm">
+            <!-- Green/Teal tint for languages -->
             <span
-              class="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-emerald-200"
+              class="px-2.5 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/20 text-emerald-300"
               >Python</span
             >
             <span
-              class="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-emerald-200"
+              class="px-2.5 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/20 text-emerald-300"
               >TS/JS</span
             >
             <span
-              class="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-emerald-200"
+              class="px-2.5 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/20 text-emerald-300"
               >SQL</span
             >
             <span
-              class="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-zinc-400"
+              class="px-2.5 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/20 text-emerald-300"
               >R</span
+            >
+            <span
+              class="px-2.5 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/20 text-emerald-300"
+              >Node.js</span
+            >
+            <span
+              class="px-2.5 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/20 text-emerald-300"
+              >React</span
+            >
+            <span
+              class="px-2.5 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/20 text-emerald-300"
+              >Tailwind</span
+            >
+            <span
+              class="px-2.5 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/20 text-emerald-300"
+              >HTML/CSS</span
             >
           </div>
         </div>
 
-        <!-- 2. AI & Agents -->
+        <!-- 2. AI & Agents (More Blue/Indigo) -->
         <div
           class="spotlight-card p-6 border-t-4 border-indigo-400"
           data-aos="fade-up"
           data-aos-delay="100"
         >
-          <h3 class="text-lg font-bold text-white mb-3">
-            AI & Agentic Frameworks
-          </h3>
+          <h3 class="text-lg font-bold text-white mb-3">AI & Agents</h3>
           <div class="flex flex-wrap gap-2 text-sm">
             <span
-              class="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-indigo-200"
+              class="px-2.5 py-1 rounded-md bg-indigo-500/10 border border-indigo-500/20 text-indigo-300"
               >LangGraph</span
             >
             <span
-              class="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-indigo-200"
+              class="px-2.5 py-1 rounded-md bg-indigo-500/10 border border-indigo-500/20 text-indigo-300"
               >LangChain</span
             >
             <span
-              class="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-indigo-200"
+              class="px-2.5 py-1 rounded-md bg-indigo-500/10 border border-indigo-500/20 text-indigo-300"
+              >AutoGen</span
+            >
+            <span
+              class="px-2.5 py-1 rounded-md bg-indigo-500/10 border border-indigo-500/20 text-indigo-300"
+              >MCP</span
+            >
+            <span
+              class="px-2.5 py-1 rounded-md bg-indigo-500/10 border border-indigo-500/20 text-indigo-300"
               >PyTorch</span
             >
             <span
-              class="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-zinc-400"
+              class="px-2.5 py-1 rounded-md bg-indigo-500/10 border border-indigo-500/20 text-indigo-300"
               >Transformers</span
             >
             <span
-              class="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-zinc-400"
+              class="px-2.5 py-1 rounded-md bg-indigo-500/10 border border-indigo-500/20 text-indigo-300"
+              >RAG</span
+            >
+            <span
+              class="px-2.5 py-1 rounded-md bg-indigo-500/10 border border-indigo-500/20 text-indigo-300"
               >LoRA</span
             >
             <span
-              class="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-zinc-400"
-              >RAG</span
+              class="px-2.5 py-1 rounded-md bg-indigo-500/10 border border-indigo-500/20 text-indigo-300"
+              >OpenAI SDK</span
+            >
+            <span
+              class="px-2.5 py-1 rounded-md bg-indigo-500/10 border border-indigo-500/20 text-indigo-300"
+              >Prompt Eng</span
             >
           </div>
         </div>
 
-        <!-- 3. MLOps -->
+        <!-- 3. MLOps (Rose/Red) -->
         <div
           class="spotlight-card p-6 border-t-4 border-rose-400"
           data-aos="fade-up"
@@ -1036,113 +1064,169 @@
           </h3>
           <div class="flex flex-wrap gap-2 text-sm">
             <span
-              class="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-rose-200"
+              class="px-2.5 py-1 rounded-md bg-rose-500/10 border border-rose-500/20 text-rose-300"
               >Airflow</span
             >
             <span
-              class="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-rose-200"
+              class="px-2.5 py-1 rounded-md bg-rose-500/10 border border-rose-500/20 text-rose-300"
               >Docker</span
             >
             <span
-              class="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-zinc-400"
-              >Manifold (ray)</span
+              class="px-2.5 py-1 rounded-md bg-rose-500/10 border border-rose-500/20 text-rose-300"
+              >K8s</span
             >
             <span
-              class="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-zinc-400"
+              class="px-2.5 py-1 rounded-md bg-rose-500/10 border border-rose-500/20 text-rose-300"
               >MLflow</span
             >
             <span
-              class="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-zinc-400"
+              class="px-2.5 py-1 rounded-md bg-rose-500/10 border border-rose-500/20 text-rose-300"
               >W&B</span
+            >
+            <span
+              class="px-2.5 py-1 rounded-md bg-rose-500/10 border border-rose-500/20 text-rose-300"
+              >Distributed (DDP)</span
+            >
+            <span
+              class="px-2.5 py-1 rounded-md bg-rose-500/10 border border-rose-500/20 text-rose-300"
+              >HPC</span
+            >
+            <span
+              class="px-2.5 py-1 rounded-md bg-rose-500/10 border border-rose-500/20 text-rose-300"
+              >CI/CD</span
+            >
+            <span
+              class="px-2.5 py-1 rounded-md bg-rose-500/10 border border-rose-500/20 text-rose-300"
+              >GitHub Actions</span
             >
           </div>
         </div>
 
-        <!-- 4. Backend -->
+        <!-- 4. Cloud & Infra (Sky/Cyan) -->
         <div
           class="spotlight-card p-6 border-t-4 border-sky-400"
           data-aos="fade-up"
           data-aos-delay="300"
         >
-          <h3 class="text-lg font-bold text-white mb-3">Backend & Infra</h3>
+          <h3 class="text-lg font-bold text-white mb-3">Cloud & Backend</h3>
           <div class="flex flex-wrap gap-2 text-sm">
             <span
-              class="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-sky-200"
-              >K8s</span
+              class="px-2.5 py-1 rounded-md bg-sky-500/10 border border-sky-500/20 text-sky-300"
+              >AWS (S3/ECS)</span
             >
             <span
-              class="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-sky-200"
+              class="px-2.5 py-1 rounded-md bg-sky-500/10 border border-sky-500/20 text-sky-300"
+              >GCP (BigQuery)</span
+            >
+            <span
+              class="px-2.5 py-1 rounded-md bg-sky-500/10 border border-sky-500/20 text-sky-300"
               >FastAPI</span
             >
             <span
-              class="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-sky-200"
-              >AWS/GCP</span
-            >
-            <span
-              class="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-zinc-400"
+              class="px-2.5 py-1 rounded-md bg-sky-500/10 border border-sky-500/20 text-sky-300"
               >Redis</span
             >
             <span
-              class="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-zinc-400"
-              >Mongo</span
+              class="px-2.5 py-1 rounded-md bg-sky-500/10 border border-sky-500/20 text-sky-300"
+              >MongoDB</span
+            >
+            <span
+              class="px-2.5 py-1 rounded-md bg-sky-500/10 border border-sky-500/20 text-sky-300"
+              >Vector DBs</span
+            >
+            <span
+              class="px-2.5 py-1 rounded-md bg-sky-500/10 border border-sky-500/20 text-sky-300"
+              >Linux</span
             >
           </div>
         </div>
 
-        <!-- 5. Data Eng -->
+        <!-- 5. Data & Analytics (Amber/Orange) -->
         <div
           class="spotlight-card p-6 border-t-4 border-amber-400"
           data-aos="fade-up"
           data-aos-delay="400"
         >
-          <h3 class="text-lg font-bold text-white mb-3">Data Engineering</h3>
-          <div class="flex flex-wrap gap-2 text-sm">
-            <span
-              class="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-amber-200"
-              >ETL Pipelines</span
-            >
-            <span
-              class="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-amber-200"
-              >BigQuery</span
-            >
-            <span
-              class="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-zinc-400"
-              >Snowflake</span
-            >
-            <span
-              class="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-zinc-400"
-              >Batched I/O</span
-            >
-          </div>
-        </div>
-
-        <!-- 6. Observability -->
-        <div
-          class="spotlight-card p-6 border-t-4 border-violet-400"
-          data-aos="fade-up"
-          data-aos-delay="500"
-        >
           <h3 class="text-lg font-bold text-white mb-3">
-            Observability & CI/CD
+            Data & Observability
           </h3>
           <div class="flex flex-wrap gap-2 text-sm">
             <span
-              class="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-violet-200"
+              class="px-2.5 py-1 rounded-md bg-amber-500/10 border border-amber-500/20 text-amber-300"
+              >Snowflake</span
+            >
+            <span
+              class="px-2.5 py-1 rounded-md bg-amber-500/10 border border-amber-500/20 text-amber-300"
+              >ETL</span
+            >
+            <span
+              class="px-2.5 py-1 rounded-md bg-amber-500/10 border border-amber-500/20 text-amber-300"
               >LangSmith</span
             >
             <span
-              class="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-violet-200"
+              class="px-2.5 py-1 rounded-md bg-amber-500/10 border border-amber-500/20 text-amber-300"
               >Grafana</span
             >
             <span
-              class="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-zinc-400"
-              >GitHub Actions</span
+              class="px-2.5 py-1 rounded-md bg-amber-500/10 border border-amber-500/20 text-amber-300"
+              >Prometheus</span
             >
             <span
-              class="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-zinc-400"
-              >Pydantic</span
+              class="px-2.5 py-1 rounded-md bg-amber-500/10 border border-amber-500/20 text-amber-300"
+              >Streamlit</span
+            >
+            <span
+              class="px-2.5 py-1 rounded-md bg-amber-500/10 border border-amber-500/20 text-amber-300"
+              >Evals</span
             >
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Outside Work ===== -->
+    <section
+      id="outside-work"
+      class="py-12 px-6 max-w-4xl mx-auto border-t border-white/5"
+    >
+      <h2
+        class="text-3xl font-bold text-white mb-8 flex items-center gap-3"
+        data-aos="fade-up"
+      >
+        <span class="w-8 h-[2px] bg-purple-500"></span> Outside Work
+      </h2>
+      <div class="bento-grid-4 px-6 gap-4 py-4" data-aos="fade-up">
+        <div
+          class="p-4 rounded-xl border border-white/10 bg-zinc-900/50 hover:bg-zinc-800/50 transition-colors"
+        >
+          <div class="text-2xl mb-2">👨‍🍳</div>
+          <div class="text-white font-medium">Cooking</div>
+          <div class="text-sm text-zinc-400">
+            Experimenting with Indian dishes
+          </div>
+        </div>
+        <div
+          class="p-4 rounded-xl border border-white/10 bg-zinc-900/50 hover:bg-zinc-800/50 transition-colors"
+        >
+          <div class="text-2xl mb-2">🏏</div>
+          <div class="text-white font-medium">Cricket</div>
+          <div class="text-sm text-zinc-400">Weekend matches with friends</div>
+        </div>
+        <div
+          class="p-4 rounded-xl border border-white/10 bg-zinc-900/50 hover:bg-zinc-800/50 transition-colors"
+        >
+          <div class="text-2xl mb-2">🚀</div>
+          <div class="text-white font-medium">Space</div>
+          <div class="text-sm text-zinc-400">
+            Deep space exploration enthusiast
+          </div>
+        </div>
+        <div
+          class="p-4 rounded-xl border border-white/10 bg-zinc-900/50 hover:bg-zinc-800/50 transition-colors"
+        >
+          <div class="text-2xl mb-2">🥾</div>
+          <div class="text-white font-medium">Hiking</div>
+          <div class="text-sm text-zinc-400">Exploring trails & nature</div>
         </div>
       </div>
     </section>
@@ -1242,9 +1326,9 @@
           class="text-xs mt-2 text-gray-600 dark:text-gray-300 bg-white dark:bg-gray-800 px-2 py-1 rounded-full border border-teal-600 shadow"
         >
           Stuck scrolling? Chat with me instead!
-          <span class="block text-[10px] opacity-75"
+          <!-- <span class="block text-[10px] opacity-75"
             >(Model cold-starts in ~30s)</span
-          >
+          > -->
         </div>
       </div>
     </footer>
