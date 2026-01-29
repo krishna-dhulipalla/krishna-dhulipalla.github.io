@@ -149,7 +149,7 @@
             class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-cyan-400"
             >Deterministic Control Loops</span
           ><br />
-          around Non-Deterministic LLMs.
+          around Non-Deterministic LLMs
         </h1>
 
         <!-- Subtext -->
@@ -208,7 +208,8 @@
             </svg>
           </a>
         </div>
-      </div>
+
+
 
     </section>
 
@@ -333,6 +334,75 @@
 
       <!-- Grid -->
       <div class="grid gap-8 md:grid-cols-2" id="projGrid">
+        <!-- 0) Agent K8s Sandbox [NEW] -->
+        <article
+          id="project-k8s-sandbox"
+          data-cat="mlops agents"
+          class="spotlight-card group flex flex-col h-full rounded-2xl border border-white/10 bg-zinc-900/40 overflow-hidden hover:border-white/20 transition-all"
+          data-aos="fade-up"
+        >
+          <div
+            class="relative w-full aspect-[16/10] bg-[#1a1b1e] overflow-hidden flex items-center justify-center p-4 cursor-zoom-in"
+            onclick="openImageModal(this.querySelector('img').src)"
+          >
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-zinc-900 via-transparent to-transparent opacity-60 z-10 pointer-events-none"
+            ></div>
+            <img
+              src="assets/projects/k8s_sandbox_abstract_1769657737186.png"
+              alt="Agent K8s Sandbox"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 z-0"
+            />
+          </div>
+
+          <div class="p-6 flex flex-col flex-1">
+            <div class="flex items-center justify-between mb-4">
+              <span
+                class="text-xs font-bold tracking-widest uppercase text-blue-400"
+                >Infrastructure</span
+              >
+              <a
+                href="https://github.com/krishna-dhulipalla/agenttask-operator"
+                target="_blank"
+                class="text-zinc-400 hover:text-white transition-colors"
+                aria-label="View Code"
+              >
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    fill-rule="evenodd"
+                    d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </a>
+            </div>
+
+            <h3 class="text-xl font-bold text-white mb-3">
+              Agent K8s Sandbox
+            </h3>
+            <p class="text-zinc-400 text-sm leading-relaxed mb-6 flex-1">
+              A secure, ephemeral environment for AI agents to execute code and
+              deploy microservices. Features automated namespace isolation,
+              resource quotas, and a sidecar proxy for traffic monitoring.
+            </p>
+
+            <div class="flex flex-wrap gap-2 mt-auto">
+              <span
+                class="px-2.5 py-1 rounded bg-white/5 border border-white/10 text-xs text-zinc-300"
+                >Kubernetes</span
+              >
+              <span
+                class="px-2.5 py-1 rounded bg-white/5 border border-white/10 text-xs text-zinc-300"
+                >Go</span
+              >
+              <span
+                class="px-2.5 py-1 rounded bg-white/5 border border-white/10 text-xs text-zinc-300"
+                >Agents</span
+              >
+            </div>
+          </div>
+        </article>
+
         <!-- 1) LangGraph ChatBot -->
         <article
           id="project-profile-rag"
@@ -343,22 +413,16 @@
           <!-- Image Area (Darker bg for contrast) -->
           <div
             class="relative w-full aspect-[16/10] bg-[#1a1b1e] overflow-hidden flex items-center justify-center p-4 cursor-zoom-in"
-            onclick="openImageModal(this.querySelector('image').getAttribute('href'))"
+            onclick="openImageModal(this.querySelector('img').src)"
           >
             <div
               class="absolute inset-0 bg-gradient-to-t from-zinc-900 via-transparent to-transparent opacity-60 z-10 pointer-events-none"
             ></div>
-            <!-- Diagram -->
-            <svg
-              viewBox="0 0 2816 1536"
-              class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700 z-0"
-            >
-              <image
-                href="assets/diagrams/Autonomous.svg"
-                width="2816"
-                height="1536"
-              />
-            </svg>
+            <img
+              src="assets/projects/ui_agent_abstract_1769657654938.png"
+              alt="Autonomous UI Agent"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 z-0"
+            />
           </div>
 
           <div class="p-6 flex flex-col flex-1">
@@ -417,21 +481,16 @@
         >
           <div
             class="relative w-full aspect-[16/10] bg-[#1a1b1e] overflow-hidden flex items-center justify-center p-4 cursor-zoom-in"
-            onclick="openImageModal(this.querySelector('image').getAttribute('href'))"
+            onclick="openImageModal(this.querySelector('img').src)"
           >
             <div
               class="absolute inset-0 bg-gradient-to-t from-zinc-900 via-transparent to-transparent opacity-60 z-10 pointer-events-none"
             ></div>
-            <svg
-              viewBox="0 0 2816 1536"
-              class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700 z-0"
-            >
-              <image
-                href="assets/diagrams/SQL_agent.svg"
-                width="2816"
-                height="1536"
-              />
-            </svg>
+            <img
+              src="assets/projects/data_agents_abstract_1769657668012.png"
+              alt="Internal Data Agents"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 z-0"
+            />
           </div>
 
           <div class="p-6 flex flex-col flex-1">
@@ -489,21 +548,16 @@
         >
           <div
             class="relative w-full aspect-[16/10] bg-[#1a1b1e] overflow-hidden flex items-center justify-center p-4 cursor-zoom-in"
-            onclick="openImageModal(this.querySelector('image').getAttribute('href'))"
+            onclick="openImageModal(this.querySelector('img').src)"
           >
             <div
               class="absolute inset-0 bg-gradient-to-t from-zinc-900 via-transparent to-transparent opacity-60 z-10 pointer-events-none"
             ></div>
-            <svg
-              viewBox="0 0 2816 1536"
-              class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700 z-0"
-            >
-              <image
-                href="assets/diagrams/Proxy_tunner.svg"
-                width="2816"
-                height="1536"
-              />
-            </svg>
+            <img
+              src="assets/projects/proxy_tuner_abstract_1769657682334.png"
+              alt="Proxy TuNER"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 z-0"
+            />
           </div>
 
           <div class="p-6 flex flex-col flex-1">
@@ -562,21 +616,16 @@
         >
           <div
             class="relative w-full aspect-[16/10] bg-[#1a1b1e] overflow-hidden flex items-center justify-center p-4 cursor-zoom-in"
-            onclick="openImageModal(this.querySelector('image').getAttribute('href'))"
+            onclick="openImageModal(this.querySelector('img').src)"
           >
             <div
               class="absolute inset-0 bg-gradient-to-t from-zinc-900 via-transparent to-transparent opacity-60 z-10 pointer-events-none"
             ></div>
-            <svg
-              viewBox="0 0 2816 1536"
-              class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700 z-0"
-            >
-              <image
-                href="assets/diagrams/intellimeet.svg"
-                width="2816"
-                height="1536"
-              />
-            </svg>
+            <img
+              src="assets/projects/intellimeet_abstract_1769657698865.png"
+              alt="IntelliMeet"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 z-0"
+            />
           </div>
 
           <div class="p-6 flex flex-col flex-1">
@@ -631,21 +680,16 @@
         >
           <div
             class="relative w-full aspect-[16/10] bg-[#1a1b1e] overflow-hidden flex items-center justify-center p-4 cursor-zoom-in"
-            onclick="openImageModal(this.querySelector('image').getAttribute('href'))"
+            onclick="openImageModal(this.querySelector('img').src)"
           >
             <div
               class="absolute inset-0 bg-gradient-to-t from-zinc-900 via-transparent to-transparent opacity-60 z-10 pointer-events-none"
             ></div>
-            <svg
-              viewBox="0 0 2816 1536"
-              class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700 z-0"
-            >
-              <image
-                href="assets/diagrams/DNA_classifier.svg"
-                width="2816"
-                height="1536"
-              />
-            </svg>
+            <img
+              src="assets/projects/dna_classifier_abstract_1769657712668.png"
+              alt="DNA Classifier"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 z-0"
+            />
           </div>
 
           <div class="p-6 flex flex-col flex-1">
@@ -703,21 +747,16 @@
         >
           <div
             class="relative w-full aspect-[16/10] bg-[#1a1b1e] overflow-hidden flex items-center justify-center p-4 cursor-zoom-in"
-            onclick="openImageModal(this.querySelector('image').getAttribute('href'))"
+            onclick="openImageModal(this.querySelector('img').src)"
           >
             <div
               class="absolute inset-0 bg-gradient-to-t from-zinc-900 via-transparent to-transparent opacity-60 z-10 pointer-events-none"
             ></div>
-            <svg
-              viewBox="0 0 2816 1536"
-              class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700 z-0"
-            >
-              <image
-                href="assets/diagrams/pulse_map.svg"
-                width="2816"
-                height="1536"
-              />
-            </svg>
+            <img
+              src="assets/projects/pulsemap_abstract_1769657725532.png"
+              alt="PulseMap"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 z-0"
+            />
           </div>
 
           <div class="p-6 flex flex-col flex-1">
