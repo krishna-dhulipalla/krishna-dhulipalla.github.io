@@ -64,13 +64,71 @@ body {
   100% {
     transform: translate(20px, -20px) scale(1.1);
   }
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  width: 100%;
+  /* Deep dark theme base (Zinc-950 equivalent) */
+  background-color: #09090b;
+  color: #e4e4e7; /* Zinc-200 */
+}
+
+/* --- 1. Aurora Background Animation --- */
+.aurora-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -10;
+  overflow: hidden;
+  background: #09090b;
+}
+
+.aurora-blob {
+  position: absolute;
+  filter: blur(80px);
+  opacity: 0.4;
+  animation: auroraMove 20s infinite alternate cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.aurora-blob-1 {
+  top: -10%;
+  left: -10%;
+  width: 50vw;
+  height: 50vw;
+  background: #4f46e5; /* Indigo */
+  animation-delay: 0s;
+}
+.aurora-blob-2 {
+  top: 10%;
+  right: -10%;
+  width: 40vw;
+  height: 40vw;
+  background: #0ea5e9; /* Sky */
+  animation-delay: -5s;
+}
+.aurora-blob-3 {
+  bottom: -20%;
+  left: 20%;
+  width: 60vw;
+  height: 40vw;
+  background: #8b5cf6; /* Violet */
+  animation-delay: -10s;
+}
+
+@keyframes auroraMove {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    transform: translate(20px, -20px) scale(1.1);
+  }
 }
 
 /* Glassmorphism 2.0 */
 .glass-panel {
   background: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.05); /* Toned down from 0.1 to 0.05 */
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
@@ -80,8 +138,8 @@ body {
   position: relative;
   overflow: hidden;
   border-radius: 1rem;
-  background: rgba(24, 24, 27, 0.6); /* Zinc-900/60 */
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(24, 24, 27, 0.4); /* Zinc-900 with lower opacity */
+  border: 1px solid rgba(255, 255, 255, 0.03); /* Very subtle border */
   transition: border-color 0.3s;
 }
 
@@ -107,7 +165,8 @@ body {
   opacity: 1;
 }
 .spotlight-card:hover {
-  border-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.08); /* Darker hover border */
+  background: rgba(24, 24, 27, 0.6);
 }
 
 /* --- 3. Bento Grid Utilities --- */
