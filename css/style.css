@@ -126,21 +126,29 @@ body {
 
 /* Glassmorphism 2.0 */
 .glass-panel {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.7); /* Light Mode */
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.05); /* Toned down from 0.1 to 0.05 */
+  border: 1px solid rgba(0, 0, 0, 0.05);
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
+.dark .glass-panel {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
 
-/* --- 2. Spotlight Hover Effect (handled via JS for position, CSS for style) --- */
+/* --- 2. Spotlight Hover Effect --- */
 .spotlight-card {
   position: relative;
   overflow: hidden;
   border-radius: 1rem;
-  background: rgba(24, 24, 27, 0.4); /* Zinc-900 with lower opacity */
-  border: 1px solid rgba(255, 255, 255, 0.03); /* Very subtle border */
+  background: white; /* Light Mode */
+  border: 1px solid rgba(0, 0, 0, 0.05);
   transition: border-color 0.3s;
+}
+.dark .spotlight-card {
+  background: rgba(24, 24, 27, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.03);
 }
 
 .spotlight-card::before {
@@ -152,13 +160,20 @@ body {
   bottom: 0;
   background: radial-gradient(
     800px circle at var(--mouse-x) var(--mouse-y),
-    rgba(255, 255, 255, 0.06),
+    rgba(0, 0, 0, 0.03), /* Light Mode Hover */
     transparent 40%
   );
   z-index: 10;
   opacity: 0;
   transition: opacity 0.5s;
   pointer-events: none;
+}
+.dark .spotlight-card::before {
+  background: radial-gradient(
+    800px circle at var(--mouse-x) var(--mouse-y),
+    rgba(255, 255, 255, 0.06),
+    transparent 40%
+  );
 }
 
 .spotlight-card:hover::before {
