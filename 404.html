@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 - Model Hallucination | Krishna Vamsi Dhulipalla</title>
+
+    <!-- Fonts & Tailwind -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&family=Fira+Code:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/tailwind-config.js"></script>
+
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+    <script defer src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <link rel="stylesheet" href="./css/style.css" />
+    <style>
+      .terminal-cursor::after {
+        content: "▋";
+        animation: blink 1s step-end infinite;
+      }
+      @keyframes blink {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0;
+        }
+      }
+      .glitch-text {
+        position: relative;
+      }
+      .glitch-text::before,
+      .glitch-text::after {
+        content: attr(data-text);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+      .glitch-text::before {
+        left: 2px;
+        text-shadow: -1px 0 #ff00c1;
+        clip: rect(44px, 450px, 56px, 0);
+        animation: glitch-anim 5s infinite linear alternate-reverse;
+      }
+      .glitch-text::after {
+        left: -2px;
+        text-shadow: -1px 0 #00fff9;
+        clip: rect(44px, 450px, 56px, 0);
+        animation: glitch-anim2 5s infinite linear alternate-reverse;
+      }
+      @keyframes glitch-anim {
+        0% {
+          clip: rect(12px, 9999px, 5px, 0);
+        }
+        5% {
+          clip: rect(78px, 9999px, 96px, 0);
+        }
+        10% {
+          clip: rect(12px, 9999px, 5px, 0);
+        }
+        15% {
+          clip: rect(62px, 9999px, 55px, 0);
+        }
+        20% {
+          clip: rect(2px, 9999px, 86px, 0);
+        }
+        100% {
+          clip: rect(12px, 9999px, 5px, 0);
+        }
+      }
+      @keyframes glitch-anim2 {
+        0% {
+          clip: rect(62px, 9999px, 15px, 0);
+        }
+        5% {
+          clip: rect(2px, 9999px, 66px, 0);
+        }
+        10% {
+          clip: rect(62px, 9999px, 15px, 0);
+        }
+        15% {
+          clip: rect(92px, 9999px, 5px, 0);
+        }
+        20% {
+          clip: rect(12px, 9999px, 36px, 0);
+        }
+        100% {
+          clip: rect(62px, 9999px, 15px, 0);
+        }
+      }
+    </style>
+  </head>
+
+  <body
+    class="bg-slate-50 text-slate-900 transition-colors duration-300 dark:bg-[#09090b] dark:text-slate-100 font-sans antialiased overflow-x-hidden selection:bg-indigo-500 selection:text-white flex flex-col min-h-screen"
+  >
+    <!-- Background Effects -->
+    <div class="fixed inset-0 pointer-events-none z-[-1]">
+      <div
+        class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAuMDUiLz4KPC9zdmc+')] opacity-20"
+      ></div>
+      <div
+        class="absolute top-0 left-1/4 w-96 h-96 bg-indigo-500/20 rounded-full blur-[100px] animate-pulse"
+      ></div>
+      <div
+        class="absolute bottom-0 right-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-[100px]"
+      ></div>
+    </div>
+
+    <!-- ===== Navbar ===== -->
+    <header
+      class="fixed top-0 inset-x-0 z-50 border-b border-black/5 dark:border-white/10 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-md"
+    >
+      <nav
+        class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between"
+      >
+        <a
+          href="index.html"
+          class="font-display text-xl font-bold tracking-tight"
+        >
+          <span class="text-teal-600">Krishna</span>
+          <span class="text-slate-900 dark:text-white">Vamsi</span>
+        </a>
+
+        <div class="flex items-center gap-4">
+          <button
+            id="theme-toggle"
+            class="theme-toggle rounded-xl border border-gray-300 dark:border-gray-700 px-2 py-1 flex items-center gap-2 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+            aria-label="Toggle theme"
+          >
+            <!-- Sun Icon -->
+            <svg
+              class="sun w-4 h-4 text-amber-500 hidden dark:block"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+              />
+            </svg>
+            <!-- Moon Icon -->
+            <svg
+              class="moon w-4 h-4 text-indigo-400 block dark:hidden"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+              />
+            </svg>
+            <span class="text-xs font-medium dark:text-gray-300">Theme</span>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <!-- ===== Main Content ===== -->
+    <main
+      class="flex-grow flex items-center justify-center pt-24 pb-12 px-4 sm:px-6"
+    >
+      <div class="max-w-3xl w-full text-center space-y-8" data-aos="fade-up">
+        <!-- Glitch 404 -->
+        <div class="relative inline-block">
+          <h1
+            class="text-9xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 glitch-text"
+            data-text="404"
+          >
+            404
+          </h1>
+        </div>
+
+        <!-- Funny Status Message -->
+        <div class="space-y-2">
+          <h2
+            class="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white"
+          >
+            Model Hallucination Detected
+          </h2>
+          <p class="text-slate-600 dark:text-zinc-400 text-lg max-w-lg mx-auto">
+            Optimization failed: The page you requested got stuck in a local
+            minimum or was pruned during quantization.
+          </p>
+        </div>
+
+        <!-- Actions -->
+        <div
+          class="pt-8 flex flex-col sm:flex-row gap-4 justify-center items-center"
+        >
+          <a
+            href="index.html"
+            class="px-8 py-3 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white font-medium transition-all shadow-lg shadow-indigo-500/25 flex items-center gap-2 group"
+          >
+            <svg
+              class="w-5 h-5 group-hover:-translate-x-1 transition-transform"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M10 19l-7-7m0 0l7-7m-7 7h18"
+              />
+            </svg>
+            Re-initialize Weights (Go Home)
+          </a>
+          <a
+            href="index.html#contact"
+            class="px-8 py-3 rounded-lg border border-slate-200 dark:border-white/10 hover:bg-slate-100 dark:hover:bg-white/5 text-slate-700 dark:text-zinc-300 font-medium transition-all"
+          >
+            Report Bug
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <!-- ===== Footer ===== -->
+    <footer
+      class="border-t border-black/5 dark:border-white/5 bg-white dark:bg-zinc-900/50 py-8"
+    >
+      <div
+        class="max-w-7xl mx-auto px-6 text-center text-slate-500 dark:text-zinc-500 text-sm"
+      >
+        <p>
+          &copy; <span id="year">2026</span> Krishna Vamsi Dhulipalla. All
+          systems nominal.
+        </p>
+      </div>
+    </footer>
+
+    <script src="./js/main.js"></script>
+    <script>
+      // Update year
+      document.getElementById("year").textContent = new Date().getFullYear();
+      // Initialize AOS
+      AOS.init({
+        duration: 800,
+        once: true,
+      });
+    </script>
+  </body>
+</html>

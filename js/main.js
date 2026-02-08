@@ -1,6 +1,6 @@
 // AOS
 window.addEventListener("load", () =>
-  AOS.init({ once: true, duration: 700, easing: "ease-out" })
+  AOS.init({ once: true, duration: 700, easing: "ease-out" }),
 );
 
 // Mobile menu
@@ -24,7 +24,7 @@ const setTheme = (isDark) => {
 setTheme(
   localStorage.theme === "dark" ||
     (!("theme" in localStorage) &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches)
+      window.matchMedia("(prefers-color-scheme: dark)").matches),
 );
 themeBtn?.addEventListener("click", () => {
   setTheme(!document.documentElement.classList.contains("dark"));
@@ -52,26 +52,6 @@ themeBtn?.addEventListener("click", () => {
 document.getElementById("year").textContent = new Date().getFullYear();
 
 // Resume modal
-const resumeLinks = [
-  document.getElementById("resume-link"),
-  document.getElementById("resume-link-m"),
-].filter(Boolean);
-const resumeModal = document.getElementById("resumeModal");
-const closeResume = document.getElementById("closeResume");
-resumeLinks.forEach((el) =>
-  el.addEventListener("click", (e) => {
-    e.preventDefault();
-    resumeModal.classList.remove("hidden");
-    resumeModal.classList.add("flex");
-  })
-);
-closeResume?.addEventListener("click", () => {
-  resumeModal.classList.add("hidden");
-  resumeModal.classList.remove("flex");
-});
-resumeModal.addEventListener("click", (e) => {
-  if (e.target === resumeModal) closeResume.click();
-});
 
 // Toast helper
 function showToast(msg) {
@@ -104,7 +84,7 @@ hero?.addEventListener("error", () => {
 // --- Filter buttons ---
 const filterWrap = document.getElementById("projFilters");
 const cards = Array.from(
-  document.querySelectorAll("#projGrid .spotlight-card")
+  document.querySelectorAll("#projGrid .spotlight-card"),
 );
 
 filterWrap?.addEventListener("click", (e) => {
