@@ -449,6 +449,69 @@
 
       <!-- Grid -->
       <div class="grid gap-8 md:grid-cols-2" id="projGrid">
+        <!-- 0) Clinical Pre-Rounding Assistant [NEW] -->
+        <article
+          id="project-clinical-ai"
+          data-cat="ai"
+          class="spotlight-card group flex flex-col h-full rounded-2xl border border-white/10 bg-zinc-900/40 overflow-hidden hover:border-emerald-500/50 transition-all"
+          data-aos="fade-up"
+        >
+          <div
+            class="relative w-full aspect-[16/10] bg-[#1a1b1e] overflow-hidden flex items-center justify-center p-4 cursor-zoom-in"
+            onclick="openImageModal('assets/projects/clinical_ai_abstract_1771253329826.png')"
+          >
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-zinc-900 via-transparent to-transparent opacity-60 z-10 pointer-events-none"
+            ></div>
+            <img
+              src="assets/projects/clinical_ai_abstract_1771253329826.png"
+              alt="Clinical AI Assistant"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 z-0"
+            />
+            <div class="absolute top-4 right-4 z-20">
+               <span class="px-3 py-1 text-xs font-medium bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 rounded-full backdrop-blur-md">Healthcare AI</span>
+            </div>
+          </div>
+
+          <div class="p-6 flex flex-col flex-1">
+            <div class="flex items-center justify-between mb-4">
+              <span
+                class="text-xs font-bold tracking-widest uppercase text-emerald-400"
+                >Generative AI</span
+              >
+              <a
+                href="#"
+                class="text-zinc-400 hover:text-white transition-colors"
+                aria-label="View Project"
+              >
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+              </a>
+            </div>
+
+            <h3 class="text-xl font-bold text-white mb-3">
+              Clinical Pre-Rounding Assistant
+            </h3>
+            <p class="text-zinc-400 text-sm leading-relaxed mb-6 flex-grow">
+              Built a FHIR-based RAG system (AWS Bedrock, LangChain) to summarize 24-48h patient changes. Implemented deterministic fact extraction, PHI redaction, and LLM-as-judge evaluation for <strong>100% groundedness</strong>.
+            </p>
+
+            <div class="flex flex-wrap gap-2 mt-auto">
+              <span
+                class="px-2.5 py-1 rounded bg-white/5 border border-white/10 text-xs text-zinc-300"
+                >FHIR</span
+              >
+              <span
+                class="px-2.5 py-1 rounded bg-white/5 border border-white/10 text-xs text-zinc-300"
+                >Bedrock</span
+              >
+              <span
+                class="px-2.5 py-1 rounded bg-white/5 border border-white/10 text-xs text-zinc-300"
+                >LangChain</span
+              >
+            </div>
+          </div>
+        </article>
+
         <!-- 0) Agent K8s Sandbox [NEW] -->
         <article
           id="project-k8s-sandbox"
@@ -919,7 +982,7 @@
           ></div>
           <div class="flex flex-col sm:flex-row sm:items-baseline gap-2 mb-2">
             <h3 class="text-xl font-bold text-slate-900 dark:text-white">
-              Software Engineer (AI Platform)
+              AI Software Engineer
             </h3>
             <span class="text-slate-500 dark:text-zinc-400 text-sm"
               >Cloud Systems LLC • Jul 2025 - Present</span
@@ -1103,91 +1166,96 @@
       </div>
     </section>
 
-    <!-- ===== Core Capabilities (Refined) ===== -->
+    <!-- ===== Core Capabilities (Specialized) ===== -->
     <section id="skills" class="py-24 px-6 max-w-7xl mx-auto">
       <div class="text-center mb-16" data-aos="fade-up">
         <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-4">Core Capabilities</h2>
         <p class="text-slate-600 dark:text-zinc-400 max-w-2xl mx-auto text-lg">
-          A specialized toolkit focused on building high-scale distributed systems and autonomous AI infrastructure.
+          Specialized expertise in building compliant, high-scale Healthcare AI systems and autonomous infrastructure.
         </p>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-8">
-        <!-- 1. Distributed Systems -->
-        <div class="spotlight-card p-8 group border-t-2 border-emerald-500/50 hover:bg-slate-50 dark:hover:bg-zinc-900/80 transition-all" data-aos="fade-up">
-          <div class="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center mb-6 ring-1 ring-emerald-500/20">
-            <svg class="w-6 h-6 text-emerald-500 dark:text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- 1. Healthcare & AI -->
+        <div class="spotlight-card p-6 group border-t-2 border-emerald-500/50 hover:bg-slate-50 dark:hover:bg-zinc-900/80 transition-all" data-aos="fade-up">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center ring-1 ring-emerald-500/20">
+              <svg class="w-5 h-5 text-emerald-500 dark:text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+            </div>
+            <h3 class="font-bold text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-300 transition-colors">Healthcare & AI</h3>
           </div>
-          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-4 group-hover:text-emerald-600 dark:group-hover:text-emerald-300 transition-colors">Distributed Systems</h3>
-          <ul class="space-y-3">
-            <li class="flex items-center gap-3 text-slate-600 dark:text-zinc-400 text-sm">
-              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)]"></span>
-              Kubernetes (K8s) & Docker
-            </li>
-            <li class="flex items-center gap-3 text-zinc-400 text-sm">
-              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)]"></span>
-              Go (Golang) Microservices
-            </li>
-             <li class="flex items-center gap-3 text-zinc-400 text-sm">
-              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)]"></span>
-              gRPC & Protobuf
-            </li>
-             <li class="flex items-center gap-3 text-zinc-400 text-sm">
-              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)]"></span>
-              Terraform / IaC
-            </li>
+          <ul class="space-y-2 text-sm text-slate-600 dark:text-zinc-400">
+            <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-emerald-500 shrink-0"></span>FHIR/HL7 Integration, Clinical Workflows</li>
+            <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-emerald-500 shrink-0"></span>RAG for Healthcare, Hybrid Retrieval</li>
+            <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-emerald-500 shrink-0"></span>LangChain, LangGraph, Multi-Agent Systems</li>
+            <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-emerald-500 shrink-0"></span>AWS Bedrock (Claude), OpenAI API</li>
+            <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-emerald-500 shrink-0"></span>Eval Frameworks (LangSmith, Guardrails)</li>
+            <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-emerald-500 shrink-0"></span>Vector DBs (Pinecone, Milvus) & Chunking</li>
           </ul>
         </div>
 
-        <!-- 2. Agentic AI -->
-        <div class="spotlight-card p-8 group border-t-2 border-indigo-500/50 hover:bg-slate-50 dark:hover:bg-zinc-900/80 transition-all" data-aos="fade-up" data-aos-delay="100">
-           <div class="w-12 h-12 rounded-xl bg-indigo-500/10 flex items-center justify-center mb-6 ring-1 ring-indigo-500/20">
-             <svg class="w-6 h-6 text-indigo-500 dark:text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-           </div>
-           <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-4 group-hover:text-indigo-600 dark:group-hover:text-indigo-300 transition-colors">Agentic AI</h3>
-           <ul class="space-y-3">
-             <li class="flex items-center gap-3 text-slate-600 dark:text-zinc-400 text-sm">
-               <span class="w-1.5 h-1.5 rounded-full bg-indigo-500 shadow-[0_0_8px_rgba(99,102,241,0.5)]"></span>
-               LangChain & LangGraph
-             </li>
-             <li class="flex items-center gap-3 text-zinc-400 text-sm">
-               <span class="w-1.5 h-1.5 rounded-full bg-indigo-500 shadow-[0_0_8px_rgba(99,102,241,0.5)]"></span>
-               RAG (Retrieval Augmented Gen)
-             </li>
-              <li class="flex items-center gap-3 text-zinc-400 text-sm">
-               <span class="w-1.5 h-1.5 rounded-full bg-indigo-500 shadow-[0_0_8px_rgba(99,102,241,0.5)]"></span>
-               Fine-tuning (LoRA/QLoRA)
-             </li>
-              <li class="flex items-center gap-3 text-zinc-400 text-sm">
-               <span class="w-1.5 h-1.5 rounded-full bg-indigo-500 shadow-[0_0_8px_rgba(99,102,241,0.5)]"></span>
-               PyTorch & Transformers
-             </li>
-           </ul>
-         </div>
-
-         <!-- 3. Full-Stack Optimization -->
-         <div class="spotlight-card p-8 group border-t-2 border-sky-500/50 hover:bg-slate-50 dark:hover:bg-zinc-900/80 transition-all" data-aos="fade-up" data-aos-delay="200">
-            <div class="w-12 h-12 rounded-xl bg-sky-500/10 flex items-center justify-center mb-6 ring-1 ring-sky-500/20">
-              <svg class="w-6 h-6 text-sky-500 dark:text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+        <!-- 2. Data & Compliance -->
+        <div class="spotlight-card p-6 group border-t-2 border-indigo-500/50 hover:bg-slate-50 dark:hover:bg-zinc-900/80 transition-all" data-aos="fade-up" data-aos-delay="100">
+           <div class="flex items-center gap-4 mb-6">
+            <div class="w-10 h-10 rounded-lg bg-indigo-500/10 flex items-center justify-center ring-1 ring-indigo-500/20">
+              <svg class="w-5 h-5 text-indigo-500 dark:text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
             </div>
-            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-4 group-hover:text-sky-600 dark:group-hover:text-sky-300 transition-colors">Full-Stack Performance</h3>
-            <ul class="space-y-3">
-              <li class="flex items-center gap-3 text-slate-600 dark:text-zinc-400 text-sm">
-                <span class="w-1.5 h-1.5 rounded-full bg-sky-500 shadow-[0_0_8px_rgba(14,165,233,0.5)]"></span>
-                FastAPI (Async/Await)
-              </li>
-              <li class="flex items-center gap-3 text-zinc-400 text-sm">
-                <span class="w-1.5 h-1.5 rounded-full bg-sky-500 shadow-[0_0_8px_rgba(14,165,233,0.5)]"></span>
-                Next.js / React
-              </li>
-               <li class="flex items-center gap-3 text-zinc-400 text-sm">
-                <span class="w-1.5 h-1.5 rounded-full bg-sky-500 shadow-[0_0_8px_rgba(14,165,233,0.5)]"></span>
-                Redis Caching & SQL Tuning
-              </li>
-               <li class="flex items-center gap-3 text-zinc-400 text-sm">
-                <span class="w-1.5 h-1.5 rounded-full bg-sky-500 shadow-[0_0_8px_rgba(14,165,233,0.5)]"></span>
-                CI/CD (GitHub Actions)
-              </li>
+            <h3 class="font-bold text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-300 transition-colors">Data & Compliance</h3>
+          </div>
+           <ul class="space-y-2 text-sm text-slate-600 dark:text-zinc-400">
+            <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-indigo-500 shrink-0"></span>PHI/PII Handling, HIPAA-aware Arch</li>
+            <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-indigo-500 shrink-0"></span>Healthcare Data Stds, Audit Logging</li>
+            <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-indigo-500 shrink-0"></span>Deterministic Fact Extraction</li>
+            <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-indigo-500 shrink-0"></span>Citation Grounding & Evidence</li>
+            <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-indigo-500 shrink-0"></span>Postgres, Data Governance</li>
+          </ul>
+        </div>
+
+         <!-- 3. Programming & Backend -->
+         <div class="spotlight-card p-6 group border-t-2 border-sky-500/50 hover:bg-slate-50 dark:hover:bg-zinc-900/80 transition-all" data-aos="fade-up" data-aos-delay="200">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-10 h-10 rounded-lg bg-sky-500/10 flex items-center justify-center ring-1 ring-sky-500/20">
+                <svg class="w-5 h-5 text-sky-500 dark:text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+              </div>
+              <h3 class="font-bold text-slate-900 dark:text-white group-hover:text-sky-600 dark:group-hover:text-sky-300 transition-colors">Programming</h3>
+            </div>
+             <ul class="space-y-2 text-sm text-slate-600 dark:text-zinc-400">
+              <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-sky-500 shrink-0"></span>Python (Deep Learning, API), R</li>
+              <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-sky-500 shrink-0"></span>Go (High Perf), TypeScript (Frontend)</li>
+              <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-sky-500 shrink-0"></span>FastAPI, Node.js, REST & OpenAPI</li>
+              <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-sky-500 shrink-0"></span>SQL, Agile Methodologies</li>
+            </ul>
+          </div>
+
+          <!-- 4. ML & Infrastructure -->
+          <div class="spotlight-card p-6 group border-t-2 border-purple-500/50 hover:bg-slate-50 dark:hover:bg-zinc-900/80 transition-all" data-aos="fade-up">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-10 h-10 rounded-lg bg-purple-500/10 flex items-center justify-center ring-1 ring-purple-500/20">
+                <svg class="w-5 h-5 text-purple-500 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+              </div>
+              <h3 class="font-bold text-slate-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-300 transition-colors">ML & Infra</h3>
+            </div>
+             <ul class="space-y-2 text-sm text-slate-600 dark:text-zinc-400">
+              <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-purple-500 shrink-0"></span>PyTorch, Embeddings, MLflow</li>
+              <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-purple-500 shrink-0"></span>Docker, Kubernetes (K8s), Linux</li>
+              <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-purple-500 shrink-0"></span>CI/CD (GitHub Actions), Redis, Git</li>
+              <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-purple-500 shrink-0"></span>System Design for AI</li>
+            </ul>
+          </div>
+
+           <!-- 5. Cloud & Tools -->
+          <div class="spotlight-card p-6 group border-t-2 border-orange-500/50 hover:bg-slate-50 dark:hover:bg-zinc-900/80 transition-all" data-aos="fade-up" data-aos-delay="100">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-10 h-10 rounded-lg bg-orange-500/10 flex items-center justify-center ring-1 ring-orange-500/20">
+                <svg class="w-5 h-5 text-orange-500 dark:text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path></svg>
+              </div>
+              <h3 class="font-bold text-slate-900 dark:text-white group-hover:text-orange-600 dark:group-hover:text-orange-300 transition-colors">Cloud & Tools</h3>
+            </div>
+             <ul class="space-y-2 text-sm text-slate-600 dark:text-zinc-400">
+              <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-orange-500 shrink-0"></span>AWS (Bedrock, SageMaker, S3, Lambda)</li>
+              <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-orange-500 shrink-0"></span>AWS Step Functions, CloudWatch</li>
+              <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-orange-500 shrink-0"></span>Grafana, Prometheus, Tableau</li>
+              <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-orange-500 shrink-0"></span>GCP, Terraform (IaC)</li>
             </ul>
           </div>
       </div>
