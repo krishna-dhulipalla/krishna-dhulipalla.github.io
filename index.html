@@ -12,6 +12,16 @@ layout: null
       name="description"
       content="Selected systems, notes, and experience from Krishna Vamsi Dhulipalla, an AI / ML engineer working across agent runtimes, retrieval, evaluation, and production infrastructure."
     />
+    <script>
+      (() => {
+        try {
+          const savedTheme = window.localStorage.getItem("theme");
+          document.documentElement.dataset.theme = savedTheme === "dark" ? "dark" : "light";
+        } catch (error) {
+          document.documentElement.dataset.theme = "light";
+        }
+      })();
+    </script>
     <meta
       name="google-site-verification"
       content="qCeAap7TkXSuUZxvLUJ4y7XeuWX39M39Eo62k3zbyuE"
@@ -37,23 +47,39 @@ layout: null
           <span class="brandmark-label">Krishna Vamsi Dhulipalla</span>
           <span class="brandmark-subtitle">Selected Systems</span>
         </a>
-        <button
-          class="menu-toggle"
-          type="button"
-          aria-expanded="false"
-          aria-controls="siteMenu"
-          data-menu-toggle
-        >
-          Menu
-        </button>
 
-        <nav class="site-menu" id="siteMenu" data-site-menu>
-          <a href="#work">Work</a>
-          <a href="{{ '/blog.html' | relative_url }}">Notes</a>
-          <a href="#experience">Experience</a>
-          <a href="{{ '/resume.html' | relative_url }}">Resume</a>
-          <a href="#contact">Contact</a>
-        </nav>
+        <div class="masthead-actions">
+          <nav class="site-menu" id="siteMenu" data-site-menu>
+            <a href="#work">Work</a>
+            <a href="{{ '/blog.html' | relative_url }}">Notes</a>
+            <a href="#experience">Experience</a>
+            <a href="{{ '/resume.html' | relative_url }}">Resume</a>
+            <a href="#contact">Contact</a>
+          </nav>
+
+          <button
+            class="theme-toggle"
+            type="button"
+            aria-label="Toggle color theme"
+            aria-pressed="false"
+            data-theme-toggle
+          >
+            <span class="theme-toggle-track" aria-hidden="true">
+              <span class="theme-toggle-thumb"></span>
+            </span>
+            <span class="theme-toggle-text" data-theme-label>Light</span>
+          </button>
+
+          <button
+            class="menu-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="siteMenu"
+            data-menu-toggle
+          >
+            Menu
+          </button>
+        </div>
       </div>
     </header>
 
@@ -67,7 +93,12 @@ layout: null
         <div class="intro-grid">
           <div class="intro-copy">
             <p class="eyebrow">Applied AI / ML Systems</p>
-            <h1 class="display-heading chroma-ink">Krishna Vamsi Dhulipalla</h1>
+            <h1
+              class="display-heading chroma-ink spider-title"
+              data-text="Krishna Vamsi Dhulipalla"
+            >
+              Krishna Vamsi Dhulipalla
+            </h1>
             <p class="intro-text">
               AI / ML engineer working across agent runtimes, retrieval systems,
               evaluation, and production infrastructure. I build systems that
@@ -76,7 +107,7 @@ layout: null
             </p>
 
             <div class="focus-strip">
-              <span class="focus-label">Current focus</span>
+              <span class="focus-label spider-field" data-text="Current focus">Current focus</span>
               <p>
                 Orchestration patterns for tool-using agents, retrieval
                 reliability, and evaluation loops that hold up under real
@@ -114,7 +145,7 @@ layout: null
         <div class="section-head">
           <div>
             <p class="section-index">01 / Work</p>
-            <h2 class="section-title">Featured work</h2>
+            <h2 class="section-title spider-field" data-text="Featured work">Featured work</h2>
           </div>
           <p class="section-summary">
             Selected systems where orchestration, retrieval, evaluation, and
@@ -127,7 +158,7 @@ layout: null
             <div class="work-order">01</div>
             <div class="work-copy">
               <p class="work-group">Production AI Systems</p>
-              <h3 class="work-title chroma-hover">CoreLink AI</h3>
+              <h3 class="work-title chroma-hover spider-hover" data-text="CoreLink AI">CoreLink AI</h3>
               <p class="work-context">
                 Finance-first A2A reasoning engine built on LangGraph and MCP.
               </p>
@@ -174,7 +205,10 @@ layout: null
             <div class="work-order">02</div>
             <div class="work-copy">
               <p class="work-group">Reliable AI Systems</p>
-              <h3 class="work-title chroma-hover">
+              <h3
+                class="work-title chroma-hover spider-hover"
+                data-text="Clinical Pre-Rounding Assistant"
+              >
                 Clinical Pre-Rounding Assistant
               </h3>
               <p class="work-context">
@@ -211,7 +245,7 @@ layout: null
             <div class="work-order">03</div>
             <div class="work-copy">
               <p class="work-group">Infrastructure / Sandboxing</p>
-              <h3 class="work-title chroma-hover">Agent K8s Sandbox</h3>
+              <h3 class="work-title chroma-hover spider-hover" data-text="Agent K8s Sandbox">Agent K8s Sandbox</h3>
               <p class="work-context">
                 Isolated execution environment for untrusted agent-generated
                 code.
@@ -255,7 +289,7 @@ layout: null
             <div class="work-order">04</div>
             <div class="work-copy">
               <p class="work-group">Enterprise Retrieval / Automation</p>
-              <h3 class="work-title chroma-hover">Internal Data Agents</h3>
+              <h3 class="work-title chroma-hover spider-hover" data-text="Internal Data Agents">Internal Data Agents</h3>
               <p class="work-context">
                 Schema-aware SQL automation for internal analyst workflows.
               </p>
@@ -363,7 +397,7 @@ layout: null
         <div class="section-head">
           <div>
             <p class="section-index">02 / Notes</p>
-            <h2 class="section-title">Engineering notebook</h2>
+            <h2 class="section-title spider-field" data-text="Engineering notebook">Engineering notebook</h2>
           </div>
           <p class="section-summary">
             Notes are treated as working records: failure patterns, tradeoffs,
@@ -396,7 +430,7 @@ layout: null
         <div class="section-head">
           <div>
             <p class="section-index">03 / Experience</p>
-            <h2 class="section-title">Experience snapshot</h2>
+            <h2 class="section-title spider-field" data-text="Experience snapshot">Experience snapshot</h2>
           </div>
           <p class="section-summary">
             Roles most relevant to the systems work shown here.
@@ -466,7 +500,7 @@ layout: null
         <div class="section-head">
           <div>
             <p class="section-index">04 / Working Areas</p>
-            <h2 class="section-title">Working areas</h2>
+            <h2 class="section-title spider-field" data-text="Working areas">Working areas</h2>
           </div>
           <p class="section-summary">
             Organized by system surface rather than by tool lists.
@@ -526,7 +560,7 @@ layout: null
       <div class="site-shell footer-grid">
         <div>
           <p class="section-index">05 / Contact</p>
-          <h2 class="section-title">Contact</h2>
+          <h2 class="section-title spider-field" data-text="Contact">Contact</h2>
           <p class="footer-copy">
             Email or LinkedIn is the fastest way to reach me.
           </p>

@@ -8,6 +8,16 @@
       name="description"
       content="{{ page.excerpt | strip_html | normalize_whitespace | escape }}"
     />
+    <script>
+      (() => {
+        try {
+          const savedTheme = window.localStorage.getItem("theme");
+          document.documentElement.dataset.theme = savedTheme === "dark" ? "dark" : "light";
+        } catch (error) {
+          document.documentElement.dataset.theme = "light";
+        }
+      })();
+    </script>
     <link rel="icon" href="{{ '/assets/favicon.ico' | relative_url }}" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -28,23 +38,38 @@
           <span class="brandmark-subtitle">Engineering Notebook</span>
         </a>
 
-        <button
-          class="menu-toggle"
-          type="button"
-          aria-expanded="false"
-          aria-controls="siteMenu"
-          data-menu-toggle
-        >
-          Menu
-        </button>
+        <div class="masthead-actions">
+          <nav class="site-menu" id="siteMenu" data-site-menu>
+            <a href="{{ '/' | relative_url }}#work">Work</a>
+            <a href="{{ '/blog.html' | relative_url }}">Notes</a>
+            <a href="{{ '/' | relative_url }}#experience">Experience</a>
+            <a href="{{ '/resume.html' | relative_url }}">Resume</a>
+            <a href="{{ '/' | relative_url }}#contact">Contact</a>
+          </nav>
 
-        <nav class="site-menu" id="siteMenu" data-site-menu>
-          <a href="{{ '/' | relative_url }}#work">Work</a>
-          <a href="{{ '/blog.html' | relative_url }}">Notes</a>
-          <a href="{{ '/' | relative_url }}#experience">Experience</a>
-          <a href="{{ '/resume.html' | relative_url }}">Resume</a>
-          <a href="{{ '/' | relative_url }}#contact">Contact</a>
-        </nav>
+          <button
+            class="theme-toggle"
+            type="button"
+            aria-label="Toggle color theme"
+            aria-pressed="false"
+            data-theme-toggle
+          >
+            <span class="theme-toggle-track" aria-hidden="true">
+              <span class="theme-toggle-thumb"></span>
+            </span>
+            <span class="theme-toggle-text" data-theme-label>Light</span>
+          </button>
+
+          <button
+            class="menu-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="siteMenu"
+            data-menu-toggle
+          >
+            Menu
+          </button>
+        </div>
       </div>
     </header>
 
