@@ -1,3 +1,6 @@
 node_modules/
-artifacts/** linguist-generated=true
-*.html linguist-generated=true
+artifacts/
+_site/
+.jekyll-cache/
+.sass-cache/
+.bundle/

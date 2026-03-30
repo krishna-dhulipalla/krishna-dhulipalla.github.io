@@ -1,27 +1,27 @@
-const fs = require('fs');
-const path = require('path');
-
 beforeEach(() => {
   document.body.innerHTML = `
-    <form id="nn-contact-form" action="/" method="POST">
-      <input type="text" id="name" name="name" />
-      <input type="email" id="email" name="email" />
-      <textarea id="message" name="message"></textarea>
-      <div class="loss-message hidden" id="loss-message"></div>
-      <button type="submit" id="submit-btn"></button>
-    </form>
+    <button data-menu-toggle aria-expanded="false"></button>
+    <nav data-site-menu></nav>
+    <span data-year></span>
   `;
   jest.resetModules();
-  require('../js/scripts');
+  require("../js/main.js");
 });
 
-test('empty form shows loss message and prevents fetch', () => {
-  const fetchSpy = jest.spyOn(global, 'fetch');
-  const form = document.getElementById('nn-contact-form');
-  const submitEvent = new Event('submit', { bubbles: true, cancelable: true });
-  form.dispatchEvent(submitEvent);
+test("menu toggle updates expanded state and menu class", () => {
+  const button = document.querySelector("[data-menu-toggle]");
+  const menu = document.querySelector("[data-site-menu]");
 
-  const loss = document.getElementById('loss-message');
-  expect(loss.classList.contains('hidden')).toBe(false);
-  expect(fetchSpy).not.toHaveBeenCalled();
+  button.click();
+  expect(menu.classList.contains("is-open")).toBe(true);
+  expect(button.getAttribute("aria-expanded")).toBe("true");
+
+  button.click();
+  expect(menu.classList.contains("is-open")).toBe(false);
+  expect(button.getAttribute("aria-expanded")).toBe("false");
+});
+
+test("year placeholders are populated", () => {
+  const year = document.querySelector("[data-year]").textContent;
+  expect(year).toBe(String(new Date().getFullYear()));
 });

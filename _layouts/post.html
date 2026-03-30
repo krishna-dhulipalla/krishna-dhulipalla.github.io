@@ -1,399 +1,86 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{ page.title }} - Blog</title>
-
-    <!-- Fonts -->
+    <title>{{ page.title }} | Notes</title>
+    <meta
+      name="description"
+      content="{{ page.excerpt | strip_html | normalize_whitespace | escape }}"
+    />
+    <link rel="icon" href="{{ '/assets/favicon.ico' | relative_url }}" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
-
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
-    <script src="/js/tailwind-config.js"></script>
-    <!-- Adjusted path for Jekyll root -->
-
-    <style>
-      ::selection {
-        background-color: #0d9488;
-        color: white;
-      }
-      body {
-        font-family: "Inter", sans-serif;
-      }
-      .font-serif {
-        font-family: "Merriweather", serif;
-      }
-      .font-mono {
-        font-family: "JetBrains Mono", monospace;
-      }
-      pre {
-        background-color: #1e1e1e !important;
-        border-radius: 0.75rem;
-      }
-    </style>
+    <link rel="stylesheet" href="{{ '/css/style.css' | relative_url }}" />
+    <script defer src="{{ '/js/main.js' | relative_url }}"></script>
   </head>
+  <body class="page-post">
+    <a class="skip-link" href="#main">Skip to content</a>
 
-  <body
-    class="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 flex flex-col min-h-screen"
-  >
-    <!-- Navbar -->
-    <header
-      class="fixed top-0 inset-x-0 z-50 border-b border-black/5 dark:border-white/10 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md"
-    >
-      <nav
-        class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between"
-      >
-        <a
-          href="{{ site.baseurl }}/index.html"
-          class="text-xl font-bold tracking-tight"
-        >
-          <span class="text-teal-600">Krishna</span>
-          <span class="text-gray-900 dark:text-white">Vamsi</span>
+    <header class="site-header">
+      <div class="site-shell masthead">
+        <a class="brandmark" href="{{ '/' | relative_url }}">
+          <span class="brandmark-label">Krishna Vamsi Dhulipalla</span>
+          <span class="brandmark-subtitle">Engineering Notebook</span>
         </a>
-        <div class="flex items-center gap-6 text-sm font-medium">
-          <a
-            href="{{ site.baseurl }}/blog.html"
-            class="flex items-center gap-1 hover:text-teal-600 transition-colors"
-          >
-            <svg
-              class="w-4 h-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M10 19l-7-7m0 0l7-7m-7 7h18"
-              ></path>
-            </svg>
-            All Posts
-          </a>
-        </div>
-      </nav>
+
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="siteMenu"
+          data-menu-toggle
+        >
+          Menu
+        </button>
+
+        <nav class="site-menu" id="siteMenu" data-site-menu>
+          <a href="{{ '/' | relative_url }}#work">Work</a>
+          <a href="{{ '/blog.html' | relative_url }}">Notes</a>
+          <a href="{{ '/' | relative_url }}#experience">Experience</a>
+          <a href="{{ '/resume.html' | relative_url }}">Resume</a>
+          <a href="{{ '/' | relative_url }}#contact">Contact</a>
+        </nav>
+      </div>
     </header>
 
-    <main class="flex-grow pt-32 pb-20 px-4 sm:px-6 lg:px-8">
-      <!-- Article Header -->
-      <header class="mx-auto max-w-3xl mb-12 text-center md:text-left">
-        <div
-          class="flex flex-wrap items-center gap-3 text-sm font-mono text-teal-600 dark:text-teal-400 mb-6 uppercase tracking-wider justify-center md:justify-start"
-        >
-          <span>{{ page.category }}</span>
-          <span
-            class="w-1 h-1 rounded-full bg-gray-300 dark:bg-gray-600"
-          ></span>
-          <span
-            >{{ content | number_of_words | divided_by: 200 }} Min Read</span
-          >
-          <span
-            class="w-1 h-1 rounded-full bg-gray-300 dark:bg-gray-600"
-          ></span>
-          <span>{{ page.date | date: "%b %d, %Y" }}</span>
-        </div>
-        <h1
-          class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold leading-tight text-gray-900 dark:text-white mb-6"
-        >
-          {{ page.title }}
-        </h1>
-        <p
-          class="text-xl text-gray-600 dark:text-gray-400 leading-relaxed font-serif italic"
-        >
-          {{ page.excerpt }}
-        </p>
-      </header>
-
-      <!-- Article Image/Divider -->
-      <div
-        class="mx-auto max-w-5xl mb-16 h-px bg-gradient-to-r from-transparent via-gray-200 dark:via-gray-700 to-transparent"
-      ></div>
-
-      <!-- Article Content (Prose) -->
-      <article
-        class="mx-auto max-w-3xl prose prose-lg prose-slate dark:prose-invert prose-headings:font-serif prose-headings:font-bold prose-code:font-mono prose-pre:shadow-xl"
-      >
-        {{ content }}
-      </article>
-
-      <!-- Author Footer -->
-      <div
-        class="mx-auto max-w-3xl mt-16 pt-8 border-t border-gray-200 dark:border-gray-800 flex items-center gap-4"
-      >
-        <div
-          class="w-12 h-12 rounded-full bg-gray-200 dark:bg-gray-700 overflow-hidden"
-        >
-          <!-- Placeholder -->
-          <svg
-            class="w-full h-full text-gray-400"
-            fill="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z"
-            />
-          </svg>
-        </div>
-        <div>
-          <p class="font-bold text-gray-900 dark:text-white">
-            Written by Krishna Vamsi
-          </p>
-          <p class="text-sm text-gray-500">
-            Engineer & Researcher. Building reliable agents.
-          </p>
-        </div>
-      </div>
-
-      <!-- Comments Section (Vercel Backend) -->
-      <section
-        class="mx-auto max-w-3xl mt-16 pt-8 border-t border-gray-200 dark:border-gray-800"
-      >
-        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">
-          Comments
-        </h3>
-
-        <!-- Comment List -->
-        <div id="comment-list" class="space-y-6 mb-10">
-          <p id="loading-msg" class="text-gray-500 italic text-sm">
-            Loading comments...
-          </p>
-          <p id="no-comments-msg" class="hidden text-gray-500 italic text-sm">
-            No comments yet. Be the first!
-          </p>
-        </div>
-
-        <!-- Comment Form -->
-        <form
-          id="comment-form"
-          class="bg-gray-50 dark:bg-gray-800/50 p-6 rounded-2xl border border-gray-200 dark:border-gray-700 relative"
-        >
-          <h4 class="text-lg font-semibold mb-4 text-gray-900 dark:text-white">
-            Leave a thought
-          </h4>
-
-          <div class="grid gap-4">
-            <!-- Honeypot (Hidden) -->
-            <input
-              type="text"
-              name="website"
-              style="display: none"
-              tabindex="-1"
-              autocomplete="off"
-            />
-
-            <div class="flex items-center gap-4">
-              <div class="flex-grow">
-                <label
-                  for="comment-name"
-                  class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
-                  >Name</label
-                >
-                <input
-                  type="text"
-                  id="comment-name"
-                  placeholder="Your Name"
-                  class="w-full rounded-lg border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 px-4 py-2 text-sm focus:border-teal-500 focus:ring-teal-500 dark:text-white transition-opacity duration-200"
-                />
-              </div>
-
-              <!-- Anonymous Toggle -->
-              <div class="flex flex-col justify-end pb-2">
-                <label class="inline-flex items-center cursor-pointer">
-                  <input
-                    type="checkbox"
-                    id="anon-toggle"
-                    class="sr-only peer"
-                  />
-                  <div
-                    class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-teal-300 dark:peer-focus:ring-teal-800 rounded-full dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-teal-600"
-                  ></div>
-                  <span
-                    class="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300"
-                    >Post as Anonymous</span
-                  >
-                </label>
-              </div>
-            </div>
-
-            <div>
-              <label
-                for="comment-body"
-                class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
-                >Message</label
-              >
-              <textarea
-                id="comment-body"
-                rows="3"
-                required
-                placeholder="Great post!"
-                class="w-full rounded-lg border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 px-4 py-2 text-sm focus:border-teal-500 focus:ring-teal-500 dark:text-white"
-              ></textarea>
-            </div>
-
-            <button
-              type="submit"
-              id="submit-btn"
-              class="self-start px-4 py-2 bg-teal-600 text-white rounded-lg text-sm font-medium hover:bg-teal-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              Post Comment
-            </button>
-            <p id="error-msg" class="hidden text-red-500 text-sm mt-2"></p>
+    <main id="main" class="site-shell page-stack">
+      <article class="post-shell">
+        <header class="post-header">
+          <p class="page-label">Notebook entry</p>
+          <h1 class="post-title chroma-ink">{{ page.title }}</h1>
+          <div class="post-meta">
+            <span>{{ page.date | date: "%b %d, %Y" }}</span>
+            <span>
+              {% if page.category %}
+                {{ page.category }}
+              {% else %}
+                {{ page.categories | first }}
+              {% endif %}
+            </span>
+            <span>{{ content | number_of_words | divided_by: 200 }} min read</span>
           </div>
-        </form>
-      </section>
+          <p class="post-dek">{{ page.excerpt }}</p>
+        </header>
 
-      <!-- Comment Logic (Vercel API) -->
-      <script>
-        document.addEventListener("DOMContentLoaded", () => {
-          const form = document.getElementById("comment-form");
-          const list = document.getElementById("comment-list");
-          const loadingMsg = document.getElementById("loading-msg");
-          const noMsg = document.getElementById("no-comments-msg");
-          const nameInput = document.getElementById("comment-name");
-          const anonToggle = document.getElementById("anon-toggle");
-          const submitBtn = document.getElementById("submit-btn");
-          const errorMsg = document.getElementById("error-msg");
+        <div class="post-body">{{ content }}</div>
 
-          // Configuration
-          const API_URL = "/api/comments";
-          const postId = window.location.pathname.replace(/\/$/, "");
-
-          // 1. Toggle Anonymous Logic
-          anonToggle.addEventListener("change", (e) => {
-            if (e.target.checked) {
-              nameInput.value = "";
-              nameInput.placeholder = "Anonymous";
-              nameInput.disabled = true;
-              nameInput.classList.add("opacity-50");
-            } else {
-              nameInput.placeholder = "Your Name";
-              nameInput.disabled = false;
-              nameInput.classList.remove("opacity-50");
-            }
-          });
-
-          // 2. Render Comments
-          const renderComments = (comments) => {
-            list.innerHTML = "";
-
-            if (comments.length === 0) {
-              list.appendChild(noMsg);
-              noMsg.classList.remove("hidden");
-              return;
-            }
-
-            comments.forEach((c) => {
-              const div = document.createElement("div");
-              div.className = "flex gap-3 animate-fade-in";
-
-              const dateStr = new Date(c.createdAt).toLocaleDateString(
-                undefined,
-                {
-                  month: "short",
-                  day: "numeric",
-                  year: "numeric",
-                }
-              );
-
-              div.innerHTML = `
-                <div class="flex-shrink-0 w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-gray-500 dark:text-gray-400">
-                  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
-                </div>
-                <div>
-                  <div class="flex items-center gap-2">
-                    <span class="font-semibold text-gray-900 dark:text-white text-sm">${c.name}</span>
-                    <span class="text-xs text-gray-500">${dateStr}</span>
-                  </div>
-                  <p class="text-gray-600 dark:text-gray-300 text-sm mt-1 whitespace-pre-wrap">${c.body}</p>
-                </div>
-              `;
-              list.appendChild(div);
-            });
-          };
-
-          // 3. Fetch Comments
-          const fetchComments = async () => {
-            try {
-              loadingMsg.classList.remove("hidden");
-              noMsg.classList.add("hidden");
-
-              const res = await fetch(
-                `${API_URL}?postId=${encodeURIComponent(postId)}`
-              );
-              if (!res.ok) throw new Error("Failed to load");
-
-              const data = await res.json();
-              loadingMsg.classList.add("hidden");
-              renderComments(data.comments || []);
-            } catch (err) {
-              console.error(err);
-              loadingMsg.textContent =
-                "Could not load comments. (Is the backend running?)";
-            }
-          };
-
-          fetchComments();
-
-          // 4. Submit Comment
-          form.addEventListener("submit", async (e) => {
-            e.preventDefault();
-            errorMsg.classList.add("hidden");
-            submitBtn.disabled = true;
-            submitBtn.textContent = "Posting...";
-
-            const body = document.getElementById("comment-body").value.trim();
-            const isAnonymous = anonToggle.checked;
-            const name = isAnonymous ? "Anonymous" : nameInput.value.trim();
-            const honeypot = form.querySelector('input[name="website"]').value;
-
-            try {
-              const res = await fetch(API_URL, {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                  postId,
-                  name,
-                  isAnonymous,
-                  content: body,
-                  honeypot,
-                }),
-              });
-
-              if (!res.ok) throw new Error("Failed to post");
-
-              document.getElementById("comment-body").value = "";
-              form.querySelector('input[name="website"]').value = "";
-              await fetchComments();
-            } catch (err) {
-              console.error(err);
-              errorMsg.textContent =
-                "Failed to post comment. Please try again.";
-              errorMsg.classList.remove("hidden");
-            } finally {
-              submitBtn.disabled = false;
-              submitBtn.textContent = "Post Comment";
-            }
-          });
-        });
-      </script>
+        <footer class="post-footer">
+          <a href="{{ '/blog.html' | relative_url }}">Back to notes</a>
+          <a href="{{ '/' | relative_url }}">Return to homepage</a>
+        </footer>
+      </article>
     </main>
 
-    <!-- Theme Logic -->
-    <script>
-      const html = document.documentElement;
-      if (
-        localStorage.theme === "dark" ||
-        (!("theme" in localStorage) &&
-          window.matchMedia("(prefers-color-scheme: dark)").matches)
-      ) {
-        html.classList.add("dark");
-      }
-    </script>
+    <footer class="site-footer">
+      <div class="site-shell footer-bar">
+        <p>(c) <span data-year></span> Krishna Vamsi Dhulipalla</p>
+        <a href="#main">Back to top</a>
+      </div>
+    </footer>
   </body>
 </html>

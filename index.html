@@ -1,1483 +1,560 @@
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+---
+layout: null
+---
+
+<!doctype html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Krishna Vamsi Dhulipalla - Portfolio</title>
-
+    <title>Krishna Vamsi Dhulipalla | Applied AI / ML Systems</title>
+    <meta
+      name="description"
+      content="Selected systems, notes, and experience from Krishna Vamsi Dhulipalla, an AI / ML engineer working across agent runtimes, retrieval, evaluation, and production infrastructure."
+    />
     <meta
       name="google-site-verification"
       content="qCeAap7TkXSuUZxvLUJ4y7XeuWX39M39Eo62k3zbyuE"
     />
-
-    <!-- Fonts & Tailwind -->
+    <link rel="icon" href="{{ '/assets/favicon.ico' | relative_url }}" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="./js/tailwind-config.js"></script>
-
-    <!-- Lottie for subtle hero animation -->
-    <script
-      src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js"
-      type="module"
-    ></script>
-    <script
-      src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js"
-      type="module"
-    ></script>
-    <!-- AOS (animate on scroll) -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
-    <script defer src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="{{ '/css/style.css' | relative_url }}" />
+    <script defer src="{{ '/js/main.js' | relative_url }}"></script>
   </head>
+  <body class="page-home">
+    {% assign featured_note = site.posts | where_exp: "post", "post.title ==
+    'Why Your Vision Model Is Lying to You (And How to Catch It)'" | first %}
+    <a class="skip-link" href="#main">Skip to content</a>
 
-  <body
-    class="bg-gray-50 text-slate-900 transition-colors duration-300 dark:bg-[#09090b] dark:text-slate-100 font-sans antialiased overflow-x-hidden selection:bg-indigo-500 selection:text-white"
-  >
-    <!-- Noise Texture Overlay -->
-    <div class="bg-noise"></div>
-
-    <!-- ===== Navbar ===== -->
-    <header
-      class="fixed top-0 inset-x-0 z-50 border-b border-black/5 dark:border-white/10 bg-white dark:bg-gray-900/80 glass"
-    >
-      <nav
-        class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between"
-      >
-        <a href="#top" class="font-display text-xl font-bold tracking-tight">
-          <span class="text-teal-600">Krishna</span>
-          <span class="text-gray-900 dark:text-white">Vamsi</span>
+    <header class="site-header">
+      <div class="site-shell masthead">
+        <a class="brandmark" href="{{ '/' | relative_url }}">
+          <span class="brandmark-label">Krishna Vamsi Dhulipalla</span>
+          <span class="brandmark-subtitle">Selected Systems</span>
         </a>
-        <div class="hidden md:flex items-center gap-6 text-sm">
-          <a href="#about" class="hover:text-teal-600">About</a>
-          <a href="#projects" class="hover:text-teal-600">Projects</a>
-          <a href="blog.html" class="hover:text-teal-600">Blogs</a>
-          <a href="#experience" class="hover:text-teal-600">Experience</a>
-          <a href="#skills" class="hover:text-teal-600">Skills</a>
-          <a href="#contact" class="hover:text-teal-600">Contact</a>
-          <a
-            href="/res"
-            id="resume-link"
-            target="_blank"
-            class="inline-flex items-center rounded-xl border border-teal-600 px-3 py-1.5 font-medium text-teal-700 dark:text-teal-400 hover:bg-teal-50 dark:hover:bg-gray-800"
-            >Resume</a
-          >
-          <button
-            id="theme-toggle"
-            class="theme-toggle rounded-xl border border-gray-300 dark:border-gray-700 px-2 py-1 flex items-center gap-2"
-            aria-label="Toggle theme"
-            aria-pressed="false"
-          >
-            <span class="theme-icon" aria-hidden="true">🌞</span>
-            <span class="theme-text hidden sm:inline">Light</span>
-          </button>
-        </div>
         <button
-          id="menuBtn"
-          class="md:hidden p-2 rounded-lg border border-gray-200 dark:border-gray-700"
-          aria-label="Open menu"
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="siteMenu"
+          data-menu-toggle
         >
           Menu
         </button>
-      </nav>
-      <!-- Mobile menu -->
-      <div
-        id="mobileMenu"
-        class="md:hidden hidden border-t border-black/5 dark:border-white/10"
-      >
-        <div class="mx-auto max-w-7xl px-4 py-3 flex flex-col gap-3 text-sm">
-          <a href="#about" class="hover:text-teal-600">About</a>
-          <a href="#projects" class="hover:text-teal-600">Projects</a>
-          <a href="blog.html" class="hover:text-teal-600">Blogs</a>
-          <a href="#experience" class="hover:text-teal-600">Experience</a>
-          <a href="#skills" class="hover:text-teal-600">Skills</a>
-          <a href="#contact" class="hover:text-teal-600">Contact</a>
-          <a
-            href="assets/resume.pdf"
-            id="resume-link-m"
-            target="_blank"
-            class="inline-flex w-max items-center rounded-xl border border-teal-600 px-3 py-1.5 font-medium text-teal-700 dark:text-teal-400 hover:bg-teal-50 dark:hover:bg-gray-800"
-            >Resume</a
-          >
-        </div>
+
+        <nav class="site-menu" id="siteMenu" data-site-menu>
+          <a href="#work">Work</a>
+          <a href="{{ '/blog.html' | relative_url }}">Notes</a>
+          <a href="#experience">Experience</a>
+          <a href="{{ '/resume.html' | relative_url }}">Resume</a>
+          <a href="#contact">Contact</a>
+        </nav>
       </div>
     </header>
 
-    <!-- ===== Hero (Aurora) ===== -->
-    <section
-      id="top"
-      class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
-    >
-      <!-- Aurora Background -->
-      <div class="aurora-bg">
-        <div class="aurora-blob aurora-blob-1"></div>
-        <div class="aurora-blob aurora-blob-2"></div>
-        <div class="aurora-blob aurora-blob-3"></div>
-      </div>
-
-      <div
-        class="relative z-10 max-w-5xl px-6 text-center space-y-8"
-        data-aos="fade-up"
-        data-aos-duration="1000"
-      >
-        <!-- Status Pill -->
-        <div
-          class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass-panel text-xs font-medium text-emerald-300 border-emerald-500/20 shadow-[0_0_15px_rgba(16,185,129,0.2)]"
-        >
-          <span class="relative flex h-2 w-2">
-            <span
-              class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"
-            ></span>
-            <span
-              class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"
-            ></span>
-          </span>
-          Engineering Agents for Production
+    <main id="main" class="site-shell page-stack">
+      <section class="section intro-section" id="top">
+        <div class="section-marker">
+          <span>Issue 01</span>
+          <span>Spring 2026</span>
         </div>
 
-        <!-- Headline -->
-        <h1
-          class="text-4xl md:text-6xl font-bold tracking-tight text-white leading-tight"
-        >
-          Architecting
-          <span
-            class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-cyan-400"
-            >Deterministic Control Loops</span
-          ><br />
-          around Non-Deterministic LLMs
-        </h1>
-
-        <!-- Subtext -->
-        <p
-          class="text-lg md:text-xl text-slate-600 dark:text-zinc-400 max-w-2xl mx-auto leading-relaxed"
-        >
-          I build scalable agentic workflows, RAG systems, and distributed
-          training pipelines. Turning research concepts into reliable
-          infrastructure.
-        </p>
-
-        <!-- CTAs -->
-        <div
-          class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4"
-        >
-          <a
-            href="#projects"
-            class="px-8 py-3.5 rounded-xl bg-slate-900 text-white dark:bg-white dark:text-black font-semibold hover:bg-slate-800 dark:hover:bg-zinc-200 transition-all shadow-xl hover:scale-105 active:scale-95"
-          >
-            View Work
-          </a>
-          <a
-            href="#contact"
-            class="px-8 py-3.5 rounded-xl glass-panel text-slate-900 dark:text-white hover:bg-black/5 dark:hover:bg-white/10 transition-all font-medium border-black/10 dark:border-white/10 hover:border-black/20 dark:hover:border-white/20 active:scale-95"
-          >
-            Contact Me
-          </a>
-        </div>
-
-        <!-- Social Links -->
-        <div class="mt-8 flex gap-6 justify-center items-center">
-          <!-- GitHub -->
-          <a
-            href="https://github.com/krishna-dhulipalla"
-            target="_blank"
-            class="text-slate-500 hover:text-black dark:text-zinc-400 dark:hover:text-white transition-colors hover:scale-110 transform duration-200"
-            aria-label="GitHub"
-          >
-            <svg class="w-7 h-7" viewBox="0 0 24 24" fill="currentColor">
-              <path
-                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
-              />
-            </svg>
-          </a>
-          <!-- LinkedIn -->
-          <a
-            href="https://www.linkedin.com/in/krishnavamsidhulipalla/"
-            target="_blank"
-            class="text-slate-500 hover:text-[#0077b5] dark:text-zinc-400 dark:hover:text-[#0077b5] transition-colors hover:scale-110 transform duration-200"
-            aria-label="LinkedIn"
-          >
-            <svg class="w-7 h-7" viewBox="0 0 24 24" fill="currentColor">
-              <path
-                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
-              />
-            </svg>
-          </a>
-        </div>
-
-
-
-    </section>
-
-    <!-- ===== About (Bento Grid) ===== -->
-    <section id="about" class="relative py-24 px-6 max-w-7xl mx-auto">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <!-- Block 1: Intro & Bio (Span 2) -->
-        <div
-          class="col-span-1 md:col-span-2 spotlight-card p-8 flex flex-col justify-center gap-6"
-          data-aos="fade-up"
-        >
-          <div class="space-y-4">
-            <h2 class="text-3xl font-bold text-slate-900 dark:text-white tracking-tight">
-              AI Agent Engineer
-              <span class="block text-lg font-medium text-emerald-600 dark:text-emerald-400 mt-1"
-                >Specializing in autonomous workflows & infra</span
-              >
-            </h2>
-            <p class="text-slate-600 dark:text-zinc-400 leading-relaxed text-lg">
-              I bridge the gap between AI research and production-grade
-              infrastructure. With a background in distributed GPU training and
-              genomics sequence classification, I specialize in building the
-              orchestration layers that make LLMs reliable at scale.
-              <br /><br />
-              Whether it’s architecting agentic workflows to automate complex
-              SQL generation or optimizing inference performance for
-              multi-billion parameter models, my goal is to turn
-              non-deterministic research concepts into high-availability systems
-              that save real-world time and cost.
+        <div class="intro-grid">
+          <div class="intro-copy">
+            <p class="eyebrow">Applied AI / ML Systems</p>
+            <h1 class="display-heading chroma-ink">Krishna Vamsi Dhulipalla</h1>
+            <p class="intro-text">
+              AI / ML engineer working across agent runtimes, retrieval systems,
+              evaluation, and production infrastructure. I build systems that
+              turn model behavior into something inspectable, measurable, and
+              dependable in use.
             </p>
-          </div>
 
-          <div class="grid sm:grid-cols-2 gap-4 pt-4">
-            <div
-              class="glass-panel p-4 rounded-xl border-l-[3px] border-emerald-500"
-            >
-              <div class="text-2xl font-bold text-slate-900 dark:text-white mb-1">~20 hrs/wk</div>
-              <div class="text-sm text-slate-600 dark:text-zinc-400">
-                Of Manual SQL Generation Automated
-              </div>
+            <div class="focus-strip">
+              <span class="focus-label">Current focus</span>
+              <p>
+                Orchestration patterns for tool-using agents, retrieval
+                reliability, and evaluation loops that hold up under real
+                constraints.
+              </p>
             </div>
-            <a
-              href="#project-proxytuner"
-              class="glass-panel p-4 rounded-xl border-l-[3px] border-indigo-500 hover:bg-slate-50 dark:hover:bg-white/5 transition-colors cursor-pointer group"
-              onclick="document.getElementById('project-proxytuner').scrollIntoView({behavior: 'smooth', block: 'center'}); document.getElementById('project-proxytuner').classList.add('ring-highlight'); setTimeout(() => document.getElementById('project-proxytuner').classList.remove('ring-highlight'), 1200); return false;"
-            >
-              <div
-                class="text-2xl font-bold text-slate-900 dark:text-white mb-1 group-hover:text-indigo-600 dark:group-hover:text-indigo-300 transition-colors"
-              >
-                70%
-              </div>
-              <div class="text-sm text-slate-600 dark:text-zinc-400">
-                Training Cost Reduction via Distributed Tuning ↗
-              </div>
-            </a>
           </div>
-        </div>
 
-        <!-- Block 2: Profile Image (Span 1) -->
-        <div
-          class="col-span-1 spotlight-card p-2 min-h-[300px] relative group overflow-hidden"
-          data-aos="fade-up"
-          data-aos-delay="100"
-        >
-          <img
-            src="assets/profile.png"
-            alt="Krishna Vamsi Dhulipalla"
-            class="w-full h-full object-cover object-top rounded-lg opacity-90 group-hover:scale-105 transition-transform duration-700"
-          />
-          <div
-            class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"
-          ></div>
+          <aside class="paper-note intro-note">
+            <div class="note-header">
+              <span class="eyebrow">Working areas</span>
+              <span class="note-id">A-01</span>
+            </div>
+            <dl class="meta-list">
+              <div>
+                <dt>Role</dt>
+                <dd>Applied AI / ML engineer</dd>
+              </div>
+              <div>
+                <dt>Emphasis</dt>
+                <dd>Agent systems, retrieval, infrastructure, evaluation</dd>
+              </div>
+              <div>
+                <dt>Bias</dt>
+                <dd>
+                  System clarity over hype, implementation depth over gloss
+                </dd>
+              </div>
+            </dl>
+          </aside>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ===== Technical Approach ("The How") ===== -->
-    <section class="py-20 px-6 max-w-7xl mx-auto border-t border-white/5 relative overflow-hidden">
-      <!-- Angled background accent -->
-      <div class="absolute inset-0 bg-zinc-900/20 skew-y-3 transform -z-10 origin-top-left scale-150"></div>
-      
-      <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-        <!-- Text Content -->
-        <div data-aos="fade-right">
-          <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-6">Technical Approach</h2>
-          <p class="text-slate-600 dark:text-zinc-400 text-lg leading-relaxed mb-8">
-            Building <strong class="text-slate-900 dark:text-white">resilient systems</strong> that handle unpredictability. I prioritize observability, fault tolerance, and type-safety to ensure reliable behavior in production environments.
+      <section class="section" id="work">
+        <div class="section-head">
+          <div>
+            <p class="section-index">01 / Work</p>
+            <h2 class="section-title">Featured work</h2>
+          </div>
+          <p class="section-summary">
+            Selected systems where orchestration, retrieval, evaluation, and
+            deployment decisions shaped the outcome.
           </p>
-          
-          <div class="space-y-6">
-            <!-- Principle 1 -->
-            <div class="flex gap-4">
-              <div class="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center shrink-0">
-                <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-              </div>
-              <div>
-                <h4 class="text-slate-900 dark:text-white font-bold mb-1">Reliability First</h4>
-                <p class="text-sm text-slate-600 dark:text-zinc-400">Implementing circuit breakers, backoff strategies, and dead-letter queues.</p>
-              </div>
-            </div>
-            
-            <!-- Principle 2 -->
-            <div class="flex gap-4">
-              <div class="w-10 h-10 rounded-lg bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center shrink-0">
-                <svg class="w-5 h-5 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
-              </div>
-              <div>
-                <h4 class="text-slate-900 dark:text-white font-bold mb-1">Deterministic AI</h4>
-                <p class="text-sm text-slate-600 dark:text-zinc-400">Constraining LLM outputs via Pydantic schemas and strict validation layers.</p>
-              </div>
-            </div>
-
-            <!-- Principle 3 -->
-            <div class="flex gap-4">
-               <div class="w-10 h-10 rounded-lg bg-rose-500/10 border border-rose-500/20 flex items-center justify-center shrink-0">
-                 <svg class="w-5 h-5 text-rose-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
-               </div>
-               <div>
-                 <h4 class="text-slate-900 dark:text-white font-bold mb-1">Observability Driven</h4>
-                 <p class="text-sm text-slate-600 dark:text-zinc-400">Structured logging and metric tracing to ensure system transparency.</p>
-               </div>
-             </div>
-          </div>
         </div>
-        
-        <!-- Terminal Visual (Professional) -->
-        <div class="relative h-[320px] w-full bg-[#0d1117] rounded-xl border border-white/10 shadow-2xl flex flex-col overflow-hidden" data-aos="fade-left">
-           <!-- Terminal Toolbar -->
-           <div class="flex items-center px-4 py-3 bg-white/5 border-b border-white/5">
-             <div class="flex gap-2">
-               <div class="w-3 h-3 rounded-full bg-red-500/50"></div>
-               <div class="w-3 h-3 rounded-full bg-yellow-500/50"></div>
-               <div class="w-3 h-3 rounded-full bg-green-500/50"></div>
-             </div>
-             <div class="ml-4 text-xs text-zinc-500 font-mono">agent-controller — zsh</div>
-           </div>
-           
-           <!-- Terminal Content -->
-           <div class="p-6 font-mono text-xs md:text-sm text-zinc-300 space-y-2 overflow-y-auto">
-             <div class="flex gap-2">
-               <span class="text-emerald-400">vamsi@dev-box:~$</span>
-               <span class="text-white">kubectl logs pod/vamsi-brain-node-1 -n production --follow</span>
-             </div>
-             
-             <!-- Personalized Log Lines -->
-             <div class="flex gap-2 opacity-80">
-                <span class="text-blue-400">[INFO]</span>
-                <span>Initializing context... Coffee_Level: 98% (OPTIMAL)</span>
-             </div>
-             <div class="flex gap-2 opacity-80">
-                <span class="text-blue-400">[INFO]</span>
-                <span>Loading model weights... Quantizing to 4-bit because VRAM is expensive.</span>
-             </div>
-             <div class="flex gap-2">
-                <span class="text-amber-400">[WARN]</span>
-                <span>Detected anomaly: "It works on my machine".</span>
-             </div>
-             <div class="flex gap-2 opacity-80">
-                <span class="text-blue-400">[INFO]</span>
-                <span>> Containerizing environment to fix anomaly... DONE.</span>
-             </div>
-             <div class="flex gap-2">
-                <span class="text-rose-400">[ERROR]</span>
-                <span>DNS_PROBE_FINISHED_NXDOMAIN. It's always DNS.</span>
-             </div>
-             <div class="flex gap-2 opacity-80">
-                <span class="text-blue-400">[INFO]</span>
-                <span>Resolving... Bypassing DNS with hardcoded IP (don't tell security).</span>
-             </div>
-             <div class="flex gap-2 opacity-80">
-                <span class="text-blue-400">[INFO]</span>
-                <span>Deploying 'Agent-Sandbox' to production on Friday...</span>
-             </div>
-             <div class="flex gap-2">
-                <span class="text-rose-500 font-bold">[CRIT]</span>
-                <span>Guardrails triggered: "Senior_Dev_Protocol_Violation". Aborting.</span>
-             </div>
-             <div class="flex gap-2">
-                <span class="text-emerald-400">[SUCCESS]</span>
-                <span>Rescheduling deployment to Monday. System Stable.</span>
-             </div>
 
-             <div class="flex gap-2 mt-2 animate-pulse">
-               <span class="text-emerald-400">❯</span>
-               <span class="w-2 h-4 bg-zinc-500 inline-block align-middle"></span>
-             </div>
-           </div>
+        <div class="work-list">
+          <article class="work-row">
+            <div class="work-order">01</div>
+            <div class="work-copy">
+              <p class="work-group">Production AI Systems</p>
+              <h3 class="work-title chroma-hover">CoreLink AI</h3>
+              <p class="work-context">
+                Finance-first A2A reasoning engine built on LangGraph and MCP.
+              </p>
+              <p class="work-description">
+                Built a modular reasoning runtime for finance work where a
+                single prompt loop is not enough. The engine separates intake,
+                planning, context curation, execution, review, and output
+                adaptation so evidence, assumptions, and policy checks remain
+                explicit through the run.
+              </p>
+              <p class="work-role">
+                <span>System area</span>
+                Agent runtime, tool mediation, review flow, policy-aware
+                orchestration
+              </p>
+              <ul class="token-list">
+                <li>LangGraph</li>
+                <li>MCP</li>
+                <li>A2A</li>
+                <li>Structured reasoning</li>
+              </ul>
+              <div class="link-row">
+                <a
+                  href="https://github.com/krishna-dhulipalla/CoreLink-AI"
+                  target="_blank"
+                  rel="noreferrer"
+                  >Repository</a
+                >
+              </div>
+            </div>
+            <aside class="work-sheet diagram-sheet">
+              <p class="sheet-label">Runtime path</p>
+              <ol class="diagram-list">
+                <li>Intake</li>
+                <li>Planner + capability resolver</li>
+                <li>Context curator</li>
+                <li>Executor</li>
+                <li>Reviewer + output adapter</li>
+              </ol>
+            </aside>
+          </article>
+
+          <article class="work-row">
+            <div class="work-order">02</div>
+            <div class="work-copy">
+              <p class="work-group">Reliable AI Systems</p>
+              <h3 class="work-title chroma-hover">
+                Clinical Pre-Rounding Assistant
+              </h3>
+              <p class="work-context">
+                FHIR-grounded clinical summarization for the last 24 to 48 hours
+                of patient change.
+              </p>
+              <p class="work-description">
+                Built a healthcare RAG system on AWS Bedrock and LangChain that
+                prioritized grounded summaries over fluent guesswork. The stack
+                combined deterministic fact extraction, PHI redaction, and
+                evaluation loops designed for clinical reliability.
+              </p>
+              <p class="work-role">
+                <span>System area</span>
+                Retrieval, grounding, redaction, evaluation
+              </p>
+              <ul class="token-list">
+                <li>FHIR</li>
+                <li>AWS Bedrock</li>
+                <li>LangChain</li>
+                <li>Healthcare AI</li>
+              </ul>
+            </div>
+            <aside class="work-sheet">
+              <p class="sheet-label">Reliability focus</p>
+              <p class="sheet-caption">
+                Grounding, redaction, and evaluation were treated as first-class
+                system requirements rather than afterthoughts.
+              </p>
+            </aside>
+          </article>
+
+          <article class="work-row">
+            <div class="work-order">03</div>
+            <div class="work-copy">
+              <p class="work-group">Infrastructure / Sandboxing</p>
+              <h3 class="work-title chroma-hover">Agent K8s Sandbox</h3>
+              <p class="work-context">
+                Isolated execution environment for untrusted agent-generated
+                code.
+              </p>
+              <p class="work-description">
+                Designed a Kubernetes-based sandbox with namespace isolation,
+                CPU and memory controls, and a sidecar proxy for observability.
+                The core problem was safe execution boundaries, not just running
+                generated code inside a container and calling it isolated.
+              </p>
+              <p class="work-role">
+                <span>System area</span>
+                Isolation, throttling, execution safety, observability
+              </p>
+              <ul class="token-list">
+                <li>Kubernetes</li>
+                <li>Go</li>
+                <li>Sandboxing</li>
+                <li>Agents</li>
+              </ul>
+              <div class="link-row">
+                <a
+                  href="https://github.com/krishna-dhulipalla/agenttask-operator"
+                  target="_blank"
+                  rel="noreferrer"
+                  >Repository</a
+                >
+              </div>
+            </div>
+            <aside class="work-sheet">
+              <p class="sheet-label">Execution guardrails</p>
+              <ol class="diagram-list">
+                <li>Namespace isolation</li>
+                <li>Resource throttling</li>
+                <li>Proxy-mediated observability</li>
+              </ol>
+            </aside>
+          </article>
+
+          <article class="work-row">
+            <div class="work-order">04</div>
+            <div class="work-copy">
+              <p class="work-group">Enterprise Retrieval / Automation</p>
+              <h3 class="work-title chroma-hover">Internal Data Agents</h3>
+              <p class="work-context">
+                Schema-aware SQL automation for internal analyst workflows.
+              </p>
+              <p class="work-description">
+                Replaced a large share of manual analyst requests with
+                autonomous SQL agents backed by schema-aware retrieval and
+                enterprise-safe execution. The value came from constraints, RBAC
+                alignment, and making the generated path trustworthy enough to
+                use.
+              </p>
+              <p class="work-role">
+                <span>System area</span>
+                SQL generation, schema retrieval, policy-safe automation
+              </p>
+              <ul class="token-list">
+                <li>LangChain</li>
+                <li>SQL / Pandas</li>
+                <li>Kubernetes</li>
+                <li>RAG</li>
+              </ul>
+            </div>
+            <aside class="work-sheet">
+              <p class="sheet-label">Operational result</p>
+              <p class="sheet-caption">
+                Replaced manual analyst work with a constrained, schema-aware
+                path that fit existing enterprise controls.
+              </p>
+            </aside>
+          </article>
         </div>
-      </div>
-    </section>
 
-    <!-- ===== Projects ===== -->
-    <section id="projects" class="mx-auto max-w-6xl px-6 py-16 md:py-24">
-      <!-- Section title -->
-      <h2
-        class="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100 mb-10"
-      >
-        Projects
-      </h2>
-      <!-- Filters -->
-      <!-- Filters -->
-      <div
-        class="mb-8 flex flex-wrap gap-2"
-        id="projFilters"
-        role="tablist"
-        aria-label="Project filters"
-      >
-        <button
-          class="proj-filter px-4 py-2 rounded-full text-sm font-medium border transition-all duration-300 bg-white text-slate-700 border-slate-200 hover:bg-slate-50 dark:bg-slate-900 dark:text-slate-300 dark:border-slate-700 dark:hover:bg-slate-800 aria-pressed:bg-teal-600 aria-pressed:text-white aria-pressed:border-teal-600 aria-pressed:shadow-lg aria-pressed:scale-105 dark:aria-pressed:bg-teal-500 dark:aria-pressed:text-black dark:aria-pressed:border-teal-500"
-          data-filter="all"
-          aria-pressed="true"
-        >
-          All
-        </button>
-
-        <button
-          class="proj-filter px-4 py-2 rounded-full text-sm font-medium border transition-all duration-300 bg-white text-slate-700 border-slate-200 hover:bg-slate-50 dark:bg-slate-900 dark:text-slate-300 dark:border-slate-700 dark:hover:bg-slate-800 aria-pressed:bg-teal-600 aria-pressed:text-white aria-pressed:border-teal-600 aria-pressed:shadow-lg aria-pressed:scale-105 dark:aria-pressed:bg-teal-500 dark:aria-pressed:text-black dark:aria-pressed:border-teal-500"
-          data-filter="agents"
-        >
-          Agents
-        </button>
-
-        <button
-          class="proj-filter px-4 py-2 rounded-full text-sm font-medium border transition-all duration-300 bg-white text-slate-700 border-slate-200 hover:bg-slate-50 dark:bg-slate-900 dark:text-slate-300 dark:border-slate-700 dark:hover:bg-slate-800 aria-pressed:bg-teal-600 aria-pressed:text-white aria-pressed:border-teal-600 aria-pressed:shadow-lg aria-pressed:scale-105 dark:aria-pressed:bg-teal-500 dark:aria-pressed:text-black dark:aria-pressed:border-teal-500"
-          data-filter="mlops"
-        >
-          Data &amp; MLOps
-        </button>
-
-        <button
-          class="proj-filter px-4 py-2 rounded-full text-sm font-medium border transition-all duration-300 bg-white text-slate-700 border-slate-200 hover:bg-slate-50 dark:bg-slate-900 dark:text-slate-300 dark:border-slate-700 dark:hover:bg-slate-800 aria-pressed:bg-teal-600 aria-pressed:text-white aria-pressed:border-teal-600 aria-pressed:shadow-lg aria-pressed:scale-105 dark:aria-pressed:bg-teal-500 dark:aria-pressed:text-black dark:aria-pressed:border-teal-500"
-          data-filter="research"
-        >
-          Research
-        </button>
-      </div>
-
-      <!-- Grid -->
-      <div class="grid gap-8 md:grid-cols-2" id="projGrid">
-        <!-- 0) Clinical Pre-Rounding Assistant [NEW] -->
-        <article
-          id="project-clinical-ai"
-          data-cat="ai"
-          class="spotlight-card group flex flex-col h-full rounded-2xl border border-white/10 bg-zinc-900/40 overflow-hidden hover:border-emerald-500/50 transition-all"
-          data-aos="fade-up"
-        >
-          <div
-            class="relative w-full aspect-[16/10] bg-[#1a1b1e] overflow-hidden flex items-center justify-center p-4 cursor-zoom-in"
-            onclick="openImageModal('assets/projects/clinical_ai_abstract_1771253329826.png')"
-          >
-            <div
-              class="absolute inset-0 bg-gradient-to-t from-zinc-900 via-transparent to-transparent opacity-60 z-10 pointer-events-none"
-            ></div>
-            <img
-              src="assets/projects/clinical_ai_abstract_1771253329826.png"
-              alt="Clinical AI Assistant"
-              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 z-0"
-            />
-            <div class="absolute top-4 right-4 z-20">
-               <span class="px-3 py-1 text-xs font-medium bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 rounded-full backdrop-blur-md">Healthcare AI</span>
-            </div>
-          </div>
-
-          <div class="p-6 flex flex-col flex-1">
-            <div class="flex items-center justify-between mb-4">
-              <span
-                class="text-xs font-bold tracking-widest uppercase text-emerald-400"
-                >Generative AI</span
-              >
-              <a
-                href="#"
-                class="text-zinc-400 hover:text-white transition-colors"
-                aria-label="View Project"
-              >
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-              </a>
-            </div>
-
-            <h3 class="text-xl font-bold text-white mb-3">
-              Clinical Pre-Rounding Assistant
-            </h3>
-            <p class="text-zinc-400 text-sm leading-relaxed mb-6 flex-grow">
-              Built a FHIR-based RAG system (AWS Bedrock, LangChain) to summarize 24-48h patient changes. Implemented deterministic fact extraction, PHI redaction, and LLM-as-judge evaluation for <strong>100% groundedness</strong>.
+        <div class="archive-block">
+          <div class="archive-head">
+            <h3>Selected archive</h3>
+            <p>
+              Additional systems across web agents, efficient tuning, genomics,
+              and streaming infrastructure.
             </p>
-
-            <div class="flex flex-wrap gap-2 mt-auto">
-              <span
-                class="px-2.5 py-1 rounded bg-white/5 border border-white/10 text-xs text-zinc-300"
-                >FHIR</span
-              >
-              <span
-                class="px-2.5 py-1 rounded bg-white/5 border border-white/10 text-xs text-zinc-300"
-                >Bedrock</span
-              >
-              <span
-                class="px-2.5 py-1 rounded bg-white/5 border border-white/10 text-xs text-zinc-300"
-                >LangChain</span
-              >
-            </div>
           </div>
-        </article>
-
-        <!-- 0) Agent K8s Sandbox [NEW] -->
-        <article
-          id="project-k8s-sandbox"
-          data-cat="mlops agents"
-          class="spotlight-card group flex flex-col h-full rounded-2xl border border-white/10 bg-zinc-900/40 overflow-hidden hover:border-white/20 transition-all"
-          data-aos="fade-up"
-        >
-          <div
-            class="relative w-full aspect-[16/10] bg-[#1a1b1e] overflow-hidden flex items-center justify-center p-4 cursor-zoom-in"
-            onclick="openImageModal(this.querySelector('img').src)"
-          >
-            <div
-              class="absolute inset-0 bg-gradient-to-t from-zinc-900 via-transparent to-transparent opacity-60 z-10 pointer-events-none"
-            ></div>
-            <img
-              src="assets/projects/k8s_sandbox_abstract_1769657737186.png"
-              alt="Agent K8s Sandbox"
-              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 z-0"
-            />
-          </div>
-
-          <div class="p-6 flex flex-col flex-1">
-            <div class="flex items-center justify-between mb-4">
-              <span
-                class="text-xs font-bold tracking-widest uppercase text-blue-400"
-                >Infrastructure</span
-              >
-              <a
-                href="https://github.com/krishna-dhulipalla/agenttask-operator"
-                target="_blank"
-                class="text-zinc-400 hover:text-white transition-colors"
-                aria-label="View Code"
-              >
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path
-                    fill-rule="evenodd"
-                    d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-                    clip-rule="evenodd"
-                  />
-                </svg>
-              </a>
-            </div>
-
-            <h3 class="text-xl font-bold text-white mb-3">
-              Agent K8s Sandbox
-            </h3>
-            <p class="text-zinc-400 text-sm leading-relaxed mb-6 flex-grow">
-              Production-grade sandbox environment for untrusted AI-generated code. Features <strong>namespace isolation</strong>, CPU/Memory throttling, and a sidecar proxy that intercepts implementation details for observability.
-            </p>
-
-            <div class="flex flex-wrap gap-2 mt-auto">
-              <span
-                class="px-2.5 py-1 rounded bg-white/5 border border-white/10 text-xs text-zinc-300"
-                >Kubernetes</span
-              >
-              <span
-                class="px-2.5 py-1 rounded bg-white/5 border border-white/10 text-xs text-zinc-300"
-                >Go</span
-              >
-              <span
-                class="px-2.5 py-1 rounded bg-white/5 border border-white/10 text-xs text-zinc-300"
-                >Agents</span
-              >
-            </div>
-          </div>
-        </article>
-
-        <!-- 1) LangGraph ChatBot -->
-        <article
-          id="project-profile-rag"
-          data-cat="agents"
-          class="spotlight-card group flex flex-col h-full rounded-2xl border border-white/10 bg-zinc-900/40 overflow-hidden hover:border-white/20 transition-all"
-          data-aos="fade-up"
-        >
-          <!-- Image Area (Darker bg for contrast) -->
-          <div
-            class="relative w-full aspect-[16/10] bg-[#1a1b1e] overflow-hidden flex items-center justify-center p-4 cursor-zoom-in"
-            onclick="openImageModal(this.querySelector('img').src)"
-          >
-            <div
-              class="absolute inset-0 bg-gradient-to-t from-zinc-900 via-transparent to-transparent opacity-60 z-10 pointer-events-none"
-            ></div>
-            <img
-              src="assets/projects/ui_agent_abstract_1769657654938.png"
-              alt="Autonomous UI Agent"
-              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 z-0"
-            />
-          </div>
-
-          <div class="p-6 flex flex-col flex-1">
-            <div class="flex items-center justify-between mb-4">
-              <span
-                class="text-xs font-bold tracking-widest uppercase text-indigo-400"
-                >Agentic Workflow</span
-              >
+          <div class="archive-grid">
+            <article class="archive-item">
+              <h4>Autonomous UI Agent</h4>
+              <p>
+                Deterministic validation loop for web agents using vision-backed
+                state checks.
+              </p>
               <a
                 href="https://github.com/krishna-dhulipalla/Autonomous-Web-UI-Multi-Agent"
                 target="_blank"
-                class="text-zinc-400 hover:text-white transition-colors"
+                rel="noreferrer"
+                >Repository</a
               >
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path
-                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
-                  />
-                </svg>
-              </a>
-            </div>
-
-            <h3 class="text-xl font-bold text-white mb-3">
-              Autonomous UI Agent
-            </h3>
-            <p class="text-zinc-400 text-sm leading-relaxed mb-6 flex-1">
-              Engineered a deterministic control loop for non-deterministic web agents. Achieved <strong class="text-white">94% task success rate</strong> by implementing a self-correcting vision pipeline that validates UI state changes before proceeding.
-            </p>
-
-            <div class="flex flex-wrap gap-2 mt-auto">
-              <span
-                class="px-2.5 py-1 rounded bg-white/5 border border-white/10 text-xs text-zinc-300"
-                >LangGraph</span
-              >
-              <span
-                class="px-2.5 py-1 rounded bg-white/5 border border-white/10 text-xs text-zinc-300"
-                >Playwright</span
-              >
-              <span
-                class="px-2.5 py-1 rounded bg-white/5 border border-white/10 text-xs text-zinc-300"
-                >Vision</span
-              >
-            </div>
-          </div>
-        </article>
-
-        <!-- 2) LLM SQL Agent -->
-        <article
-          id="project-android-agent"
-          data-cat="agents"
-          class="spotlight-card group flex flex-col h-full rounded-2xl border border-white/10 bg-zinc-900/40 overflow-hidden hover:border-white/20 transition-all"
-          data-aos="fade-up"
-          data-aos-delay="100"
-        >
-          <div
-            class="relative w-full aspect-[16/10] bg-[#1a1b1e] overflow-hidden flex items-center justify-center p-4 cursor-zoom-in"
-            onclick="openImageModal(this.querySelector('img').src)"
-          >
-            <div
-              class="absolute inset-0 bg-gradient-to-t from-zinc-900 via-transparent to-transparent opacity-60 z-10 pointer-events-none"
-            ></div>
-            <img
-              src="assets/projects/data_agents_abstract_1769657668012.png"
-              alt="Internal Data Agents"
-              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 z-0"
-            />
-          </div>
-
-          <div class="p-6 flex flex-col flex-1">
-            <div class="flex items-center justify-between mb-4">
-              <span
-                class="text-xs font-bold tracking-widest uppercase text-emerald-400"
-                >Enterprise RAG</span
-              >
-              <a
-                href="https://github.com/krishna-dhulipalla"
-                target="_blank"
-                class="text-zinc-400 hover:text-white transition-colors"
-              >
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path
-                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
-                  />
-                </svg>
-              </a>
-            </div>
-
-            <h3 class="text-xl font-bold text-white mb-3">
-              Internal Data Agents
-            </h3>
-            <p class="text-zinc-400 text-sm leading-relaxed mb-6 flex-1">
-              Replaced <strong class="text-white">65%</strong> of manual data analyst tickets with autonomous SQL agents. Built a schema-aware RAG system that sanitizes query generation and adheres to enterprise RBAC policies.
-            </p>
-
-            <div class="flex flex-wrap gap-2 mt-auto">
-              <span
-                class="px-2.5 py-1 rounded bg-white/5 border border-white/10 text-xs text-zinc-300"
-                >LangChain</span
-              >
-              <span
-                class="px-2.5 py-1 rounded bg-white/5 border border-white/10 text-xs text-zinc-300"
-                >SQL/Pandas</span
-              >
-              <span
-                class="px-2.5 py-1 rounded bg-white/5 border border-white/10 text-xs text-zinc-300"
-                >K8s</span
-              >
-            </div>
-          </div>
-        </article>
-
-        <!-- 3) Proxy TuNER -->
-        <article
-          id="project-proxytuner"
-          data-cat="research"
-          class="spotlight-card group flex flex-col h-full rounded-2xl border border-white/10 bg-zinc-900/40 overflow-hidden hover:border-white/20 transition-all"
-          data-aos="fade-up"
-        >
-          <div
-            class="relative w-full aspect-[16/10] bg-[#1a1b1e] overflow-hidden flex items-center justify-center p-4 cursor-zoom-in"
-            onclick="openImageModal(this.querySelector('img').src)"
-          >
-            <div
-              class="absolute inset-0 bg-gradient-to-t from-zinc-900 via-transparent to-transparent opacity-60 z-10 pointer-events-none"
-            ></div>
-            <img
-              src="assets/projects/proxy_tuner_abstract_1769657682334.png"
-              alt="Proxy TuNER"
-              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 z-0"
-            />
-          </div>
-
-          <div class="p-6 flex flex-col flex-1">
-            <div class="flex items-center justify-between mb-4">
-              <span
-                class="text-xs font-bold tracking-widest uppercase text-rose-400"
-                >LLM Efficiency</span
-              >
+            </article>
+            <article class="archive-item">
+              <h4>Proxy TuNER</h4>
+              <p>
+                Lightweight proxy tuning for LLaMA 2 to cut training cost
+                without full-parameter finetuning.
+              </p>
               <a
                 href="https://github.com/krishna-dhulipalla/ProxytuNER"
                 target="_blank"
-                class="text-zinc-400 hover:text-white transition-colors"
+                rel="noreferrer"
+                >Repository</a
               >
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path
-                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
-                  />
-                </svg>
-              </a>
-            </div>
-
-            <h3 class="text-xl font-bold text-white mb-3">
-              Proxy TuNER (LLaMA 2)
-            </h3>
-            <p class="text-zinc-400 text-sm leading-relaxed mb-6 flex-1">
-              Slashed LLM training costs by <strong class="text-white">70%</strong> by steering frozen LLaMA 2 models with lightweight domain experts. Eliminated the need for full-parameter fine-tuning while retaining general reasoning capabilities.
-            </p>
-
-            <div class="flex flex-wrap gap-2 mt-auto">
-              <span
-                class="px-2.5 py-1 rounded bg-white/5 border border-white/10 text-xs text-zinc-300"
-                >PyTorch</span
-              >
-              <span
-                class="px-2.5 py-1 rounded bg-white/5 border border-white/10 text-xs text-zinc-300"
-                >LLaMA 2</span
-              >
-              <span
-                class="px-2.5 py-1 rounded bg-white/5 border border-white/10 text-xs text-zinc-300"
-                >Eff. Tuning</span
-              >
-            </div>
-          </div>
-        </article>
-
-        <!-- 4) IntelliMeet -->
-        <article
-          id="project-intellimeet"
-          data-cat="mlops"
-          class="spotlight-card group flex flex-col h-full rounded-2xl border border-white/10 bg-zinc-900/40 overflow-hidden hover:border-white/20 transition-all"
-          data-aos="fade-up"
-          data-aos-delay="100"
-        >
-          <div
-            class="relative w-full aspect-[16/10] bg-[#1a1b1e] overflow-hidden flex items-center justify-center p-4 cursor-zoom-in"
-            onclick="openImageModal(this.querySelector('img').src)"
-          >
-            <div
-              class="absolute inset-0 bg-gradient-to-t from-zinc-900 via-transparent to-transparent opacity-60 z-10 pointer-events-none"
-            ></div>
-            <img
-              src="assets/projects/intellimeet_abstract_1769657698865.png"
-              alt="IntelliMeet"
-              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 z-0"
-            />
-          </div>
-
-          <div class="p-6 flex flex-col flex-1">
-            <div class="flex items-center justify-between mb-4">
-              <span
-                class="text-xs font-bold tracking-widest uppercase text-sky-400"
-                >Real-Time System</span
-              >
-              <a
-                href="https://github.com/krishna-dhulipalla/SE-Project---IntelliMeet"
-                target="_blank"
-                class="text-zinc-400 hover:text-white transition-colors"
-              >
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path
-                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
-                  />
-                </svg>
-              </a>
-            </div>
-
-            <h3 class="text-xl font-bold text-white mb-3">IntelliMeet</h3>
-            <p class="text-zinc-400 text-sm leading-relaxed mb-6 flex-1">
-              Scaled real-time video infrastructure to support <strong class="text-white">500+ concurrent peers</strong>. Optimized WebRTC signaling and implemented client-side network recovery, reducing stream dropouts by 25%.
-            </p>
-
-            <div class="flex flex-wrap gap-2 mt-auto">
-              <span
-                class="px-2.5 py-1 rounded bg-white/5 border border-white/10 text-xs text-zinc-300"
-                >WebRTC</span
-              >
-              <span
-                class="px-2.5 py-1 rounded bg-white/5 border border-white/10 text-xs text-zinc-300"
-                >FastAPI</span
-              >
-              <span
-                class="px-2.5 py-1 rounded bg-white/5 border border-white/10 text-xs text-zinc-300"
-                >Computer Vision</span
-              >
-            </div>
-          </div>
-        </article>
-
-        <!-- 5) DNA Classifier -->
-        <article
-          id="project-genomics-pipeline"
-          data-cat="research"
-          class="spotlight-card group flex flex-col h-full rounded-2xl border border-white/10 bg-zinc-900/40 overflow-hidden hover:border-white/20 transition-all"
-          data-aos="fade-up"
-        >
-          <div
-            class="relative w-full aspect-[16/10] bg-[#1a1b1e] overflow-hidden flex items-center justify-center p-4 cursor-zoom-in"
-            onclick="openImageModal(this.querySelector('img').src)"
-          >
-            <div
-              class="absolute inset-0 bg-gradient-to-t from-zinc-900 via-transparent to-transparent opacity-60 z-10 pointer-events-none"
-            ></div>
-            <img
-              src="assets/projects/dna_classifier_abstract_1769657712668.png"
-              alt="DNA Classifier"
-              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 z-0"
-            />
-          </div>
-
-          <div class="p-6 flex flex-col flex-1">
-            <div class="flex items-center justify-between mb-4">
-              <span
-                class="text-xs font-bold tracking-widest uppercase text-teal-400"
-                >BioComuping</span
-              >
-              <a
-                href="https://github.com/krishna-dhulipalla"
-                target="_blank"
-                class="text-zinc-400 hover:text-white transition-colors"
-              >
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path
-                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
-                  />
-                </svg>
-              </a>
-            </div>
-
-            <h3 class="text-xl font-bold text-white mb-3">
-              DNA Sequence Classifier
-            </h3>
-            <p class="text-zinc-400 text-sm leading-relaxed mb-6 flex-1">
-              Processed <strong class="text-white">1M+ genomic sequences</strong> by orchestrating distributed inference on HPC clusters. Optimized DNABERT attention heads to ignore non-coding regions, improving throughput by 30%.
-            </p>
-
-            <div class="flex flex-wrap gap-2 mt-auto">
-              <span
-                class="px-2.5 py-1 rounded bg-white/5 border border-white/10 text-xs text-zinc-300"
-                >Airflow</span
-              >
-              <span
-                class="px-2.5 py-1 rounded bg-white/5 border border-white/10 text-xs text-zinc-300"
-                >HPC/Batch</span
-              >
-              <span
-                class="px-2.5 py-1 rounded bg-white/5 border border-white/10 text-xs text-zinc-300"
-                >DNABERT</span
-              >
-            </div>
-          </div>
-        </article>
-
-        <!-- 6) PulseMap -->
-        <article
-          id="project-pulsemap"
-          data-cat="mlops"
-          class="spotlight-card group flex flex-col h-full rounded-2xl border border-white/10 bg-zinc-900/40 overflow-hidden hover:border-white/20 transition-all"
-          data-aos="fade-up"
-          data-aos-delay="100"
-        >
-          <div
-            class="relative w-full aspect-[16/10] bg-[#1a1b1e] overflow-hidden flex items-center justify-center p-4 cursor-zoom-in"
-            onclick="openImageModal(this.querySelector('img').src)"
-          >
-            <div
-              class="absolute inset-0 bg-gradient-to-t from-zinc-900 via-transparent to-transparent opacity-60 z-10 pointer-events-none"
-            ></div>
-            <img
-              src="assets/projects/pulsemap_abstract_1769657725532.png"
-              alt="PulseMap"
-              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 z-0"
-            />
-          </div>
-
-          <div class="p-6 flex flex-col flex-1">
-            <div class="flex items-center justify-between mb-4">
-              <span
-                class="text-xs font-bold tracking-widest uppercase text-amber-400"
-                >Agentic + Streaming</span
-              >
+            </article>
+            <article class="archive-item">
+              <h4>DNA Sequence Classifier</h4>
+              <p>
+                Distributed genomics inference and throughput optimization on
+                HPC infrastructure.
+              </p>
+            </article>
+            <article class="archive-item">
+              <h4>PulseMap</h4>
+              <p>
+                Event-stream ingestion and agentic triage for disaster response
+                mapping.
+              </p>
               <a
                 href="https://github.com/krishna-dhulipalla/PulseMap-Agent"
                 target="_blank"
-                class="text-zinc-400 hover:text-white transition-colors"
+                rel="noreferrer"
+                >Repository</a
               >
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path
-                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
-                  />
-                </svg>
-              </a>
-            </div>
+            </article>
+            <article class="archive-item">
+              <h4>IntelliMeet</h4>
+              <p>
+                Real-time meeting infrastructure with network recovery and
+                higher peer capacity.
+              </p>
+              <a
+                href="https://github.com/krishna-dhulipalla/SE-Project---IntelliMeet"
+                target="_blank"
+                rel="noreferrer"
+                >Repository</a
+              >
+            </article>
+          </div>
+        </div>
+      </section>
 
-            <h3 class="text-xl font-bold text-white mb-3">PulseMap</h3>
-            <p class="text-zinc-400 text-sm leading-relaxed mb-6 flex-1">
-              Built a disaster response platform capable of ingesting <strong class="text-white">10k+ events/sec</strong>. Agents triage social signals and sensor data to generate geospatial risk maps in real-time.
-            </p>
+      <section class="section" id="notes">
+        <div class="section-head">
+          <div>
+            <p class="section-index">02 / Notes</p>
+            <h2 class="section-title">Engineering notebook</h2>
+          </div>
+          <p class="section-summary">
+            Notes are treated as working records: failure patterns, tradeoffs,
+            and observations that held up in implementation.
+          </p>
+        </div>
 
-            <div class="flex flex-wrap gap-2 mt-auto">
-              <span
-                class="px-2.5 py-1 rounded bg-white/5 border border-white/10 text-xs text-zinc-300"
-                >Kafka</span
-              >
-              <span
-                class="px-2.5 py-1 rounded bg-white/5 border border-white/10 text-xs text-zinc-300"
-                >Agents</span
-              >
-              <span
-                class="px-2.5 py-1 rounded bg-white/5 border border-white/10 text-xs text-zinc-300"
-                >Geospatial</span
-              >
-            </div>
+        {% if featured_note %}
+        <article class="note-feature note-feature-single">
+          <p class="note-type">Systems note</p>
+          <h3 class="chroma-hover">
+            <a href="{{ featured_note.url | relative_url }}">
+              {{ featured_note.title }}
+            </a>
+          </h3>
+          <p class="note-summary">{{ featured_note.excerpt }}</p>
+          <div class="note-meta">
+            <span>{{ featured_note.date | date: "%b %d, %Y" }}</span>
+            <span>Computer vision reliability</span>
           </div>
         </article>
-      </div>
-    </section>
+        {% endif %}
 
-    <!-- ===== Experience (Minimal Timeline) ===== -->
-    <section id="experience" class="py-24 px-6 max-w-4xl mx-auto">
-      <h2
-        class="text-3xl font-bold text-slate-900 dark:text-white mb-12 flex items-center gap-3"
-        data-aos="fade-up"
-      >
-        <span class="w-8 h-[2px] bg-emerald-500"></span> Experience
-      </h2>
+        <div class="section-cta">
+          <a href="{{ '/blog.html' | relative_url }}">Read note</a>
+        </div>
+      </section>
 
-      <div class="relative border-l border-white/10 ml-3 space-y-12">
-        <!-- Cloud Systems -->
-        <div class="relative pl-10" data-aos="fade-up" data-aos-delay="100">
-          <div
-            class="absolute -left-1.5 top-2 w-3 h-3 rounded-full bg-emerald-500 ring-4 ring-black"
-          ></div>
-          <div class="flex flex-col sm:flex-row sm:items-baseline gap-2 mb-2">
-            <h3 class="text-xl font-bold text-slate-900 dark:text-white">
-              AI Software Engineer
-            </h3>
-            <span class="text-slate-500 dark:text-zinc-400 text-sm"
-              >Tabner Inc • Jul 2025 - Present</span
-            >
+      <section class="section" id="experience">
+        <div class="section-head">
+          <div>
+            <p class="section-index">03 / Experience</p>
+            <h2 class="section-title">Experience snapshot</h2>
           </div>
-          <p class="text-slate-600 dark:text-zinc-400 leading-relaxed max-w-2xl">
-            Architected agentic workflows to automate
-            <strong class="text-emerald-600 dark:text-emerald-300">65%</strong> of internal data
-            requests. Rebuilt ETL pipelines reducing runtime by
-            <strong class="text-emerald-600 dark:text-emerald-300">25%</strong> and deployed
-            containerized services on K8s maintaining
-            <strong class="text-emerald-600 dark:text-emerald-300">99.9%</strong> uptime.
+          <p class="section-summary">
+            Roles most relevant to the systems work shown here.
           </p>
         </div>
 
-        <!-- Virginia Tech (ML) -->
-        <div class="relative pl-10" data-aos="fade-up" data-aos-delay="200">
-          <div
-            class="absolute -left-[5px] top-2 w-2.5 h-2.5 rounded-full bg-zinc-700 ring-4 ring-black"
-          ></div>
-          <div class="flex flex-col sm:flex-row sm:items-baseline gap-2 mb-2">
-            <h3 class="text-lg font-bold text-slate-800 dark:text-zinc-100">
-              Machine Learning Engineer
-            </h3>
-            <span class="text-slate-500 dark:text-zinc-500 text-sm"
-              >Virginia Tech • Aug 2024 - Jul 2025</span
-            >
-          </div>
-          <p class="text-slate-600 dark:text-zinc-500 leading-relaxed max-w-2xl">
-            Increased genomics throughput by
-            <strong class="text-slate-800 dark:text-zinc-300">32%</strong> via LoRA/Soft-prompting.
-            Orchestrated <strong class="text-slate-800 dark:text-zinc-300">100+</strong> distributed
-            GPU experiments and containerized fine-tuning workflows to slash
-            setup time.
-          </p>
-        </div>
-
-        <!-- Virginia Tech (GRA) -->
-        <div class="relative pl-10" data-aos="fade-up" data-aos-delay="300">
-          <div
-            class="absolute -left-[5px] top-2 w-2.5 h-2.5 rounded-full bg-zinc-700 ring-4 ring-black"
-          ></div>
-          <div class="flex flex-col sm:flex-row sm:items-baseline gap-2 mb-2">
-            <h3 class="text-lg font-bold text-slate-800 dark:text-zinc-100">
-              Graduate Research Assistant
-            </h3>
-            <span class="text-slate-500 dark:text-zinc-500 text-sm"
-              >Virginia Tech • Jun 2023 - May 2024</span
-            >
-          </div>
-          <p class="text-slate-600 dark:text-zinc-500 leading-relaxed max-w-2xl">
-            Improved NER F1-score by
-            <strong class="text-slate-800 dark:text-zinc-300">8%</strong> using proxy-tuned LLaMA 2
-            models. Optimized inference performance by 30% and reduced training
-            costs by 70%.
-          </p>
-        </div>
-
-        <!-- UJR -->
-        <div class="relative pl-10" data-aos="fade-up" data-aos-delay="400">
-          <div
-            class="absolute -left-[5px] top-2 w-2.5 h-2.5 rounded-full bg-zinc-700 ring-4 ring-black"
-          ></div>
-          <div class="flex flex-col sm:flex-row sm:items-baseline gap-2 mb-2">
-            <h3 class="text-lg font-bold text-slate-800 dark:text-zinc-100">Software Engineer</h3>
-            <span class="text-slate-500 dark:text-zinc-500 text-sm"
-              >UJR Technologies • Jul 2021 - Dec 2022</span
-            >
-          </div>
-          <p class="text-slate-600 dark:text-zinc-500 leading-relaxed max-w-2xl">
-            Standardized REST APIs reducing integration defects by
-            <strong class="text-slate-800 dark:text-zinc-300">40%</strong>. Automated CI/CD
-            pipelines via GitHub Actions cutting release failures by 20%.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== Education ===== -->
-    <!-- ===== Education ===== -->
-    <section
-      id="education"
-      class="py-12 px-6 max-w-4xl mx-auto border-t border-black/5 dark:border-white/5"
-    >
-      <h2
-        class="text-3xl font-bold text-slate-900 dark:text-white mb-8 flex items-center gap-3"
-        data-aos="fade-up"
-      >
-        <span class="w-8 h-[2px] bg-indigo-500"></span> Education
-      </h2>
-
-      <div class="space-y-6">
-        <!-- Masters -->
-        <div
-          class="glass-panel p-6 rounded-xl border border-black/5 dark:border-white/5"
-          data-aos="fade-up"
-        >
-          <div
-            class="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-2"
-          >
-            <h3 class="text-xl font-bold text-slate-900 dark:text-white">Virginia Tech</h3>
-          </div>
-          <div class="text-lg text-slate-700 dark:text-zinc-300 font-medium mb-1">
-            Master of Science, Computer Science
-          </div>
-          <p class="text-emerald-600 dark:text-emerald-400 font-mono text-sm">GPA 3.9/4.0</p>
-        </div>
-
-        <!-- Bachelors -->
-        <div
-          class="glass-panel p-6 rounded-xl border border-black/5 dark:border-white/5"
-          data-aos="fade-up"
-          data-aos-delay="100"
-        >
-          <div
-            class="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-2"
-          >
-            <h3 class="text-xl font-bold text-slate-900 dark:text-white">Vel Tech University</h3>
-          </div>
-          <div class="text-lg text-slate-700 dark:text-zinc-300 font-medium mb-1">
-            Bachelor of Technology, Computer Science and Engineering
-          </div>
-          <p class="text-emerald-600 dark:text-emerald-400 font-mono text-sm">GPA 8.24/10</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== Selected Publications ===== -->
-    <section
-      id="publications"
-      class="py-12 px-6 max-w-4xl mx-auto border-t border-black/5 dark:border-white/5"
-    >
-      <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-8 flex items-center gap-3">
-        <span class="text-indigo-400">📜</span> Selected Research
-      </h2>
-      <div class="space-y-4">
-        <!-- Paper 1 -->
-        <a
-          href="#"
-          class="block p-4 rounded-xl bg-white dark:bg-zinc-900/50 border border-black/5 dark:border-white/5 hover:border-indigo-500/30 transition-colors group shadow-sm dark:shadow-none"
-        >
-          <h3
-            class="text-lg font-semibold text-slate-900 dark:text-zinc-200 group-hover:text-indigo-600 dark:group-hover:text-indigo-300 transition-colors"
-          >
-            Predicting Circadian Transcription in mRNAs and lncRNAs
-          </h3>
-          <p class="text-slate-500 dark:text-zinc-500 text-sm mt-1">IEEE BIBM 2024</p>
-        </a>
-        <!-- Paper 2 -->
-        <a
-          href="#"
-          class="block p-4 rounded-xl bg-white dark:bg-zinc-900/50 border border-black/5 dark:border-white/5 hover:border-indigo-500/30 transition-colors group shadow-sm dark:shadow-none"
-        >
-          <h3
-            class="text-lg font-semibold text-slate-900 dark:text-zinc-200 group-hover:text-indigo-600 dark:group-hover:text-indigo-300 transition-colors"
-          >
-            DNA Foundation Models for Cross-Species TF Binding Prediction
-          </h3>
-          <p class="text-slate-500 dark:text-zinc-500 text-sm mt-1">NeurIPS ML in CompBio 2025</p>
-        </a>
-        <!-- Paper 3 -->
-        <a
-          href="#"
-          class="block p-4 rounded-xl bg-white dark:bg-zinc-900/50 border border-black/5 dark:border-white/5 hover:border-indigo-500/30 transition-colors group shadow-sm dark:shadow-none"
-        >
-          <div class="flex items-start justify-between">
-            <h3
-              class="text-lg font-semibold text-slate-900 dark:text-zinc-200 group-hover:text-indigo-600 dark:group-hover:text-indigo-300 transition-colors"
-            >
-              Multi-omics atlas of the plant nuclear envelope
-            </h3>
-            <span
-              class="text-xs font-medium px-2 py-0.5 rounded bg-amber-500/10 text-amber-700 dark:text-amber-300 border border-amber-500/20"
-              >Under Review</span
-            >
-          </div>
-          <p class="text-slate-500 dark:text-zinc-500 text-sm mt-1">
-            Science Advances • University of California, Berkeley
-          </p>
-        </a>
-      </div>
-    </section>
-
-    <!-- ===== Core Capabilities (Specialized) ===== -->
-    <section id="skills" class="py-24 px-6 max-w-7xl mx-auto">
-      <div class="text-center mb-16" data-aos="fade-up">
-        <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-4">Core Capabilities</h2>
-        <p class="text-slate-600 dark:text-zinc-400 max-w-2xl mx-auto text-lg">
-          Specialized expertise in building compliant, high-scale Healthcare AI systems and autonomous infrastructure.
-        </p>
-      </div>
-
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- 1. Healthcare & AI -->
-        <div class="spotlight-card p-6 group border-t-2 border-emerald-500/50 hover:bg-slate-50 dark:hover:bg-zinc-900/80 transition-all" data-aos="fade-up">
-          <div class="flex items-center gap-4 mb-6">
-            <div class="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center ring-1 ring-emerald-500/20">
-              <svg class="w-5 h-5 text-emerald-500 dark:text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+        <div class="experience-list">
+          <article class="experience-item current-role">
+            <div class="experience-main">
+              <h3>AI Software Engineer</h3>
+              <p class="experience-org">Tabner Inc</p>
             </div>
-            <h3 class="font-bold text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-300 transition-colors">Healthcare & AI</h3>
-          </div>
-          <ul class="space-y-2 text-sm text-slate-600 dark:text-zinc-400">
-            <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-emerald-500 shrink-0"></span>FHIR/HL7 Integration, Clinical Workflows</li>
-            <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-emerald-500 shrink-0"></span>RAG for Healthcare, Hybrid Retrieval</li>
-            <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-emerald-500 shrink-0"></span>LangChain, LangGraph, Multi-Agent Systems</li>
-            <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-emerald-500 shrink-0"></span>AWS Bedrock (Claude), OpenAI API</li>
-            <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-emerald-500 shrink-0"></span>Eval Frameworks (LangSmith, Guardrails)</li>
-            <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-emerald-500 shrink-0"></span>Vector DBs (Pinecone, Milvus) & Chunking</li>
-          </ul>
-        </div>
-
-        <!-- 2. Data & Compliance -->
-        <div class="spotlight-card p-6 group border-t-2 border-indigo-500/50 hover:bg-slate-50 dark:hover:bg-zinc-900/80 transition-all" data-aos="fade-up" data-aos-delay="100">
-           <div class="flex items-center gap-4 mb-6">
-            <div class="w-10 h-10 rounded-lg bg-indigo-500/10 flex items-center justify-center ring-1 ring-indigo-500/20">
-              <svg class="w-5 h-5 text-indigo-500 dark:text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-            </div>
-            <h3 class="font-bold text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-300 transition-colors">Data & Compliance</h3>
-          </div>
-           <ul class="space-y-2 text-sm text-slate-600 dark:text-zinc-400">
-            <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-indigo-500 shrink-0"></span>PHI/PII Handling, HIPAA-aware Arch</li>
-            <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-indigo-500 shrink-0"></span>Healthcare Data Stds, Audit Logging</li>
-            <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-indigo-500 shrink-0"></span>Deterministic Fact Extraction</li>
-            <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-indigo-500 shrink-0"></span>Citation Grounding & Evidence</li>
-            <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-indigo-500 shrink-0"></span>Postgres, Data Governance</li>
-          </ul>
-        </div>
-
-         <!-- 3. Programming & Backend -->
-         <div class="spotlight-card p-6 group border-t-2 border-sky-500/50 hover:bg-slate-50 dark:hover:bg-zinc-900/80 transition-all" data-aos="fade-up" data-aos-delay="200">
-            <div class="flex items-center gap-4 mb-6">
-              <div class="w-10 h-10 rounded-lg bg-sky-500/10 flex items-center justify-center ring-1 ring-sky-500/20">
-                <svg class="w-5 h-5 text-sky-500 dark:text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
-              </div>
-              <h3 class="font-bold text-slate-900 dark:text-white group-hover:text-sky-600 dark:group-hover:text-sky-300 transition-colors">Programming</h3>
-            </div>
-             <ul class="space-y-2 text-sm text-slate-600 dark:text-zinc-400">
-              <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-sky-500 shrink-0"></span>Python (Deep Learning, API), R</li>
-              <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-sky-500 shrink-0"></span>Go (High Perf), TypeScript (Frontend)</li>
-              <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-sky-500 shrink-0"></span>FastAPI, Node.js, REST & OpenAPI</li>
-              <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-sky-500 shrink-0"></span>SQL, Agile Methodologies</li>
+            <p class="experience-date">Jul 2025 - Present</p>
+            <p class="experience-summary">
+              Built agentic workflows for internal data operations, rebuilt ETL
+              pipelines, and shipped containerized services with production
+              uptime requirements.
+            </p>
+            <ul class="detail-list">
+              <li>
+                Automated 65% of internal data requests with agent workflows.
+              </li>
+              <li>Reduced ETL runtime by 25% through pipeline redesign.</li>
+              <li>Maintained 99.9% uptime on containerized deployments.</li>
             </ul>
-          </div>
+          </article>
 
-          <!-- 4. ML & Infrastructure -->
-          <div class="spotlight-card p-6 group border-t-2 border-purple-500/50 hover:bg-slate-50 dark:hover:bg-zinc-900/80 transition-all" data-aos="fade-up">
-            <div class="flex items-center gap-4 mb-6">
-              <div class="w-10 h-10 rounded-lg bg-purple-500/10 flex items-center justify-center ring-1 ring-purple-500/20">
-                <svg class="w-5 h-5 text-purple-500 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
-              </div>
-              <h3 class="font-bold text-slate-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-300 transition-colors">ML & Infra</h3>
+          <article class="experience-item">
+            <div class="experience-main">
+              <h3>Machine Learning Engineer</h3>
+              <p class="experience-org">Virginia Tech</p>
             </div>
-             <ul class="space-y-2 text-sm text-slate-600 dark:text-zinc-400">
-              <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-purple-500 shrink-0"></span>PyTorch, Embeddings, MLflow</li>
-              <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-purple-500 shrink-0"></span>Docker, Kubernetes (K8s), Linux</li>
-              <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-purple-500 shrink-0"></span>CI/CD (GitHub Actions), Redis, Git</li>
-              <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-purple-500 shrink-0"></span>System Design for AI</li>
-            </ul>
-          </div>
+            <p class="experience-date">Aug 2024 - Jul 2025</p>
+            <p class="experience-summary">
+              Worked on genomics models, distributed experimentation, and
+              repeatable fine-tuning workflows across GPU infrastructure.
+            </p>
+          </article>
 
-           <!-- 5. Cloud & Tools -->
-          <div class="spotlight-card p-6 group border-t-2 border-orange-500/50 hover:bg-slate-50 dark:hover:bg-zinc-900/80 transition-all" data-aos="fade-up" data-aos-delay="100">
-            <div class="flex items-center gap-4 mb-6">
-              <div class="w-10 h-10 rounded-lg bg-orange-500/10 flex items-center justify-center ring-1 ring-orange-500/20">
-                <svg class="w-5 h-5 text-orange-500 dark:text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path></svg>
-              </div>
-              <h3 class="font-bold text-slate-900 dark:text-white group-hover:text-orange-600 dark:group-hover:text-orange-300 transition-colors">Cloud & Tools</h3>
+          <article class="experience-item">
+            <div class="experience-main">
+              <h3>Graduate Research Assistant</h3>
+              <p class="experience-org">Virginia Tech</p>
             </div>
-             <ul class="space-y-2 text-sm text-slate-600 dark:text-zinc-400">
-              <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-orange-500 shrink-0"></span>AWS (Bedrock, SageMaker, S3, Lambda)</li>
-              <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-orange-500 shrink-0"></span>AWS Step Functions, CloudWatch</li>
-              <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-orange-500 shrink-0"></span>Grafana, Prometheus, Tableau</li>
-              <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-orange-500 shrink-0"></span>GCP, Terraform (IaC)</li>
+            <p class="experience-date">Jun 2023 - May 2024</p>
+            <p class="experience-summary">
+              Improved NER performance and inference efficiency while exploring
+              low-cost ways to steer foundation models toward domain tasks.
+            </p>
+          </article>
+
+          <article class="experience-item">
+            <div class="experience-main">
+              <h3>Software Engineer</h3>
+              <p class="experience-org">UJR Technologies</p>
+            </div>
+            <p class="experience-date">Jul 2021 - Dec 2022</p>
+            <p class="experience-summary">
+              Built backend APIs and delivery pipelines with an emphasis on
+              reducing release defects and stabilizing integration work.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="areas">
+        <div class="section-head">
+          <div>
+            <p class="section-index">04 / Working Areas</p>
+            <h2 class="section-title">Working areas</h2>
+          </div>
+          <p class="section-summary">
+            Organized by system surface rather than by tool lists.
+          </p>
+        </div>
+
+        <div class="areas-grid">
+          <article class="area-block">
+            <h3>Agent Systems</h3>
+            <ul class="detail-list">
+              <li>Runtime orchestration and planner / reviewer patterns</li>
+              <li>Tool mediation and constrained execution paths</li>
+              <li>
+                Deterministic control around non-deterministic model behavior
+              </li>
             </ul>
-          </div>
-      </div>
-    </section>
+          </article>
+          <article class="area-block">
+            <h3>Retrieval / Data Workflows</h3>
+            <ul class="detail-list">
+              <li>Schema-aware retrieval and enterprise query generation</li>
+              <li>Grounding, evidence shaping, and context curation</li>
+              <li>
+                Structured pipelines for clinical and internal data systems
+              </li>
+            </ul>
+          </article>
+          <article class="area-block">
+            <h3>ML Infrastructure</h3>
+            <ul class="detail-list">
+              <li>Distributed experimentation and inference workflows</li>
+              <li>Execution isolation, throttling, and sandbox design</li>
+              <li>Evaluation paths that stay measurable outside demos</li>
+            </ul>
+          </article>
+          <article class="area-block">
+            <h3>Cloud / Deployment</h3>
+            <ul class="detail-list">
+              <li>Kubernetes, containers, and service reliability</li>
+              <li>AWS workflows across Bedrock and production services</li>
+              <li>Operational visibility for long-running AI systems</li>
+            </ul>
+          </article>
+          <article class="area-block">
+            <h3>Scientific / Healthcare AI</h3>
+            <ul class="detail-list">
+              <li>FHIR-grounded clinical summarization</li>
+              <li>Genomics pipelines and sequence-model deployment</li>
+              <li>Research translated into usable engineering systems</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+    </main>
 
-    <!-- ===== Outside Work ===== -->
-    <section
-      id="outside-work"
-      class="py-12 px-6 max-w-4xl mx-auto border-t border-black/5 dark:border-white/5"
-    >
-      <h2
-        class="text-3xl font-bold text-slate-900 dark:text-white mb-8 flex items-center gap-3"
-        data-aos="fade-up"
-      >
-        <span class="w-8 h-[2px] bg-purple-500"></span> Outside Work
-      </h2>
-      <div class="bento-grid-4 px-6 gap-4 py-4" data-aos="fade-up">
-        <div
-          class="p-4 rounded-xl border border-black/5 dark:border-white/10 bg-white dark:bg-zinc-900/50 hover:bg-slate-50 dark:hover:bg-zinc-800/50 transition-colors shadow-sm dark:shadow-none"
-        >
-          <div class="text-2xl mb-2">👨‍🍳</div>
-          <div class="text-slate-900 dark:text-white font-medium">Cooking</div>
-          <div class="text-sm text-slate-600 dark:text-zinc-400">
-            Experimenting with Indian dishes
-          </div>
-        </div>
-        <div
-          class="p-4 rounded-xl border border-black/5 dark:border-white/10 bg-white dark:bg-zinc-900/50 hover:bg-slate-50 dark:hover:bg-zinc-800/50 transition-colors shadow-sm dark:shadow-none"
-        >
-          <div class="text-2xl mb-2">🏏</div>
-          <div class="text-slate-900 dark:text-white font-medium">Cricket</div>
-          <div class="text-sm text-slate-600 dark:text-zinc-400">Weekend matches with friends</div>
-        </div>
-        <div
-          class="p-4 rounded-xl border border-black/5 dark:border-white/10 bg-white dark:bg-zinc-900/50 hover:bg-slate-50 dark:hover:bg-zinc-800/50 transition-colors shadow-sm dark:shadow-none"
-        >
-          <div class="text-2xl mb-2">🚀</div>
-          <div class="text-slate-900 dark:text-white font-medium">Space</div>
-          <div class="text-sm text-slate-600 dark:text-zinc-400">
-            Deep space exploration enthusiast
-          </div>
-        </div>
-        <div
-          class="p-4 rounded-xl border border-black/5 dark:border-white/10 bg-white dark:bg-zinc-900/50 hover:bg-slate-50 dark:hover:bg-zinc-800/50 transition-colors shadow-sm dark:shadow-none"
-        >
-          <div class="text-2xl mb-2">🥾</div>
-          <div class="text-slate-900 dark:text-white font-medium">Hiking</div>
-          <div class="text-sm text-slate-600 dark:text-zinc-400">Exploring trails & nature</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== Contact ===== -->
-    <section id="contact" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
-      <div class="grid md:grid-cols-2 gap-10">
+    <footer class="site-footer" id="contact">
+      <div class="site-shell footer-grid">
         <div>
-          <h2 class="font-display text-3xl md:text-4xl font-bold">
-            Let's talk
-          </h2>
-          <p class="mt-3 text-gray-600 dark:text-gray-300">
-            Open to roles and collaborations. The fastest way to reach me is
-            email or LinkedIn.
+          <p class="section-index">05 / Contact</p>
+          <h2 class="section-title">Contact</h2>
+          <p class="footer-copy">
+            Email or LinkedIn is the fastest way to reach me.
           </p>
-          <div class="mt-6 flex flex-col gap-2 text-sm">
-            <a
-              href="mailto:dhulipallakrishnavamsi@gmail.com"
-              class="hover:text-teal-600"
-              >dhulipallakrishnavamsi@gmail.com</a
-            >
-            <a
-              href="https://www.linkedin.com/in/krishnavamsidhulipalla"
-              class="hover:text-teal-600"
-              target="_blank"
-              >LinkedIn</a
-            >
-          </div>
         </div>
-        <form
-          id="nn-contact-form"
-          action="https://formspree.io/f/mzzpwpkj"
-          method="POST"
-          class="rounded-2xl border border-gray-200 dark:border-gray-700 p-6 grid gap-4 bg-white dark:bg-gray-900/50"
-          onsubmit="event.preventDefault(); showToast('Message sent - I will reply soon.'); this.reset();"
-        >
-          <div class="grid gap-1">
-            <label for="name" class="text-sm text-gray-500">Name</label>
-            <input
-              id="name"
-              type="text"
-              class="rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 px-3 py-2"
-              required
-            />
-          </div>
-          <div class="grid gap-1">
-            <label for="email" class="text-sm text-gray-500">Email</label>
-            <input
-              id="email"
-              type="email"
-              class="rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 px-3 py-2"
-              required
-            />
-          </div>
-          <div class="grid gap-1">
-            <label for="msg" class="text-sm text-gray-500">Message</label>
-            <textarea
-              id="msg"
-              rows="4"
-              class="rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 px-3 py-2"
-              placeholder="Tell me about your project..."
-            ></textarea>
-          </div>
-          <button
-            class="mt-2 inline-flex items-center rounded-xl bg-teal-600 px-4 py-2.5 text-white shadow-float hover:bg-teal-700"
+
+        <div class="footer-links">
+          <a href="mailto:dhulipallakrishnavamsi@gmail.com"
+            >dhulipallakrishnavamsi@gmail.com</a
           >
-            Send
-          </button>
-        </form>
-      </div>
-    </section>
-
-    <!-- ===== Footer ===== -->
-    <footer class="border-t border-black/5 dark:border-white/10">
-      <div
-        class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 text-sm flex flex-col md:flex-row items-center justify-between gap-3"
-      >
-        <p>© <span id="year"></span> Krishna Vamsi Dhulipalla</p>
-        <div class="flex items-center gap-4">
-          <a href="#top" class="hover:text-teal-600">Back to top ↑</a>
+          <a
+            href="https://github.com/krishna-dhulipalla"
+            target="_blank"
+            rel="noreferrer"
+            >GitHub</a
+          >
+          <a
+            href="https://www.linkedin.com/in/krishnavamsidhulipalla/"
+            target="_blank"
+            rel="noreferrer"
+            >LinkedIn</a
+          >
+          <a href="{{ '/resume.html' | relative_url }}">Resume summary</a>
         </div>
       </div>
-      <a
-        id="chatbot-lottie-btn"
-        href="https://krishnadhulipalla-chatbot.hf.space/"
-        target="_blank"
-        class="fixed bottom-14 right-4 flex flex-col items-center cursor-pointer hover:scale-105 transition-transform"
-      >
-        <dotlottie-wc
-          src="https://lottie.host/12b60265-5eef-4309-bcce-98abdae08afb/9FFDxA63EF.lottie"
-          style="width: 5rem; height: 5rem"
-          speed="1"
-          autoplay
-          loop
-        ></dotlottie-wc>
-        <div
-          id="chatbot-lottie-btn-text"
-          class="text-xs mt-2 text-gray-600 dark:text-gray-300 bg-white dark:bg-gray-800 px-2 py-1 rounded-full border border-teal-600 shadow"
-        >
-          Stuck scrolling? Chat with me instead!
-        </div>
-      </a>
+      <div class="site-shell footer-bar">
+        <p>(c) <span data-year></span> Krishna Vamsi Dhulipalla</p>
+        <a href="#top">Back to top</a>
+      </div>
     </footer>
-
-    <!-- ===== Resume Modal ===== -->
-    <div
-      id="resumeModal"
-      class="fixed inset-0 hidden items-center justify-center bg-black/50 p-4 z-50"
-    >
-      <div
-        class="w-full max-w-3xl rounded-2xl bg-white dark:bg-gray-900 overflow-hidden shadow-2xl"
-      >
-        <div
-          class="flex items-center justify-between px-5 py-3 border-b border-gray-200 dark:border-gray-800"
-        >
-          <h3 class="font-semibold">Resume</h3>
-          <button id="closeResume" class="text-xl leading-none">×</button>
-        </div>
-        <div class="p-5">
-          <iframe
-            src="assets/resume.pdf"
-            class="w-full h-[70vh] rounded-md"
-            title="Resume PDF"
-          ></iframe>
-        </div>
-      </div>
-    </div>
-
-    <!-- ===== Toast ===== -->
-    <div
-      id="toast"
-      class="fixed bottom-6 left-1/2 -translate-x-1/2 hidden rounded-xl bg-gray-900 text-white text-sm px-4 py-2 shadow-float"
-    >
-      Message sent - I will reply soon.
-    </div>
-
-    <!-- ===== Image Modal (Lightbox) ===== -->
-    <div
-      id="imageModal"
-      class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
-      onclick="closeImageModal()"
-    >
-      <button
-        class="absolute top-4 right-4 p-2 text-white/50 hover:text-white"
-        onclick="closeImageModal()"
-      >
-        <svg
-          class="w-8 h-8"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M6 18L18 6M6 6l12 12"
-          />
-        </svg>
-      </button>
-      <div
-        class="relative w-full max-w-6xl max-h-[90vh] flex items-center justify-center"
-        onclick="event.stopPropagation()"
-      >
-        <!-- Image container -->
-        <img
-          id="modalImg"
-          src=""
-          alt="Full view"
-          class="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl"
-        />
-      </div>
-    </div>
-
-    <script src="./js/main.js"></script>
   </body>
 </html>
