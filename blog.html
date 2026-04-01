@@ -15,14 +15,22 @@ layout: null
       (() => {
         try {
           const savedTheme = window.localStorage.getItem("theme");
-          document.documentElement.dataset.theme = savedTheme === "dark" ? "dark" : "light";
+          document.documentElement.dataset.theme =
+            savedTheme === "dark" ? "dark" : "light";
         } catch (error) {
           document.documentElement.dataset.theme = "light";
         }
       })();
     </script>
-    <link rel="icon" type="image/svg+xml" href="{{ '/assets/favicon.svg' | relative_url }}" />
-    <link rel="alternate icon" href="{{ '/assets/favicon.ico' | relative_url }}" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="{{ '/assets/favicon.svg' | relative_url }}"
+    />
+    <link
+      rel="alternate icon"
+      href="{{ '/assets/favicon.ico' | relative_url }}"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -91,8 +99,9 @@ layout: null
         <aside class="page-note">
           <p class="eyebrow">Index</p>
           <p class="note-copy">
-            This page stays selective. Only technical notes that add useful
-            context to the work are kept here.
+            Technical notes stay closest to the systems work, and the archive
+            also includes adjacent market and tracking notes from the same
+            period.
           </p>
         </aside>
       </section>
@@ -101,20 +110,26 @@ layout: null
         <div class="section-head">
           <div>
             <p class="section-index">01 / Notes</p>
-            <h2 class="section-title">Technical notes</h2>
+            <h2 class="section-title">Notebook entries</h2>
           </div>
           <p class="section-summary">
-            Entries closest to reliability, observability, and production
-            system behavior.
+            Notes and related entries, ordered by date.
           </p>
         </div>
 
         <div class="note-list">
           {% for post in site.posts %}
-            {% if post.categories contains "Engineering" %}
             <article class="note-list-item">
               <div>
-                <p class="note-type">Systems note</p>
+                <p class="note-type">
+                  {% if post.category %}
+                    {{ post.category }}
+                  {% elsif post.categories and post.categories.size > 0 %}
+                    {{ post.categories | first }}
+                  {% else %}
+                    Note
+                  {% endif %}
+                </p>
                 <h3>
                   <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
                 </h3>
@@ -122,7 +137,6 @@ layout: null
               <p class="note-list-meta">{{ post.date | date: "%b %d, %Y" }}</p>
               <p>{{ post.excerpt }}</p>
             </article>
-            {% endif %}
           {% endfor %}
         </div>
       </section>
@@ -131,78 +145,10 @@ layout: null
     <footer class="site-footer">
       <div class="site-shell footer-grid">
         <div>
-          <p class="section-index">Back</p>
-          <h2 class="section-title">Selected systems</h2>
+          <p class="section-index">Home</p>
+          <h2 class="section-title">Main site</h2>
           <p class="footer-copy">
-            The homepage remains the main index for work, experience, and
-            contact.
-          </p>
-        </div>
-        <div class="footer-links">
-          <a href="{{ '/' | relative_url }}">Return to homepage</a>
-          <a href="mailto:dhulipallakrishnavamsi@gmail.com">Email</a>
-          <a
-            href="https://github.com/krishna-dhulipalla"
-
-    <main id="main" class="site-shell page-stack">
-      <section class="page-intro">
-        <div>
-          <p class="page-label">Notes</p>
-          <h1 class="page-title chroma-ink">Engineering notebook</h1>
-          <p class="page-subtitle">
-            Notes on runtime behavior, failure modes, deployment tradeoffs, and
-            the implementation details that still matter after the demo ends.
-          </p>
-        </div>
-
-        <aside class="page-note">
-          <p class="eyebrow">Index</p>
-          <p class="note-copy">
-            This page stays selective. Only technical notes that add useful
-            context to the work are kept here.
-          </p>
-        </aside>
-      </section>
-
-      <section class="note-section">
-        <div class="section-head">
-          <div>
-            <p class="section-index">01 / Notes</p>
-            <h2 class="section-title">Technical notes</h2>
-          </div>
-          <p class="section-summary">
-            Entries closest to reliability, observability, and production
-            system behavior.
-          </p>
-        </div>
-
-        <div class="note-list">
-          {% for post in site.posts %}
-            {% if post.categories contains "Engineering" %}
-            <article class="note-list-item">
-              <div>
-                <p class="note-type">Systems note</p>
-                <h3>
-                  <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-                </h3>
-              </div>
-              <p class="note-list-meta">{{ post.date | date: "%b %d, %Y" }}</p>
-              <p>{{ post.excerpt }}</p>
-            </article>
-            {% endif %}
-          {% endfor %}
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="site-shell footer-grid">
-        <div>
-          <p class="section-index">Back</p>
-          <h2 class="section-title">Selected systems</h2>
-          <p class="footer-copy">
-            The homepage remains the main index for work, experience, and
-            contact.
+            Return to the homepage for work, experience, and contact.
           </p>
         </div>
         <div class="footer-links">
@@ -218,11 +164,10 @@ layout: null
       </div>
       <div class="site-shell footer-bar">
         <p>(c) <span data-year></span> Krishna Vamsi Dhulipalla</p>
-        <a href="#top">Back to top</a>
+        <a href="#main">Back to top</a>
       </div>
     </footer>
 
-    <!-- Global Glitch Overlay (Spider-Verse Effect) -->
     <div class="global-glitch-overlay" aria-hidden="true"></div>
   </body>
 </html>
