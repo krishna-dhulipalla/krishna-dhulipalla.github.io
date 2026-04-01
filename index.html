@@ -27,7 +27,8 @@ layout: null
       name="google-site-verification"
       content="qCeAap7TkXSuUZxvLUJ4y7XeuWX39M39Eo62k3zbyuE"
     />
-    <link rel="icon" href="{{ '/assets/favicon.ico' | relative_url }}" />
+    <link rel="icon" type="image/svg+xml" href="{{ '/assets/favicon.svg' | relative_url }}" />
+    <link rel="alternate icon" href="{{ '/assets/favicon.ico' | relative_url }}" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -108,10 +109,9 @@ layout: null
               Krishna Vamsi Dhulipalla
             </h1>
             <p class="intro-text">
-              AI / ML engineer working across agent runtimes, retrieval systems,
-              evaluation, and production infrastructure. I build systems that
-              turn model behavior into something inspectable, measurable, and
-              dependable in use.
+              AI / ML engineer focused on agent systems, retrieval, evaluation,
+              and production infrastructure. I build applied AI systems that
+              make model behavior inspectable, measurable, and reliable in use.
             </p>
 
             <div class="focus-strip">
@@ -119,9 +119,8 @@ layout: null
                 >Current focus</span
               >
               <p>
-                Orchestration patterns for tool-using agents, retrieval
-                reliability, and evaluation loops that hold up under real
-                constraints.
+                Tool-using agent orchestration, retrieval reliability, and
+                evaluation loops that hold up under real constraints.
               </p>
             </div>
 
@@ -171,11 +170,16 @@ layout: null
           </div>
 
           <aside class="paper-note intro-note">
-            <img
-              src="{{ '/assets/profile.png' | relative_url }}"
-              class="author-photo"
-              alt="Krishna Vamsi Dhulipalla"
-            />
+            <div
+              class="author-photo-frame"
+              style="--photo-src: url('{{ '/assets/profile.png' | relative_url }}')"
+            >
+              <img
+                src="{{ '/assets/profile.png' | relative_url }}"
+                class="author-photo"
+                alt="Krishna Vamsi Dhulipalla"
+              />
+            </div>
             <div class="note-header">
               <span class="eyebrow">Working areas</span>
               <span class="note-id">A-01</span>
@@ -210,7 +214,7 @@ layout: null
           </div>
           <p class="section-summary">
             Selected systems where orchestration, retrieval, evaluation, and
-            deployment decisions shaped the outcome.
+            deployment decisions shaped the result.
           </p>
         </div>
 
@@ -229,10 +233,10 @@ layout: null
                 Finance-first A2A reasoning engine built on LangGraph and MCP.
               </p>
               <p class="work-description">
-                Built a modular reasoning runtime for finance work where a
-                single prompt loop is not enough. The engine separates intake,
+                Built a modular reasoning runtime for finance tasks where a
+                single prompt loop was not enough. It separates intake,
                 planning, context curation, execution, review, and output
-                adaptation so evidence, assumptions, and policy checks remain
+                adaptation so evidence, assumptions, and policy checks stay
                 explicit through the run.
               </p>
               <p class="work-role">
@@ -282,10 +286,10 @@ layout: null
                 of patient change.
               </p>
               <p class="work-description">
-                Built a healthcare RAG system on AWS Bedrock and LangChain that
-                prioritized grounded summaries over fluent guesswork. The stack
-                combined deterministic fact extraction, PHI redaction, and
-                evaluation loops designed for clinical reliability.
+                Built a healthcare RAG system on AWS Bedrock and LangChain for
+                grounded summaries of recent patient change. The stack combined
+                deterministic fact extraction, PHI redaction, and evaluation
+                loops aimed at clinical reliability.
               </p>
               <p class="work-role">
                 <span>System area</span>
@@ -331,10 +335,11 @@ layout: null
                 code.
               </p>
               <p class="work-description">
-                Designed a Kubernetes-based sandbox with namespace isolation,
-                CPU and memory controls, and a sidecar proxy for observability.
-                The core problem was safe execution boundaries, not just running
-                generated code inside a container and calling it isolated.
+                Designed a Kubernetes-based sandbox for untrusted
+                agent-generated code with namespace isolation, resource
+                controls, and a sidecar proxy for observability. The main
+                challenge was safe execution boundaries, not simply running
+                generated code in a container.
               </p>
               <p class="work-role">
                 <span>System area</span>
@@ -379,11 +384,10 @@ layout: null
                 Schema-aware SQL automation for internal analyst workflows.
               </p>
               <p class="work-description">
-                Replaced a large share of manual analyst requests with
-                autonomous SQL agents backed by schema-aware retrieval and
-                enterprise-safe execution. The value came from constraints, RBAC
-                alignment, and making the generated path trustworthy enough to
-                use.
+                Replaced manual analyst requests with autonomous SQL agents
+                backed by schema-aware retrieval and enterprise-safe execution.
+                The core value came from constraints, RBAC alignment, and
+                making the generated path trustworthy enough to use.
               </p>
               <p class="work-role">
                 <span>System area</span>
@@ -490,8 +494,8 @@ layout: null
             </h2>
           </div>
           <p class="section-summary">
-            Notes are treated as working records: failure patterns, tradeoffs,
-            and observations that held up in implementation.
+            Notes are working records on failure patterns, implementation
+            tradeoffs, and system behavior that held up in practice.
           </p>
         </div>
 
@@ -528,7 +532,7 @@ layout: null
             </h2>
           </div>
           <p class="section-summary">
-            Roles most relevant to the systems work shown here.
+            Roles most relevant to the systems work on this site.
           </p>
         </div>
 
@@ -540,8 +544,8 @@ layout: null
             </div>
             <p class="experience-date">Jul 2025 - Present</p>
             <p class="experience-summary">
-              Built agentic workflows for internal data operations, rebuilt ETL
-              pipelines, and shipped containerized services with production
+              Built agent workflows for internal data operations, redesigned
+              ETL pipelines, and shipped containerized services with production
               uptime requirements.
             </p>
             <ul class="detail-list">
@@ -560,8 +564,8 @@ layout: null
             </div>
             <p class="experience-date">Aug 2024 - Jul 2025</p>
             <p class="experience-summary">
-              Worked on genomics models, distributed experimentation, and
-              repeatable fine-tuning workflows across GPU infrastructure.
+              Built genomics model workflows, distributed experiments, and
+              repeatable fine-tuning pipelines across GPU infrastructure.
             </p>
           </article>
 
@@ -573,7 +577,7 @@ layout: null
             <p class="experience-date">Jun 2023 - May 2024</p>
             <p class="experience-summary">
               Improved NER performance and inference efficiency while exploring
-              low-cost ways to steer foundation models toward domain tasks.
+              lower-cost ways to steer foundation models toward domain tasks.
             </p>
           </article>
 
@@ -584,8 +588,8 @@ layout: null
             </div>
             <p class="experience-date">Jul 2021 - Dec 2022</p>
             <p class="experience-summary">
-              Built backend APIs and delivery pipelines with an emphasis on
-              reducing release defects and stabilizing integration work.
+              Built backend APIs and delivery pipelines focused on reducing
+              release defects and stabilizing integrations.
             </p>
           </article>
         </div>
@@ -600,7 +604,7 @@ layout: null
             </h2>
           </div>
           <p class="section-summary">
-            Organized by system surface rather than by tool lists.
+            Grouped by capability area rather than by tool lists.
           </p>
         </div>
 
@@ -608,8 +612,8 @@ layout: null
           <article class="area-block">
             <h3>Agent Systems</h3>
             <ul class="detail-list">
-              <li>Runtime orchestration and planner / reviewer patterns</li>
-              <li>Tool mediation and constrained execution paths</li>
+              <li>Runtime orchestration across planner / reviewer patterns</li>
+              <li>Tool mediation and constrained execution</li>
               <li>
                 Deterministic control around non-deterministic model behavior
               </li>
@@ -618,11 +622,9 @@ layout: null
           <article class="area-block">
             <h3>Retrieval / Data Workflows</h3>
             <ul class="detail-list">
-              <li>Schema-aware retrieval and enterprise query generation</li>
+              <li>Schema-aware retrieval for enterprise query generation</li>
               <li>Grounding, evidence shaping, and context curation</li>
-              <li>
-                Structured pipelines for clinical and internal data systems
-              </li>
+              <li>Structured pipelines for clinical and internal data</li>
             </ul>
           </article>
           <article class="area-block">
@@ -646,7 +648,7 @@ layout: null
             <ul class="detail-list">
               <li>FHIR-grounded clinical summarization</li>
               <li>Genomics pipelines and sequence-model deployment</li>
-              <li>Research translated into usable engineering systems</li>
+              <li>Research translated into usable systems</li>
             </ul>
           </article>
         </div>
@@ -661,7 +663,8 @@ layout: null
             Contact
           </h2>
           <p class="footer-copy">
-            Email or LinkedIn is the fastest way to reach me.
+            Email or LinkedIn is the fastest way to reach me about AI systems
+            and engineering work.
           </p>
         </div>
 

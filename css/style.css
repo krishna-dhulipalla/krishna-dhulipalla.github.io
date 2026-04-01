@@ -1712,17 +1712,55 @@ html.theme-shifting .page-home .spider-title::after {
   }
 }
 
+.author-photo-frame {
+  position: relative;
+  margin-bottom: 1.25rem;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  isolation: isolate;
+}
+
 .author-photo {
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
   object-position: top center;
   display: block;
-  margin-bottom: 1.25rem;
+  margin-bottom: 0;
   border-radius: 4px;
-  border: 1px solid var(--line);
   position: relative;
   z-index: 1;
+}
+
+.author-photo-frame::before,
+.author-photo-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0;
+  background-image: var(--photo-src);
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+  transition: opacity var(--theme-transition), transform var(--theme-transition), filter var(--theme-transition);
+}
+
+.author-photo-frame::before {
+  mix-blend-mode: multiply;
+  filter: contrast(1.08) saturate(1.08) drop-shadow(3px 0 0 var(--blue-ink));
+}
+
+.author-photo-frame::after {
+  mix-blend-mode: multiply;
+  filter: contrast(1.04) saturate(1.12) drop-shadow(-3px 0 0 var(--rust-ink));
+}
+
+html[data-theme="dark"] .author-photo-frame::before,
+html[data-theme="dark"] .author-photo-frame::after {
+  mix-blend-mode: screen;
 }
 
 .intro-note {
@@ -1730,19 +1768,91 @@ html.theme-shifting .page-home .spider-title::after {
   overflow: hidden;
 }
 
-.intro-note::before,
-.intro-note::after {
-  content: "";
-  position: absolute;
-  top: 1.15rem; /* Match parent padding */
-  left: 1.15rem;
-  width: calc(100% - 2.3rem);
-  aspect-ratio: 1 / 1;
-  pointer-events: none;
-  z-index: 2;
-  opacity: 0;
-  mix-blend-mode: screen;
-  background: inherit; /* Fallback */
+html.theme-shifting .author-photo {
+  animation: photoCoreShift 0.52s steps(4, end) forwards;
+}
+
+html.theme-shifting .author-photo-frame::before {
+  animation: photoChannelBlue 0.52s steps(5, end) forwards;
+}
+
+html.theme-shifting .author-photo-frame::after {
+  animation: photoChannelRust 0.52s steps(5, end) forwards;
+}
+
+@keyframes photoCoreShift {
+  0% {
+    transform: translate3d(0, 0, 0);
+    filter: none;
+  }
+  14% {
+    transform: translate3d(-1px, 0.5px, 0) skewX(0.4deg);
+    filter: contrast(1.08) saturate(1.06);
+  }
+  36% {
+    transform: translate3d(1px, -0.5px, 0) skewX(-0.5deg);
+    filter: contrast(1.14) saturate(1.1);
+  }
+  62% {
+    transform: translate3d(-0.5px, 1px, 0);
+    filter: contrast(1.06) saturate(1.08);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+    filter: none;
+  }
+}
+
+@keyframes photoChannelBlue {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0);
+  }
+  10% {
+    opacity: 0.24;
+  }
+  18% {
+    opacity: 0.38;
+    transform: translate3d(5px, -1px, 0);
+  }
+  44% {
+    opacity: 0.16;
+    transform: translate3d(2px, 1px, 0);
+  }
+  72% {
+    opacity: 0.32;
+    transform: translate3d(4px, 0, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes photoChannelRust {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0);
+  }
+  12% {
+    opacity: 0.22;
+  }
+  24% {
+    opacity: 0.34;
+    transform: translate3d(-5px, 1px, 0);
+  }
+  48% {
+    opacity: 0.14;
+    transform: translate3d(-2px, -1px, 0);
+  }
+  78% {
+    opacity: 0.28;
+    transform: translate3d(-4px, 0, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0);
+  }
 }
 
 /* Global Heading Glitch */
@@ -1839,6 +1949,9 @@ html.theme-shifting .global-glitch-overlay {
   .glitch-digit::after,
   .glitch-slice,
   .glitch-scan,
+  .author-photo,
+  .author-photo-frame::before,
+  .author-photo-frame::after,
   .spider-title::before,
   .spider-title::after,
   .spider-field::before,
@@ -1852,6 +1965,8 @@ html.theme-shifting .global-glitch-overlay {
 
   .glitch-slice,
   .glitch-scan,
+  .author-photo-frame::before,
+  .author-photo-frame::after,
   .spider-title::before,
   .spider-title::after,
   .spider-field::before,
