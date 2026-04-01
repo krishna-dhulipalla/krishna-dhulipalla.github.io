@@ -142,6 +142,73 @@ layout: null
           <a href="mailto:dhulipallakrishnavamsi@gmail.com">Email</a>
           <a
             href="https://github.com/krishna-dhulipalla"
+
+    <main id="main" class="site-shell page-stack">
+      <section class="page-intro">
+        <div>
+          <p class="page-label">Notes</p>
+          <h1 class="page-title chroma-ink">Engineering notebook</h1>
+          <p class="page-subtitle">
+            Notes on runtime behavior, failure modes, deployment tradeoffs, and
+            the implementation details that still matter after the demo ends.
+          </p>
+        </div>
+
+        <aside class="page-note">
+          <p class="eyebrow">Index</p>
+          <p class="note-copy">
+            This page stays selective. Only technical notes that add useful
+            context to the work are kept here.
+          </p>
+        </aside>
+      </section>
+
+      <section class="note-section">
+        <div class="section-head">
+          <div>
+            <p class="section-index">01 / Notes</p>
+            <h2 class="section-title">Technical notes</h2>
+          </div>
+          <p class="section-summary">
+            Entries closest to reliability, observability, and production
+            system behavior.
+          </p>
+        </div>
+
+        <div class="note-list">
+          {% for post in site.posts %}
+            {% if post.categories contains "Engineering" %}
+            <article class="note-list-item">
+              <div>
+                <p class="note-type">Systems note</p>
+                <h3>
+                  <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                </h3>
+              </div>
+              <p class="note-list-meta">{{ post.date | date: "%b %d, %Y" }}</p>
+              <p>{{ post.excerpt }}</p>
+            </article>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-shell footer-grid">
+        <div>
+          <p class="section-index">Back</p>
+          <h2 class="section-title">Selected systems</h2>
+          <p class="footer-copy">
+            The homepage remains the main index for work, experience, and
+            contact.
+          </p>
+        </div>
+        <div class="footer-links">
+          <a href="{{ '/' | relative_url }}">Return to homepage</a>
+          <a href="mailto:dhulipallakrishnavamsi@gmail.com">Email</a>
+          <a
+            href="https://github.com/krishna-dhulipalla"
             target="_blank"
             rel="noreferrer"
             >GitHub</a
@@ -150,8 +217,11 @@ layout: null
       </div>
       <div class="site-shell footer-bar">
         <p>(c) <span data-year></span> Krishna Vamsi Dhulipalla</p>
-        <a href="#main">Back to top</a>
+        <a href="#top">Back to top</a>
       </div>
     </footer>
+
+    <!-- Global Glitch Overlay (Spider-Verse Effect) -->
+    <div class="global-glitch-overlay" aria-hidden="true"></div>
   </body>
 </html>

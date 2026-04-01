@@ -16,7 +16,8 @@ layout: null
       (() => {
         try {
           const savedTheme = window.localStorage.getItem("theme");
-          document.documentElement.dataset.theme = savedTheme === "dark" ? "dark" : "light";
+          document.documentElement.dataset.theme =
+            savedTheme === "dark" ? "dark" : "light";
         } catch (error) {
           document.documentElement.dataset.theme = "light";
         }
@@ -84,8 +85,15 @@ layout: null
     </header>
 
     <main id="main" class="site-shell page-stack">
-      <section class="section intro-section" id="top" style="padding-top: 0; margin-top: -1.6rem;">
-        <div class="section-marker" style="border-top: none; padding-top: 0.5rem;">
+      <section
+        class="section intro-section"
+        id="top"
+        style="padding-top: 0; margin-top: -1.6rem"
+      >
+        <div
+          class="section-marker"
+          style="border-top: none; padding-top: 0.5rem"
+        >
           <span>Issue 01</span>
           <span>Spring 2026</span>
         </div>
@@ -107,7 +115,9 @@ layout: null
             </p>
 
             <div class="focus-strip">
-              <span class="focus-label spider-field" data-text="Current focus">Current focus</span>
+              <span class="focus-label spider-field" data-text="Current focus"
+                >Current focus</span
+              >
               <p>
                 Orchestration patterns for tool-using agents, retrieval
                 reliability, and evaluation loops that hold up under real
@@ -115,26 +125,57 @@ layout: null
               </p>
             </div>
 
-
-            <div class="focus-strip" style="margin-top: 0.8rem; border-top: none;">
-              <span class="focus-label spider-field" data-text="Core Stack">Core Stack</span>
-              <p style="font-size: 0.95rem;">
-                <strong>AI & Agents:</strong> LangGraph, PyTorch, MCP, RAG Architectures, Claude/OpenAI<br/>
-                <strong>Backend & Ops:</strong> Python, Go, Node.js, AWS, Kubernetes, Docker<br/>
-                <strong>Data & Analytics:</strong> SQL, PostgreSQL, Vector DBs, Airflow, Snowflake
+            <div
+              class="focus-strip"
+              style="margin-top: 0.8rem; border-top: none"
+            >
+              <span class="focus-label spider-field" data-text="Core Stack"
+                >Core Stack</span
+              >
+              <p style="font-size: 0.95rem">
+                <strong>AI & Agents:</strong> LangGraph, PyTorch, MCP, RAG
+                Architectures, Claude/OpenAI<br />
+                <strong>Backend & Ops:</strong> Python, Go, Node.js, AWS,
+                Kubernetes, Docker<br />
+                <strong>Data & Analytics:</strong> SQL, PostgreSQL, Vector DBs,
+                Airflow, Snowflake
               </p>
             </div>
 
-            <div class="link-row hero-links" style="margin-top: 1.5rem;">
-              <a href="https://linkedin.com/in/krishnavamsidhulipalla/" target="_blank" rel="noreferrer">LinkedIn</a>
-              <a href="https://github.com/krishna-dhulipalla" target="_blank" rel="noreferrer">GitHub</a>
-              <a href="https://scholar.google.com/citations?user=uvbsnjMAAAAJ&hl=en" target="_blank" rel="noreferrer">Google Scholar</a>
-              <a href="https://krishnadhulipalla-chatbot.hf.space/" target="_blank" rel="noreferrer">Personal Chatbot</a>
+            <div class="link-row hero-links" style="margin-top: 1.5rem">
+              <a
+                href="https://linkedin.com/in/krishnavamsidhulipalla/"
+                target="_blank"
+                rel="noreferrer"
+                >LinkedIn</a
+              >
+              <a
+                href="https://github.com/krishna-dhulipalla"
+                target="_blank"
+                rel="noreferrer"
+                >GitHub</a
+              >
+              <a
+                href="https://scholar.google.com/citations?user=uvbsnjMAAAAJ&hl=en"
+                target="_blank"
+                rel="noreferrer"
+                >Google Scholar</a
+              >
+              <a
+                href="https://krishnadhulipalla-chatbot.hf.space/"
+                target="_blank"
+                rel="noreferrer"
+                >Personal Chatbot</a
+              >
             </div>
           </div>
 
           <aside class="paper-note intro-note">
-            <img src="{{ '/assets/profile.png' | relative_url }}" class="author-photo" alt="Krishna Vamsi Dhulipalla" />
+            <img
+              src="{{ '/assets/profile.png' | relative_url }}"
+              class="author-photo"
+              alt="Krishna Vamsi Dhulipalla"
+            />
             <div class="note-header">
               <span class="eyebrow">Working areas</span>
               <span class="note-id">A-01</span>
@@ -163,7 +204,9 @@ layout: null
         <div class="section-head">
           <div>
             <p class="section-index">01 / Work</p>
-            <h2 class="section-title spider-field" data-text="Featured work">Featured work</h2>
+            <h2 class="section-title spider-field" data-text="Featured work">
+              Featured work
+            </h2>
           </div>
           <p class="section-summary">
             Selected systems where orchestration, retrieval, evaluation, and
@@ -176,7 +219,12 @@ layout: null
             <div class="work-order">01</div>
             <div class="work-copy">
               <p class="work-group">Production AI Systems</p>
-              <h3 class="work-title chroma-hover spider-hover" data-text="CoreLink AI">CoreLink AI</h3>
+              <h3
+                class="work-title chroma-hover spider-hover"
+                data-text="CoreLink AI"
+              >
+                CoreLink AI
+              </h3>
               <p class="work-context">
                 Finance-first A2A reasoning engine built on LangGraph and MCP.
               </p>
@@ -251,7 +299,12 @@ layout: null
                 <li>Healthcare AI</li>
               </ul>
               <div class="link-row">
-                <a href="https://github.com/krishna-dhulipalla/Clinical-pre-rounding-ai" target="_blank" rel="noreferrer">Repository</a>
+                <a
+                  href="https://github.com/krishna-dhulipalla/Clinical-pre-rounding-ai"
+                  target="_blank"
+                  rel="noreferrer"
+                  >Repository</a
+                >
               </div>
             </div>
             <aside class="work-sheet">
@@ -267,7 +320,12 @@ layout: null
             <div class="work-order">03</div>
             <div class="work-copy">
               <p class="work-group">Infrastructure / Sandboxing</p>
-              <h3 class="work-title chroma-hover spider-hover" data-text="Agent K8s Sandbox">Agent K8s Sandbox</h3>
+              <h3
+                class="work-title chroma-hover spider-hover"
+                data-text="Agent K8s Sandbox"
+              >
+                Agent K8s Sandbox
+              </h3>
               <p class="work-context">
                 Isolated execution environment for untrusted agent-generated
                 code.
@@ -311,7 +369,12 @@ layout: null
             <div class="work-order">04</div>
             <div class="work-copy">
               <p class="work-group">Enterprise Retrieval / Automation</p>
-              <h3 class="work-title chroma-hover spider-hover" data-text="Internal Data Agents">Internal Data Agents</h3>
+              <h3
+                class="work-title chroma-hover spider-hover"
+                data-text="Internal Data Agents"
+              >
+                Internal Data Agents
+              </h3>
               <p class="work-context">
                 Schema-aware SQL automation for internal analyst workflows.
               </p>
@@ -419,7 +482,12 @@ layout: null
         <div class="section-head">
           <div>
             <p class="section-index">02 / Notes</p>
-            <h2 class="section-title spider-field" data-text="Engineering notebook">Engineering notebook</h2>
+            <h2
+              class="section-title spider-field"
+              data-text="Engineering notebook"
+            >
+              Engineering notebook
+            </h2>
           </div>
           <p class="section-summary">
             Notes are treated as working records: failure patterns, tradeoffs,
@@ -452,7 +520,12 @@ layout: null
         <div class="section-head">
           <div>
             <p class="section-index">03 / Experience</p>
-            <h2 class="section-title spider-field" data-text="Experience snapshot">Experience snapshot</h2>
+            <h2
+              class="section-title spider-field"
+              data-text="Experience snapshot"
+            >
+              Experience snapshot
+            </h2>
           </div>
           <p class="section-summary">
             Roles most relevant to the systems work shown here.
@@ -522,7 +595,9 @@ layout: null
         <div class="section-head">
           <div>
             <p class="section-index">04 / Working Areas</p>
-            <h2 class="section-title spider-field" data-text="Working areas">Working areas</h2>
+            <h2 class="section-title spider-field" data-text="Working areas">
+              Working areas
+            </h2>
           </div>
           <p class="section-summary">
             Organized by system surface rather than by tool lists.
@@ -582,7 +657,9 @@ layout: null
       <div class="site-shell footer-grid">
         <div>
           <p class="section-index">05 / Contact</p>
-          <h2 class="section-title spider-field" data-text="Contact">Contact</h2>
+          <h2 class="section-title spider-field" data-text="Contact">
+            Contact
+          </h2>
           <p class="footer-copy">
             Email or LinkedIn is the fastest way to reach me.
           </p>
@@ -612,5 +689,8 @@ layout: null
         <a href="#top">Back to top</a>
       </div>
     </footer>
+
+    <!-- Global Glitch Overlay (Spider-Verse Effect) -->
+    <div class="global-glitch-overlay" aria-hidden="true"></div>
   </body>
 </html>
