@@ -37,6 +37,12 @@ layout: null
     />
     <link rel="stylesheet" href="{{ '/css/style.css' | relative_url }}" />
     <script defer src="{{ '/js/main.js' | relative_url }}"></script>
+    <script defer src="{{ '/js/pretext-loader.js' | relative_url }}"></script>
+    <script defer src="{{ '/js/mascot-config.js' | relative_url }}"></script>
+    <script defer src="{{ '/js/MascotRenderer.js' | relative_url }}"></script>
+    <script defer src="{{ '/js/MascotLayout.js' | relative_url }}"></script>
+    <script defer src="{{ '/js/MascotController.js' | relative_url }}"></script>
+    <script defer src="{{ '/js/mascot-init.js' | relative_url }}"></script>
   </head>
   <body class="page-home">
     {% assign featured_note = site.posts | where_exp: "post", "post.title ==
@@ -89,6 +95,7 @@ layout: null
       <section
         class="section intro-section"
         id="top"
+        data-mascot-section="intro"
         style="padding-top: 0; margin-top: -1.6rem"
       >
         <div
@@ -108,17 +115,22 @@ layout: null
             >
               Krishna Vamsi Dhulipalla
             </h1>
-            <p class="intro-text">
+            <p class="intro-text" data-mascot-lines="intro-copy">
               AI / ML engineer focused on agent systems, retrieval, evaluation,
               and production infrastructure. I build applied AI systems that
               make model behavior inspectable, measurable, and reliable in use.
             </p>
 
-            <div class="focus-strip">
+            <div
+              class="focus-strip"
+              data-mascot-anchor="current-focus"
+              data-mascot-rest="top-left"
+              data-mascot-behaviors="inspect,rest"
+            >
               <span class="focus-label spider-field" data-text="Current focus"
                 >Current focus</span
               >
-              <p>
+              <p data-mascot-lines="focus-copy">
                 Tool-using agent orchestration, retrieval reliability, and
                 evaluation loops that hold up under real constraints.
               </p>
@@ -126,6 +138,9 @@ layout: null
 
             <div
               class="focus-strip"
+              data-mascot-anchor="core-stack"
+              data-mascot-rest="bottom-left"
+              data-mascot-behaviors="rest"
               style="margin-top: 0.8rem; border-top: none"
             >
               <span class="focus-label spider-field" data-text="Core Stack"
@@ -169,7 +184,12 @@ layout: null
             </div>
           </div>
 
-          <aside class="paper-note intro-note">
+          <aside
+            class="paper-note intro-note"
+            data-mascot-anchor="intro-note"
+            data-mascot-rest="top-right"
+            data-mascot-behaviors="rest,idle,inspect"
+          >
             <div
               class="author-photo-frame"
               style="--photo-src: url('{{ '/assets/profile.png' | relative_url }}')"
@@ -204,8 +224,13 @@ layout: null
         </div>
       </section>
 
-      <section class="section" id="work">
-        <div class="section-head">
+      <section class="section" id="work" data-mascot-section="work">
+        <div
+          class="section-head"
+          data-mascot-anchor="work-head"
+          data-mascot-rest="right"
+          data-mascot-behaviors="inspect,rest"
+        >
           <div>
             <p class="section-index">01 / Work</p>
             <h2 class="section-title spider-field" data-text="Featured work">
@@ -259,7 +284,12 @@ layout: null
                 >
               </div>
             </div>
-            <aside class="work-sheet diagram-sheet">
+            <aside
+              class="work-sheet diagram-sheet"
+              data-mascot-anchor="work-sheet-1"
+              data-mascot-rest="top-left"
+              data-mascot-behaviors="rest,inspect"
+            >
               <p class="sheet-label">Runtime path</p>
               <ol class="diagram-list">
                 <li>Intake</li>
@@ -311,7 +341,12 @@ layout: null
                 >
               </div>
             </div>
-            <aside class="work-sheet">
+            <aside
+              class="work-sheet"
+              data-mascot-anchor="work-sheet-2"
+              data-mascot-rest="top-left"
+              data-mascot-behaviors="rest,inspect"
+            >
               <p class="sheet-label">Reliability focus</p>
               <p class="sheet-caption">
                 Grounding, redaction, and evaluation were treated as first-class
@@ -360,7 +395,12 @@ layout: null
                 >
               </div>
             </div>
-            <aside class="work-sheet">
+            <aside
+              class="work-sheet"
+              data-mascot-anchor="work-sheet-3"
+              data-mascot-rest="top-left"
+              data-mascot-behaviors="rest,inspect"
+            >
               <p class="sheet-label">Execution guardrails</p>
               <ol class="diagram-list">
                 <li>Namespace isolation</li>
@@ -400,7 +440,12 @@ layout: null
                 <li>RAG</li>
               </ul>
             </div>
-            <aside class="work-sheet">
+            <aside
+              class="work-sheet"
+              data-mascot-anchor="work-sheet-4"
+              data-mascot-rest="top-left"
+              data-mascot-behaviors="rest,inspect"
+            >
               <p class="sheet-label">Operational result</p>
               <p class="sheet-caption">
                 Replaced manual analyst work with a constrained, schema-aware
@@ -482,8 +527,13 @@ layout: null
         </div>
       </section>
 
-      <section class="section" id="notes">
-        <div class="section-head">
+      <section class="section" id="notes" data-mascot-section="notes">
+        <div
+          class="section-head"
+          data-mascot-anchor="notes-head"
+          data-mascot-rest="right"
+          data-mascot-behaviors="inspect,rest"
+        >
           <div>
             <p class="section-index">02 / Notes</p>
             <h2
@@ -500,7 +550,12 @@ layout: null
         </div>
 
         {% if featured_note %}
-        <article class="note-feature note-feature-single">
+        <article
+          class="note-feature note-feature-single"
+          data-mascot-anchor="featured-note"
+          data-mascot-rest="top-right"
+          data-mascot-behaviors="inspect,rest"
+        >
           <p class="note-type">Systems note</p>
           <h3 class="chroma-hover">
             <a href="{{ featured_note.url | relative_url }}">
@@ -520,8 +575,17 @@ layout: null
         </div>
       </section>
 
-      <section class="section" id="experience">
-        <div class="section-head">
+      <section
+        class="section"
+        id="experience"
+        data-mascot-section="experience"
+      >
+        <div
+          class="section-head"
+          data-mascot-anchor="experience-head"
+          data-mascot-rest="right"
+          data-mascot-behaviors="inspect,rest"
+        >
           <div>
             <p class="section-index">03 / Experience</p>
             <h2
@@ -595,8 +659,13 @@ layout: null
         </div>
       </section>
 
-      <section class="section" id="areas">
-        <div class="section-head">
+      <section class="section" id="areas" data-mascot-section="areas">
+        <div
+          class="section-head"
+          data-mascot-anchor="areas-head"
+          data-mascot-rest="right"
+          data-mascot-behaviors="inspect,rest"
+        >
           <div>
             <p class="section-index">04 / Working Areas</p>
             <h2 class="section-title spider-field" data-text="Working areas">
@@ -655,8 +724,13 @@ layout: null
       </section>
     </main>
 
-    <footer class="site-footer" id="contact">
-      <div class="site-shell footer-grid">
+    <footer class="site-footer" id="contact" data-mascot-section="contact">
+      <div
+        class="site-shell footer-grid"
+        data-mascot-anchor="contact-grid"
+        data-mascot-rest="left"
+        data-mascot-behaviors="rest,inspect"
+      >
         <div>
           <p class="section-index">05 / Contact</p>
           <h2 class="section-title spider-field" data-text="Contact">
@@ -693,6 +767,7 @@ layout: null
       </div>
     </footer>
 
+    <div id="mascot-root" class="mascot-root" aria-hidden="true"></div>
     <!-- Global Glitch Overlay (Spider-Verse Effect) -->
     <div class="global-glitch-overlay" aria-hidden="true"></div>
   </body>
