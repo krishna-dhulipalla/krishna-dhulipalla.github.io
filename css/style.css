@@ -1112,25 +1112,29 @@ html.theme-shifting .page-home .spider-title::after {
 }
 
 .post-shell {
-  padding: 1.4rem 1.4rem 1.8rem;
+  padding: 2.9rem 2.4rem 2rem;
 }
 
 .post-header {
-  display: grid;
-  gap: 1rem;
-  margin-bottom: 1.6rem;
-  padding-bottom: 1.2rem;
+  margin-bottom: 2.4rem;
+  padding-bottom: 1.85rem;
   border-bottom: 1px solid var(--line);
 }
 
-.post-title {
-  max-width: 14ch;
+.post-header-inner {
+  max-width: 62rem;
+  margin: 0 auto;
+  display: grid;
+  justify-items: center;
+  gap: 0.95rem;
+  text-align: center;
 }
 
 .post-meta {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.8rem 1.2rem;
+  justify-content: center;
+  gap: 0.8rem 1.5rem;
   color: var(--ink-soft);
   font-family: "IBM Plex Mono", monospace;
   font-size: 0.78rem;
@@ -1138,13 +1142,128 @@ html.theme-shifting .page-home .spider-title::after {
   letter-spacing: 0.08em;
 }
 
+.post-title {
+  max-width: 16ch;
+  font-size: clamp(2.8rem, 5.3vw, 4.95rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.page-post .post-title.chroma-ink {
+  text-shadow: none;
+}
+
+.post-byline {
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(1rem, 1.45vw, 1.22rem);
+}
+
 .post-dek {
   margin: 0;
+  max-width: 44rem;
+  font-size: clamp(1.02rem, 1.45vw, 1.18rem);
+  line-height: 1.7;
 }
 
 .post-body {
   color: var(--ink);
   font-size: 1.06rem;
+}
+
+.post-body-inner {
+  max-width: 78ch;
+  margin: 0 auto;
+}
+
+.post-utility {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 1.8rem;
+  margin-bottom: 1.9rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.post-utility-main {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  min-width: 0;
+}
+
+.post-utility-button,
+.post-utility-secondary,
+.post-utility-link {
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  cursor: pointer;
+  padding: 0;
+}
+
+.post-utility-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.post-utility-secondary {
+  color: var(--ink-soft);
+}
+
+.post-utility-secondary:hover,
+.post-utility-secondary:focus-visible {
+  color: var(--blue-ink);
+}
+
+.post-utility-icon {
+  width: 2.9rem;
+  height: 2.9rem;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: rgba(23, 20, 18, 0.08);
+  font-size: 0.95rem;
+  transition:
+    transform var(--transition),
+    background-color var(--transition);
+}
+
+.post-utility-button:hover .post-utility-icon,
+.post-utility-button:focus-visible .post-utility-icon {
+  transform: scale(1.03);
+  background: rgba(23, 20, 18, 0.13);
+}
+
+.post-utility-button:focus-visible,
+.post-utility-secondary:focus-visible,
+.post-utility-link:focus-visible {
+  outline: 2px solid var(--blue-ink);
+  outline-offset: 4px;
+}
+
+.post-utility-separator {
+  width: 1px;
+  align-self: stretch;
+  background: var(--line);
+}
+
+.post-utility-status {
+  margin: 0;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.post-utility-link {
+  color: var(--ink);
+}
+
+.post-utility-link:hover,
+.post-utility-link:focus-visible {
+  color: var(--blue-ink);
 }
 
 .post-body h2,
@@ -1168,7 +1287,7 @@ html.theme-shifting .page-home .spider-title::after {
 .post-body ul,
 .post-body ol,
 .post-body blockquote {
-  max-width: 68ch;
+  max-width: 100%;
 }
 
 .post-body ul,
@@ -1224,6 +1343,9 @@ html.theme-shifting .page-home .spider-title::after {
 
 .post-footer {
   margin-top: 2rem;
+  max-width: 74ch;
+  margin-left: auto;
+  margin-right: auto;
   padding-top: 1.2rem;
   border-top: 1px solid var(--line);
   display: flex;
@@ -1709,6 +1831,56 @@ html.theme-shifting .page-home .spider-title::after {
 
   .theme-toggle {
     margin-left: auto;
+  }
+
+  .post-shell {
+    padding: 1.4rem 1.1rem 1.6rem;
+  }
+
+  .post-header-inner {
+    justify-items: start;
+    text-align: left;
+    gap: 0.8rem;
+  }
+
+  .post-meta {
+    justify-content: flex-start;
+    gap: 0.55rem 1rem;
+  }
+
+  .post-title {
+    max-width: 11ch;
+    font-size: clamp(2.35rem, 11vw, 3.7rem);
+  }
+
+  .post-byline {
+    font-size: 0.98rem;
+  }
+
+  .post-dek {
+    max-width: 100%;
+    font-size: 1rem;
+  }
+
+  .post-utility {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1rem;
+    padding-bottom: 1.45rem;
+    margin-bottom: 1.45rem;
+  }
+
+  .post-utility-main {
+    flex-wrap: wrap;
+    gap: 0.85rem;
+  }
+
+  .post-utility-separator {
+    display: none;
+  }
+
+  .post-utility-status {
+    white-space: normal;
   }
 }
 

@@ -75,25 +75,72 @@
     </header>
 
     <main id="main" class="site-shell page-stack">
+      {% assign reading_minutes = content | number_of_words | divided_by: 200 %}
+      {% if reading_minutes < 1 %}
+        {% assign reading_minutes = 1 %}
+      {% endif %}
       <article class="post-shell">
         <header class="post-header">
-          <p class="page-label">Notebook entry</p>
-          <h1 class="post-title chroma-ink">{{ page.title }}</h1>
-          <div class="post-meta">
-            <span>{{ page.date | date: "%b %d, %Y" }}</span>
-            <span>
-              {% if page.category %}
-                {{ page.category }}
-              {% else %}
-                {{ page.categories | first }}
-              {% endif %}
-            </span>
-            <span>{{ content | number_of_words | divided_by: 200 }} min read</span>
+          <div class="post-header-inner">
+            <div class="post-meta">
+              <span>{{ page.date | date: "%b %d, %Y" }}</span>
+              <span>
+                {% if page.category %}
+                  {{ page.category }}
+                {% else %}
+                  {{ page.categories | first }}
+                {% endif %}
+              </span>
+              <span>{{ reading_minutes }} min read</span>
+            </div>
+            <h1 class="post-title chroma-ink">{{ page.title }}</h1>
+            <p class="post-byline">
+              By {{ page.author | default: "Krishna Vamsi Dhulipalla" }}
+            </p>
+            <p class="post-dek">{{ page.excerpt }}</p>
           </div>
-          <p class="post-dek">{{ page.excerpt }}</p>
         </header>
 
-        <div class="post-body">{{ content }}</div>
+        <div class="post-body">
+          <div class="post-body-inner">
+            <div class="post-utility" aria-label="Article utilities">
+              <div class="post-utility-main">
+                <button
+                  class="post-utility-button"
+                  type="button"
+                  data-listen-article
+                  aria-label="Play or pause article audio"
+                >
+                  <span class="post-utility-icon" data-listen-icon aria-hidden="true">▶</span>
+                  <span data-listen-label>Listen to article</span>
+                </button>
+                <button
+                  class="post-utility-secondary"
+                  type="button"
+                  data-restart-article
+                  aria-label="Restart article audio"
+                >
+                  Restart
+                </button>
+                <span class="post-utility-separator" aria-hidden="true"></span>
+                <p class="post-utility-status" data-article-status aria-live="polite">{{ reading_minutes }} min audio</p>
+              </div>
+
+              <button
+                class="post-utility-link"
+                type="button"
+                data-share-article
+                aria-label="Share article"
+              >
+                <span data-share-label>Share</span>
+              </button>
+            </div>
+
+            <div data-post-voice-source>
+              {{ content }}
+            </div>
+          </div>
+        </div>
 
         <footer class="post-footer">
           <a href="{{ '/blog.html' | relative_url }}">Back to notes</a>
