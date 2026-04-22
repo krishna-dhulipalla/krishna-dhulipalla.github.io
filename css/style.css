@@ -1122,7 +1122,7 @@ html.theme-shifting .page-home .spider-title::after {
 }
 
 .post-header-inner {
-  max-width: 62rem;
+  max-width: 76rem;
   margin: 0 auto;
   display: grid;
   justify-items: center;
@@ -1143,8 +1143,8 @@ html.theme-shifting .page-home .spider-title::after {
 }
 
 .post-title {
-  max-width: 16ch;
-  font-size: clamp(2.8rem, 5.3vw, 4.95rem);
+  max-width: 24ch;
+  font-size: clamp(2.8rem, 5.6vw, 5.2rem);
   line-height: 1;
   letter-spacing: -0.04em;
 }
@@ -1849,7 +1849,7 @@ html.theme-shifting .page-home .spider-title::after {
   }
 
   .post-title {
-    max-width: 11ch;
+    max-width: 13ch;
     font-size: clamp(2.35rem, 11vw, 3.7rem);
   }
 
