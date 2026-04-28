@@ -1,10 +1,10 @@
 title: Krishna Vamsi Dhulipalla
-email: dhulipallakrishnavamsi@gmail.com
+email: krishnadhulipalla13@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Engineering thoughts on LLM systems, Agentic workflows, and Reverse Engineering.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
+url: "https://krishna-dhulipalla.github.io" # the base hostname & protocol for your site
+twitter_username: Krishnavam11316
 github_username: krishna-dhulipalla
 
 # Build settings

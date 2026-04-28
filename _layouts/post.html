@@ -1,13 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{ page.title }} | Notes</title>
-    <meta
-      name="description"
-      content="{{ page.excerpt | strip_html | normalize_whitespace | escape }}"
-    />
+    {% assign page_title = page.title | append: ' | Notes' %}
+    {% assign page_description = page.excerpt %}
+    {% include seo-head.html title=page_title description=page_description %}
     <script>
       (() => {
         try {

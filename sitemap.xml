@@ -1,13 +1,23 @@
+---
+layout: null
+permalink: /sitemap.xml
+---
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  {% for page in site.html_pages %}
+    {% unless page.url == '/404.html' or page.sitemap == false %}
   <url>
-    <loc>https://krishna-dhulipalla.github.io/</loc>
-    <lastmod>2025-09-08</lastmod>
-    <priority>1.00</priority>
+    <loc>{{ page.url | absolute_url }}</loc>
+    <lastmod>{{ site.time | date: "%Y-%m-%d" }}</lastmod>
+    <priority>{% if page.url == '/' %}1.00{% elsif page.url == '/blog.html' %}0.95{% else %}0.80{% endif %}</priority>
   </url>
+    {% endunless %}
+  {% endfor %}
+  {% for post in site.posts %}
   <url>
-    <loc>https://krishna-dhulipalla.github.io/assets/resume.pdf</loc>
-    <lastmod>2025-09-08</lastmod>
-    <priority>0.80</priority>
+    <loc>{{ post.url | absolute_url }}</loc>
+    <lastmod>{{ post.date | date: "%Y-%m-%d" }}</lastmod>
+    <priority>0.90</priority>
   </url>
+  {% endfor %}
 </urlset>
