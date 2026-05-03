@@ -3,3 +3,4 @@ Allow: /
 
 Sitemap: https://krishna-dhulipalla.github.io/sitemap.xml
 Sitemap: https://krishna-dhulipalla.github.io/mysites.xml
+Sitemap: https://krishna-dhulipalla.github.io/sitemap.txt

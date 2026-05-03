@@ -1,0 +1,10 @@
+https://krishna-dhulipalla.github.io/
+https://krishna-dhulipalla.github.io/blog.html
+https://krishna-dhulipalla.github.io/resume.html
+https://krishna-dhulipalla.github.io/job%20search/2025/12/29/hiring-momentum-dashboard.html
+https://krishna-dhulipalla.github.io/market%20notes/2025/12/30/december-hiring-signals.html
+https://krishna-dhulipalla.github.io/engineering/mlops/computer%20vision/2026/02/07/vision-model-lying.html
+https://krishna-dhulipalla.github.io/engineering/llm%20systems/agents/2026/04/21/building-corelink-ai.html
+https://krishna-dhulipalla.github.io/engineering/databases/systems/2026/04/21/postgresql-is-the-most-underrated-tool-in-your-stack.html
+https://krishna-dhulipalla.github.io/engineering/llm%20systems/inference/2026/04/28/turboquant-is-important-but-the-real-win-is-narrower.html
+https://krishna-dhulipalla.github.io/engineering/ai%20infrastructure/sustainability/2026/04/28/why-fast-ai-power-estimation-matters-more-than-it-sounds.html
