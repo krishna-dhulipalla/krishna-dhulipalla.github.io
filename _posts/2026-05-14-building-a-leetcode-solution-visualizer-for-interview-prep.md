@@ -197,6 +197,15 @@ That makes practice less about staring at code and more about building intuition
 
 ---
 
+## Try it out
+
+The visualizer is open-source and runs directly in the browser:
+
+- **Live App:** [LeetCode Solution Visualizer](https://krishna-dhulipalla.github.io/leetcode-visualizer/)
+- **GitHub:** [leetcode-visualizer](https://github.com/krishna-dhulipalla/leetcode-visualizer)
+
+---
+
 ## Credits
 
 - LeetCode-style interview problems for the examples and workflows this tool is designed around
