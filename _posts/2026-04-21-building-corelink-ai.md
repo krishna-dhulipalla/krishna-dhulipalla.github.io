@@ -4,7 +4,7 @@ title: "Building CoreLink AI: An Evidence-Grounded Reasoning Engine That Knows W
 date: 2026-04-21 10:00:00 -0500
 categories: [Engineering, LLM Systems, Agents]
 featured: true
-image: /assets/corelink_diagram.png
+image: /assets/profile.png
 excerpt: "Most agent systems fail in predictable ways: they trust model recall too much, use tools without policy, and keep reasoning long after the evidence ran out. CoreLink AI was built to make those failure modes explicit, bounded, and auditable."
 ---
 
@@ -150,7 +150,7 @@ I also wanted the runtime to stay flexible across domains. So the architecture l
 
 That keeps the reasoning policy separate from the concrete tool surface.
 
-![CoreLink AI Architecture](/assets/corelink_diagram.png)
+![CoreLink AI Architecture]({{ '/assets/diagrams/corelink-ai.svg' | relative_url }})
 _Figure: CoreLink AI is organized around planning, retrieval strategy, evidence extraction, compute, and bounded recovery rather than a single unconstrained reasoning loop._
 
 ---

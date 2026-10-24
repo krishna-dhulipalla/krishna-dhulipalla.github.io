@@ -25,7 +25,7 @@
   --spider-blue-strong: rgba(78, 103, 182, 0.68);
   --spider-rust-strong: rgba(186, 90, 69, 0.48);
   --spider-teal-strong: rgba(26, 118, 108, 0.34);
-  --site-width: min(1200px, calc(100vw - 2.5rem));
+  --site-width: min(1200px, calc(100% - 2.5rem));
   --radius: 18px;
   --header-height: 78px;
   --transition: 180ms ease;
@@ -76,6 +76,7 @@ html[data-theme="dark"] {
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: var(--sticky-header-height, var(--header-height));
   text-size-adjust: 100%;
 }
 
@@ -464,7 +465,7 @@ html[data-theme="dark"] .theme-toggle-thumb {
 .spider-field::after,
 .spider-hover::before,
 .spider-hover::after {
-  content: attr(data-text);
+  content: attr(data-text) / "";
   position: absolute;
   inset: 0;
   pointer-events: none;
@@ -1433,7 +1434,7 @@ html.theme-shifting .page-home .spider-title::after {
 
 .glitch-digit::before,
 .glitch-digit::after {
-  content: attr(data-text);
+  content: attr(data-text) / "";
   position: absolute;
   inset: 0;
   pointer-events: none;
@@ -1769,7 +1770,8 @@ html.theme-shifting .page-home .spider-title::after {
 
 @media (max-width: 760px) {
   :root {
-    --site-width: min(100vw - 1.4rem, 1200px);
+    --site-width: min(calc(100% - 1.4rem), 1200px);
+    --sticky-header-height: 160px;
   }
 
   .masthead {

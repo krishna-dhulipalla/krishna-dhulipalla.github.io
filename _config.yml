@@ -1,7 +1,8 @@
 title: Krishna Vamsi Dhulipalla
 email: krishnadhulipalla13@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Engineering thoughts on LLM systems, Agentic workflows, and Reverse Engineering.
+  AI engineering projects and notes on multi-agent systems, evidence-grounded retrieval,
+  evaluation, and production infrastructure by Krishna Vamsi Dhulipalla.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://krishna-dhulipalla.github.io" # the base hostname & protocol for your site
 twitter_username: Krishnavam11316
@@ -15,6 +16,16 @@ plugins:
   - jekyll-sitemap
 
 exclude:
+  - api
+  - docs
+  - tests
+  - output
+  - artifacts
+  - package.json
+  - package-lock.json
+  - STYLEGUIDE.md
+  - README.md
+  - AGENTS.md
   - Gemfile
   - Gemfile.lock
   - node_modules

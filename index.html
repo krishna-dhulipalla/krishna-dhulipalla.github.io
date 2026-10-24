@@ -92,7 +92,7 @@ description: Selected systems, notes, and experience from Krishna Vamsi Dhulipal
           style="border-top: none; padding-top: 0.5rem"
         >
           <span>Issue 01</span>
-          <span>Spring 2026</span>
+          <span>Updated October 2026</span>
         </div>
 
         <div class="intro-grid">
@@ -105,9 +105,10 @@ description: Selected systems, notes, and experience from Krishna Vamsi Dhulipal
               Krishna Vamsi Dhulipalla
             </h1>
             <p class="intro-text">
-              AI / ML engineer focused on agent systems, retrieval, evaluation,
-              and production infrastructure. I build applied AI systems that
-              make model behavior inspectable, measurable, and reliable in use.
+              AI engineer building multi-agent platforms, LLM applications,
+              and full-stack services. I turn enterprise data and complex
+              workflows into systems with traceable evidence, measurable
+              quality, and reliable execution.
             </p>
 
             <div class="focus-strip">
@@ -115,8 +116,8 @@ description: Selected systems, notes, and experience from Krishna Vamsi Dhulipal
                 >Current focus</span
               >
               <p>
-                Tool-using agent orchestration, retrieval reliability, and
-                evaluation loops that hold up under real constraints.
+                Evidence-grounded agents, deterministic verification, and
+                evaluation loops that improve reliability and inference cost.
               </p>
             </div>
 
@@ -128,16 +129,19 @@ description: Selected systems, notes, and experience from Krishna Vamsi Dhulipal
                 >Core Stack</span
               >
               <p style="font-size: 0.95rem">
-                <strong>AI & Agents:</strong> LangGraph, PyTorch, MCP, RAG
-                Architectures, Claude/OpenAI<br />
-                <strong>Backend & Ops:</strong> Python, Go, Node.js, AWS,
-                Kubernetes, Docker<br />
-                <strong>Data & Analytics:</strong> SQL, PostgreSQL, Vector DBs,
-                Airflow, Snowflake
+                <strong>AI & Agents:</strong> LangGraph, MCP, RAG, RAGAS,
+                Claude, OpenAI API<br />
+                <strong>Backend & Apps:</strong> Python, FastAPI, React,
+                TypeScript, Go<br />
+                <strong>Data & Infrastructure:</strong> PostgreSQL, Redis,
+                AWS Bedrock, Docker, Kubernetes
               </p>
             </div>
 
             <div class="link-row hero-links" style="margin-top: 1.5rem">
+              <a href="{{ '/assets/KrishnaDhulipalla.pdf' | relative_url }}" download
+                >Download resume (PDF)</a
+              >
               <a
                 href="https://linkedin.com/in/krishnavamsidhulipalla/"
                 target="_blank"
@@ -226,25 +230,23 @@ description: Selected systems, notes, and experience from Krishna Vamsi Dhulipal
                 CoreLink AI
               </h3>
               <p class="work-context">
-                Finance-first A2A reasoning engine built on LangGraph and MCP.
+                Evidence-grounded analytical reasoning with LangGraph, A2A, and MCP.
               </p>
               <p class="work-description">
-                Built a modular reasoning runtime for finance tasks where a
-                single prompt loop was not enough. It separates intake,
-                planning, context curation, execution, review, and output
-                adaptation so evidence, assumptions, and policy checks stay
-                explicit through the run.
+                Built an agent runtime that retrieves documents and tables,
+                extracts typed evidence, and computes answers deterministically.
+                Bounded recovery paths rotate retrieval strategies when evidence
+                is weak, while a strategy journal carries outcomes into later tasks.
               </p>
               <p class="work-role">
                 <span>System area</span>
-                Agent runtime, tool mediation, review flow, policy-aware
-                orchestration
+                Adaptive retrieval, deterministic compute, verification, strategy memory
               </p>
               <ul class="token-list">
                 <li>LangGraph</li>
                 <li>MCP</li>
                 <li>A2A</li>
-                <li>Structured reasoning</li>
+                <li>Hybrid retrieval</li>
               </ul>
               <div class="link-row">
                 <a
@@ -260,9 +262,9 @@ description: Selected systems, notes, and experience from Krishna Vamsi Dhulipal
               <ol class="diagram-list">
                 <li>Intake</li>
                 <li>Planner + capability resolver</li>
-                <li>Context curator</li>
-                <li>Executor</li>
-                <li>Reviewer + output adapter</li>
+                <li>Evidence retrieval + context curation</li>
+                <li>Deterministic compute</li>
+                <li>Verify, repair, or finish</li>
               </ol>
             </aside>
           </article>
@@ -273,30 +275,30 @@ description: Selected systems, notes, and experience from Krishna Vamsi Dhulipal
               <p class="work-group">Reliable AI Systems</p>
               <h3
                 class="work-title chroma-hover spider-hover"
-                data-text="Clinical Pre-Rounding Assistant"
+                data-text="Rounds"
               >
-                Clinical Pre-Rounding Assistant
+                Rounds
               </h3>
               <p class="work-context">
-                FHIR-grounded clinical summarization for the last 24 to 48 hours
-                of patient change.
+                Clinical change intelligence with source-linked FHIR briefings.
               </p>
               <p class="work-description">
-                Built a healthcare RAG system on AWS Bedrock and LangChain for
-                grounded summaries of recent patient change. The stack combined
-                deterministic fact extraction, PHI redaction, and evaluation
-                loops aimed at clinical reliability.
+                Built a React/TypeScript and FastAPI workbench that compares
+                patient changes within an encounter, links statements to versioned
+                FHIR evidence, and saves clinician-reviewed handoffs. Deterministic
+                claim checks and fallback behavior keep optional LLM ranking
+                separate from factual calculations.
               </p>
               <p class="work-role">
                 <span>System area</span>
-                Retrieval, grounding, redaction, evaluation
+                Evidence provenance, claim verification, review history, background jobs
               </p>
               <ul class="token-list">
                 <li>FHIR</li>
 
-                <li>AWS Bedrock</li>
-                <li>LangChain</li>
-                <li>Healthcare AI</li>
+                <li>React / TypeScript</li>
+                <li>FastAPI</li>
+                <li>PostgreSQL</li>
               </ul>
               <div class="link-row">
                 <a
@@ -310,8 +312,9 @@ description: Selected systems, notes, and experience from Krishna Vamsi Dhulipal
             <aside class="work-sheet">
               <p class="sheet-label">Reliability focus</p>
               <p class="sheet-caption">
-                Grounding, redaction, and evaluation were treated as first-class
-                system requirements rather than afterthoughts.
+                Source inspection, explicit abstention for missing evidence,
+                and reproducible evaluation. Built for synthetic-data demos
+                and sandbox evaluation.
               </p>
             </aside>
           </article>
@@ -322,24 +325,24 @@ description: Selected systems, notes, and experience from Krishna Vamsi Dhulipal
               <p class="work-group">Infrastructure / Sandboxing</p>
               <h3
                 class="work-title chroma-hover spider-hover"
-                data-text="Agent K8s Sandbox"
+                data-text="AgentTask Operator"
               >
-                Agent K8s Sandbox
+                AgentTask Operator
               </h3>
               <p class="work-context">
                 Isolated execution environment for untrusted agent-generated
                 code.
               </p>
               <p class="work-description">
-                Designed a Kubernetes-based sandbox for untrusted
-                agent-generated code with namespace isolation, resource
-                controls, and a sidecar proxy for observability. The main
-                challenge was safe execution boundaries, not simply running
-                generated code in a container.
+                Built a Kubernetes operator in Go for ephemeral agent execution
+                with rootless containers, default-deny network policies, runtime
+                profiles, and resource limits. Added timeout enforcement,
+                automatic cleanup, structured results, Prometheus metrics,
+                and an agentctl CLI for running and inspecting tasks.
               </p>
               <p class="work-role">
                 <span>System area</span>
-                Isolation, throttling, execution safety, observability
+                Execution isolation, lifecycle management, observability, developer tooling
               </p>
               <ul class="token-list">
                 <li>Kubernetes</li>
@@ -349,7 +352,7 @@ description: Selected systems, notes, and experience from Krishna Vamsi Dhulipal
               </ul>
               <div class="link-row">
                 <a
-                  href="https://github.com/krishna-dhulipalla/agenttask-operator"
+                  href="https://github.com/krishna-dhulipalla/AgentTask-Operator"
                   target="_blank"
                   rel="noreferrer"
                   >Repository</a
@@ -359,9 +362,9 @@ description: Selected systems, notes, and experience from Krishna Vamsi Dhulipal
             <aside class="work-sheet">
               <p class="sheet-label">Execution guardrails</p>
               <ol class="diagram-list">
-                <li>Namespace isolation</li>
-                <li>Resource throttling</li>
-                <li>Proxy-mediated observability</li>
+                <li>Rootless execution + network policies</li>
+                <li>Resource limits + timeouts</li>
+                <li>Structured results + automatic cleanup</li>
               </ol>
             </aside>
           </article>
@@ -380,27 +383,27 @@ description: Selected systems, notes, and experience from Krishna Vamsi Dhulipal
                 Schema-aware SQL automation for internal analyst workflows.
               </p>
               <p class="work-description">
-                Replaced manual analyst requests with autonomous SQL agents
-                backed by schema-aware retrieval and enterprise-safe execution.
-                The core value came from constraints, RBAC alignment, and
-                making the generated path trustworthy enough to use.
+                Built production LangGraph workflows at Tabner for text-to-SQL,
+                database operations, document retrieval, and MCP tools. FastAPI
+                services connect enterprise data with PII masking, schema
+                validation, SQL guardrails, and RAGAS evaluation.
               </p>
               <p class="work-role">
                 <span>System area</span>
                 SQL generation, schema retrieval, policy-safe automation
               </p>
               <ul class="token-list">
-                <li>LangChain</li>
-                <li>SQL / Pandas</li>
-                <li>Kubernetes</li>
-                <li>RAG</li>
+                <li>LangGraph</li>
+                <li>FastAPI</li>
+                <li>AWS Bedrock</li>
+                <li>RAGAS</li>
               </ul>
             </div>
             <aside class="work-sheet">
               <p class="sheet-label">Operational result</p>
               <p class="sheet-caption">
-                Replaced manual analyst work with a constrained, schema-aware
-                path that fit existing enterprise controls.
+                Automated 70%+ of recurring analytics requests and reduced
+                failed agent executions by 40%.
               </p>
             </aside>
           </article>
@@ -468,7 +471,7 @@ description: Selected systems, notes, and experience from Krishna Vamsi Dhulipal
                 higher peer capacity.
               </p>
               <a
-                href="https://github.com/krishna-dhulipalla/SE-Project---IntelliMeet"
+                href="https://github.com/krishna-dhulipalla/IntelliMeet-AI-Enabled-Decentralized-Video-Conferencing-App-"
                 target="_blank"
                 rel="noreferrer"
                 >Repository</a
@@ -512,7 +515,7 @@ description: Selected systems, notes, and experience from Krishna Vamsi Dhulipal
         {% endif %}
 
         <div class="section-cta">
-          <a href="{{ '/blog.html' | relative_url }}">Read note</a>
+          <a href="{{ '/blog.html' | relative_url }}">Browse all notes</a>
         </div>
       </section>
 
@@ -535,21 +538,22 @@ description: Selected systems, notes, and experience from Krishna Vamsi Dhulipal
         <div class="experience-list">
           <article class="experience-item current-role">
             <div class="experience-main">
-              <h3>AI Software Engineer</h3>
-              <p class="experience-org">Tabner Inc</p>
+              <h3>AI Engineer</h3>
+              <p class="experience-org">Tabner Inc.</p>
             </div>
             <p class="experience-date">Jul 2025 - Present</p>
             <p class="experience-summary">
-              Built agent workflows for internal data operations, redesigned
-              ETL pipelines, and shipped containerized services with production
-              uptime requirements.
+              Build production multi-agent workflows with Python, LangGraph,
+              Claude, and AWS Bedrock, supported by FastAPI services and
+              stakeholder-facing React workflows.
             </p>
             <ul class="detail-list">
               <li>
-                Automated 65% of internal data requests with agent workflows.
+                Automated 70%+ of recurring analytics requests.
               </li>
-              <li>Reduced ETL runtime by 25% through pipeline redesign.</li>
-              <li>Maintained 99.9% uptime on containerized deployments.</li>
+              <li>Reduced LLM inference costs by 30% through routing and semantic caching.</li>
+              <li>Reduced failed agent executions by 40% with validation, guardrails, and retries.</li>
+              <li>Reduced production regressions during prompt and model updates by 30%.</li>
             </ul>
           </article>
 
@@ -560,8 +564,9 @@ description: Selected systems, notes, and experience from Krishna Vamsi Dhulipal
             </div>
             <p class="experience-date">Aug 2024 - Jul 2025</p>
             <p class="experience-summary">
-              Built genomics model workflows, distributed experiments, and
-              repeatable fine-tuning pipelines across GPU infrastructure.
+              Improved distributed genomics training throughput by 30% on HPC
+              GPU clusters and reduced experiment runtime from 12 to 8 hours.
+              Standardized fine-tuning, MLflow tracking, and deployment workflows.
             </p>
           </article>
 
@@ -572,8 +577,9 @@ description: Selected systems, notes, and experience from Krishna Vamsi Dhulipal
             </div>
             <p class="experience-date">Jun 2023 - May 2024</p>
             <p class="experience-summary">
-              Improved NER performance and inference efficiency while exploring
-              lower-cost ways to steer foundation models toward domain tasks.
+              Fine-tuned LLaMA and SciBERT for cross-domain named entity
+              recognition. Automated retraining and evaluation on HPC clusters,
+              reducing manual experiment setup by 40%.
             </p>
           </article>
 
@@ -584,8 +590,9 @@ description: Selected systems, notes, and experience from Krishna Vamsi Dhulipal
             </div>
             <p class="experience-date">Jul 2021 - Dec 2022</p>
             <p class="experience-summary">
-              Built backend APIs and delivery pipelines focused on reducing
-              release defects and stabilizing integrations.
+              Built Python and Azure Data Factory ETL pipelines into Azure SQL,
+              reducing manual data handling by 60%. Added validation and monitoring
+              that improved data accuracy and cut issue triage time by 40%.
             </p>
           </article>
         </div>
@@ -665,8 +672,8 @@ description: Selected systems, notes, and experience from Krishna Vamsi Dhulipal
         </div>
 
         <div class="footer-links">
-          <a href="mailto:krishnadhulipalla13@gmail.com"
-            >krishnadhulipalla13@gmail.com</a
+          <a href="mailto:{{ site.email }}"
+            >{{ site.email }}</a
           >
           <a
             href="https://github.com/krishna-dhulipalla"
