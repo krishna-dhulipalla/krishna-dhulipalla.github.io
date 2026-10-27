@@ -80,6 +80,9 @@
           <div class="post-header-inner">
             <div class="post-meta">
               <span>{{ page.date | date: "%b %d, %Y" }}</span>
+              {% if page.last_modified_at %}
+                <span>Updated {{ page.last_modified_at | date: "%b %d, %Y" }}</span>
+              {% endif %}
               <span>
                 {% if page.category %}
                   {{ page.category }}

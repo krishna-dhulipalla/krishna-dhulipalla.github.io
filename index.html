@@ -35,8 +35,7 @@ description: Selected systems, notes, and experience from Krishna Vamsi Dhulipal
     <script defer src="{{ '/js/main.js' | relative_url }}"></script>
   </head>
   <body class="page-home">
-    {% assign featured_note = site.posts | where_exp: "post", "post.title ==
-    'Why Your Vision Model Is Lying to You (And How to Catch It)'" | first %}
+    {% assign featured_note = site.posts | where: "slug", "vision-model-lying" | first %}
     <a class="skip-link" href="#main">Skip to content</a>
 
     <header class="site-header">

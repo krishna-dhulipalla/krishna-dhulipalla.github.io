@@ -1116,6 +1116,13 @@ html.theme-shifting .page-home .spider-title::after {
   padding: 2.9rem 2.4rem 2rem;
 }
 
+.post-shell,
+.post-header-inner,
+.post-body-inner,
+.note-list-item > div {
+  min-width: 0;
+}
+
 .post-header {
   margin-bottom: 2.4rem;
   padding-bottom: 1.85rem;
@@ -1141,6 +1148,10 @@ html.theme-shifting .page-home .spider-title::after {
   font-size: 0.78rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
+}
+
+.post-meta > span {
+  white-space: nowrap;
 }
 
 .post-title {
@@ -1170,6 +1181,7 @@ html.theme-shifting .page-home .spider-title::after {
 .post-body {
   color: var(--ink);
   font-size: 1.06rem;
+  overflow-wrap: anywhere;
 }
 
 .post-body-inner {
@@ -1309,6 +1321,7 @@ html.theme-shifting .page-home .spider-title::after {
 }
 
 .post-body img {
+  height: auto;
   margin: 1.4rem 0 0.4rem;
   border: 1px solid var(--line);
   background: var(--paper-strong);
@@ -1328,6 +1341,7 @@ html.theme-shifting .page-home .spider-title::after {
 }
 
 .post-body pre {
+  max-width: 100%;
   overflow-x: auto;
   padding: 1rem;
   border: 1px solid var(--line);
@@ -1340,6 +1354,13 @@ html.theme-shifting .page-home .spider-title::after {
   background: transparent;
   padding: 0;
   color: inherit;
+  overflow-wrap: normal;
+}
+
+.post-body table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
 }
 
 .post-footer {
@@ -1779,6 +1800,7 @@ html.theme-shifting .page-home .spider-title::after {
     padding: 0.9rem 0;
     min-height: auto;
     flex-wrap: wrap;
+    gap: 0.65rem;
   }
 
   .masthead-actions {
@@ -1792,6 +1814,18 @@ html.theme-shifting .page-home .spider-title::after {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    min-height: 44px;
+  }
+
+  .theme-toggle,
+  .site-menu a {
+    min-height: 44px;
+  }
+
+  .site-menu a {
+    display: flex;
+    align-items: center;
+    width: 100%;
   }
 
   .site-menu {
@@ -1803,6 +1837,8 @@ html.theme-shifting .page-home .spider-title::after {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.75rem;
+    max-height: calc(100dvh - 9rem);
+    overflow-y: auto;
   }
 
   .site-menu.is-open {
@@ -1836,7 +1872,12 @@ html.theme-shifting .page-home .spider-title::after {
   }
 
   .post-shell {
-    padding: 1.4rem 1.1rem 1.6rem;
+    padding: clamp(0.9rem, 3.5vw, 1.4rem);
+  }
+
+  .post-header {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.4rem;
   }
 
   .post-header-inner {
@@ -1851,8 +1892,11 @@ html.theme-shifting .page-home .spider-title::after {
   }
 
   .post-title {
-    max-width: 13ch;
-    font-size: clamp(2.35rem, 11vw, 3.7rem);
+    max-width: 100%;
+    font-size: clamp(2rem, 7.5vw, 3.2rem);
+    line-height: 1.08;
+    overflow-wrap: anywhere;
+    text-wrap: balance;
   }
 
   .post-byline {
@@ -1867,12 +1911,13 @@ html.theme-shifting .page-home .spider-title::after {
   .post-utility {
     align-items: flex-start;
     flex-direction: column;
-    gap: 1rem;
-    padding-bottom: 1.45rem;
-    margin-bottom: 1.45rem;
+    gap: 0.5rem;
+    padding-bottom: 1rem;
+    margin-bottom: 1.25rem;
   }
 
   .post-utility-main {
+    width: 100%;
     flex-wrap: wrap;
     gap: 0.85rem;
   }
@@ -1883,6 +1928,74 @@ html.theme-shifting .page-home .spider-title::after {
 
   .post-utility-status {
     white-space: normal;
+    flex-basis: 100%;
+    font-size: 0.9rem;
+  }
+
+  .post-utility-button,
+  .post-utility-secondary,
+  .post-utility-link {
+    min-height: 44px;
+  }
+
+  .post-utility-icon {
+    flex-shrink: 0;
+  }
+
+  .post-body {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  .post-body h2 {
+    font-size: clamp(1.5rem, 6vw, 1.9rem);
+    line-height: 1.18;
+  }
+
+  .post-body h3 {
+    font-size: 1.3rem;
+    line-height: 1.25;
+  }
+
+  .post-body pre {
+    padding: 0.8rem;
+    font-size: 0.88rem;
+  }
+
+  .post-footer {
+    flex-wrap: wrap;
+  }
+
+  .post-footer a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+
+  .page-notes .page-intro {
+    gap: 1rem;
+    padding-top: 0.3rem;
+  }
+
+  .page-notes .page-note {
+    padding: 0.5rem 0;
+  }
+
+  .page-notes .note-section {
+    margin-top: 1.5rem;
+  }
+
+  .page-notes .section-head {
+    gap: 0.65rem;
+  }
+
+  .note-list-item {
+    gap: 0.5rem;
+  }
+
+  .note-list-item h3 {
+    line-height: 1.18;
+    overflow-wrap: anywhere;
   }
 }
 

@@ -130,7 +130,12 @@ description: Engineering notes and field logs from Krishna Vamsi Dhulipalla on a
                   <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
                 </h3>
               </div>
-              <p class="note-list-meta">{{ post.date | date: "%b %d, %Y" }}</p>
+              <p class="note-list-meta">
+                {{ post.date | date: "%b %d, %Y" }}
+                {% if post.last_modified_at %}
+                  <span> / Updated {{ post.last_modified_at | date: "%b %d, %Y" }}</span>
+                {% endif %}
+              </p>
               <p>{{ post.excerpt }}</p>
             </article>
           {% endfor %}
